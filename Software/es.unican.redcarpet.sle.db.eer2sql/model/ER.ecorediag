@@ -40,7 +40,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_TEQhEUcaEeCozdJq_lczrw"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_XH5PAEyTEeCeY-WHBLyciQ" type="2001">
-        <element xmi:type="ecore:EAttribute" href="ER.ecore#//Attribute/Accepts%20nulls"/>
+        <element xmi:type="ecore:EAttribute" href="ER.ecore#//Attribute/nullable"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_XH5PAUyTEeCeY-WHBLyciQ"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_xFvXIUarEeCcJfaCuM1ALQ"/>
