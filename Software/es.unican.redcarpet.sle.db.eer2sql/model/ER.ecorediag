@@ -180,18 +180,6 @@
     <element xmi:type="ecore:EClass" href="ER.ecore#//Line_Relationship"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YCii8kasEeCcJfaCuM1ALQ" x="795" y="860"/>
   </children>
-  <children xmi:type="notation:Shape" xmi:id="_fsnd0EccEeCozdJq_lczrw" type="Note" fontName="Segoe UI" description="Dominio: ¿Se tendría que representar el dominio? Igual queremos que el rango de valores sea 'on' y 'off'" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
-    <children xmi:type="notation:BasicDecorationNode" xmi:id="_fsor8EccEeCozdJq_lczrw" type="DiagramName">
-      <element xsi:nil="true"/>
-    </children>
-    <children xmi:type="notation:BasicDecorationNode" xmi:id="_fsor8UccEeCozdJq_lczrw" type="Description">
-      <element xsi:nil="true"/>
-    </children>
-    <styles xmi:type="notation:TextStyle" xmi:id="_fsnd0UccEeCozdJq_lczrw"/>
-    <styles xmi:type="notation:LineTypeStyle" xmi:id="_fsnd0kccEeCozdJq_lczrw"/>
-    <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fsnd00ccEeCozdJq_lczrw" x="1310" y="475" width="216"/>
-  </children>
   <children xmi:type="notation:Node" xmi:id="_bJ4AgEceEeCozdJq_lczrw" type="1001">
     <children xmi:type="notation:Node" xmi:id="_bJ4Ag0ceEeCozdJq_lczrw" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_bJ-HIEceEeCozdJq_lczrw" type="5001">
@@ -421,7 +409,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_Hx31IVFSEeCCbM58qQCr3Q" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="ER.ecore#//EnumWeakEntity"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hx31IlFSEeCCbM58qQCr3Q" x="-660" y="15"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hx31IlFSEeCCbM58qQCr3Q" x="-310" y="-75"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_DQXjYFFTEeCCbM58qQCr3Q" type="1001">
     <children xmi:type="notation:Node" xmi:id="_DQYxgFFTEeCCbM58qQCr3Q" type="4001"/>
