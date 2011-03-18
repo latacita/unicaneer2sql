@@ -16,15 +16,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Ent_Con" upperBound="-1"
         eType="#//Constraint"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Single_Attribute" eSuperTypes="#//Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Multiplicity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Att_Con" upperBound="-1"
-        eType="#//Constraint"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nullable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Att_Dom" lowerBound="1"
-        eType="#//Domain" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Relationship">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -44,10 +38,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Uni_Att" eType="#//Attribute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Uni_Com" eType="#//Composite_Attribute"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Composite_Attribute">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Composite_Attribute" eSuperTypes="#//Attribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Com_Att" lowerBound="2"
-        upperBound="-1" eType="#//Attribute" containment="true"/>
+        upperBound="-1" eType="#//Single_Attribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -95,12 +88,8 @@
         eType="#//Entity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Gen_Ent_Sub" lowerBound="1"
         upperBound="-1" eType="#//Entity" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Gen_Att" upperBound="-1"
-        eType="#//Attribute" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Gen_Com" upperBound="-1"
-        eType="#//Composite_Attribute" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Gen_Com" eType="#//Composite_Attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Gen_Att" lowerBound="1"
+        eType="#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Aggregation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Agg_Ent_Ini" lowerBound="1"
@@ -118,11 +107,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Weak_Entity" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//EnumWeakEntity"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="TypeWeakEntity">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="enumeration" value=""/>
-    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Wea_Att" lowerBound="1"
+        eType="#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EnumWeakEntity">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -134,5 +120,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="Domain">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Values" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Att_Dom" lowerBound="1"
+        eType="#//Domain" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nullable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Att_Con" upperBound="-1"
+        eType="#//Constraint"/>
   </eClassifiers>
 </ecore:EPackage>
