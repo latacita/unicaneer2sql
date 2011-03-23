@@ -89,7 +89,7 @@
     <styles xmi:type="notation:TextStyle" xmi:id="_lMUYoFV-EeCpO7JwxyHuAw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_lMUYoVV-EeCpO7JwxyHuAw"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lMUYolV-EeCpO7JwxyHuAw" x="500" y="105" width="186" height="61"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lMUYolV-EeCpO7JwxyHuAw" x="485" y="105" width="186" height="61"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_k8aDQVVQEeCpO7JwxyHuAw"/>
   <element xmi:type="ecore:EPackage" href="EERmodel.ecore#/"/>
