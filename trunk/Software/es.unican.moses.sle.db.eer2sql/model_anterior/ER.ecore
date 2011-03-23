@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="er"
+    nsURI="http://er/1.0" nsPrefix="er">
+  <eClassifiers xsi:type="ecore:EClass" name="Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Ent_Att" lowerBound="1"
+        upperBound="-1" eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Ent_Pri" lowerBound="1"
+        eType="#//Primary_key" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Ent_Uni" upperBound="-1"
+        eType="#//Candidate_key" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Ent_Com" upperBound="-1"
+        eType="#//Composite_Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Ent_Con" upperBound="-1"
+        eType="#//Constraint0" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Single_Attribute" eSuperTypes="#//Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Multiplicity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Sin_Dom" lowerBound="1"
+        eType="#//Domain"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Derivate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship" eSuperTypes="#//AbstractRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Rel_Com" upperBound="-1"
+        eType="#//Composite_Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Rel_Att" upperBound="-1"
+        eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Rel_Con" upperBound="-1"
+        eType="#//Constraint0" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Rel_Lin" lowerBound="2"
+        upperBound="-1" eType="#//Line_Relationship" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Primary_key" eSuperTypes="#//Candidate_key"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Candidate_key">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Uni_Att" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Uni_Com" eType="#//Composite_Attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Composite_Attribute" eSuperTypes="#//Attribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Com_Att" lowerBound="2"
+        upperBound="-1" eType="#//Single_Attribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Restriction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Line_Relationship" eSuperTypes="#//Line">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Lin_Rel" lowerBound="1"
+        upperBound="2" eType="#//Relationship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Lin_Dep" eType="#//Dependency_Relationship"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Project">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Pro_Ent" lowerBound="1"
+        upperBound="-1" eType="#//Entity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Pro_Att" lowerBound="1"
+        upperBound="-1" eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Pro_Rel" upperBound="-1"
+        eType="#//Relationship" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Pro_Dom" upperBound="-1"
+        eType="#//Domain" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Exclusive" eSuperTypes="#//Constraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Exc_Lin" lowerBound="2"
+        upperBound="-1" eType="#//Line"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Exclusion" eSuperTypes="#//Constraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Exc_Rel" lowerBound="2"
+        upperBound="2" eType="#//Relationship"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inclusiveness" eSuperTypes="#//Constraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Inc_Lin" lowerBound="2"
+        upperBound="-1" eType="#//Line"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inclusion" eSuperTypes="#//Constraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Inc_Rel" lowerBound="2"
+        upperBound="2" eType="#//Relationship"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Generalization">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Gen_Ent_Sup" lowerBound="1"
+        eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Gen_Chi" lowerBound="1"
+        upperBound="-1" eType="#//Child_Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Gen_Att" lowerBound="1"
+        eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Gen_Lin" lowerBound="1"
+        upperBound="-1" eType="#//Line_Generalization"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Aggregation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Agg_Ent_Ini" lowerBound="1"
+        eType="#//Entity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Composite_Component" eSuperTypes="#//Aggregation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CC_Lin" lowerBound="2"
+        upperBound="-1" eType="#//Line_Generalization" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CC_Rel" upperBound="-1"
+        eType="#//Relationship"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Member_Collection" eSuperTypes="#//Aggregation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="MC_Lin" lowerBound="1"
+        eType="#//Line_Generalization" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Weak_Entity" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//EnumWeakEntity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Wea_Att" lowerBound="1"
+        eType="#//Attribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EnumWeakEntity">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="enumeration" value=""/>
+    </eAnnotations>
+    <eLiterals name="Identification"/>
+    <eLiterals name="Existence" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Domain">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Values" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nullable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Att_Con" upperBound="-1"
+        eType="#//Constraint0" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Att_Gen" eType="#//Generalization"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Line_Generalization" eSuperTypes="#//Line"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Line">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Cardinality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Lin_Ent" eType="#//Entity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint0"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Child_Entity" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Chi_Att" lowerBound="1"
+        upperBound="-1" eType="#//Attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency_Relationship" eSuperTypes="#//AbstractRelation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//Dependency_Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Dep_Lin_Dep" lowerBound="1"
+        upperBound="-1" eType="#//Line_Dependence" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Dependency_Type">
+    <eLiterals name="ID"/>
+    <eLiterals name="E" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractRelation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Line_Dependence" eSuperTypes="#//Line">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Lin_Dep_Dep" lowerBound="1"
+        eType="#//Dependency_Relationship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Lin_Chi" lowerBound="1"
+        eType="#//Child_Entity"/>
+  </eClassifiers>
+</ecore:EPackage>
