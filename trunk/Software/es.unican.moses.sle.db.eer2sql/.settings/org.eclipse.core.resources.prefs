@@ -1,9 +1,10 @@
-#Tue Mar 22 20:44:35 CET 2011
+#Wed Mar 23 11:25:43 CET 2011
 eclipse.preferences.version=1
-encoding//model/Attribute.ecorediag=UTF-8
-encoding//model/Constraint.ecorediag=UTF-8
-encoding//model/ER.ecore=UTF-8
-encoding//model/ER_completo.ecorediag=UTF-8
-encoding//model/Entity.ecorediag=UTF-8
-encoding//model/Project.ecorediag=UTF-8
-encoding//model/Relationship.ecorediag=UTF-8
+encoding//model_anterior/Attribute.ecorediag=UTF-8
+encoding//model_anterior/Constraint.ecorediag=UTF-8
+encoding//model_anterior/ER.ecore=UTF-8
+encoding//model_anterior/ER.ecorediag=UTF-8
+encoding//model_anterior/ER_completo.ecorediag=UTF-8
+encoding//model_anterior/Entity.ecorediag=UTF-8
+encoding//model_anterior/Project.ecorediag=UTF-8
+encoding//model_anterior/Relationship.ecorediag=UTF-8
