@@ -43,10 +43,6 @@
   <children xmi:type="notation:Node" xmi:id="_QxxeUFVCEeCpO7JwxyHuAw" type="1001">
     <children xmi:type="notation:Node" xmi:id="_QxxeU1VCEeCpO7JwxyHuAw" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_QxxeVFVCEeCpO7JwxyHuAw" type="5001">
-      <children xmi:type="notation:Node" xmi:id="_kERCsFVCEeCpO7JwxyHuAw" type="2001">
-        <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Single_Attribute/Multiplicity"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_kERCsVVCEeCpO7JwxyHuAw"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_IIdpsFVDEeCpO7JwxyHuAw" type="2001">
         <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Single_Attribute/Derivate"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_IIdpsVVDEeCpO7JwxyHuAw"/>
@@ -62,7 +58,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_QxxeUVVCEeCpO7JwxyHuAw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="EERmodel.ecore#//Single_Attribute"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QxxeUlVCEeCpO7JwxyHuAw" x="585" y="265"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QxxeUlVCEeCpO7JwxyHuAw" x="585" y="270"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_elW5QFVeEeCpO7JwxyHuAw" type="Note" fontName="Segoe UI" description="Si relaciono Single_Attribute con dominio 1..* ¿se puede quitar la multiplicidad?" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
     <children xmi:type="notation:BasicDecorationNode" xmi:id="_elgDMFVeEeCpO7JwxyHuAw" type="DiagramName">
@@ -75,6 +71,30 @@
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_elW5QlVeEeCpO7JwxyHuAw"/>
     <element xsi:nil="true"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_elW5Q1VeEeCpO7JwxyHuAw" x="730" y="115" width="151" height="116"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_nwT0YFX3EeC-yZaefy81Hg" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_nwT0Y1X3EeC-yZaefy81Hg" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_nwT0ZFX3EeC-yZaefy81Hg" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_qXy0AFX3EeC-yZaefy81Hg" type="2001">
+        <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Multiplicity.1/lowerBound"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_qXy0AVX3EeC-yZaefy81Hg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_nwc-UFX3EeC-yZaefy81Hg" type="2001">
+        <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Multiplicity.1/upperBound"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_nwc-UVX3EeC-yZaefy81Hg"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_nwT0ZVX3EeC-yZaefy81Hg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_nwT0ZlX3EeC-yZaefy81Hg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_nwT0Z1X3EeC-yZaefy81Hg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_nwT0aFX3EeC-yZaefy81Hg" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_nwT0aVX3EeC-yZaefy81Hg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_nwT0alX3EeC-yZaefy81Hg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_nwT0a1X3EeC-yZaefy81Hg"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_nwT0YVX3EeC-yZaefy81Hg" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="EERmodel.ecore#//Multiplicity.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nwT0YlX3EeC-yZaefy81Hg" x="600" y="405"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_kBn7MVU-EeC11o5yiAlA1w"/>
   <element xmi:type="ecore:EPackage" href="EERmodel.ecore#/"/>
@@ -105,5 +125,17 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_Y9u9slVDEeCpO7JwxyHuAw" fontName="Segoe UI"/>
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Y9u9s1VDEeCpO7JwxyHuAw" points="[-63, -33, 102, 112]$[-63, -73, 102, 72]$[-136, -73, 29, 72]$[-136, -112, 29, 33]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_nwmvUFX3EeC-yZaefy81Hg" type="3002" source="_QxxeUFVCEeCpO7JwxyHuAw" target="_nwT0YFX3EeC-yZaefy81Hg">
+    <children xmi:type="notation:Node" xmi:id="_nwmvVFX3EeC-yZaefy81Hg" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_nwmvVVX3EeC-yZaefy81Hg" x="-4" y="-32"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_nwmvVlX3EeC-yZaefy81Hg" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_nwmvV1X3EeC-yZaefy81Hg" x="-4" y="12"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_nwmvUVX3EeC-yZaefy81Hg" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_nwmvUlX3EeC-yZaefy81Hg" fontColor="4210752" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="EERmodel.ecore#//Single_Attribute/multiplicity"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nwmvU1X3EeC-yZaefy81Hg" points="[-55, -24, 602, 271]$[-656, -295, 1, 0]"/>
   </edges>
 </notation:Diagram>
