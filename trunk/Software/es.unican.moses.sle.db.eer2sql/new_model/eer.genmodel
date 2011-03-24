@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/es.unican.moses.sle.db.eer2sql/src"
+    modelPluginID="es.unican.moses.sle.db.eer2sql" modelName="Eer" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>EERmodel.ecore</foreignModel>
+  <genPackages prefix="EER" disposableProviderFactory="true" ecorePackage="EERmodel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="EERmodel.ecore#//Dependency_Type">
+      <genEnumLiterals ecoreEnumLiteral="EERmodel.ecore#//Dependency_Type/ID"/>
+      <genEnumLiterals ecoreEnumLiteral="EERmodel.ecore#//Dependency_Type/E"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="EERmodel.ecore#//Relationship_Type">
+      <genEnumLiterals ecoreEnumLiteral="EERmodel.ecore#//Relationship_Type/Strong"/>
+      <genEnumLiterals ecoreEnumLiteral="EERmodel.ecore#//Relationship_Type/Weak"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="EERmodel.ecore#//Generalization_Type">
+      <genEnumLiterals ecoreEnumLiteral="EERmodel.ecore#//Generalization_Type/Total_Overlapping"/>
+      <genEnumLiterals ecoreEnumLiteral="EERmodel.ecore#//Generalization_Type/Total_Disjoint"/>
+      <genEnumLiterals ecoreEnumLiteral="EERmodel.ecore#//Generalization_Type/Partial_Overlapping"/>
+      <genEnumLiterals ecoreEnumLiteral="EERmodel.ecore#//Generalization_Type/Partial_Disjoint"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="EERmodel.ecore#//Cardinality_Type"/>
+    <genDataTypes ecoreDataType="EERmodel.ecore#//UnboundedNatural"/>
+    <genClasses ecoreClass="EERmodel.ecore#//Project">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Project/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Project/Project_Entity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Project/Project_Relationship"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Project/Project_Domain"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Entity/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Entity/Entity_Primary_Key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Entity/Entity_Candidate_Key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Entity/Entity_Attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Child_Entity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Child_Entity/Child_Entity_Attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Weak_Entity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Weak_Entity/Weak_Entity_Attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Constraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Constraint/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Constraint/Comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Constraint/Restriction"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Exclusive">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Exclusive/Exclusive_Line"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Inclusiveness">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Inclusiveness/Inclusiveness_Line"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Exclusion">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Exclusion/Exclusion_Relationship"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Inclusion">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Inclusion/Inclusion_Relationship"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Candidate_Key">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Candidate_Key/Candidate_Key_Attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Primary_Key"/>
+    <genClasses ecoreClass="EERmodel.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Attribute/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Attribute/Nullable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Attribute/Attribute_Generalization"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Composite_Attribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Composite_Attribute/Composite_Att_Single_Att"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Single_Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Single_Attribute/Derivate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Single_Attribute/Single_Att_Domain"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Single_Attribute/multiplicity"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Domain">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Domain/Name"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Abstract_Relation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Abstract_Relation/Name"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Relationship">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Relationship/Relationship_Line_Rel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Relationship/Relationship_Attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Relationship/Type"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Dependency_Relation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Dependency_Relation/Type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Dependency_Relation/Dependency_Rel_Line_Dep"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Line">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Line/Cardinality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Line/Rol"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Line/Line_Entity"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Line_Relationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Line_Relationship/Line_Rel_Relationship"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Line_Relationship/Line_Rel_Relation"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Line_Dependence">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Line_Dependence/Line_Dep_Dependency_Rel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Line_Dependence/Line_Dep_Child_Ent"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Line_Generalization"/>
+    <genClasses ecoreClass="EERmodel.ecore#//Aggregation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Aggregation/Aggregation_Entity"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Composite_Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Composite_Component/CC_Line_Gen"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Member_Collection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Member_Collection/MC_Line_Gen"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Generalization">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Generalization/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Generalization/Type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Generalization/Generalization_Child_Ent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Generalization/Generalization_Attribute"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EERmodel.ecore#//Generalization/Generalization_Line_Gen"/>
+    </genClasses>
+    <genClasses ecoreClass="EERmodel.ecore#//Multiplicity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Multiplicity/upperBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EERmodel.ecore#//Multiplicity/lowerBound"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_1j7iEFVDEeCpO7JwxyHuAw" type="EcoreTools" name="EERmodel.ecorediag" measurementUnit="Pixel">
-  <children xmi:type="notation:Node" xmi:id="_4U08YFVDEeCpO7JwxyHuAw" type="1001">
-    <children xmi:type="notation:Node" xmi:id="_4U08Y1VDEeCpO7JwxyHuAw" type="4001"/>
-    <children xmi:type="notation:Node" xmi:id="_4U08ZFVDEeCpO7JwxyHuAw" type="5001">
-      <children xmi:type="notation:Node" xmi:id="_51FOMFVDEeCpO7JwxyHuAw" type="2001">
-        <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Domain.1/Name"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_51FOMVVDEeCpO7JwxyHuAw"/>
-      </children>
-      <styles xmi:type="notation:DrawerStyle" xmi:id="_4U08ZVVDEeCpO7JwxyHuAw"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_4U08ZlVDEeCpO7JwxyHuAw"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_4U08Z1VDEeCpO7JwxyHuAw"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_4U08aFVDEeCpO7JwxyHuAw" type="5002">
-      <styles xmi:type="notation:DrawerStyle" xmi:id="_4U08aVVDEeCpO7JwxyHuAw"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_4U08alVDEeCpO7JwxyHuAw"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_4U08a1VDEeCpO7JwxyHuAw"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_4U08YVVDEeCpO7JwxyHuAw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="EERmodel.ecore#//Domain.1"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4U08YlVDEeCpO7JwxyHuAw" x="275" y="120"/>
-  </children>
   <children xmi:type="notation:Node" xmi:id="_8bHcUFVDEeCpO7JwxyHuAw" type="1001">
     <children xmi:type="notation:Node" xmi:id="_8bHcU1VDEeCpO7JwxyHuAw" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_8bQmQFVDEeCpO7JwxyHuAw" type="5001">
@@ -38,17 +18,4 @@
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_1j7iEVVDEeCpO7JwxyHuAw"/>
   <element xmi:type="ecore:EPackage" href="EERmodel.ecore#/"/>
-  <edges xmi:type="notation:Edge" xmi:id="_9KRoYFVDEeCpO7JwxyHuAw" type="3002" source="_8bHcUFVDEeCpO7JwxyHuAw" target="_4U08YFVDEeCpO7JwxyHuAw">
-    <children xmi:type="notation:Node" xmi:id="_9KayUFVDEeCpO7JwxyHuAw" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_9KayUVVDEeCpO7JwxyHuAw" x="-80" y="12"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_9KayUlVDEeCpO7JwxyHuAw" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_9KayU1VDEeCpO7JwxyHuAw" x="10" y="10"/>
-    </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_9KRoYVVDEeCpO7JwxyHuAw" lineColor="4210752"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_9KRoYlVDEeCpO7JwxyHuAw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="EERmodel.ecore#//Single_Attribute/Single_Att_Domain"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9KRoY1VDEeCpO7JwxyHuAw" points="[-1, -8, 279, 6]$[-222, -8, 58, 6]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9KayVFVDEeCpO7JwxyHuAw" id="(0.013793103448275862,0.7058823529411765)"/>
-  </edges>
 </notation:Diagram>
