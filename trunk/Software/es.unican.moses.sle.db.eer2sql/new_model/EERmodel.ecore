@@ -67,12 +67,12 @@
         lowerBound="2" upperBound="-1" eType="#//Single_Attribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Single_Attribute" eSuperTypes="#//Attribute">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Multiplicity" lowerBound="1"
-        eType="#//Multiplicity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Derivate" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Single_Att_Domain" lowerBound="1"
         eType="#//Domain"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="multiplicity" lowerBound="1"
+        eType="#//Multiplicity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Domain">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -147,9 +147,11 @@
     <eLiterals name="Partial_Overlapping" value="2"/>
     <eLiterals name="Partial_Disjoint" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="Multiplicity" instanceClassName="java.util.calendar">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="pattern" value=""/>
-    </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Multiplicity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="UnboundedNatural" instanceClassName="es.unican.moses.sle.db.eer2sql.util.UnboundedNatural"/>
 </ecore:EPackage>
