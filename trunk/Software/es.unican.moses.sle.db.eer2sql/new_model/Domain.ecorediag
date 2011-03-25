@@ -16,6 +16,34 @@
     <element xmi:type="ecore:EClass" href="EERmodel.ecore#//Single_Attribute"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8bHcUlVDEeCpO7JwxyHuAw" x="615" y="100"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_9w6xgFbLEeCDhcVTbETsUw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_9w-b4FbLEeCDhcVTbETsUw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_9w_C8FbLEeCDhcVTbETsUw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_9w_C8VbLEeCDhcVTbETsUw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_9w_C8lbLEeCDhcVTbETsUw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_9w_C81bLEeCDhcVTbETsUw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_9xAREFbLEeCDhcVTbETsUw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_9xAREVbLEeCDhcVTbETsUw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_9xARElbLEeCDhcVTbETsUw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_9xARE1bLEeCDhcVTbETsUw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_9w6xgVbLEeCDhcVTbETsUw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="EERmodel.ecore#//Domain"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9w6xglbLEeCDhcVTbETsUw" x="257" y="99"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_1j7iEVVDEeCpO7JwxyHuAw"/>
   <element xmi:type="ecore:EPackage" href="EERmodel.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_9xRW0FbLEeCDhcVTbETsUw" type="3002" source="_8bHcUFVDEeCpO7JwxyHuAw" target="_9w6xgFbLEeCDhcVTbETsUw">
+    <children xmi:type="notation:Node" xmi:id="_9xR94FbLEeCDhcVTbETsUw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_9xR94VbLEeCDhcVTbETsUw" x="-84" y="10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_9xSk8FbLEeCDhcVTbETsUw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_9xSk8VbLEeCDhcVTbETsUw" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_9xRW0VbLEeCDhcVTbETsUw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_9xRW0lbLEeCDhcVTbETsUw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="EERmodel.ecore#//Single_Attribute/Single_Att_Domain"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9xRW01bLEeCDhcVTbETsUw" points="[-71, -13, 616, 112]$[-686, -125, 1, 0]"/>
+  </edges>
 </notation:Diagram>
