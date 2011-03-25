@@ -82,8 +82,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Single_Att_Domain" lowerBound="1"
         eType="#//Domain"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="multiplicity" lowerBound="1"
-        eType="#//Multiplicity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Multiplicity" lowerBound="1"
+        eType="#//UnboundedNatural" defaultValueLiteral="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Domain">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -108,10 +108,10 @@
         lowerBound="1" upperBound="-1" eType="#//Line_Dependence" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Line">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Cardinality" lowerBound="1"
-        eType="#//Cardinality_Type"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Rol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Line_Entity" eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Line_Cardinality" lowerBound="1"
+        eType="#//Cardinality" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Line_Relationship" eSuperTypes="#//Line">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Line_Rel_Relationship"
@@ -125,7 +125,6 @@
         eType="#//Child_Entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Line_Generalization" eSuperTypes="#//Line"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="Cardinality_Type" instanceClassName="int"/>
   <eClassifiers xsi:type="ecore:EClass" name="Aggregation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Aggregation_Entity" lowerBound="1"
         eType="#//Entity"/>
@@ -158,11 +157,11 @@
     <eLiterals name="Partial_Overlapping" value="2"/>
     <eLiterals name="Partial_Disjoint" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Multiplicity">
+  <eClassifiers xsi:type="ecore:EClass" name="Cardinality">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"
-        eType="#//UnboundedNatural"/>
+        eType="#//UnboundedNatural" defaultValueLiteral="1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="UnboundedNatural" instanceClassName="es.unican.moses.sle.db.eer2sql.util.UnboundedNatural"/>
 </ecore:EPackage>

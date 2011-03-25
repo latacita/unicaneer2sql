@@ -47,6 +47,10 @@
         <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Single_Attribute/Derivate"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_IIdpsVVDEeCpO7JwxyHuAw"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_84p3gFbxEeCDhcVTbETsUw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Single_Attribute/Multiplicity"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_84p3gVbxEeCDhcVTbETsUw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_QxxeVVVCEeCpO7JwxyHuAw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_QxxeVlVCEeCpO7JwxyHuAw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_QxxeV1VCEeCpO7JwxyHuAw"/>
