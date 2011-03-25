@@ -16,18 +16,28 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Entity_Primary_Key" lowerBound="1"
         eType="#//Primary_Key" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Entity_Candidate_Key" lowerBound="1"
-        upperBound="-1" eType="#//Candidate_Key" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Entity_Candidate_Key" upperBound="-1"
+        eType="#//Candidate_Key" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Entity_Attribute" lowerBound="1"
         upperBound="-1" eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Entity_Weak_Entity" upperBound="-1"
+        eType="#//Weak_Entity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Entity_Child_Entity" upperBound="-1"
+        eType="#//Child_Entity" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Child_Entity" eSuperTypes="#//Entity">
+  <eClassifiers xsi:type="ecore:EClass" name="Child_Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Child_Entity_Attribute"
         lowerBound="1" upperBound="-1" eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Weak_Entity" eSuperTypes="#//Entity">
+  <eClassifiers xsi:type="ecore:EClass" name="Weak_Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Weak_Entity_Attribute"
         lowerBound="1" eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Weak_Entity_Primary_Key"
+        eType="#//Primary_Key" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Weak_Entity_Candidate_Key"
+        upperBound="-1" eType="#//Candidate_Key" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -50,9 +60,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Inclusion_Relationship"
         lowerBound="2" upperBound="2" eType="#//Relationship"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Candidate_Key" eSuperTypes="#//Constraint">
+  <eClassifiers xsi:type="ecore:EClass" name="Candidate_Key">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Candidate_Key_Attribute"
         lowerBound="1" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Primary_Key" eSuperTypes="#//Candidate_Key"/>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
