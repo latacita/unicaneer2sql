@@ -19,6 +19,14 @@
   <children xmi:type="notation:Node" xmi:id="_9w6xgFbLEeCDhcVTbETsUw" type="1001">
     <children xmi:type="notation:Node" xmi:id="_9w-b4FbLEeCDhcVTbETsUw" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_9w_C8FbLEeCDhcVTbETsUw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_tuUpEFb2EeCDhcVTbETsUw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Domain/Name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_tuUpEVb2EeCDhcVTbETsUw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_xcknAFb3EeCDhcVTbETsUw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Domain/Type"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_xcknAVb3EeCDhcVTbETsUw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_9w_C8VbLEeCDhcVTbETsUw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_9w_C8lbLEeCDhcVTbETsUw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_9w_C81bLEeCDhcVTbETsUw"/>
