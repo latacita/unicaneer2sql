@@ -87,6 +87,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Domain">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" lowerBound="1" eType="#//Data_Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Dependency_Type">
     <eLiterals name="ID"/>
@@ -164,4 +165,30 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="UnboundedNatural" instanceClassName="es.unican.moses.sle.db.eer2sql.util.UnboundedNatural"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Data_Type">
+    <eLiterals name="bigint"/>
+    <eLiterals name="timestamp" value="1"/>
+    <eLiterals name="binary" value="2"/>
+    <eLiterals name="bit" value="3"/>
+    <eLiterals name="char" value="4"/>
+    <eLiterals name="nchar" value="5"/>
+    <eLiterals name="decimal" value="6"/>
+    <eLiterals name="money" value="7"/>
+    <eLiterals name="smallmoney" value="8"/>
+    <eLiterals name="float" value="9"/>
+    <eLiterals name="int" value="11"/>
+    <eLiterals name="image" value="12"/>
+    <eLiterals name="text" value="13"/>
+    <eLiterals name="ntext" value="14"/>
+    <eLiterals name="numeric" value="15"/>
+    <eLiterals name="real" value="16"/>
+    <eLiterals name="smallint" value="17"/>
+    <eLiterals name="datetime" value="18"/>
+    <eLiterals name="smalldatetime" value="19"/>
+    <eLiterals name="varbinary" value="20"/>
+    <eLiterals name="varchar" value="21"/>
+    <eLiterals name="nvarchar" value="24"/>
+    <eLiterals name="tinyint" value="22"/>
+    <eLiterals name="uniqueidentifier" value="23"/>
+  </eClassifiers>
 </ecore:EPackage>
