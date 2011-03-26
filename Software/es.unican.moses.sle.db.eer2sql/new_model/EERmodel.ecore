@@ -87,7 +87,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Domain">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" lowerBound="1" eType="#//Data_Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Dependency_Type">
     <eLiterals name="ID"/>
@@ -190,5 +189,12 @@
     <eLiterals name="nvarchar" value="24"/>
     <eLiterals name="tinyint" value="22"/>
     <eLiterals name="uniqueidentifier" value="23"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Base_Domain" eSuperTypes="#//Domain">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" lowerBound="1" eType="#//Data_Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User_Domain" eSuperTypes="#//Domain">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Values" lowerBound="1"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
