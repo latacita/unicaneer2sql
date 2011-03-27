@@ -157,7 +157,7 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_WWPHQFVUEeCpO7JwxyHuAw" type="3002" source="_5lbs0FU8EeC11o5yiAlA1w" target="_AkhucFVUEeCpO7JwxyHuAw">
     <children xmi:type="notation:Node" xmi:id="_WWPHRFVUEeCpO7JwxyHuAw" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_WWPHRVVUEeCpO7JwxyHuAw" x="-37" y="-53"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_WWPHRVVUEeCpO7JwxyHuAw" x="48" y="90"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_WWPHRlVUEeCpO7JwxyHuAw" type="4012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_WWPHR1VUEeCpO7JwxyHuAw" x="10" y="10"/>
@@ -165,7 +165,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_WWPHQVVUEeCpO7JwxyHuAw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_WWPHQlVUEeCpO7JwxyHuAw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="EERmodel.ecore#//Inclusiveness/Inclusiveness_Line"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WWPHQ1VUEeCpO7JwxyHuAw" points="[-2, 21, 20, -269]$[-22, 285, 0, -5]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WWPHQ1VUEeCpO7JwxyHuAw" points="[8, 4, 82, -267]$[8, 271, 82, 0]$[-47, 271, 27, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dt2OAFVUEeCpO7JwxyHuAw" id="(0.3235294117647059,0.9069767441860465)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WWPHSFVUEeCpO7JwxyHuAw" id="(0.7360406091370558,0.08823529411764706)"/>
   </edges>
