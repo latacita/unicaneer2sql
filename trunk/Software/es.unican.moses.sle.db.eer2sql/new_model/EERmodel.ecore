@@ -46,11 +46,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Exclusive" eSuperTypes="#//Constraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Exclusive_Line" lowerBound="2"
-        upperBound="-1" eType="#//Line"/>
+        upperBound="2" eType="#//Line"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Inclusiveness" eSuperTypes="#//Constraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Inclusiveness_Line" lowerBound="2"
-        upperBound="-1" eType="#//Line"/>
+        upperBound="2" eType="#//Line"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Exclusion" eSuperTypes="#//Constraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Exclusion_Relationship"
