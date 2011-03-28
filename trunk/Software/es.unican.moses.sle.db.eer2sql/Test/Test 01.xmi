@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ASCII"?>
+<EER:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EER="http://EER/1.0" xsi:schemaLocation="http://EER/1.0 ../new_model/EERmodel.ecore" Name="Test 01">
+  <Project_Entity Name="Marca">
+    <Entity_Primary_Key Candidate_Key_Attribute="//@Project_Entity.0/@Entity_Attribute.0" Name="Codigo_Marca"/>
+    <Entity_Attribute xsi:type="EER:Single_Attribute" Name="Codigo_Marca" Single_Att_Domain="//@Project_Domain.0"/>
+    <Entity_Attribute xsi:type="EER:Single_Attribute" Name="Nombre_Marca" Nullable="true" Single_Att_Domain="//@Project_Domain.1"/>
+  </Project_Entity>
+  <Project_Entity Name="Modelo">
+    <Entity_Primary_Key Candidate_Key_Attribute="//@Project_Entity.1/@Entity_Attribute.0" Name="Codigo_Modelo"/>
+    <Entity_Candidate_Key Candidate_Key_Attribute="//@Project_Entity.1/@Entity_Attribute.1" Name="Nombre_Modelo"/>
+    <Entity_Attribute xsi:type="EER:Composite_Attribute" Name="Codigo_Modelo">
+      <Composite_Att_Single_Att Name="Letra" Single_Att_Domain="//@Project_Domain.1"/>
+      <Composite_Att_Single_Att Name="Numero" Single_Att_Domain="//@Project_Domain.0"/>
+    </Entity_Attribute>
+    <Entity_Attribute xsi:type="EER:Single_Attribute" Name="Nombre_Modelo" Single_Att_Domain="//@Project_Domain.1"/>
+  </Project_Entity>
+  <Project_Entity Name="Coche">
+    <Entity_Primary_Key Candidate_Key_Attribute="//@Project_Entity.2/@Entity_Attribute.0" Name="Codigo_Coche"/>
+    <Entity_Candidate_Key Candidate_Key_Attribute="//@Project_Entity.2/@Entity_Attribute.1" Name="NBastidor"/>
+    <Entity_Attribute xsi:type="EER:Single_Attribute" Name="Codigo_Coche" Single_Att_Domain="//@Project_Domain.0"/>
+    <Entity_Attribute xsi:type="EER:Single_Attribute" Name="NBastidor" Single_Att_Domain="//@Project_Domain.0"/>
+    <Entity_Attribute xsi:type="EER:Single_Attribute" Name="Calidad_Coche" Single_Att_Domain="//@Project_Domain.2"/>
+  </Project_Entity>
+  <Project_Relationship Name="pertenece 1">
+    <Relationship_Line_Rel Line_Entity="//@Project_Entity.0" Line_Rel_Relationship="//@Project_Relationship.0">
+      <Line_Cardinality/>
+    </Relationship_Line_Rel>
+    <Relationship_Line_Rel Line_Entity="//@Project_Entity.1" Line_Rel_Relationship="//@Project_Relationship.0">
+      <Line_Cardinality lowerBound="0"/>
+    </Relationship_Line_Rel>
+    <Relationship_Line_Rel Line_Entity="//@Project_Entity.2" Line_Rel_Relationship="//@Project_Relationship.0">
+      <Line_Cardinality/>
+    </Relationship_Line_Rel>
+  </Project_Relationship>
+  <Project_Relationship Name="es">
+    <Relationship_Line_Rel Rol="parte a" Line_Entity="//@Project_Entity.0" Line_Rel_Relationship="//@Project_Relationship.1">
+      <Line_Cardinality/>
+    </Relationship_Line_Rel>
+    <Relationship_Line_Rel Rol="parte b" Line_Entity="//@Project_Entity.0" Line_Rel_Relationship="//@Project_Relationship.1">
+      <Line_Cardinality/>
+    </Relationship_Line_Rel>
+    <Relationship_Attribute xsi:type="EER:Single_Attribute" Name="fecha" Single_Att_Domain="//@Project_Domain.1"/>
+  </Project_Relationship>
+  <Project_Domain xsi:type="EER:Base_Domain" Name="Codigos" Type="nvarchar"/>
+  <Project_Domain xsi:type="EER:Base_Domain" Name="Nombres" Type="varchar"/>
+  <Project_Domain xsi:type="EER:User_Domain" Name="Calidad">
+    <Values>Buena</Values>
+    <Values>Mala</Values>
+  </Project_Domain>
+</EER:Project>
