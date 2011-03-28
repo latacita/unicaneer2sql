@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<EER:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EER="http://EER/1.0" xsi:schemaLocation="http://EER/1.0 ../new_model/EERmodel.ecore" Name="Test 07">
+  <Project_Entity Name="Profesor">
+    <Entity_Primary_Key Candidate_Key_Attribute="//@Project_Entity.0/@Entity_Attribute.0" Name="Cod_Profesor"/>
+    <Entity_Attribute xsi:type="EER:Single_Attribute" Name="Cod_Profesor" Single_Att_Domain="//@Project_Domain.0"/>
+  </Project_Entity>
+  <Project_Entity Name="Curso">
+    <Entity_Primary_Key Candidate_Key_Attribute="//@Project_Entity.1/@Entity_Attribute.0" Name="Cod_Curso"/>
+    <Entity_Attribute xsi:type="EER:Single_Attribute" Name="Cod_Curso" Single_Att_Domain="//@Project_Domain.0"/>
+  </Project_Entity>
+  <Project_Relationship Name="imparte">
+    <Relationship_Line_Rel Rol="p1" Line_Entity="//@Project_Entity.0" Line_Rel_Relationship="//@Project_Relationship.0">
+      <Line_Cardinality/>
+    </Relationship_Line_Rel>
+    <Relationship_Line_Rel Rol="c1" Line_Entity="//@Project_Entity.1" Line_Rel_Relationship="//@Project_Relationship.0">
+      <Line_Cardinality/>
+    </Relationship_Line_Rel>
+    <Relationship_Exclusion Exclusion_Relationship="//@Project_Relationship.0 //@Project_Relationship.1"/>
+  </Project_Relationship>
+  <Project_Relationship Name="recibe">
+    <Relationship_Line_Rel Rol="p2" Line_Entity="//@Project_Entity.0" Line_Rel_Relationship="//@Project_Relationship.1">
+      <Line_Cardinality/>
+    </Relationship_Line_Rel>
+    <Relationship_Line_Rel Rol="c2" Line_Entity="//@Project_Entity.1" Line_Rel_Relationship="//@Project_Relationship.1">
+      <Line_Cardinality/>
+    </Relationship_Line_Rel>
+  </Project_Relationship>
+  <Project_Domain xsi:type="EER:Base_Domain" Name="Predefinido"/>
+</EER:Project>
