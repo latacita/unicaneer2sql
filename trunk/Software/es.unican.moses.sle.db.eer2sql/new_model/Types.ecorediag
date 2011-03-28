@@ -65,13 +65,6 @@
     <element xmi:type="ecore:EEnum" href="EERmodel.ecore#//Generalization_Type"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OVZxclVhEeCpO7JwxyHuAw" x="140" y="255"/>
   </children>
-  <children xmi:type="notation:Node" xmi:id="_4prlQFX3EeC-yZaefy81Hg" type="1004">
-    <children xmi:type="notation:Node" xmi:id="_4prlQ1X3EeC-yZaefy81Hg" type="4008"/>
-    <children xmi:type="notation:Node" xmi:id="_4prlRFX3EeC-yZaefy81Hg" type="4009"/>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_4prlQVX3EeC-yZaefy81Hg" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EDataType" href="EERmodel.ecore#//UnboundedNatural"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4prlQlX3EeC-yZaefy81Hg" x="315" y="60" width="453"/>
-  </children>
   <children xmi:type="notation:Node" xmi:id="_wScLoFb2EeCDhcVTbETsUw" type="1005">
     <children xmi:type="notation:Node" xmi:id="_wSen4Fb2EeCDhcVTbETsUw" type="4010"/>
     <children xmi:type="notation:Node" xmi:id="_wSfO8Fb2EeCDhcVTbETsUw" type="5008">
@@ -178,6 +171,13 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_wScLoVb2EeCDhcVTbETsUw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="EERmodel.ecore#//Data_Type"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wScLolb2EeCDhcVTbETsUw" x="315" y="135"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_0mqHkVkfEeCLIPK1ED0Jgw" type="1004">
+    <children xmi:type="notation:Node" xmi:id="_0mz4kFkfEeCLIPK1ED0Jgw" type="4008"/>
+    <children xmi:type="notation:Node" xmi:id="_0mz4kVkfEeCLIPK1ED0Jgw" type="4009"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_0mqHklkfEeCLIPK1ED0Jgw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EDataType" href="EERmodel.ecore#//UnboundedNatural"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0mqHk1kfEeCLIPK1ED0Jgw" x="310" y="55"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_k8aDQVVQEeCpO7JwxyHuAw"/>
   <element xmi:type="ecore:EPackage" href="EERmodel.ecore#/"/>

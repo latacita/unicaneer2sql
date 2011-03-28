@@ -85,7 +85,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Single_Att_Domain" lowerBound="1"
         eType="#//Domain"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Multiplicity" lowerBound="1"
-        eType="#//UnboundedNatural" defaultValueLiteral="1"/>
+        eType="#//UnboundedNatural" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Domain">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -161,11 +161,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Cardinality">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"
-        eType="#//UnboundedNatural" defaultValueLiteral="1"/>
+        eType="#//UnboundedNatural" defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="UnboundedNatural" instanceClassName="es.unican.moses.sle.db.eer2sql.util.UnboundedNatural"/>
   <eClassifiers xsi:type="ecore:EEnum" name="Data_Type">
     <eLiterals name="bigint"/>
     <eLiterals name="timestamp" value="1"/>
@@ -199,4 +198,5 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Values" lowerBound="1"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="UnboundedNatural" instanceClassName="es.unican.moses.sle.db.eer2sql.util.UnboundedNatural"/>
 </ecore:EPackage>
