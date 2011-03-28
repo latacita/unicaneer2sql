@@ -51,6 +51,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Inclusiveness" eSuperTypes="#//Constraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Inclusiveness_Line" lowerBound="2"
         upperBound="2" eType="#//Line"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Inclusiveness_Cardinality"
+        lowerBound="1" eType="#//Cardinality" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Exclusion" eSuperTypes="#//Constraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Exclusion_Relationship"
