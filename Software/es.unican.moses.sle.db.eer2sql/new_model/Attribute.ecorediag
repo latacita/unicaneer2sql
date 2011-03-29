@@ -74,7 +74,7 @@
     <styles xmi:type="notation:TextStyle" xmi:id="_elW5QVVeEeCpO7JwxyHuAw"/>
     <styles xmi:type="notation:LineTypeStyle" xmi:id="_elW5QlVeEeCpO7JwxyHuAw"/>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_elW5Q1VeEeCpO7JwxyHuAw" x="730" y="115" width="151" height="116"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_elW5Q1VeEeCpO7JwxyHuAw" x="620" y="75" width="151" height="116"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_kBn7MVU-EeC11o5yiAlA1w"/>
   <element xmi:type="ecore:EPackage" href="EERmodel.ecore#/"/>

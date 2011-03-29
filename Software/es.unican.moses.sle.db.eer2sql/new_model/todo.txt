@@ -1,0 +1,18 @@
+(1) Cambiar el nombre de las referencias (son atributos)
+(2) ¿Un atributo no puede tener una cardinalidad mínima?
+(3) No convencido del todo de la solución de los "user domains"
+(4) Los tipos de datosestán demasiado influenciados por la implementación
+(5) Tampoco me satisface que estén definidos a nivel de metamodelo por las razones que ya descubrirás 
+    en las transformaciones
+(6) Entity_Candidate_key tiene que tener como multiplicidad mínima 1
+(7) Revisar las multiplicades de todos los atributos WeakEntity.name debe ser 1..1
+(8) ¿Qué es una Child_Entity?
+(9) ¿Entity_Weak_Entity es realmente composición?¿Porque no herencia?
+(10) Cardinalidades de Candidate key
+(11) ¿Qué es una child entity?
+(12) Cambiar el nombre de Line_Relationship por participant
+(13) Las relaciones de dependencia no las entiendo
+(14) Yo metería una clase abstracta nodo, quita de muchos problemas
+(15) No estoy seguro de que Generalization pueda heredar de line tan alegremente
+(16) Revisar más despacio las constraints 
+ 

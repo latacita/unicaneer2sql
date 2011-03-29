@@ -1,5 +1,0 @@
-
-// Nota 
-public class UnboundedNatural {
-
-}
