@@ -1,0 +1,2436 @@
+Manifest-Version: 1.0
+Bundle-Vendor: %providerName
+Eclipse-SourceBundle: org.eclipse.uml2.uml;version="3.1.2.v20101026192
+ 7";roots:="."
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.uml2.uml.source
+Bundle-Version: 3.1.2.v201010261927
+Bundle-ManifestVersion: 2
+
+Name: org/eclipse/uml2/uml/internal/impl/AbstractionImpl.java
+SHA1-Digest: hhjGPgqj2vC7A8i3R6M2xYizSyM=
+
+Name: org/eclipse/uml2/uml/MessageEnd.java
+SHA1-Digest: XbEh0j+9IWdzvN/RcXq7mB7DJN0=
+
+Name: org/eclipse/uml2/uml/Manifestation.java
+SHA1-Digest: +hsPSwVGxRPZ66yb7yjnniYaXCc=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReadExtentActionImpl.java
+SHA1-Digest: HCY+egKtNljFGLMUapg6xxJg1bo=
+
+Name: org/eclipse/uml2/uml/ValueSpecification.java
+SHA1-Digest: nykMW78RSxp0/WVojmRfATrsPBM=
+
+Name: org/eclipse/uml2/uml/internal/operations/GeneralizationSetOperat
+ ions.java
+SHA1-Digest: /+oWnIHASNw9m3v7FPThjaX3B6g=
+
+Name: org/eclipse/uml2/uml/internal/impl/TypedElementImpl.java
+SHA1-Digest: hkHJ4yfu+qyh2J2fzXQ9HTLbF+Q=
+
+Name: org/eclipse/uml2/uml/internal/operations/ExtensionPointOperation
+ s.java
+SHA1-Digest: kUm3SIvSEewP5XVTHKmamThIzTA=
+
+Name: org/eclipse/uml2/uml/internal/impl/MultiplicityElementImpl.java
+SHA1-Digest: hNIUNRlHDsYbhVc+8CxOvanQEUE=
+
+Name: org/eclipse/uml2/uml/internal/impl/DurationConstraintImpl.java
+SHA1-Digest: hNA91rnxpa6oBmua4PcsxTkEgZ8=
+
+Name: org/eclipse/uml2/uml/internal/impl/CallEventImpl.java
+SHA1-Digest: h/UwqhGm9gpexG1KAcqzHsAiHjM=
+
+Name: org/eclipse/uml2/uml/Component.java
+SHA1-Digest: OPYTzvIQqU19cKfvt+AdfF2bDzM=
+
+Name: org/eclipse/uml2/uml/internal/operations/ProtocolTransitionOpera
+ tions.java
+SHA1-Digest: aDCmTDA/oUkjxX7XP/f4IwqDgPA=
+
+Name: org/eclipse/uml2/uml/internal/impl/ProtocolTransitionImpl.java
+SHA1-Digest: 5zPtBviuAC/iF1y+vZMartD+0rA=
+
+Name: org/eclipse/uml2/uml/ParameterDirectionKind.java
+SHA1-Digest: 6J+nFEQRNMapBVO+WakCDpSJj+M=
+
+Name: org/eclipse/uml2/uml/internal/operations/RedefinableElementOpera
+ tions.java
+SHA1-Digest: XGOAPSMGUZH5PuLiIqqou5hc5js=
+
+Name: org/eclipse/uml2/uml/internal/operations/GateOperations.java
+SHA1-Digest: zhxFbXKpvcLojKDbJJDzozO8qzg=
+
+Name: org/eclipse/uml2/uml/DataStoreNode.java
+SHA1-Digest: MEu7pP2deZQ8r2xBW6GYbDLn+EQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/ActorImpl.java
+SHA1-Digest: gamsV7uSQg0ptHv295Y5mEfDRR0=
+
+Name: org/eclipse/uml2/uml/internal/resource/UMLHandler.java
+SHA1-Digest: puxDytKawVfwLwsjccd95n35pOo=
+
+Name: org/eclipse/uml2/uml/internal/impl/EnumerationLiteralImpl.java
+SHA1-Digest: 8ppmWOVscsp/AoEkfm/JdoPE6IY=
+
+Name: org/eclipse/uml2/uml/internal/impl/InteractionImpl.java
+SHA1-Digest: 8x7EP+vXkDixVS7YZ4VhQyTFoYk=
+
+Name: org/eclipse/uml2/uml/internal/operations/ClearStructuralFeatureA
+ ctionOperations.java
+SHA1-Digest: VXFSQzWv+rm6yN/oa5khRAtzZ+c=
+
+Name: org/eclipse/uml2/uml/resource/CMOF2UMLExtendedMetaData.java
+SHA1-Digest: bKgcadYD0ukyn9KzsB/GhqXfQUU=
+
+Name: org/eclipse/uml2/uml/ConnectionPointReference.java
+SHA1-Digest: 4syfLBj2yA3T8W8PkgY0NedZX5A=
+
+Name: org/eclipse/uml2/uml/internal/impl/AcceptCallActionImpl.java
+SHA1-Digest: 9tIMYTsiyIf9kgGawKbzApTTVuc=
+
+Name: org/eclipse/uml2/uml/internal/impl/ParameterableElementImpl.java
+SHA1-Digest: 8YxkSwSslDWMGMzMAKbkBrA1Tik=
+
+Name: org/eclipse/uml2/uml/internal/impl/LiteralBooleanImpl.java
+SHA1-Digest: ViQd+KWUU5HHVD+DB6Zus3uCE/k=
+
+Name: org/eclipse/uml2/uml/internal/operations/StartObjectBehaviorActi
+ onOperations.java
+SHA1-Digest: 0eFpToE+ur1vV9am3X04xBH7p8s=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReplyActionImpl.java
+SHA1-Digest: UpVusMyY20bLAZcyrVR/Wo4FzHc=
+
+Name: org/eclipse/uml2/uml/internal/operations/CreateObjectActionOpera
+ tions.java
+SHA1-Digest: hEa+QDLSbgxomTLIszOg5CjLU1U=
+
+Name: org/eclipse/uml2/uml/internal/operations/WriteStructuralFeatureA
+ ctionOperations.java
+SHA1-Digest: QbgdvDMzlm64PkeC2OLmk/Wx0Qw=
+
+Name: org/eclipse/uml2/uml/InterfaceRealization.java
+SHA1-Digest: JSG4/d94Xz08cs0/u7Jf03pX6WE=
+
+Name: org/eclipse/uml2/uml/CreateLinkAction.java
+SHA1-Digest: 3ktqtJGf1yrIMP6/lFSCHfgNw18=
+
+Name: org/eclipse/uml2/uml/OperationTemplateParameter.java
+SHA1-Digest: 2lWQUUfZ+D5nkQnNh9ayLt07Rws=
+
+Name: model/UML.merged.uml
+SHA1-Digest: YV+4OMjWriBhIJH68b3qF2AkdVc=
+
+Name: org/eclipse/uml2/uml/Port.java
+SHA1-Digest: hayqjrTJL87DHY4ONuEDZGgMrMg=
+
+Name: org/eclipse/uml2/uml/Substitution.java
+SHA1-Digest: swm86Bnv9QVa+c4AqYoSolpe9lE=
+
+Name: org/eclipse/uml2/uml/resource/UML2122UMLResourceHandler.java
+SHA1-Digest: aYoPeB4INkiHT57/87uHab9IpWg=
+
+Name: org/eclipse/uml2/uml/internal/operations/ConstraintOperations.ja
+ va
+SHA1-Digest: T5xykyht2BOcVrfEkvXfdlfL304=
+
+Name: org/eclipse/uml2/uml/internal/impl/ConstraintImpl.java
+SHA1-Digest: J6rsfRLdRmCNEpCfCVKYKE3AoYw=
+
+Name: org/eclipse/uml2/uml/internal/operations/ParameterOperations.jav
+ a
+SHA1-Digest: 6VCftIosSCdUfS+gTNz8nVsfOTE=
+
+Name: org/eclipse/uml2/uml/internal/impl/OpaqueBehaviorImpl.java
+SHA1-Digest: SNEZQjzJFN5S8U1z+ML4wMeOKjQ=
+
+Name: org/eclipse/uml2/uml/CreationEvent.java
+SHA1-Digest: NaAp0ttQx6THVilMNlFawHaTvo4=
+
+Name: org/eclipse/uml2/uml/ProfileApplication.java
+SHA1-Digest: PJf4c90W3xoG4UFOyd4Ja+e069w=
+
+Name: org/eclipse/uml2/uml/internal/operations/ValueSpecificationActio
+ nOperations.java
+SHA1-Digest: BoeEbmdic4Ab/cPTX8XuYIEQgjI=
+
+Name: org/eclipse/uml2/uml/internal/operations/NamespaceOperations.jav
+ a
+SHA1-Digest: TZXvJ8XZuSbeZS+xlTWfJwQrS3w=
+
+Name: org/eclipse/uml2/uml/AggregationKind.java
+SHA1-Digest: SntuGtxzmQEQepB6TdyEoHIjmLk=
+
+Name: org/eclipse/uml2/uml/internal/resource/XMI212UMLResourceImpl.jav
+ a
+SHA1-Digest: i5JntIZ3pKs4sA9xV2ppr7DsLls=
+
+Name: org/eclipse/uml2/uml/internal/impl/DeploymentImpl.java
+SHA1-Digest: lwtCnRxEIyTW3SulzUPX08n6MQE=
+
+Name: org/eclipse/uml2/uml/internal/impl/ExecutionEventImpl.java
+SHA1-Digest: K2tdSbUQpjc9gh9bZXiy8vL8C10=
+
+Name: org/eclipse/uml2/uml/internal/operations/PinOperations.java
+SHA1-Digest: t81lUkdGIg/oRskNKAXnGJ3ahcM=
+
+Name: org/eclipse/uml2/uml/AddStructuralFeatureValueAction.java
+SHA1-Digest: H1rOggJzTNRFdcdF4xC4wbhQL4M=
+
+Name: org/eclipse/uml2/uml/internal/impl/DirectedRelationshipImpl.java
+SHA1-Digest: cfjc3TI0iUhaDvzpc/uhkIlsml4=
+
+Name: org/eclipse/uml2/uml/internal/impl/ChangeEventImpl.java
+SHA1-Digest: 6EK07vTEYiFihlV1OVRv9o2eVMc=
+
+Name: org/eclipse/uml2/uml/internal/operations/ReceptionOperations.jav
+ a
+SHA1-Digest: vf66zL09UWVjB74MxFxZecYX02o=
+
+Name: org/eclipse/uml2/uml/internal/impl/ExceptionHandlerImpl.java
+SHA1-Digest: lPaCCkrxpj88PyYIuvfdBZUo0yE=
+
+Name: org/eclipse/uml2/uml/internal/operations/ExtendOperations.java
+SHA1-Digest: 2dEo+vot762WKilvtyGCauvG1SI=
+
+Name: org/eclipse/uml2/uml/StateMachine.java
+SHA1-Digest: jY70037C+AivaoEVGv7HgLCoSlQ=
+
+Name: org/eclipse/uml2/uml/internal/operations/RemoveVariableValueActi
+ onOperations.java
+SHA1-Digest: XEOeHPdwcJjR6i7yIH2MXEKCR1I=
+
+Name: org/eclipse/uml2/uml/internal/operations/ValueSpecificationOpera
+ tions.java
+SHA1-Digest: VY8XJxEQ7cOM6k5w4KB4rvJs4tU=
+
+Name: org/eclipse/uml2/uml/internal/operations/InitialNodeOperations.j
+ ava
+SHA1-Digest: OwRgfZpIjbMY67gM/mGts/qNTmc=
+
+Name: org/eclipse/uml2/uml/internal/impl/DeploymentSpecificationImpl.j
+ ava
+SHA1-Digest: 8DKCGy5qGPqRLkXXq8QVkA14NQQ=
+
+Name: org/eclipse/uml2/uml/internal/operations/ActivityNodeOperations.
+ java
+SHA1-Digest: oz5XEpC/F1Yib1/OjrIkALOZiP8=
+
+Name: org/eclipse/uml2/uml/internal/impl/ActivityNodeImpl.java
+SHA1-Digest: HUU4Aqi6jyTI/ocyPRPGiZQ+lZ0=
+
+Name: org/eclipse/uml2/uml/TimeObservation.java
+SHA1-Digest: 7J2HwDFjcbrOjewTGcBzNKpSt5Y=
+
+Name: org/eclipse/uml2/uml/internal/impl/NamespaceImpl.java
+SHA1-Digest: X0nrpTXnl9TIsq0s9EKjaom8V4Y=
+
+Name: org/eclipse/uml2/uml/RedefinableElement.java
+SHA1-Digest: 1S35hIAFdUg9yvEmunKVadDq13g=
+
+Name: org/eclipse/uml2/uml/ActivityParameterNode.java
+SHA1-Digest: gBQim5iNijKTdEBg+ZiKRIhOA7Q=
+
+Name: org/eclipse/uml2/uml/internal/operations/LiteralStringOperations
+ .java
+SHA1-Digest: wdRliz0bNOsEl9pZdV4x+m1u76Q=
+
+Name: org/eclipse/uml2/uml/internal/operations/InputPinOperations.java
+SHA1-Digest: 9YJHEo9DItgnIBZu/YMLydaPcYw=
+
+Name: org/eclipse/uml2/uml/internal/operations/CallOperationActionOper
+ ations.java
+SHA1-Digest: cOqm/m0fOyxUk3ICZ1g0vGneepo=
+
+Name: org/eclipse/uml2/uml/EnumerationLiteral.java
+SHA1-Digest: trjwwvyAb+kKx/ibZ6PyB7zsyL4=
+
+Name: org/eclipse/uml2/uml/internal/resource/CMOF2UMLHandler.java
+SHA1-Digest: xCIveUhYpOfjKJ2U7f68i1s/hd4=
+
+Name: org/eclipse/uml2/uml/internal/operations/MultiplicityElementOper
+ ations.java
+SHA1-Digest: CnNNi6WnIkUzRsZ7g58cBD+jZn8=
+
+Name: org/eclipse/uml2/uml/internal/operations/ComponentOperations.jav
+ a
+SHA1-Digest: i7Dfb7QEqSij6ZNDq+WcKeUXpxk=
+
+Name: org/eclipse/uml2/uml/internal/impl/TestIdentityActionImpl.java
+SHA1-Digest: j91QmQmgDVCmGAz4ni4iyUcEtxU=
+
+Name: model/UML2_2_UML.ecore2ecore
+SHA1-Digest: jaRCvx/KTxxmZN3erGi1eGfYXl0=
+
+Name: org/eclipse/uml2/uml/resource/CMOF2UMLResource.java
+SHA1-Digest: Hb+lAjfQwFrh8w5iTwgfvyWD6N0=
+
+Name: org/eclipse/uml2/uml/internal/impl/ClassifierImpl.java
+SHA1-Digest: 1t1HdhdnMHk3Gm67j3wHdK7DAm4=
+
+Name: org/eclipse/uml2/uml/UnmarshallAction.java
+SHA1-Digest: gm6aT5YKiK6de//bluynsP6HrWQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/LinkEndDataImpl.java
+SHA1-Digest: Mvt8ZQHFVp5P5jPoxuj9aPMDVOg=
+
+Name: org/eclipse/uml2/uml/internal/operations/AddStructuralFeatureVal
+ ueActionOperations.java
+SHA1-Digest: GivV6OGziZxJPW5aS+2zhlKaKS0=
+
+Name: org/eclipse/uml2/uml/internal/impl/ConsiderIgnoreFragmentImpl.ja
+ va
+SHA1-Digest: sYmYWzdVME43iYUL5YAPlAY/CJ0=
+
+Name: org/eclipse/uml2/uml/resource/UML22UMLExtendedMetaData.java
+SHA1-Digest: In2z1s0khATyrFkX+GUbfVnAZKM=
+
+Name: org/eclipse/uml2/uml/internal/resource/XMI212UMLResourceFactoryI
+ mpl.java
+SHA1-Digest: BM0DTQdqP3AVsTMR049E7X4D/Tk=
+
+Name: org/eclipse/uml2/uml/internal/operations/OpaqueExpressionOperati
+ ons.java
+SHA1-Digest: ybdNwk2nw5KzAskTJEya1APP70E=
+
+Name: org/eclipse/uml2/uml/internal/impl/OpaqueExpressionImpl.java
+SHA1-Digest: QH3J4h5rWoYsJXWViV2OLwEEq2I=
+
+Name: org/eclipse/uml2/uml/internal/operations/StartClassifierBehavior
+ ActionOperations.java
+SHA1-Digest: NhwboVBwfPEU9bId+UeuA4pKwyE=
+
+Name: org/eclipse/uml2/uml/RemoveStructuralFeatureValueAction.java
+SHA1-Digest: gOfikd+pWKMewcrPY+9aM7rUkJw=
+
+Name: org/eclipse/uml2/uml/AnyReceiveEvent.java
+SHA1-Digest: nlUGmRaqXy0Dy7KfTFK9oLNgdjc=
+
+Name: org/eclipse/uml2/uml/internal/operations/PackageOperations.java
+SHA1-Digest: t++SbUJVUMTcVnUdZfhx0n+U/x0=
+
+Name: org/eclipse/uml2/uml/internal/impl/TimeIntervalImpl.java
+SHA1-Digest: K/kHgiJUBm31OpWHMWWD+5Eo244=
+
+Name: org/eclipse/uml2/uml/ConnectorEnd.java
+SHA1-Digest: b029bFdWfnuXhpo2SfNYoPjmmSs=
+
+Name: model/LM.uml
+SHA1-Digest: s0YAo5eAGzYF1kuXy73KspsYIUM=
+
+Name: org/eclipse/uml2/uml/internal/impl/ExecutableNodeImpl.java
+SHA1-Digest: oKiEzC5hCReyh3Cbc8SqsWhX+jo=
+
+Name: org/eclipse/uml2/uml/internal/impl/GateImpl.java
+SHA1-Digest: Vmmtem5x0fa7e1W9NX2KSb+LfGA=
+
+Name: org/eclipse/uml2/uml/IntervalConstraint.java
+SHA1-Digest: egA5oV37i9/pqpeKjEdvQUnq5J8=
+
+Name: org/eclipse/uml2/uml/internal/operations/VertexOperations.java
+SHA1-Digest: SoiyRNRTHf2+OQaTBTkwmOk0nfY=
+
+Name: org/eclipse/uml2/uml/internal/impl/AddStructuralFeatureValueActi
+ onImpl.java
+SHA1-Digest: NWFmbePAmZCG6mSXjKidBkl1Iks=
+
+Name: org/eclipse/uml2/uml/internal/impl/FlowFinalNodeImpl.java
+SHA1-Digest: gwYp5WwQagKpBXAOtzHdEEbAE5c=
+
+Name: org/eclipse/uml2/uml/internal/impl/SubstitutionImpl.java
+SHA1-Digest: uZJeaRj5VKLNdVLIRKq2XxgVfWY=
+
+Name: org/eclipse/uml2/uml/internal/impl/SendObjectActionImpl.java
+SHA1-Digest: nk/PZO7qO8wVgI4gQvOvydmWdJ4=
+
+Name: org/eclipse/uml2/uml/internal/impl/ExtendImpl.java
+SHA1-Digest: C5jdqJaxfbJGptTZ65zOat8oAvg=
+
+Name: org/eclipse/uml2/uml/ReadExtentAction.java
+SHA1-Digest: 5730lzrcNbQGYwC1SUZze5LGZd0=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReadSelfActionImpl.java
+SHA1-Digest: NwvA+qblBbYWvLVeQtYk0wtG24Y=
+
+Name: org/eclipse/uml2/uml/Package.java
+SHA1-Digest: zySW/WMYUJWQJGbkS777Aaa22SI=
+
+Name: org/eclipse/uml2/uml/internal/impl/UMLFactoryImpl.java
+SHA1-Digest: hBtOmK0eZy5vZu2BnEjAZL7sQnc=
+
+Name: org/eclipse/uml2/uml/internal/impl/MessageEndImpl.java
+SHA1-Digest: jWvjbDY+CuD62RJtduWmNVAW7zM=
+
+Name: org/eclipse/uml2/uml/internal/operations/BehaviorOperations.java
+SHA1-Digest: 09hi2LuevHeXTRvUMljHPD9uizE=
+
+Name: org/eclipse/uml2/uml/internal/impl/ValueSpecificationImpl.java
+SHA1-Digest: 6E1nSM9pYmyPMMFZ/pQu31nAu5Q=
+
+Name: org/eclipse/uml2/uml/internal/impl/LinkActionImpl.java
+SHA1-Digest: hRUHooqufbhj7QrWXc9KKHLh/zY=
+
+Name: org/eclipse/uml2/uml/internal/operations/RedefinableTemplateSign
+ atureOperations.java
+SHA1-Digest: vuKCbZDa87tcTVOI9Wftw0ih2dc=
+
+Name: org/eclipse/uml2/uml/internal/resource/UML22UMLHandler.java
+SHA1-Digest: NjQ0MSdUvMhRmwwxKguL+ssep2g=
+
+Name: org/eclipse/uml2/uml/Signal.java
+SHA1-Digest: pDqNPkJWiiwWDSOseNHUREnorXk=
+
+Name: org/eclipse/uml2/uml/DurationObservation.java
+SHA1-Digest: cjUlByIrke+bMzDErvBm8DkCyMo=
+
+Name: org/eclipse/uml2/uml/internal/operations/InstanceValueOperations
+ .java
+SHA1-Digest: FbAd0Q9OBaUWeF/O1QHCiQyY/Z0=
+
+Name: org/eclipse/uml2/uml/ValuePin.java
+SHA1-Digest: 9s0ucMQCts7RJwf9y2WABRI8f/w=
+
+Name: org/eclipse/uml2/uml/internal/operations/InterfaceOperations.jav
+ a
+SHA1-Digest: aDJPLfJtWie8QEePIfUOQ+ydHwk=
+
+Name: org/eclipse/uml2/uml/WriteVariableAction.java
+SHA1-Digest: g+DxSDUxIsHIJP34k4dCcJK2BfM=
+
+Name: org/eclipse/uml2/uml/internal/impl/ObjectNodeImpl.java
+SHA1-Digest: 2oIOl5sNvBwi9SeG1+iOxlDPUB8=
+
+Name: org/eclipse/uml2/uml/resource/UML212UMLExtendedMetaData.java
+SHA1-Digest: JGvMCROeMg88SeLdTnWly+Vq2QU=
+
+Name: org/eclipse/uml2/uml/internal/impl/SlotImpl.java
+SHA1-Digest: O8piX7fnWYKFq4wpbEJ3bcAOFog=
+
+Name: org/eclipse/uml2/uml/internal/impl/DecisionNodeImpl.java
+SHA1-Digest: pO/hq2L06uZ3J25mXxYFcl42msI=
+
+Name: org/eclipse/uml2/uml/ParameterableElement.java
+SHA1-Digest: uoR1DAkYF/reX0Z0jcQ3S+vR7bM=
+
+Name: org/eclipse/uml2/uml/ParameterSet.java
+SHA1-Digest: xUZsuAZUWYDDDC+cHvWJJwCAvSs=
+
+Name: org/eclipse/uml2/uml/internal/impl/MessageImpl.java
+SHA1-Digest: hXnExrj8KM4/+Q9bGB0gTFjSonQ=
+
+Name: org/eclipse/uml2/uml/PseudostateKind.java
+SHA1-Digest: HI5uF5GHfWTXtJKZ6gOmhk3bWec=
+
+Name: org/eclipse/uml2/uml/internal/impl/AnyReceiveEventImpl.java
+SHA1-Digest: d80/TwEvL60mXAZsv10eHyjZuI4=
+
+Name: org/eclipse/uml2/uml/internal/operations/ProfileOperations.java
+SHA1-Digest: xwPBw8za1umVxaElbssqaIcEtjg=
+
+Name: org/eclipse/uml2/uml/internal/impl/PrimitiveTypeImpl.java
+SHA1-Digest: Um7z4Pxm0zPP74XJVrYNyBJJVac=
+
+Name: org/eclipse/uml2/uml/PackageMerge.java
+SHA1-Digest: 7kPpbCqblPaxTSjCwhfpucW8H/w=
+
+Name: org/eclipse/uml2/uml/internal/operations/AcceptEventActionOperat
+ ions.java
+SHA1-Digest: mYnHUr2vAJoPxP1iEZlBuFRri/o=
+
+Name: org/eclipse/uml2/uml/Association.java
+SHA1-Digest: /ZGNI3nvlwFyLgES0k0lTGBnFOs=
+
+Name: org/eclipse/uml2/uml/LiteralString.java
+SHA1-Digest: DDk46UBIY82kZQ8zZnHiMC9O2kw=
+
+Name: org/eclipse/uml2/uml/internal/operations/CreateLinkActionOperati
+ ons.java
+SHA1-Digest: gheEPUpaSoRC44WwSsE4m/tWPPE=
+
+Name: org/eclipse/uml2/uml/MergeNode.java
+SHA1-Digest: ZjKbwDx3akybbYSqCLxUwU9alGc=
+
+Name: org/eclipse/uml2/uml/internal/impl/PartDecompositionImpl.java
+SHA1-Digest: hamuka2HrwOnQrgGayT6JG8XicQ=
+
+Name: org/eclipse/uml2/uml/QualifierValue.java
+SHA1-Digest: sgh2QD6CuAKywn9qwCXU4kqHiqU=
+
+Name: org/eclipse/uml2/uml/internal/impl/SignalImpl.java
+SHA1-Digest: UxCiW45DNHvQXAuU2nLJAvkp3P8=
+
+Name: org/eclipse/uml2/uml/internal/impl/OperationTemplateParameterImp
+ l.java
+SHA1-Digest: wtv3vMDvi3/FjA+cRjJ50xLHzr8=
+
+Name: org/eclipse/uml2/uml/internal/operations/TimeExpressionOperation
+ s.java
+SHA1-Digest: FcgEDnfEMAlOzWBnV+2QaIHaUzM=
+
+Name: org/eclipse/uml2/uml/internal/impl/TimeExpressionImpl.java
+SHA1-Digest: jv3QvnpAOamkQwWsUjQ8ks4fKU4=
+
+Name: org/eclipse/uml2/uml/internal/impl/IntervalImpl.java
+SHA1-Digest: pVQZbdyAEo8DbA7r62L396ri4EE=
+
+Name: org/eclipse/uml2/uml/internal/impl/NamedElementImpl.java
+SHA1-Digest: 8CH7eEsnTH6R1l65YUOw6Vupxzs=
+
+Name: org/eclipse/uml2/uml/internal/operations/StructuredActivityNodeO
+ perations.java
+SHA1-Digest: ypsBG30lmuYGPHr9Z4iuSdxydWQ=
+
+Name: org/eclipse/uml2/uml/internal/operations/ActionInputPinOperation
+ s.java
+SHA1-Digest: r3ei3egdnvaWvZ4N3iY0ljlITiM=
+
+Name: org/eclipse/uml2/uml/Slot.java
+SHA1-Digest: dOemUEHFwsxAwShtIHK8+pKJmpg=
+
+Name: org/eclipse/uml2/uml/ConsiderIgnoreFragment.java
+SHA1-Digest: vWoLZnKUlGi9PwgVIzOCBWUgtDk=
+
+Name: org/eclipse/uml2/uml/internal/operations/WriteVariableActionOper
+ ations.java
+SHA1-Digest: 8S8WP6A3iwv3uZ3DaPmswklCBsw=
+
+Name: org/eclipse/uml2/uml/internal/operations/TemplateParameterOperat
+ ions.java
+SHA1-Digest: 7pSDwHw7FNmS2VcL367NtZg/aSQ=
+
+Name: org/eclipse/uml2/uml/DeployedArtifact.java
+SHA1-Digest: +lMPGdWeqREF83kABCyBXaqd9i0=
+
+Name: org/eclipse/uml2/uml/Parameter.java
+SHA1-Digest: wr25Z87gwWhzAv/ZVNZWXbVHOCk=
+
+Name: org/eclipse/uml2/uml/internal/operations/AssociationClassOperati
+ ons.java
+SHA1-Digest: BPjeItgW5BNrH8w7DQttPrjnkGk=
+
+Name: org/eclipse/uml2/uml/internal/impl/DeviceImpl.java
+SHA1-Digest: UzttUcdwP4y+ZJFiKfuSLda+6Bk=
+
+Name: org/eclipse/uml2/uml/internal/operations/ConditionalNodeOperatio
+ ns.java
+SHA1-Digest: QqZ3MIQ87WoDrLLrBp/ijFSuuJI=
+
+Name: org/eclipse/uml2/uml/internal/impl/DurationImpl.java
+SHA1-Digest: Oot+wavwpQ4/250Y90LrqxdHlfs=
+
+Name: org/eclipse/uml2/uml/internal/impl/VariableActionImpl.java
+SHA1-Digest: T1Gigu2yhWTe0G7hOgzXKdvqJAo=
+
+Name: org/eclipse/uml2/uml/internal/impl/UMLPackageImpl.java
+SHA1-Digest: vHIIPkLe1/oIF8C2/PBYpHsgdHU=
+
+Name: org/eclipse/uml2/uml/internal/impl/WriteStructuralFeatureActionI
+ mpl.java
+SHA1-Digest: LGn4UWx/0Ylk5YunLM1QFa8ve0Q=
+
+Name: org/eclipse/uml2/uml/internal/impl/DurationObservationImpl.java
+SHA1-Digest: 1pOAYswc+Ht3EMyDtVVBrfgj4XE=
+
+Name: org/eclipse/uml2/uml/internal/operations/ExtensionOperations.jav
+ a
+SHA1-Digest: TGJneBhtePdLniFOxpjLxZaJcLg=
+
+Name: org/eclipse/uml2/uml/internal/operations/AddVariableValueActionO
+ perations.java
+SHA1-Digest: PXwNuWRGvzrFFcjTWEsgIzFktW0=
+
+Name: org/eclipse/uml2/uml/Class.java
+SHA1-Digest: L2y+OQ+RGkW297xH4xrDnJwo5mE=
+
+Name: org/eclipse/uml2/uml/internal/impl/StateImpl.java
+SHA1-Digest: Mpy1eNC4BBZ2S/bcc4Ev+nN6JIU=
+
+Name: org/eclipse/uml2/uml/internal/impl/SequenceNodeImpl.java
+SHA1-Digest: +mvE7m/v1G4Cy7ccBgGuX3nzqNY=
+
+Name: org/eclipse/uml2/uml/internal/operations/PartDecompositionOperat
+ ions.java
+SHA1-Digest: tITgLBnXK6I9/XX6i+/TtDU857Q=
+
+Name: org/eclipse/uml2/uml/internal/impl/TemplateParameterSubstitution
+ Impl.java
+SHA1-Digest: VuObmlsnBUo9YVPmfdc5XMZQg+Y=
+
+Name: org/eclipse/uml2/uml/internal/impl/VariableImpl.java
+SHA1-Digest: YUHtj1sDxpAIu2S4wNHVy+GDp00=
+
+Name: org/eclipse/uml2/uml/internal/operations/ConsiderIgnoreFragmentO
+ perations.java
+SHA1-Digest: uPWUOhyqYbi4Ov62kI58VkimQd4=
+
+Name: org/eclipse/uml2/uml/internal/impl/ManifestationImpl.java
+SHA1-Digest: vxdiCcWgZ+3j9CyUn/2+n/Hyx6w=
+
+Name: org/eclipse/uml2/uml/internal/operations/ControlFlowOperations.j
+ ava
+SHA1-Digest: xexpuVnejE4/tB/4dvS+j/eh0W4=
+
+Name: org/eclipse/uml2/uml/InitialNode.java
+SHA1-Digest: l2KLI5MRwULu/qbae2ojM5x3XI4=
+
+Name: org/eclipse/uml2/uml/internal/operations/StateMachineOperations.
+ java
+SHA1-Digest: 17qlEXVXV6d0kB3w1PngkcyIfME=
+
+Name: org/eclipse/uml2/uml/internal/operations/LinkEndCreationDataOper
+ ations.java
+SHA1-Digest: Nhfwkl2gweW50kxlaeWoXlPJJSM=
+
+Name: org/eclipse/uml2/uml/internal/impl/ActionImpl.java
+SHA1-Digest: RIIT3XRycdcDe1+F4Td14+kBSEE=
+
+Name: org/eclipse/uml2/uml/CreateObjectAction.java
+SHA1-Digest: N9CHB+cJCyqXzK5go5m4vvk7o30=
+
+Name: org/eclipse/uml2/uml/WriteStructuralFeatureAction.java
+SHA1-Digest: RsA7JdsDVOQqVmFNoaaGDbw3RaQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/LifelineImpl.java
+SHA1-Digest: 5FW+5+BFG//sx5Q7qLKzeDppBRQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/EventImpl.java
+SHA1-Digest: 0Xdh8qJj4Qtl26iZf6UP6Wbt5uw=
+
+Name: org/eclipse/uml2/uml/TimeConstraint.java
+SHA1-Digest: O0faa8P3/1+5fs3XBPDIS+YxVQ4=
+
+Name: org/eclipse/uml2/uml/util/UMLUtil.java
+SHA1-Digest: DhMrP+HXc/K2/TWY071VstxTEU8=
+
+Name: org/eclipse/uml2/uml/Event.java
+SHA1-Digest: PcNYXWZ4S1V6DRwJhrlHKi0liNE=
+
+Name: org/eclipse/uml2/uml/internal/impl/ValueSpecificationActionImpl.
+ java
+SHA1-Digest: A9l5vwdUHKnVP9Xl1dLRdyCIL7g=
+
+Name: org/eclipse/uml2/uml/internal/impl/OutputPinImpl.java
+SHA1-Digest: iLX1iBagnX95gnYZwsYb5xTCzYs=
+
+Name: org/eclipse/uml2/uml/DataType.java
+SHA1-Digest: j9n8dXgKpNYLj2NIWFOASCwnZiw=
+
+Name: org/eclipse/uml2/uml/internal/impl/CallBehaviorActionImpl.java
+SHA1-Digest: NrvmiWJxnvKKWNtxa7IQybkjcIA=
+
+Name: org/eclipse/uml2/uml/ActionExecutionSpecification.java
+SHA1-Digest: W7O9v92D9Mdfm5zVmMm0otefAbQ=
+
+Name: org/eclipse/uml2/uml/PackageableElement.java
+SHA1-Digest: sxpG0rC8fmD2n1bPN1M7G7RPzis=
+
+Name: org/eclipse/uml2/uml/util/UMLSwitch.java
+SHA1-Digest: GyBvxL+S0UxL+TCKtRAR9hBlhoc=
+
+Name: org/eclipse/uml2/uml/Type.java
+SHA1-Digest: H38f9w0PyjorL7q1jR05RXYbOGA=
+
+Name: org/eclipse/uml2/uml/StartClassifierBehaviorAction.java
+SHA1-Digest: qBDqS5Xq2Yfn4VKLEF01xe2+xIk=
+
+Name: org/eclipse/uml2/uml/internal/resource/CMOF2UMLResourceFactoryIm
+ pl.java
+SHA1-Digest: a4d7ZpkkIiNUd8JTL8zwu1TJuQ4=
+
+Name: org/eclipse/uml2/uml/Profile.java
+SHA1-Digest: VGeF5jlMeV5/WKP/LKe9AkUf2WM=
+
+Name: org/eclipse/uml2/uml/internal/operations/ParameterSetOperations.
+ java
+SHA1-Digest: c44SgYmHs2Jr5v9hcoKdGA+QG6o=
+
+Name: org/eclipse/uml2/uml/TemplateableElement.java
+SHA1-Digest: J6OALEZnqdeRyo3CzgKbckssPsw=
+
+Name: org/eclipse/uml2/uml/CallAction.java
+SHA1-Digest: 0nNsOW/Kij66q3oDtIICvnjIKR8=
+
+Name: org/eclipse/uml2/uml/TypedElement.java
+SHA1-Digest: dyEvb5h4awNEmLARGWYH18pvYas=
+
+Name: org/eclipse/uml2/uml/internal/impl/CombinedFragmentImpl.java
+SHA1-Digest: Shlmozn4nVNYwc4Mchc/Py09bVM=
+
+Name: org/eclipse/uml2/uml/internal/operations/DurationOperations.java
+SHA1-Digest: c9pf5FzN9yzghfAiOfqsF5LRmqE=
+
+Name: org/eclipse/uml2/uml/internal/operations/ArtifactOperations.java
+SHA1-Digest: 6sUgVjYXC18/AnUAxRTuH2dN/zg=
+
+Name: org/eclipse/uml2/uml/internal/impl/CreateObjectActionImpl.java
+SHA1-Digest: AaPlue5YS2Srl7t4zZWIPu4fdlU=
+
+Name: org/eclipse/uml2/uml/InformationItem.java
+SHA1-Digest: pHpABBmTK2yd5IN7I1Kr35txlKk=
+
+Name: org/eclipse/uml2/uml/internal/impl/AddVariableValueActionImpl.ja
+ va
+SHA1-Digest: HGaCoHmPulxUu7zEXLr/YSLvE7U=
+
+Name: org/eclipse/uml2/uml/internal/operations/DestructionEventOperati
+ ons.java
+SHA1-Digest: qsQX1/VMd3Lk3t0ujYCoO37N83w=
+
+Name: org/eclipse/uml2/uml/TimeExpression.java
+SHA1-Digest: IYYluY7ozDWIt4Ep5rAClE0vVO8=
+
+Name: org/eclipse/uml2/uml/ForkNode.java
+SHA1-Digest: h1bh5jfyRVMD0U7gZ07IVYUeawI=
+
+Name: org/eclipse/uml2/uml/resource/XMI2UMLResource.java
+SHA1-Digest: d3qCvQBcGEMTwMu1mgNNocxGREc=
+
+Name: org/eclipse/uml2/uml/Pin.java
+SHA1-Digest: c0CCZhkPUYCkHO0JkhI/PhJ6QK0=
+
+Name: org/eclipse/uml2/uml/internal/impl/NodeImpl.java
+SHA1-Digest: 14O2Tv2DksaNiBl41Uh96MxNxio=
+
+Name: org/eclipse/uml2/uml/internal/impl/IntervalConstraintImpl.java
+SHA1-Digest: ao3+fwxpJUQCioYXXW2mG/TgjG8=
+
+Name: org/eclipse/uml2/uml/InteractionConstraint.java
+SHA1-Digest: rZFAAvom39uIXrDXabSkR2f6t6Y=
+
+Name: org/eclipse/uml2/uml/internal/impl/PackageImportImpl.java
+SHA1-Digest: OabHdp8JyHkQnQjaChTnQuWls/c=
+
+Name: org/eclipse/uml2/uml/internal/impl/ActivityFinalNodeImpl.java
+SHA1-Digest: d4Gc6yOUBvU6uzu+OXKVAv+Df4A=
+
+Name: org/eclipse/uml2/uml/internal/impl/IncludeImpl.java
+SHA1-Digest: //QACLX1IrCaWmy+kMi7ZLQJMHU=
+
+Name: org/eclipse/uml2/uml/internal/impl/InitialNodeImpl.java
+SHA1-Digest: 00b7iyxWX5LXo+petJe9OjRFnjw=
+
+Name: org/eclipse/uml2/uml/ActivityFinalNode.java
+SHA1-Digest: yOUV9EfyoUlfWQm93UIvgFNZ6oM=
+
+Name: org/eclipse/uml2/uml/Continuation.java
+SHA1-Digest: OSc2TnNpf0bIP1nhDwFNzD/hupI=
+
+Name: org/eclipse/uml2/uml/internal/resource/UML212UMLResourceFactoryI
+ mpl.java
+SHA1-Digest: /UsJvaH4tjNn8fhdQFtU5ybaeP8=
+
+Name: org/eclipse/uml2/uml/internal/impl/DeployedArtifactImpl.java
+SHA1-Digest: 3H/agLI2gZz4krGiZRi0wkxZC6E=
+
+Name: org/eclipse/uml2/uml/internal/impl/StateMachineImpl.java
+SHA1-Digest: 5/gCV3HaCkB+94PYT8rswsm5hSo=
+
+Name: org/eclipse/uml2/uml/UMLPackage.java
+SHA1-Digest: rfxTyM8Gd0ejaXP5tZJKB03FC64=
+
+Name: org/eclipse/uml2/uml/internal/operations/RegionOperations.java
+SHA1-Digest: b25tfLI4ARTU1fC06me1j7iy0ZM=
+
+Name: org/eclipse/uml2/uml/ElementImport.java
+SHA1-Digest: a5zzbGEHqLLS0xXMwjRIEgOqPSU=
+
+Name: org/eclipse/uml2/uml/RedefinableTemplateSignature.java
+SHA1-Digest: 02cMpT6YBRbvaQT29JbiIYaLp8w=
+
+Name: org/eclipse/uml2/uml/internal/operations/ProtocolStateMachineOpe
+ rations.java
+SHA1-Digest: ya8L5veCKuFUFTj5nOMa49hLxKw=
+
+Name: org/eclipse/uml2/uml/MultiplicityElement.java
+SHA1-Digest: 3dv/StXt8jDlxHoJLfy4Hv3Qi6E=
+
+Name: org/eclipse/uml2/uml/MessageKind.java
+SHA1-Digest: bKj1ZyWdvt+Dqqkc4RrGdA/5J9U=
+
+Name: org/eclipse/uml2/uml/Interface.java
+SHA1-Digest: sZsMQ3myLoxziWeHA69YgQwz+3Q=
+
+Name: org/eclipse/uml2/uml/FinalNode.java
+SHA1-Digest: ZCQevHbrh/siJWXMwp1OxP+YKK0=
+
+Name: org/eclipse/uml2/uml/VisibilityKind.java
+SHA1-Digest: Yg7abBZQkeUJbF4DkJdZx+2unzU=
+
+Name: org/eclipse/uml2/uml/internal/impl/SignalEventImpl.java
+SHA1-Digest: yLH+FxzyLPTXqKQCuQ3Gwo/5LoI=
+
+Name: org/eclipse/uml2/uml/internal/impl/VertexImpl.java
+SHA1-Digest: khE8Vvqw3jd3/G3FoWentXJ+dso=
+
+Name: org/eclipse/uml2/uml/ExpansionKind.java
+SHA1-Digest: WsuXnxOoweLTeCPhu2fTe5sd5gA=
+
+Name: org/eclipse/uml2/uml/Classifier.java
+SHA1-Digest: tCzc0MI2nRi8feKsZwNrSIj3q0k=
+
+Name: org/eclipse/uml2/uml/internal/impl/DestroyObjectActionImpl.java
+SHA1-Digest: O5UY9cPfJ6TktcJPJT5tfDR5q5s=
+
+Name: org/eclipse/uml2/uml/internal/resource/XMI2UMLLoadImpl.java
+SHA1-Digest: eg1c+QCqz20A2FmAvBaB/+BieiE=
+
+Name: org/eclipse/uml2/uml/internal/impl/ProfileImpl.java
+SHA1-Digest: AECfnnB4HUcvGQXeFK/DNZBX69Y=
+
+Name: org/eclipse/uml2/uml/internal/impl/ModelImpl.java
+SHA1-Digest: 9HQv4jIUIpcTPSS/e09qKPxAxb0=
+
+Name: org/eclipse/uml2/uml/internal/impl/TemplateableElementImpl.java
+SHA1-Digest: kq5/j9izxDp21jPATXRWgI5UQDM=
+
+Name: org/eclipse/uml2/uml/internal/impl/ConnectableElementImpl.java
+SHA1-Digest: rIojBUYf4CofKR2sPzM7L04kPH0=
+
+Name: org/eclipse/uml2/uml/GeneralizationSet.java
+SHA1-Digest: E/etTkvrN6v1FPtyzMDeGHTErEo=
+
+Name: org/eclipse/uml2/uml/ExtensionPoint.java
+SHA1-Digest: DVY+SJ+d0Cp6Mjf37MpXFqYjY2g=
+
+Name: org/eclipse/uml2/uml/internal/impl/CommentImpl.java
+SHA1-Digest: E/oZtejGUvTdSaVq9YWSJFSRL3U=
+
+Name: org/eclipse/uml2/uml/internal/impl/ElementImpl.java
+SHA1-Digest: oWem4exB3lA6DB3rF5DUqRjvzc8=
+
+Name: org/eclipse/uml2/uml/internal/operations/ClauseOperations.java
+SHA1-Digest: trCxLI4V6CRcnMQAcKt7V4GOncI=
+
+Name: org/eclipse/uml2/uml/ExecutableNode.java
+SHA1-Digest: IuGX+d2cBRu7bTzmjNJWT96KnPM=
+
+Name: about.html
+SHA1-Digest: XX9QNRrVnHKSlwVc2mDJkamI7cs=
+
+Name: org/eclipse/uml2/uml/internal/impl/ConnectorEndImpl.java
+SHA1-Digest: Il/a9Y9ZRki7owo1xaCkctgEHRY=
+
+Name: org/eclipse/uml2/uml/internal/operations/JoinNodeOperations.java
+SHA1-Digest: gr38bo+42u8tJPgWcuy0Ge/eKuw=
+
+Name: org/eclipse/uml2/uml/internal/impl/InterruptibleActivityRegionIm
+ pl.java
+SHA1-Digest: IfycGSUBpfCiSDNK7wITC/TgrqA=
+
+Name: org/eclipse/uml2/uml/internal/impl/UseCaseImpl.java
+SHA1-Digest: 5t5DZJiK4zF+/TFKiL1Frz1AwIQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReadVariableActionImpl.java
+SHA1-Digest: NGrMccHhRsUDmYZmYlCwIMsIyDc=
+
+Name: org/eclipse/uml2/uml/internal/impl/QualifierValueImpl.java
+SHA1-Digest: aPLEUAYrtyxrv9XFU03xMnmMOcQ=
+
+Name: model/L3.uml
+SHA1-Digest: ylTDJCmvi5RUyQ9Rn+AUR1E8OwQ=
+
+Name: org/eclipse/uml2/uml/internal/operations/MergeNodeOperations.jav
+ a
+SHA1-Digest: WNERlRmM937X9SAwWmYnFsgu5Rc=
+
+Name: org/eclipse/uml2/uml/NamedElement.java
+SHA1-Digest: MojRfr5OE7rrExyQ49bXQ5bs7ME=
+
+Name: org/eclipse/uml2/uml/internal/impl/WriteVariableActionImpl.java
+SHA1-Digest: YBffZHFlP/zxEdaaxDFo7E/971M=
+
+Name: org/eclipse/uml2/uml/internal/resource/CMOF2UMLResourceImpl.java
+SHA1-Digest: yzqnoGLT7BeToBmQLWdUE/iGP7o=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReceptionImpl.java
+SHA1-Digest: ubPT7bxNVFVpxa4zY06NxU6NkjU=
+
+Name: org/eclipse/uml2/uml/DirectedRelationship.java
+SHA1-Digest: ni8XOnDbJAiQAGuXdyRNc98yQIA=
+
+Name: org/eclipse/uml2/uml/State.java
+SHA1-Digest: dhJj6yp1VWY6ALnVJ3eGOgzruhY=
+
+Name: org/eclipse/uml2/uml/internal/impl/ClassifierTemplateParameterIm
+ pl.java
+SHA1-Digest: gIaGbS0X0fJc8DB77DWW/MEZhzg=
+
+Name: org/eclipse/uml2/uml/internal/operations/ActorOperations.java
+SHA1-Digest: UkdG9CnD5Kur0tXjp8znUa+lGJI=
+
+Name: org/eclipse/uml2/uml/internal/operations/ActionExecutionSpecific
+ ationOperations.java
+SHA1-Digest: DJlgimV06fStv5BMW5ycaCIAM9Q=
+
+Name: org/eclipse/uml2/uml/internal/impl/ActionExecutionSpecificationI
+ mpl.java
+SHA1-Digest: MH8jOf2GTvqAGmMLxM/lqyCj6po=
+
+Name: org/eclipse/uml2/uml/Reception.java
+SHA1-Digest: 6sSXSPwSjzBYvhdsM8P0An63TTE=
+
+Name: org/eclipse/uml2/uml/WriteLinkAction.java
+SHA1-Digest: /HXdITuyveYOFy4tmwe9uFHZLrY=
+
+Name: org/eclipse/uml2/uml/internal/impl/GeneralizationImpl.java
+SHA1-Digest: dT8tLuv/PJs87MG7KdvqdhjdUA8=
+
+Name: org/eclipse/uml2/uml/Include.java
+SHA1-Digest: Po6+7PWGy/istMx0St3oxYQw35w=
+
+Name: org/eclipse/uml2/uml/internal/resource/UML22UMLLoadImpl.java
+SHA1-Digest: KvmQvvZraE3tmRvGhH9JR89f/7Y=
+
+Name: org/eclipse/uml2/uml/Message.java
+SHA1-Digest: L5Ap/ZB0Rcm8jLFeleKWMDZFfS0=
+
+Name: org/eclipse/uml2/uml/RemoveVariableValueAction.java
+SHA1-Digest: Oaf3/h6aGubWWIuhMhtLjlUFKS4=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReadLinkObjectEndActionImpl.j
+ ava
+SHA1-Digest: n+1BK6yF0T2qFjsXLyrB2SgIKmo=
+
+Name: org/eclipse/uml2/uml/MessageSort.java
+SHA1-Digest: im8DvQNIoDLcYZj9nv+8YiwGhyQ=
+
+Name: org/eclipse/uml2/uml/Behavior.java
+SHA1-Digest: CQafMxX99R72TCvZ+LN0mbAkF1o=
+
+Name: org/eclipse/uml2/uml/internal/impl/MessageEventImpl.java
+SHA1-Digest: dciGKuIsgtKLEZPiGyftvrnqNv4=
+
+Name: org/eclipse/uml2/uml/ConnectorKind.java
+SHA1-Digest: CikhFmLxED28VcIo7QSyBEYWow8=
+
+Name: org/eclipse/uml2/uml/MessageOccurrenceSpecification.java
+SHA1-Digest: i6qTkgreZCzbxOFoccX5x9EGjkc=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReadStructuralFeatureActionIm
+ pl.java
+SHA1-Digest: HJr0TWZqDg7GQ7gdBw6if3N45pQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/InterfaceRealizationImpl.java
+SHA1-Digest: V1oCg86mJoka++jgIZBbS6IB6ZU=
+
+Name: org/eclipse/uml2/uml/FunctionBehavior.java
+SHA1-Digest: dXOj+zN7t6gSVu5+jthJYAh0W1M=
+
+Name: org/eclipse/uml2/uml/CallEvent.java
+SHA1-Digest: 4q8jHdG+ZXK7ekru1iVQGh/FTnE=
+
+Name: org/eclipse/uml2/uml/internal/impl/RedefinableElementImpl.java
+SHA1-Digest: IHkIBWPb7Xe/1sxMBBaWB9Dyx1o=
+
+Name: org/eclipse/uml2/uml/DestructionEvent.java
+SHA1-Digest: Hjy2gOcjFfHdgSDsi5w8uYlIk4U=
+
+Name: org/eclipse/uml2/uml/internal/impl/CentralBufferNodeImpl.java
+SHA1-Digest: 3zF9NpUrUEVqujKkLL6bRWyQtH4=
+
+Name: org/eclipse/uml2/uml/LoopNode.java
+SHA1-Digest: rL/ReBrI7HH+hBEJe2lkVgLwXgs=
+
+Name: org/eclipse/uml2/uml/internal/resource/XMI2UMLHandler.java
+SHA1-Digest: Au6kypSS0kCo/ENZua4JeOZ070A=
+
+Name: org/eclipse/uml2/uml/SequenceNode.java
+SHA1-Digest: bSvWPb9v103GKIylg3T3AXeTxK0=
+
+Name: org/eclipse/uml2/uml/internal/operations/DurationObservationOper
+ ations.java
+SHA1-Digest: bKrT499u0wI+sS2lLjj+7ghV5I4=
+
+Name: org/eclipse/uml2/uml/ObjectNode.java
+SHA1-Digest: RH30dZm2hJjOEf8DTz8S0i0l4bE=
+
+Name: org/eclipse/uml2/uml/internal/operations/PortOperations.java
+SHA1-Digest: HZbO9s1eOaKY48DTXVqmXt7Sb1s=
+
+Name: org/eclipse/uml2/uml/internal/impl/PortImpl.java
+SHA1-Digest: yxJk3RXbHueIGGwXwcY5r+erSoo=
+
+Name: org/eclipse/uml2/uml/DestroyObjectAction.java
+SHA1-Digest: PkZWda7V3kzl7TgxdR5eLqv4Rpc=
+
+Name: org/eclipse/uml2/uml/StructuralFeatureAction.java
+SHA1-Digest: tjONzA8Gb66NhwCodrtsr+pihJo=
+
+Name: org/eclipse/uml2/uml/SendOperationEvent.java
+SHA1-Digest: yuWNHlCh2tdTi0bo98wtrmGLz04=
+
+Name: org/eclipse/uml2/uml/internal/operations/FinalStateOperations.ja
+ va
+SHA1-Digest: l8puqxeVwZeTC0ySruwNw7WdQDg=
+
+Name: org/eclipse/uml2/uml/LinkEndCreationData.java
+SHA1-Digest: ojY77BO5hFHF2PFmZ4cmL/oh97s=
+
+Name: org/eclipse/uml2/uml/FlowFinalNode.java
+SHA1-Digest: usxNTLj4XyMLD0fGsdcXA9IYURw=
+
+Name: org/eclipse/uml2/uml/internal/operations/ConnectableElementOpera
+ tions.java
+SHA1-Digest: u9oxpSMIeFfIKFmT6zvp45e+LgE=
+
+Name: org/eclipse/uml2/uml/OpaqueBehavior.java
+SHA1-Digest: ZS9z7noy9u7R6rQZwkBvGJtG5lM=
+
+Name: org/eclipse/uml2/uml/TimeInterval.java
+SHA1-Digest: DAhoYrLg8AwYL1APNoy6xxRfI2Y=
+
+Name: org/eclipse/uml2/uml/Lifeline.java
+SHA1-Digest: L7Ue+WddPw0lRSKX+4BMN/sTTMU=
+
+Name: org/eclipse/uml2/uml/ProtocolStateMachine.java
+SHA1-Digest: CQxxGRH6c1FSFuU0NsJUpu0nWU8=
+
+Name: org/eclipse/uml2/uml/CommunicationPath.java
+SHA1-Digest: 31WLxgAh238H49m85XRNLQtViz8=
+
+Name: org/eclipse/uml2/uml/StringExpression.java
+SHA1-Digest: s5rCr5kP4pcifrxg1NGj5LbPJZc=
+
+Name: org/eclipse/uml2/uml/internal/operations/ReadVariableActionOpera
+ tions.java
+SHA1-Digest: gBGikyvsARc10WPWYxrJAEgZ9u0=
+
+Name: org/eclipse/uml2/uml/internal/operations/CreationEventOperations
+ .java
+SHA1-Digest: TBwECQCi2sR7RpBZZXUrjKLFNCc=
+
+Name: org/eclipse/uml2/uml/internal/impl/PseudostateImpl.java
+SHA1-Digest: 2Y4MrML1JW59H5u/oWdOuV1aWuE=
+
+Name: org/eclipse/uml2/uml/internal/operations/LoopNodeOperations.java
+SHA1-Digest: 0n9roTlUqXQnTDbwgoGgjBOv0t0=
+
+Name: org/eclipse/uml2/uml/internal/operations/BehavioralFeatureOperat
+ ions.java
+SHA1-Digest: 150i1AB70ULn7mCmiJm5cFyRgZE=
+
+Name: org/eclipse/uml2/uml/internal/impl/ActivityGroupImpl.java
+SHA1-Digest: w8gjj8O7p5iaidP6+HGXddA4j5Q=
+
+Name: org/eclipse/uml2/uml/internal/impl/InteractionConstraintImpl.jav
+ a
+SHA1-Digest: RdERVHL/plDzQpE8weMPIonBUo0=
+
+Name: org/eclipse/uml2/uml/internal/impl/ConnectorImpl.java
+SHA1-Digest: 2d02F1d6X+Cs95myYtJHRBO8LUU=
+
+Name: org/eclipse/uml2/uml/BehaviorExecutionSpecification.java
+SHA1-Digest: C8UaeMRx9phPSHD/Cx3UzVRNyeg=
+
+Name: org/eclipse/uml2/uml/SendObjectAction.java
+SHA1-Digest: mhA6VSfSaT56e18ayvT4X0pluKE=
+
+Name: org/eclipse/uml2/uml/AcceptCallAction.java
+SHA1-Digest: U5nXUJGgHeXOoVehoN72iZZuwsY=
+
+Name: org/eclipse/uml2/uml/internal/impl/StartObjectBehaviorActionImpl
+ .java
+SHA1-Digest: G09+r0lm4jQJLqhzJy8FNnPYK0U=
+
+Name: org/eclipse/uml2/uml/PackageImport.java
+SHA1-Digest: 40yusW4Wm/lv25tzXrwr1R4dCcc=
+
+Name: org/eclipse/uml2/uml/LinkEndData.java
+SHA1-Digest: pYI6PGGFttit6oUXJerTW+oXqF4=
+
+Name: org/eclipse/uml2/uml/ConnectableElement.java
+SHA1-Digest: zPf2r0Y6sod5ta6Z1Gj0/YWIf+A=
+
+Name: org/eclipse/uml2/uml/DestroyLinkAction.java
+SHA1-Digest: dfq01B/RTGZX0clfgNR2Hw9iQsY=
+
+Name: org/eclipse/uml2/uml/internal/operations/TypeOperations.java
+SHA1-Digest: 3jCZZfjQwRq7n1S+6FxypXDPVfY=
+
+Name: org/eclipse/uml2/uml/OpaqueAction.java
+SHA1-Digest: DfnDIFoX8LbeQgSamDpREwZVEbI=
+
+Name: org/eclipse/uml2/uml/CallConcurrencyKind.java
+SHA1-Digest: CxZuiXjjnptfPZ2Bfi61SCNjRQI=
+
+Name: org/eclipse/uml2/uml/Device.java
+SHA1-Digest: JnKUQPPUdA3M1zJ8uybpZdyDfDg=
+
+Name: org/eclipse/uml2/uml/internal/resource/XMI2UMLResourceFactoryImp
+ l.java
+SHA1-Digest: xqInh3eqi/pyOEBvmvX+SV+mJt0=
+
+Name: org/eclipse/uml2/uml/internal/operations/ReadExtentActionOperati
+ ons.java
+SHA1-Digest: TdAAA1Xka8kbLWfhCyHh6eAtcjg=
+
+Name: org/eclipse/uml2/uml/internal/operations/TransitionOperations.ja
+ va
+SHA1-Digest: /KJpUkQPW1TIqziZsBWjqgi4vzY=
+
+Name: org/eclipse/uml2/uml/internal/operations/ModelOperations.java
+SHA1-Digest: zUImYrTyBVE+u/0DnoqaO2cHJL0=
+
+Name: org/eclipse/uml2/uml/internal/impl/PropertyImpl.java
+SHA1-Digest: dfeI6oi3Vf9Lqym5Dd8/NHIpZkw=
+
+Name: org/eclipse/uml2/uml/internal/impl/CallActionImpl.java
+SHA1-Digest: 6B3j4Uc4rV/zGdsgIuExYOz+/xs=
+
+Name: org/eclipse/uml2/uml/internal/impl/TemplateSignatureImpl.java
+SHA1-Digest: CriYsX8rmZtPn29VrJBSq3QdCqk=
+
+Name: org/eclipse/uml2/uml/internal/impl/BehavioredClassifierImpl.java
+SHA1-Digest: +UTiVEfdeXv2SkJe+VW3Sj6kW6Q=
+
+Name: org/eclipse/uml2/uml/JoinNode.java
+SHA1-Digest: 6jgdr2iK9+AQh+QCLIIKMrWpLV0=
+
+Name: org/eclipse/uml2/uml/internal/impl/ActivityImpl.java
+SHA1-Digest: DNjImyuMmr2BU3tpPcGg7S5hb64=
+
+Name: org/eclipse/uml2/uml/internal/impl/FinalNodeImpl.java
+SHA1-Digest: myMFwWwpn3fDjmjIc+hciF1drBo=
+
+Name: org/eclipse/uml2/uml/ReadVariableAction.java
+SHA1-Digest: 5co290psjFmsYCGYdzSephHvQQE=
+
+Name: org/eclipse/uml2/uml/ReadStructuralFeatureAction.java
+SHA1-Digest: TYEGgDXtqmVyce5IntFC6FYwcpc=
+
+Name: org/eclipse/uml2/uml/TestIdentityAction.java
+SHA1-Digest: qSmbJS+u1OxC8AfTpjNwSbgGSto=
+
+Name: org/eclipse/uml2/uml/internal/impl/InvocationActionImpl.java
+SHA1-Digest: h9SQ3ONljAcJsBYxm7SO53U29Cw=
+
+Name: org/eclipse/uml2/uml/CollaborationUse.java
+SHA1-Digest: 9ldFc1ikVBtixkFU8d9CF131YEM=
+
+Name: org/eclipse/uml2/uml/internal/operations/LiteralUnlimitedNatural
+ Operations.java
+SHA1-Digest: S7Tv5xIAWXyORjHY8pPRGckPm5A=
+
+Name: org/eclipse/uml2/uml/Interaction.java
+SHA1-Digest: 9Bu8i0dilF1mQ4nqkGm9iLXqdpY=
+
+Name: org/eclipse/uml2/uml/internal/resource/UML22UMLResourceFactoryIm
+ pl.java
+SHA1-Digest: CGyhb3Zz3BEqOWnRx/n83BFNwcM=
+
+Name: org/eclipse/uml2/uml/internal/impl/ParameterImpl.java
+SHA1-Digest: 7zCI6Kad/OUdqyrwu1onZ+7rAPU=
+
+Name: org/eclipse/uml2/uml/internal/operations/ExceptionHandlerOperati
+ ons.java
+SHA1-Digest: zLumuuwlahlyC2YdgQ8OP0A6HRE=
+
+Name: org/eclipse/uml2/uml/internal/impl/OperationImpl.java
+SHA1-Digest: THdQb9G5ZmHamxsdtCLKZflVMf4=
+
+Name: org/eclipse/uml2/uml/Relationship.java
+SHA1-Digest: YsiIOIW7ZPFxNNdwmYGOvxC+8CI=
+
+Name: org/eclipse/uml2/uml/Model.java
+SHA1-Digest: sFeLuIuqdmV4ZOStnq4MKCQLroI=
+
+Name: org/eclipse/uml2/uml/Action.java
+SHA1-Digest: nNJHaOFMi1nW2uNT9DT5h+pvEUY=
+
+Name: org/eclipse/uml2/uml/Operation.java
+SHA1-Digest: zoaTVX2bYF9J79beA6DNPzebU4Q=
+
+Name: org/eclipse/uml2/uml/internal/impl/ExpressionImpl.java
+SHA1-Digest: j9yuDdsdFKr0/upHs+GhFYlgLqM=
+
+Name: templates/Header.propertiesjetinc
+SHA1-Digest: /BBW4s5qTNGFkQAx/FIb5FdwXFo=
+
+Name: model/Ecore.uml
+SHA1-Digest: awf9QR2avqO3JEg6GyzNJnAK97A=
+
+Name: org/eclipse/uml2/uml/internal/impl/UsageImpl.java
+SHA1-Digest: L6czMXmjc2JX12Gg2KmIYSTvC80=
+
+Name: org/eclipse/uml2/uml/BehavioredClassifier.java
+SHA1-Digest: w79vh+iXkkeZrIrGapfrhFI75WA=
+
+Name: org/eclipse/uml2/uml/internal/impl/BehaviorImpl.java
+SHA1-Digest: IbhJKX3b7jrjjOz8S5C1o5X+lQM=
+
+Name: org/eclipse/uml2/uml/ObjectFlow.java
+SHA1-Digest: AejPrevB5kROS8kyIRWMtzkxMi8=
+
+Name: org/eclipse/uml2/uml/ProtocolTransition.java
+SHA1-Digest: /zven/N5iPg9NAqyn/3zuTK21BQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/ClauseImpl.java
+SHA1-Digest: psbCiXORRC8RN2BOfkvH4UinRyQ=
+
+Name: org/eclipse/uml2/uml/internal/operations/AssociationOperations.j
+ ava
+SHA1-Digest: OQCUwuVLegSD1dtI/63vEpOnmyc=
+
+Name: org/eclipse/uml2/uml/ObjectNodeOrderingKind.java
+SHA1-Digest: OvYW3pRIyquLBzTfVIpZIsHJK74=
+
+Name: org/eclipse/uml2/uml/internal/impl/PinImpl.java
+SHA1-Digest: Sr++dvZLkDJ+asL+HMop3lY0s50=
+
+Name: model/L2.uml
+SHA1-Digest: Ok12OdjxAJbe4+zhz2ZeXR48n7w=
+
+Name: org/eclipse/uml2/uml/ConnectableElementTemplateParameter.java
+SHA1-Digest: J9WRyPEby7TS42Il4aVQxCoWS/I=
+
+Name: org/eclipse/uml2/uml/internal/impl/DestructionEventImpl.java
+SHA1-Digest: oLS1/KQHK9xIacBfAit6DA+spa4=
+
+Name: org/eclipse/uml2/uml/util/UMLAdapterFactory.java
+SHA1-Digest: PnEmDzGTzXwko9yI2D8jTIB2MQs=
+
+Name: org/eclipse/uml2/uml/internal/impl/TemplateParameterImpl.java
+SHA1-Digest: 5pAali4yXAA7aUkSHRD97ARXI+0=
+
+Name: org/eclipse/uml2/uml/internal/operations/NodeOperations.java
+SHA1-Digest: sU1hAqvJJVYGf8ebP8jrrbQ7fTI=
+
+Name: org/eclipse/uml2/uml/internal/operations/CollaborationUseOperati
+ ons.java
+SHA1-Digest: xth9qkMpNS4oa4fmMfcV0cbgm1A=
+
+Name: org/eclipse/uml2/uml/internal/impl/SendSignalEventImpl.java
+SHA1-Digest: 3Nec/d9VN4aFnDBJuvrdhUDZ+eo=
+
+Name: org/eclipse/uml2/uml/internal/operations/ConnectionPointReferenc
+ eOperations.java
+SHA1-Digest: AgnW+2i0tZ86a5LVfNscfYGzeE0=
+
+Name: org/eclipse/uml2/uml/internal/impl/ConnectionPointReferenceImpl.
+ java
+SHA1-Digest: pSeev/8SzPJ9eoFNDaig+tQ+pCM=
+
+Name: org/eclipse/uml2/uml/LiteralSpecification.java
+SHA1-Digest: LXoXB5wpEZRHhhKCNZ/vTNQYxkk=
+
+Name: org/eclipse/uml2/uml/internal/impl/DeploymentTargetImpl.java
+SHA1-Digest: sIKLHBTf50+EGLwyIj7t82ukD6U=
+
+Name: org/eclipse/uml2/uml/internal/operations/InteractionUseOperation
+ s.java
+SHA1-Digest: YqzaFzYhYgQEXcs84EQlb3k1pBo=
+
+Name: org/eclipse/uml2/uml/internal/impl/InteractionUseImpl.java
+SHA1-Digest: f/EXVKuYWK1vcUcHNrfENKgf5KQ=
+
+Name: org/eclipse/uml2/uml/Artifact.java
+SHA1-Digest: kEIQgecMvCgMY28Vl/5cVLhtDJs=
+
+Name: org/eclipse/uml2/uml/internal/operations/TemplateableElementOper
+ ations.java
+SHA1-Digest: eiYyUUNqrawQVHuHY+c8D0C+ZLI=
+
+Name: org/eclipse/uml2/uml/internal/impl/RegionImpl.java
+SHA1-Digest: a5377fYo5u0FI6NBxlzd+tMGDtU=
+
+Name: org/eclipse/uml2/uml/ActivityNode.java
+SHA1-Digest: 3D1ZludyeS2PDcfE2kqzeS6lRhw=
+
+Name: org/eclipse/uml2/uml/LinkAction.java
+SHA1-Digest: 5oPEn7P6ob1RDgVHIvfs+tX6Do0=
+
+Name: org/eclipse/uml2/uml/internal/impl/ExtensionImpl.java
+SHA1-Digest: r3Alqgdgdh9Di3Gzvucbk1vn+nA=
+
+Name: org/eclipse/uml2/uml/internal/impl/InstanceValueImpl.java
+SHA1-Digest: EFJlWZPiFva8+BZruknU+/+MIfs=
+
+Name: org/eclipse/uml2/uml/Extension.java
+SHA1-Digest: GjykNT1s1JJl/z/Xf2wHSEEMxMU=
+
+Name: org/eclipse/uml2/uml/InputPin.java
+SHA1-Digest: hg0c76GU4afFgd2m0ypHHvbuXl8=
+
+Name: org/eclipse/uml2/uml/InstanceValue.java
+SHA1-Digest: fne6lV0wTyDyWzB2f0QDonrUC7Y=
+
+Name: org/eclipse/uml2/uml/AddVariableValueAction.java
+SHA1-Digest: T4tVpndu1RkXrfWZI6gVII/aJlA=
+
+Name: org/eclipse/uml2/uml/internal/impl/ExecutionSpecificationImpl.ja
+ va
+SHA1-Digest: hGtvJMFbOmgsIPx2eczi11qqiKQ=
+
+Name: org/eclipse/uml2/uml/ReadLinkAction.java
+SHA1-Digest: mCkBqg3clOuT4GYt4wzGp3YSA7A=
+
+Name: org/eclipse/uml2/uml/internal/operations/ActivityParameterNodeOp
+ erations.java
+SHA1-Digest: KjtEc9no3VZY0yAbiCJ1Xto7AKc=
+
+Name: org/eclipse/uml2/uml/internal/impl/SendSignalActionImpl.java
+SHA1-Digest: 9vCkXlmOIyWGRw0dGUrwJPfoUOA=
+
+Name: org/eclipse/uml2/uml/internal/operations/InterruptibleActivityRe
+ gionOperations.java
+SHA1-Digest: EtS0vSlJgPy/9jnlxdcWvLJMamY=
+
+Name: org/eclipse/uml2/uml/internal/impl/ValuePinImpl.java
+SHA1-Digest: ISw2fXfaj97VXlV9XbVYbTqWBZY=
+
+Name: org/eclipse/uml2/uml/internal/impl/ControlFlowImpl.java
+SHA1-Digest: /8mg68spVpz8VCmSKR2eTnRHuZY=
+
+Name: org/eclipse/uml2/uml/internal/resource/CMOF2UMLLoadImpl.java
+SHA1-Digest: +9hXkuwnejak05k8UnTYWDrJTaQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/LinkEndDestructionDataImpl.ja
+ va
+SHA1-Digest: LI7lsEva96LdBiMqRIMeonNC9sw=
+
+Name: org/eclipse/uml2/uml/ChangeEvent.java
+SHA1-Digest: nLAstkI3qVjxuEUTJTolEpT8rso=
+
+Name: org/eclipse/uml2/uml/internal/operations/ParameterableElementOpe
+ rations.java
+SHA1-Digest: O/nwG//IuXg8UB/TNlmS6Nigcrk=
+
+Name: org/eclipse/uml2/uml/UMLPlugin.java
+SHA1-Digest: GyrOVeuiG+VgFeli5eQyGJJ5h7o=
+
+Name: org/eclipse/uml2/uml/MessageEvent.java
+SHA1-Digest: zFpJovS5xUzDc7uvPXQjB7tLCTU=
+
+Name: org/eclipse/uml2/uml/internal/operations/CombinedFragmentOperati
+ ons.java
+SHA1-Digest: fZV01dWRXoOAgwmqrhScPGri2ww=
+
+Name: org/eclipse/uml2/uml/internal/impl/ExpansionNodeImpl.java
+SHA1-Digest: cUiGu3LjV6oIw/14ZUZ3/M+lyOw=
+
+Name: org/eclipse/uml2/uml/Comment.java
+SHA1-Digest: 7zH+W6Z51T1iDnXfy0nyVT9xja4=
+
+Name: org/eclipse/uml2/uml/ReclassifyObjectAction.java
+SHA1-Digest: ZaoUBsTpp/1uV9ssumUwAHy5870=
+
+Name: org/eclipse/uml2/uml/Gate.java
+SHA1-Digest: PrxpAzeT3UU/f7tVtQw0oJ6s3Gc=
+
+Name: org/eclipse/uml2/uml/internal/operations/ElementImportOperations
+ .java
+SHA1-Digest: 1ObM5JL0DdQHw5DtWWGJbv3ow94=
+
+Name: org/eclipse/uml2/uml/internal/impl/StructuralFeatureImpl.java
+SHA1-Digest: k2N0qEueat/drKxi5AEaiWA9vYM=
+
+Name: org/eclipse/uml2/uml/internal/impl/TriggerImpl.java
+SHA1-Digest: PbwhYS/7zoywbw+9BIICsfcQdDY=
+
+Name: org/eclipse/uml2/uml/ActivityPartition.java
+SHA1-Digest: sPQYZzScA4FSzUCf30c9XO6pHWA=
+
+Name: org/eclipse/uml2/uml/internal/impl/MessageOccurrenceSpecificatio
+ nImpl.java
+SHA1-Digest: G3I8Z3vJtfgBt6vxrzl4Hn7P3CE=
+
+Name: org/eclipse/uml2/uml/internal/operations/ClearAssociationActionO
+ perations.java
+SHA1-Digest: D82WoumHfvf3FZx/xu9TuMED0Oo=
+
+Name: org/eclipse/uml2/uml/StructuralFeature.java
+SHA1-Digest: 0tcjxjZBu49K3BWYQDeh9mRr3kk=
+
+Name: org/eclipse/uml2/uml/InterruptibleActivityRegion.java
+SHA1-Digest: UWisGQXsOrFW4cWUYVVHVPqwT1A=
+
+Name: org/eclipse/uml2/uml/UseCase.java
+SHA1-Digest: J41o1/B4IuNW3NifVwpMeB7paR0=
+
+Name: org/eclipse/uml2/uml/internal/resource/XMI2UMLResourceImpl.java
+SHA1-Digest: g6V5wUJqPs06MVutQUvfyAYIRnA=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReadLinkActionImpl.java
+SHA1-Digest: skPPbLXv9lLB9SpKO5TWzbibS70=
+
+Name: org/eclipse/uml2/uml/ExecutionEvent.java
+SHA1-Digest: ujBLnH2QGfqSjneM3PAb0JB0AZA=
+
+Name: org/eclipse/uml2/uml/ActionInputPin.java
+SHA1-Digest: vvur5psGnqmAT0MXv4kl+lk9tc8=
+
+Name: org/eclipse/uml2/uml/internal/impl/TimeEventImpl.java
+SHA1-Digest: AFX/9Zdapyhat3rhB9nvdaPNFgM=
+
+Name: org/eclipse/uml2/uml/internal/impl/DestroyLinkActionImpl.java
+SHA1-Digest: plwu4b/GDavbGAmPsvGHXAkjoC8=
+
+Name: org/eclipse/uml2/uml/internal/impl/ConditionalNodeImpl.java
+SHA1-Digest: PmnqN36ARSCbw/WMO/6GCHnFQJQ=
+
+Name: org/eclipse/uml2/uml/SendSignalEvent.java
+SHA1-Digest: gRfl09PM4i2/ZsgkbtLRl7q+soc=
+
+Name: org/eclipse/uml2/uml/CombinedFragment.java
+SHA1-Digest: FAsafXiw920CnMG/HOfRUo/zBiQ=
+
+Name: org/eclipse/uml2/uml/internal/operations/StereotypeOperations.ja
+ va
+SHA1-Digest: s3G0mDTWSt7HSNg7iK6qi0eE2J0=
+
+Name: org/eclipse/uml2/uml/Clause.java
+SHA1-Digest: miisGTPDvWGu0UT528h+WNb4xZc=
+
+Name: org/eclipse/uml2/uml/PrimitiveType.java
+SHA1-Digest: cNOSLjh2/qzs6U7IXyToUDv5KfQ=
+
+Name: org/eclipse/uml2/uml/internal/operations/LifelineOperations.java
+SHA1-Digest: gNedAcxYN0UPFW+fNF8scJVaZRQ=
+
+Name: org/eclipse/uml2/uml/internal/operations/ActivityOperations.java
+SHA1-Digest: 8iNbWvBQecOrmSJL0lHKzHIkLEw=
+
+Name: org/eclipse/uml2/uml/internal/impl/MergeNodeImpl.java
+SHA1-Digest: VhrkwqdG1ZNvaafYCT9HAer/4fQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/InterfaceImpl.java
+SHA1-Digest: Ksn/MBIuB2A09HG1zzb8o2XY9uc=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReclassifyObjectActionImpl.ja
+ va
+SHA1-Digest: uiTKl4Aiftpir8gkXeH2R6n+Ipw=
+
+Name: org/eclipse/uml2/uml/internal/impl/CreateLinkObjectActionImpl.ja
+ va
+SHA1-Digest: Z0zok0X06VhILSleR/ccCE1IoAE=
+
+Name: org/eclipse/uml2/uml/PartDecomposition.java
+SHA1-Digest: p1Bk582LTlRWUQ95IfsTgUANWzw=
+
+Name: org/eclipse/uml2/uml/internal/operations/ValuePinOperations.java
+SHA1-Digest: TZRzP/+wVd9oTmL+q+TYY1+0jKg=
+
+Name: org/eclipse/uml2/uml/internal/operations/NamedElementOperations.
+ java
+SHA1-Digest: lFzhrBAbBQaWs3GLtz4zwBcv3Ws=
+
+Name: org/eclipse/uml2/uml/Generalization.java
+SHA1-Digest: Gr8qnmoz2NDEijRhZTllwRt/4JU=
+
+Name: org/eclipse/uml2/uml/internal/operations/UnmarshallActionOperati
+ ons.java
+SHA1-Digest: P+96OHGl3sD653sLGP1PkKevoAc=
+
+Name: org/eclipse/uml2/uml/internal/operations/AcceptCallActionOperati
+ ons.java
+SHA1-Digest: 7ezBFvFoBwDETv/TaJqbjw2PTnM=
+
+Name: org/eclipse/uml2/uml/TemplateBinding.java
+SHA1-Digest: X4LD2i9vszL1g9IRnVTbY+3Vp1Q=
+
+Name: org/eclipse/uml2/uml/internal/impl/ExtensionEndImpl.java
+SHA1-Digest: /8ogslJIOmvfJBpEzKWhLuIKdMc=
+
+Name: org/eclipse/uml2/uml/InteractionUse.java
+SHA1-Digest: 6J3zeitDfR1ucmDXAH5X26Zyqlk=
+
+Name: org/eclipse/uml2/uml/internal/impl/AssociationClassImpl.java
+SHA1-Digest: a/GzqFZBSK+gu5lSDZ+Ld0ARavo=
+
+Name: org/eclipse/uml2/uml/InteractionFragment.java
+SHA1-Digest: 0tsQFdDw6Psy8vt9eYi2D4crpeU=
+
+Name: org/eclipse/uml2/uml/Usage.java
+SHA1-Digest: /PUH50aE9MBfxBuWl4KuStXt0IM=
+
+Name: org/eclipse/uml2/uml/internal/impl/ArtifactImpl.java
+SHA1-Digest: QViS8UT4gRbRhmfG2G5gF3HsnBw=
+
+Name: org/eclipse/uml2/uml/BroadcastSignalAction.java
+SHA1-Digest: XtNSMZf8HvX/5m/Do5Yl8xTWI1g=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReceiveSignalEventImpl.java
+SHA1-Digest: BwKHj9HgaLlFUOzY/GsNCZ3Sda4=
+
+Name: org/eclipse/uml2/uml/ExecutionSpecification.java
+SHA1-Digest: Gv37R3jLJ0GShcIBAexNScPADjg=
+
+Name: org/eclipse/uml2/uml/Dependency.java
+SHA1-Digest: 8/kt99PL/eOsNq7CkuRfQpxRM34=
+
+Name: org/eclipse/uml2/uml/Namespace.java
+SHA1-Digest: N3CpPjFc+kJ4J9JT8j4fNWIh6I0=
+
+Name: org/eclipse/uml2/uml/TransitionKind.java
+SHA1-Digest: Mk4dg9a34Q4Ba3fimPw44wxTix4=
+
+Name: org/eclipse/uml2/uml/internal/impl/ClearAssociationActionImpl.ja
+ va
+SHA1-Digest: 5e/ZE/lV9x4N6G5fgtViPAW4y8E=
+
+Name: org/eclipse/uml2/uml/InvocationAction.java
+SHA1-Digest: d3nT3xjdNY/muYF56Eaw93wxOlE=
+
+Name: org/eclipse/uml2/uml/CallBehaviorAction.java
+SHA1-Digest: UUKW2Q7wSjG85Kxcyh4a6jzaoJ0=
+
+Name: model/L1.uml
+SHA1-Digest: ZJfLE/qolIMpalDmbXWWTSdU4P0=
+
+Name: org/eclipse/uml2/uml/Trigger.java
+SHA1-Digest: gE3BN0WpgzQGktWhT/GL9QAPfeE=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReadIsClassifiedObjectActionI
+ mpl.java
+SHA1-Digest: +8ybB0vrfVKJpkF5iZyVIr8DPlU=
+
+Name: org/eclipse/uml2/uml/internal/impl/OccurrenceSpecificationImpl.j
+ ava
+SHA1-Digest: wmcsC/+wkv4CcbP3Up/rV+ip1YU=
+
+Name: org/eclipse/uml2/uml/ClearStructuralFeatureAction.java
+SHA1-Digest: J7vwy/twnU6dvqkJXJUqOobi4yo=
+
+Name: org/eclipse/uml2/uml/resource/UMLResource.java
+SHA1-Digest: DdTujSlUxEC40pi8rBAd8xojmbk=
+
+Name: org/eclipse/uml2/uml/internal/resource/UMLResourceImpl.java
+SHA1-Digest: nzUJVGIq524CjIVBqUM9B3w0odg=
+
+Name: org/eclipse/uml2/uml/internal/impl/DataTypeImpl.java
+SHA1-Digest: xYrjjYjTfES6O8twVGe2fdWkehE=
+
+Name: org/eclipse/uml2/uml/ExtensionEnd.java
+SHA1-Digest: 13+JQCfttBXr9a0NVDISEZRO0ZM=
+
+Name: org/eclipse/uml2/uml/internal/operations/DecisionNodeOperations.
+ java
+SHA1-Digest: PPJr8Ehp63zlqLx/3Leza1q4LKY=
+
+Name: org/eclipse/uml2/uml/LinkEndDestructionData.java
+SHA1-Digest: UkVkb1m8DBwy2nam1RDzYoi1ggM=
+
+Name: org/eclipse/uml2/uml/ExceptionHandler.java
+SHA1-Digest: cSJe2Pa2QIQ8GOdAukC5BhRL8Zc=
+
+Name: org/eclipse/uml2/uml/LiteralBoolean.java
+SHA1-Digest: 3WMkP1YUdUbvmAfn/YXKiJw+cHA=
+
+Name: org/eclipse/uml2/uml/AssociationClass.java
+SHA1-Digest: 7nNbV66ROknofxe1filkANOLyUg=
+
+Name: org/eclipse/uml2/uml/internal/operations/InteractionOperandOpera
+ tions.java
+SHA1-Digest: aQBOw9l/xCnV/l3TfzXKAoEt6X8=
+
+Name: org/eclipse/uml2/uml/ReadLinkObjectEndQualifierAction.java
+SHA1-Digest: LAN60cVMRGwf42+RdRA8AG/8kcM=
+
+Name: org/eclipse/uml2/uml/internal/impl/AssociationImpl.java
+SHA1-Digest: KblfQ4hA837Uvo7S26W0HTaNL+U=
+
+Name: org/eclipse/uml2/uml/internal/impl/CallOperationActionImpl.java
+SHA1-Digest: cNj3/roF0l4LLRs1eruN/PEBBZI=
+
+Name: org/eclipse/uml2/uml/internal/operations/BehavioredClassifierOpe
+ rations.java
+SHA1-Digest: u2BzTVB6mv+XKr1IwPiqEoPWeVE=
+
+Name: org/eclipse/uml2/uml/internal/impl/StereotypeImpl.java
+SHA1-Digest: 4z5gFlYsrOdSpfqDizRxiPr4J50=
+
+Name: org/eclipse/uml2/uml/StateInvariant.java
+SHA1-Digest: NYsIVLq0zEetPgs5j2yBBLJgyXU=
+
+Name: org/eclipse/uml2/uml/internal/impl/DataStoreNodeImpl.java
+SHA1-Digest: yGoBQFnOzoKw6qOeU3uZHpXpXLM=
+
+Name: org/eclipse/uml2/uml/internal/impl/CreateLinkActionImpl.java
+SHA1-Digest: pLaQZlu7AyGBnlIzPJzKpjqRO3Y=
+
+Name: org/eclipse/uml2/uml/internal/operations/ExecutionSpecificationO
+ perations.java
+SHA1-Digest: x5LmGyHMee7EF84VOyDoXP0EUKY=
+
+Name: org/eclipse/uml2/uml/ReadIsClassifiedObjectAction.java
+SHA1-Digest: n9HcfgcTlM+IjsKGyVcLvKO/Kmk=
+
+Name: org/eclipse/uml2/uml/internal/impl/DependencyImpl.java
+SHA1-Digest: 3AGLq84tr7CUHjQ/r1JmvDk6nzs=
+
+Name: org/eclipse/uml2/uml/internal/operations/StringExpressionOperati
+ ons.java
+SHA1-Digest: hw4xQY4/Ot/GTNfYnM/pxD4cWg4=
+
+Name: org/eclipse/uml2/uml/internal/impl/StringExpressionImpl.java
+SHA1-Digest: 776h4yzRprKVWCtyzENAes0gq0s=
+
+Name: org/eclipse/uml2/uml/CentralBufferNode.java
+SHA1-Digest: Fd4oYiLER9qDJvh4UZfSqnDT6/A=
+
+Name: org/eclipse/uml2/uml/internal/operations/CommunicationPathOperat
+ ions.java
+SHA1-Digest: +KDcY6B1uLgn4FEcQCPXlC3tSdE=
+
+Name: org/eclipse/uml2/uml/Actor.java
+SHA1-Digest: QkMAwgBC7TCwMefgDwDRIx2Afgw=
+
+Name: org/eclipse/uml2/uml/OutputPin.java
+SHA1-Digest: kJM2brst0lKSBzMAiOcKfjm7HNA=
+
+Name: org/eclipse/uml2/uml/internal/impl/ForkNodeImpl.java
+SHA1-Digest: 4g9jqlzRjt0IY3uaBiXlKn2cnn0=
+
+Name: org/eclipse/uml2/uml/internal/operations/PseudostateOperations.j
+ ava
+SHA1-Digest: ufiKmPmP2byRffKsTfMXlLu04PQ=
+
+Name: org/eclipse/uml2/uml/internal/operations/ExpansionRegionOperatio
+ ns.java
+SHA1-Digest: A78Ak+FpjXyzlgmLA93MT+IytN4=
+
+Name: org/eclipse/uml2/uml/internal/impl/TemplateBindingImpl.java
+SHA1-Digest: MgLMc6AYAzvTaPs8DeCgs9frMuM=
+
+Name: org/eclipse/uml2/uml/internal/impl/StartClassifierBehaviorAction
+ Impl.java
+SHA1-Digest: Bx16lRHiWPJO0nw4h2SxIGKnLJ0=
+
+Name: org/eclipse/uml2/uml/resource/UML22UMLResourceHandler.java
+SHA1-Digest: 1ni4X+XnfenQLTOZlr/avjazeYY=
+
+Name: org/eclipse/uml2/uml/internal/resource/UMLLoadImpl.java
+SHA1-Digest: uY/MTuOkjJPjrFIuQ9HPup/6gLw=
+
+Name: org/eclipse/uml2/uml/internal/operations/ExtensionEndOperations.
+ java
+SHA1-Digest: o7w5Ce3otVoVwEng6R+xDS6Oiww=
+
+Name: org/eclipse/uml2/uml/internal/operations/LinkEndDestructionDataO
+ perations.java
+SHA1-Digest: +EvrknmRZ/hnYGcs1De4kIrAx1g=
+
+Name: org/eclipse/uml2/uml/internal/operations/InteractionConstraintOp
+ erations.java
+SHA1-Digest: NqN1qWUMHOfnWdxzaWTyo2R1/2k=
+
+Name: org/eclipse/uml2/uml/internal/operations/ClassifierTemplateParam
+ eterOperations.java
+SHA1-Digest: suaaXb/qdwH7pHFoHkCLIGI98VI=
+
+Name: org/eclipse/uml2/uml/DeploymentTarget.java
+SHA1-Digest: LGQIUZ1LP/eXLCug6dw0BtDbW4k=
+
+Name: org/eclipse/uml2/uml/Transition.java
+SHA1-Digest: vFyQXki+atIRGqK/4nSCpHfC9hI=
+
+Name: org/eclipse/uml2/uml/internal/impl/ContinuationImpl.java
+SHA1-Digest: mo5VO4p64Ggc5LjlIgVoph75Ofs=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: KyT9FF7C7t86NoBoa2kZT3ZJBfw=
+
+Name: org/eclipse/uml2/uml/internal/resource/XMI2UMLSaveImpl.java
+SHA1-Digest: T3vfrIPQHR8UXLUjxyWR/huGqOU=
+
+Name: org/eclipse/uml2/uml/internal/operations/MessageOperations.java
+SHA1-Digest: WCBzEBp9BS8MnhUs198S5EpEHe0=
+
+Name: org/eclipse/uml2/uml/internal/impl/TimeObservationImpl.java
+SHA1-Digest: WUSyqhmK8ajOlXhgjeXEqBXfkxs=
+
+Name: org/eclipse/uml2/uml/internal/operations/VariableActionOperation
+ s.java
+SHA1-Digest: 2L75K8n+4N5ibdmiv9IaFjeGJ8c=
+
+Name: org/eclipse/uml2/uml/internal/impl/ProtocolConformanceImpl.java
+SHA1-Digest: YokiotClFG2zTUdf2/sC5KQD0Ss=
+
+Name: org/eclipse/uml2/uml/internal/impl/CommunicationPathImpl.java
+SHA1-Digest: Rwys3hwEs7NE+tCcCyYmcWqORVQ=
+
+Name: org/eclipse/uml2/uml/CreateLinkObjectAction.java
+SHA1-Digest: PpXutL4oTQWR53rWw0fIB3VnfyU=
+
+Name: org/eclipse/uml2/uml/internal/impl/FeatureImpl.java
+SHA1-Digest: I9DySkdib173VGJKq60MfWCkbqw=
+
+Name: org/eclipse/uml2/uml/SendSignalAction.java
+SHA1-Digest: 1Uq7dh3Tzsv4VJ9AOFHAHEjtRRQ=
+
+Name: org/eclipse/uml2/uml/LiteralUnlimitedNatural.java
+SHA1-Digest: ypsM10AxJ3yU6cCGP0HqZwK2bas=
+
+Name: org/eclipse/uml2/uml/internal/operations/DataTypeOperations.java
+SHA1-Digest: rsauZlPFFKkGxJCMYnVLtan/4m8=
+
+Name: org/eclipse/uml2/uml/Connector.java
+SHA1-Digest: 3XeugIihvaj+FXFW4dgDSEDxuxw=
+
+Name: org/eclipse/uml2/uml/util/UMLValidator.java
+SHA1-Digest: Ie32btk+RPHOq3IP9P0M61RHxIk=
+
+Name: org/eclipse/uml2/uml/internal/operations/GeneralizationOperation
+ s.java
+SHA1-Digest: xAHlia8BmePIU/VO+Su0tVNBcHQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/PackageableElementImpl.java
+SHA1-Digest: JeE7oLBflKI4KDjfxoYY13S041Y=
+
+Name: org/eclipse/uml2/uml/DurationInterval.java
+SHA1-Digest: vhEqDODoxbXx9etLdjOJkUK+d2A=
+
+Name: org/eclipse/uml2/uml/internal/operations/StructuralFeatureAction
+ Operations.java
+SHA1-Digest: DqbpNkBqvN6/uQVz/82qY0Qyx98=
+
+Name: org/eclipse/uml2/uml/internal/impl/SendOperationEventImpl.java
+SHA1-Digest: QNyqOzjxWNhpZTSMSVqgWqO8P1o=
+
+Name: org/eclipse/uml2/uml/StartObjectBehaviorAction.java
+SHA1-Digest: puvWtSxv3KgGWmux8vkXvlrPoE0=
+
+Name: org/eclipse/uml2/uml/internal/impl/ExecutionOccurrenceSpecificat
+ ionImpl.java
+SHA1-Digest: s6lb9n1GWztTkxdx0wxS+171WD4=
+
+Name: org/eclipse/uml2/uml/Enumeration.java
+SHA1-Digest: zZn1MdN9X1S5CkeMN0E5iaSN3n4=
+
+Name: org/eclipse/uml2/uml/internal/operations/PropertyOperations.java
+SHA1-Digest: bpyJ/ElMd5Yh0zyq+cxy2jv4iqk=
+
+Name: org/eclipse/uml2/uml/VariableAction.java
+SHA1-Digest: LD2/5RcedRp6q2c2uIdIbZYuOeM=
+
+Name: org/eclipse/uml2/uml/internal/impl/LiteralStringImpl.java
+SHA1-Digest: 4/UWtxWXmFvAAWhgL1pnHZTFdkw=
+
+Name: org/eclipse/uml2/uml/internal/operations/OperationOperations.jav
+ a
+SHA1-Digest: 3cZSny4UPyXz8tb6WzaviJyFIXg=
+
+Name: org/eclipse/uml2/uml/ReadLinkObjectEndAction.java
+SHA1-Digest: ZxqgTMsokdp2mdy0ho8k3PWUtUE=
+
+Name: org/eclipse/uml2/uml/CallOperationAction.java
+SHA1-Digest: Iv3NwXGJ1a3GNEBK57mqzd4V+gA=
+
+Name: org/eclipse/uml2/uml/GeneralOrdering.java
+SHA1-Digest: xnIRGSD+GpHZhInKQwhmcM3kvRk=
+
+Name: plugin.properties
+SHA1-Digest: oFbQgSMLdWjZzkmJ9CxBQoWSuAE=
+
+Name: org/eclipse/uml2/uml/internal/operations/ReplyActionOperations.j
+ ava
+SHA1-Digest: I4ZgINb4EnqCm0HTzW/221tQlmE=
+
+Name: org/eclipse/uml2/uml/internal/operations/CreateLinkObjectActionO
+ perations.java
+SHA1-Digest: htIRcKrNDsJ7MgQMG3bbA3hCGvU=
+
+Name: model/Infrastructure.uml
+SHA1-Digest: VgYATBQX0lS9so7+SQSyYm5oUrk=
+
+Name: org/eclipse/uml2/uml/internal/resource/XMI212UMLHandler.java
+SHA1-Digest: q8RYPdhC4LFw/dmSYBI9Rqq+rys=
+
+Name: org/eclipse/uml2/uml/internal/operations/ForkNodeOperations.java
+SHA1-Digest: Z0IPFa0hCfYlwRWXAoi+uQKmhW0=
+
+Name: org/eclipse/uml2/uml/internal/impl/StructuralFeatureActionImpl.j
+ ava
+SHA1-Digest: TtiMmufrB07kfTczxig5xcEPF8k=
+
+Name: org/eclipse/uml2/uml/internal/impl/LinkEndCreationDataImpl.java
+SHA1-Digest: yY6LdXjgf52RB/0L4/f2EXbGyds=
+
+Name: org/eclipse/uml2/uml/internal/operations/ReadSelfActionOperation
+ s.java
+SHA1-Digest: dWmzJi/IgGNFu9G93OZm1lUuJVs=
+
+Name: org/eclipse/uml2/uml/Stereotype.java
+SHA1-Digest: feISiEOnl8+/ADKOyIFcZUOW+w4=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReadLinkObjectEndQualifierAct
+ ionImpl.java
+SHA1-Digest: xU+4LXr6DCir4jgwVv7mYQ1Re/k=
+
+Name: org/eclipse/uml2/uml/internal/impl/LiteralSpecificationImpl.java
+SHA1-Digest: p5x3vRBNuynxOnHQQ+/Da9pfzQQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/BroadcastSignalActionImpl.jav
+ a
+SHA1-Digest: LM5LNtKIaTiv+0lEPmJKCLG4v2E=
+
+Name: org/eclipse/uml2/uml/internal/operations/RemoveStructuralFeature
+ ValueActionOperations.java
+SHA1-Digest: mlwSdBvgpbmFEaVBK3yeNfogtIk=
+
+Name: org/eclipse/uml2/uml/internal/impl/StructuredClassifierImpl.java
+SHA1-Digest: GOnRKSqAMHRngPgPQVPdnnaeGVU=
+
+Name: org/eclipse/uml2/uml/Activity.java
+SHA1-Digest: pR1mgG92BUJhKizG5VXD3+oEphE=
+
+Name: org/eclipse/uml2/uml/ReplyAction.java
+SHA1-Digest: fuLYTRDAdfif0X+GuR8VzHDcYh0=
+
+Name: org/eclipse/uml2/uml/internal/operations/LinkActionOperations.ja
+ va
+SHA1-Digest: bVwKlpmemrYVwJfRksk3e1MfnNk=
+
+Name: org/eclipse/uml2/uml/Image.java
+SHA1-Digest: 5dzHJrCEk46Crd0hW/JZcofPl/A=
+
+Name: org/eclipse/uml2/uml/internal/impl/InputPinImpl.java
+SHA1-Digest: UJtW99ctmBAdhQRLNcF57xVD29Y=
+
+Name: model/L0.uml
+SHA1-Digest: p62G7G/hGw+Ij8PjkJw/rZ6x61Q=
+
+Name: org/eclipse/uml2/uml/internal/impl/FunctionBehaviorImpl.java
+SHA1-Digest: Ql6Cd/dbehIhtApqXG1cq9Y9siE=
+
+Name: org/eclipse/uml2/uml/Interval.java
+SHA1-Digest: BJzU1sw6qkYqrhiQtqitQHnZLdU=
+
+Name: org/eclipse/uml2/uml/internal/operations/QualifierValueOperation
+ s.java
+SHA1-Digest: zGbUyFk67BYcObbZ/fu9Npi+eVk=
+
+Name: org/eclipse/uml2/uml/internal/operations/ProfileApplicationOpera
+ tions.java
+SHA1-Digest: v8LuIofFZ98TNzgvXujisHBv1Yg=
+
+Name: org/eclipse/uml2/uml/internal/operations/ReadLinkActionOperation
+ s.java
+SHA1-Digest: VVYY5huMm8Rwzop9CM3+NNzPkuI=
+
+Name: org/eclipse/uml2/uml/internal/operations/ReadStructuralFeatureAc
+ tionOperations.java
+SHA1-Digest: dTVrehYi44cumA8DwHzk8IQimwA=
+
+Name: org/eclipse/uml2/uml/Pseudostate.java
+SHA1-Digest: qBlOtbHTH4vt5CJJNTDCt1gvaoc=
+
+Name: org/eclipse/uml2/uml/internal/operations/LiteralNullOperations.j
+ ava
+SHA1-Digest: oOSdv2ukiSf6usIzuxouduH5mZc=
+
+Name: org/eclipse/uml2/uml/TemplateParameter.java
+SHA1-Digest: uvAZRK5ym9k+L47oCUiH8QIZO9s=
+
+Name: org/eclipse/uml2/uml/FinalState.java
+SHA1-Digest: v0QgeM5NPn+6OYbW9NTdsAKHFg4=
+
+Name: org/eclipse/uml2/uml/TemplateParameterSubstitution.java
+SHA1-Digest: gLU8V0pwuGEYfHZoZbGC7QoUg+M=
+
+Name: org/eclipse/uml2/uml/internal/impl/TypeImpl.java
+SHA1-Digest: IPeUcJZIV5slwseDdCQJbCIu6iU=
+
+Name: org/eclipse/uml2/uml/UMLFactory.java
+SHA1-Digest: CRe0Xp9UGJoA+5d0Nb0Z+Rug30o=
+
+Name: org/eclipse/uml2/uml/internal/impl/InteractionOperandImpl.java
+SHA1-Digest: cd5KBeNr/cVPI00NAuwAskZdYZ0=
+
+Name: model/Superstructure.uml
+SHA1-Digest: UYWQtiJG1jKko2M3/EQZGB8P+tA=
+
+Name: org/eclipse/uml2/uml/StructuredClassifier.java
+SHA1-Digest: L2H6iSftNDp30SlTfRpE4SDWVzA=
+
+Name: org/eclipse/uml2/uml/internal/operations/CallActionOperations.ja
+ va
+SHA1-Digest: jpEhIBPmpi2XdZ8oo81GutR4Nu0=
+
+Name: org/eclipse/uml2/uml/internal/operations/DurationConstraintOpera
+ tions.java
+SHA1-Digest: vmxQ2TOe2Zpsj5a5vdAcvvELp78=
+
+Name: org/eclipse/uml2/uml/internal/impl/ComponentImpl.java
+SHA1-Digest: LA7ln6qe8rP+B04j7YGxoJMFgCU=
+
+Name: org/eclipse/uml2/uml/internal/impl/ExtensionPointImpl.java
+SHA1-Digest: znlsNLi3uneyf2z4U8eCmv7U6Ns=
+
+Name: org/eclipse/uml2/uml/ControlNode.java
+SHA1-Digest: dcdfe/1g1Yl4q5Ee8XH5VuaLQfw=
+
+Name: org/eclipse/uml2/uml/internal/operations/ObjectFlowOperations.ja
+ va
+SHA1-Digest: R9OHdnwSAT+D87OA4kGnI7h6/3g=
+
+Name: org/eclipse/uml2/uml/internal/impl/ObjectFlowImpl.java
+SHA1-Digest: MFrBw5VhGueb+MMyKhxK+r6HLXU=
+
+Name: org/eclipse/uml2/uml/internal/impl/ActivityEdgeImpl.java
+SHA1-Digest: oAPitGI+WAeJAoBAAQw8OEeHTEE=
+
+Name: org/eclipse/uml2/uml/internal/operations/SignalOperations.java
+SHA1-Digest: Yh4YXQNJaPDUCViWtYhn+8YtaA4=
+
+Name: org/eclipse/uml2/uml/internal/operations/ElementOperations.java
+SHA1-Digest: RNY+8/82i4bUNMaFnjBGqPf5yh4=
+
+Name: org/eclipse/uml2/uml/internal/operations/ActivityPartitionOperat
+ ions.java
+SHA1-Digest: JSLObhBc+SyFIFKWpBh1CAAO6bI=
+
+Name: org/eclipse/uml2/uml/internal/resource/XMI2UMLHelperImpl.java
+SHA1-Digest: HOhbeFXssnUlPbLvuk95gWLDlmk=
+
+Name: org/eclipse/uml2/uml/resource/UML212UMLResource.java
+SHA1-Digest: ghyic/52+N+v/z7j0IhxmAn59R0=
+
+Name: org/eclipse/uml2/uml/internal/resource/CMOF2UMLHelperImpl.java
+SHA1-Digest: MKRmmwyqfwQNXNfDv1OS5g/HNE4=
+
+Name: org/eclipse/uml2/uml/SignalEvent.java
+SHA1-Digest: RhV0hZHf3wek9U2K09WSvWmq50M=
+
+Name: org/eclipse/uml2/uml/internal/impl/StructuredActivityNodeImpl.ja
+ va
+SHA1-Digest: YEsIllglD07RvzQtQLlkbznA4uc=
+
+Name: org/eclipse/uml2/uml/Constraint.java
+SHA1-Digest: HAk1fjFfcULuTbAvHFgFZ3rJ1YA=
+
+Name: org/eclipse/uml2/uml/ParameterEffectKind.java
+SHA1-Digest: ODEq3DJyJdduhqblRbCaERN4ZzE=
+
+Name: org/eclipse/uml2/uml/ExecutionEnvironment.java
+SHA1-Digest: SSczYg0xpdBt4+sLMY6C5uhYPWQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/AcceptEventActionImpl.java
+SHA1-Digest: hCzQ6xqDsnurw2ZxWdxRufWlhQA=
+
+Name: org/eclipse/uml2/uml/internal/impl/FinalStateImpl.java
+SHA1-Digest: ZjEco/c8WOGJL4donNhiAJQyQ30=
+
+Name: org/eclipse/uml2/uml/internal/operations/LiteralBooleanOperation
+ s.java
+SHA1-Digest: jTFkvjn8QZLocbJtQ4IxuxtIEs0=
+
+Name: org/eclipse/uml2/uml/internal/operations/ConnectorOperations.jav
+ a
+SHA1-Digest: 4tXwc0tYzhmk7Q21teZdMSDwJGY=
+
+Name: org/eclipse/uml2/uml/internal/impl/ParameterSetImpl.java
+SHA1-Digest: dGRqvLc8CRnL/bsWxkZ5WNh5nGs=
+
+Name: org/eclipse/uml2/uml/internal/operations/PackageImportOperations
+ .java
+SHA1-Digest: +k0+N7CKkerxB6f2Do+3zAHSosE=
+
+Name: org/eclipse/uml2/uml/internal/operations/ContinuationOperations.
+ java
+SHA1-Digest: 3OsiM+c9Yo2/RdPyXixaE8mfOfM=
+
+Name: org/eclipse/uml2/uml/internal/impl/OpaqueActionImpl.java
+SHA1-Digest: Hi7ybsbuEOzJr0AEsRA+rAwnCgc=
+
+Name: org/eclipse/uml2/uml/internal/operations/ReadLinkObjectEndQualif
+ ierActionOperations.java
+SHA1-Digest: C/6BLEq8UCBPjSE8i2XYX0osuVY=
+
+Name: org/eclipse/uml2/uml/internal/impl/RemoveStructuralFeatureValueA
+ ctionImpl.java
+SHA1-Digest: Z/L2aZ30KydMVZXZd9Vz9ubSNJ0=
+
+Name: org/eclipse/uml2/uml/LiteralInteger.java
+SHA1-Digest: po7KZYZsvsY/YiiLMuoAYGblSlc=
+
+Name: org/eclipse/uml2/uml/internal/impl/StateInvariantImpl.java
+SHA1-Digest: JYoW5un9XTdOdUOWEbijSF4Gp4c=
+
+Name: org/eclipse/uml2/uml/ActivityEdge.java
+SHA1-Digest: p8xIdHxKyiVioR0vOINh3WnyPlo=
+
+Name: org/eclipse/uml2/uml/internal/impl/ActivityPartitionImpl.java
+SHA1-Digest: E7/x9qsKanMw9Edz+k+5MoJrrZ8=
+
+Name: org/eclipse/uml2/uml/internal/operations/ConnectorEndOperations.
+ java
+SHA1-Digest: 5oFHojSBlsqXV8XP8wCTdx8NDEA=
+
+Name: org/eclipse/uml2/uml/internal/impl/JoinNodeImpl.java
+SHA1-Digest: fFRz0cB+4n/dlzWRMnPYE4gksOQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/TimeConstraintImpl.java
+SHA1-Digest: SzRUk4YNk/u+bMZgnwLYnmkZ4ew=
+
+Name: org/eclipse/uml2/uml/Deployment.java
+SHA1-Digest: ymEuL3WSSt09JC0XbMr9NgeG0fI=
+
+Name: org/eclipse/uml2/uml/Vertex.java
+SHA1-Digest: 3KHQX4IeUyD1lxEUgVvrlGeDb5E=
+
+Name: org/eclipse/uml2/uml/internal/operations/TestIdentityActionOpera
+ tions.java
+SHA1-Digest: av7htQv+Mo8MSGl+VNUKgQzyKto=
+
+Name: org/eclipse/uml2/uml/internal/impl/CollaborationUseImpl.java
+SHA1-Digest: kRcRUxNLf7zb6uno0pPFScohIm0=
+
+Name: org/eclipse/uml2/uml/internal/impl/ObservationImpl.java
+SHA1-Digest: L0dgZQlCweHXWOkt0wTlvHlBIaE=
+
+Name: org/eclipse/uml2/uml/ClassifierTemplateParameter.java
+SHA1-Digest: DAyMG6ot1zhZ1ZSXhywXGrahwOQ=
+
+Name: org/eclipse/uml2/uml/TimeEvent.java
+SHA1-Digest: wHxfbvZHkmBVIKjFTUSvHWwjD7w=
+
+Name: org/eclipse/uml2/uml/internal/resource/UML212UMLLoadImpl.java
+SHA1-Digest: oiftq7/QyqDHU+WiCVvYGHXbElA=
+
+Name: org/eclipse/uml2/uml/internal/operations/VariableOperations.java
+SHA1-Digest: f+V9cXla1A+yzWSrKu7RWyFToGs=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReduceActionImpl.java
+SHA1-Digest: lXO81idwpSm8nU/dGPINMIvFbBw=
+
+Name: org/eclipse/uml2/uml/internal/operations/DestroyObjectActionOper
+ ations.java
+SHA1-Digest: nmIDpnAJnFA020s0+vbrCjdA3kc=
+
+Name: org/eclipse/uml2/uml/Expression.java
+SHA1-Digest: oJGwg33X9lVzBIwcpkV2zjY40qo=
+
+Name: org/eclipse/uml2/uml/internal/resource/UMLResourceFactoryImpl.ja
+ va
+SHA1-Digest: /8UkKdsyj9AvxULqcNglclJtUA8=
+
+Name: org/eclipse/uml2/uml/internal/impl/RaiseExceptionActionImpl.java
+SHA1-Digest: OhipUGFNCraqeZYnzcqcOBQBlNk=
+
+Name: org/eclipse/uml2/uml/Collaboration.java
+SHA1-Digest: igJdbUx8I5Dk1KHTMMrlOZgzIVQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/ClearVariableActionImpl.java
+SHA1-Digest: PHOhtARADTNyv6Bk3wXVlSHhp3k=
+
+Name: org/eclipse/uml2/uml/ReceiveSignalEvent.java
+SHA1-Digest: 7WPp7odgjMAMFTJCzUA048uYyWc=
+
+Name: org/eclipse/uml2/uml/internal/operations/LiteralIntegerOperation
+ s.java
+SHA1-Digest: 2yrIbYvwXvRxOWaAMwpwUthLYPo=
+
+Name: org/eclipse/uml2/uml/TemplateSignature.java
+SHA1-Digest: ycTuuOA2lJKJ5Dll6XSjCVGisCQ=
+
+Name: org/eclipse/uml2/uml/ClearAssociationAction.java
+SHA1-Digest: f0QopXECQ0IIGFotFtj85yarCVo=
+
+Name: org/eclipse/uml2/uml/internal/impl/BehavioralFeatureImpl.java
+SHA1-Digest: W8ToiDbmcYACGWgIhLURtS0bBu4=
+
+Name: org/eclipse/uml2/uml/internal/operations/ActivityEdgeOperations.
+ java
+SHA1-Digest: h9Cq0W3ALoEXiha7hM0KomyVBso=
+
+Name: org/eclipse/uml2/uml/internal/operations/InformationItemOperatio
+ ns.java
+SHA1-Digest: 6WQwWt8Nv4/zpUOqGWlbLIcE0jg=
+
+Name: org/eclipse/uml2/uml/BehavioralFeature.java
+SHA1-Digest: JAIfvIoUckuC75zdDT63F7f+iYk=
+
+Name: org/eclipse/uml2/uml/internal/impl/ComponentRealizationImpl.java
+SHA1-Digest: LrR1z9xOI/GMb3lZRKqrSV08F2Y=
+
+Name: org/eclipse/uml2/uml/Node.java
+SHA1-Digest: W8XCAsM/2m5vKsQEjWq/QVgDNlk=
+
+Name: org/eclipse/uml2/uml/internal/operations/UseCaseOperations.java
+SHA1-Digest: RHGerNgqvuqhnfX9yP8PGgCkzRM=
+
+Name: org/eclipse/uml2/uml/internal/impl/ClearStructuralFeatureActionI
+ mpl.java
+SHA1-Digest: qEvoitkCo0b3PaYwmMcgagqFGbw=
+
+Name: org/eclipse/uml2/uml/internal/resource/UML22UMLResourceImpl.java
+SHA1-Digest: 8ePT0OxpHOJTdM9ZRWdlvD86OOM=
+
+Name: org/eclipse/uml2/uml/ReduceAction.java
+SHA1-Digest: Tp88RRhrdMhfjj4VD8V0fjO9ZfA=
+
+Name: org/eclipse/uml2/uml/internal/operations/StateOperations.java
+SHA1-Digest: cRfxqnwZhFYxbwehd58QFNLtcJg=
+
+Name: org/eclipse/uml2/uml/internal/impl/UnmarshallActionImpl.java
+SHA1-Digest: +XzIXPscKBnESgeXucnigB32tgM=
+
+Name: org/eclipse/uml2/uml/ExecutionOccurrenceSpecification.java
+SHA1-Digest: PlBrVq6nFsWjIJyn7xYVamy/5x8=
+
+Name: org/eclipse/uml2/uml/internal/impl/BehaviorExecutionSpecificatio
+ nImpl.java
+SHA1-Digest: RLkUeXkeO2RZIDCQqs8Mva26cTU=
+
+Name: org/eclipse/uml2/uml/internal/operations/ActivityGroupOperations
+ .java
+SHA1-Digest: zGFauRrNXaSzpGJhCLAGfrHV/AA=
+
+Name: org/eclipse/uml2/uml/ControlFlow.java
+SHA1-Digest: hmejebdFyTyi/aabI7SFrTAbI68=
+
+Name: org/eclipse/uml2/uml/resource/CMOF2UMLResourceHandler.java
+SHA1-Digest: udu1dk1mPU/apZwRESrJb1T8/HI=
+
+Name: org/eclipse/uml2/uml/internal/impl/PackageImpl.java
+SHA1-Digest: uGz0B7mnz8Yt2KhO+NhFonhWOxQ=
+
+Name: org/eclipse/uml2/uml/internal/operations/LinkEndDataOperations.j
+ ava
+SHA1-Digest: /CKRzJWs6twrAyMCin6EckIu0n0=
+
+Name: org/eclipse/uml2/uml/Realization.java
+SHA1-Digest: x3hRp7h5xmLpk4idLEY3DghZDk0=
+
+Name: org/eclipse/uml2/uml/internal/impl/InformationItemImpl.java
+SHA1-Digest: 2NAj8l3cx1mf24HadnlaNF5n3EI=
+
+Name: org/eclipse/uml2/uml/internal/resource/CMOF2UMLSaveImpl.java
+SHA1-Digest: KwDUrQ3Oeyl0GSnYYfv/gMSH4ks=
+
+Name: org/eclipse/uml2/uml/internal/impl/ActivityParameterNodeImpl.jav
+ a
+SHA1-Digest: GIZDs2Lj3rYGDPHyqxOLfKWs9b8=
+
+Name: org/eclipse/uml2/uml/internal/impl/ImageImpl.java
+SHA1-Digest: lsZdsZCQEV/WeRD78Z/W22oeHgk=
+
+Name: org/eclipse/uml2/uml/internal/impl/ProfileApplicationImpl.java
+SHA1-Digest: LQS8Zy/Rf72+A1KN0uY9YQJz1jo=
+
+Name: org/eclipse/uml2/uml/internal/operations/FinalNodeOperations.jav
+ a
+SHA1-Digest: nShKQE0JC3is5sVeJaAvEb3WYZg=
+
+Name: org/eclipse/uml2/uml/ExpansionRegion.java
+SHA1-Digest: uaN9Rl//PDNvNmWROifkG8tEVmw=
+
+Name: model/CMOF_2_UML.ecore2ecore
+SHA1-Digest: XQrg1KQqGcmqRq5/R2m8hPrhx2U=
+
+Name: org/eclipse/uml2/uml/internal/operations/ClassifierOperations.ja
+ va
+SHA1-Digest: 9hqzXiueD+a0cdh/ik9rGPjLcVg=
+
+Name: org/eclipse/uml2/uml/Extend.java
+SHA1-Digest: Y0yAKxdDcHkGG200l2EqioEVJHk=
+
+Name: org/eclipse/uml2/uml/internal/operations/ReduceActionOperations.
+ java
+SHA1-Digest: S4Lk4bbqFrsCvNRa6D0GJH+5M/o=
+
+Name: org/eclipse/uml2/uml/internal/impl/RemoveVariableValueActionImpl
+ .java
+SHA1-Digest: 3vMAhofsrbHPTz/LkALFJFHiMqo=
+
+Name: org/eclipse/uml2/uml/ReadSelfAction.java
+SHA1-Digest: AnPWc/kcFU4eDZhogkVmsD6f+3M=
+
+Name: org/eclipse/uml2/uml/internal/impl/EnumerationImpl.java
+SHA1-Digest: W5SQxLWMlPMid+f/7x+16j0wZLg=
+
+Name: org/eclipse/uml2/uml/internal/impl/ExecutionEnvironmentImpl.java
+SHA1-Digest: owXluiGPCctoXwnGYE06pG0khNs=
+
+Name: org/eclipse/uml2/uml/ConditionalNode.java
+SHA1-Digest: gEcEkfJ/Om8+kzuMheJf2ayBSVo=
+
+Name: org/eclipse/uml2/uml/internal/operations/TemplateBindingOperatio
+ ns.java
+SHA1-Digest: bkGtF23vdKJE77886KaqBkyrGXA=
+
+Name: org/eclipse/uml2/uml/Duration.java
+SHA1-Digest: SzWaDio+Fj5DRWIbCvC1g1abpgU=
+
+Name: org/eclipse/uml2/uml/ClearVariableAction.java
+SHA1-Digest: 8/l1M796Wp9kmYdRDNA5dQALTMo=
+
+Name: org/eclipse/uml2/uml/internal/impl/GeneralOrderingImpl.java
+SHA1-Digest: PRi+oXx1w6JqVnsWR2+9xxFO9nI=
+
+Name: org/eclipse/uml2/uml/internal/impl/ProtocolStateMachineImpl.java
+SHA1-Digest: JRC8PDN9OT6p64Wy88Jn8kSx7SI=
+
+Name: org/eclipse/uml2/uml/internal/operations/ReclassifyObjectActionO
+ perations.java
+SHA1-Digest: Ogf/2wvtd+k3fn//Bq6ALeoh1qI=
+
+Name: org/eclipse/uml2/uml/internal/operations/DeploymentSpecification
+ Operations.java
+SHA1-Digest: hiN66Sg+FfwYyoFRa+uQV/CRUL0=
+
+Name: templates/Header.xmljetinc
+SHA1-Digest: 9d/SIWkZ8L0I2edoC9/gq12FgbM=
+
+Name: org/eclipse/uml2/uml/internal/resource/UML212UMLHandler.java
+SHA1-Digest: Z92TZNNf1xz/y36LNr+xdwySL+w=
+
+Name: org/eclipse/uml2/uml/LiteralNull.java
+SHA1-Digest: 3zhWL5exM02E7FmQEJwEgZ+Qs9A=
+
+Name: org/eclipse/uml2/uml/internal/operations/InvocationActionOperati
+ ons.java
+SHA1-Digest: 4rcdqVmFa8SO3uqe+a/kld8gDww=
+
+Name: org/eclipse/uml2/uml/internal/resource/UML212UMLResourceImpl.jav
+ a
+SHA1-Digest: XaykLnHMheZdYcM9F0+Lxm8KDDc=
+
+Name: org/eclipse/uml2/uml/internal/operations/ClassOperations.java
+SHA1-Digest: ToerDmAECOo4WMPe4XFcrIiCgzk=
+
+Name: org/eclipse/uml2/uml/Variable.java
+SHA1-Digest: 9FOJL2kTo0bKjNY7xLCEjxZv4/0=
+
+Name: org/eclipse/uml2/uml/OpaqueExpression.java
+SHA1-Digest: QVyjmhma5ptFNT8JnevhaMRlGOs=
+
+Name: org/eclipse/uml2/uml/internal/operations/WriteLinkActionOperatio
+ ns.java
+SHA1-Digest: +Z1PqfUPxIJMYBg7kvOmgn0+nZM=
+
+Name: org/eclipse/uml2/uml/internal/impl/RealizationImpl.java
+SHA1-Digest: zWNjxURakoX2rY9j9dvmQLwqxk4=
+
+Name: org/eclipse/uml2/uml/internal/operations/TimeEventOperations.jav
+ a
+SHA1-Digest: NLTODr20Pqg8eVrhw+zMl7lidtk=
+
+Name: org/eclipse/uml2/uml/AcceptEventAction.java
+SHA1-Digest: ks41ngPnM9CvmJxp8O9g0fEdrG4=
+
+Name: org/eclipse/uml2/uml/internal/impl/DurationIntervalImpl.java
+SHA1-Digest: FsUs7OQ4PNUcPjtDl/hp1cGlW7k=
+
+Name: org/eclipse/uml2/uml/internal/operations/TemplateParameterSubsti
+ tutionOperations.java
+SHA1-Digest: oy0MrbHC/D2lTVpL9wAyK2WZZGI=
+
+Name: org/eclipse/uml2/uml/EncapsulatedClassifier.java
+SHA1-Digest: lyMsnmfjaftaa3UhnAmrB0HOIR4=
+
+Name: org/eclipse/uml2/uml/internal/impl/InteractionFragmentImpl.java
+SHA1-Digest: PLjaN3lOAKuO7G9t7dZeBkSZtFY=
+
+Name: org/eclipse/uml2/uml/internal/operations/StructuredClassifierOpe
+ rations.java
+SHA1-Digest: WOlFedNvpgBLVcN/BW79rodGlbM=
+
+Name: org/eclipse/uml2/uml/internal/impl/PackageMergeImpl.java
+SHA1-Digest: GwcVeoRgzZ2alkmtlWpWRDTyLRk=
+
+Name: org/eclipse/uml2/uml/ExpansionNode.java
+SHA1-Digest: QCWHk4sTteH5WN4dtNe0qkIV9N0=
+
+Name: org/eclipse/uml2/uml/DeploymentSpecification.java
+SHA1-Digest: m2/j/MCFGr2ehdESjGuX59KdYfQ=
+
+Name: org/eclipse/uml2/uml/internal/operations/ReadLinkObjectEndAction
+ Operations.java
+SHA1-Digest: ZR9gHcatlmFM52SFXCc8BS/AXMI=
+
+Name: org/eclipse/uml2/uml/internal/impl/InformationFlowImpl.java
+SHA1-Digest: 9MpAULSXlJUw0eH0vDTzXKzgQM4=
+
+Name: org/eclipse/uml2/uml/internal/impl/RedefinableTemplateSignatureI
+ mpl.java
+SHA1-Digest: 9iaqy7Nh4zplssyGsXdldqMzGgE=
+
+Name: org/eclipse/uml2/uml/Element.java
+SHA1-Digest: mUE4+DyPZ4MPGkNxJWpvGyom49g=
+
+Name: org/eclipse/uml2/uml/ValueSpecificationAction.java
+SHA1-Digest: HjibSSc8Y6tlVPcepssU2hWm4QA=
+
+Name: org/eclipse/uml2/uml/internal/impl/ConnectableElementTemplatePar
+ ameterImpl.java
+SHA1-Digest: RKv631AYUb3659V9Pu3zYlnI0e0=
+
+Name: org/eclipse/uml2/uml/internal/operations/FunctionBehaviorOperati
+ ons.java
+SHA1-Digest: q9xnOxYDD1gZApio1iOiP7GptZ0=
+
+Name: org/eclipse/uml2/uml/internal/operations/ReadIsClassifiedObjectA
+ ctionOperations.java
+SHA1-Digest: 8KHH5jOc+RSOZS5JPwrS6g5/454=
+
+Name: org/eclipse/uml2/uml/internal/impl/ExpansionRegionImpl.java
+SHA1-Digest: LHTiv40U4jZMZuL8XrMgoM7kfwI=
+
+Name: model/UML.uml
+SHA1-Digest: YdQrY1Z+6ZLDG09NKWoZNABh7xo=
+
+Name: org/eclipse/uml2/uml/internal/impl/WriteLinkActionImpl.java
+SHA1-Digest: 37pxKM8EYRfTNNQM351ZLMVdNa8=
+
+Name: org/eclipse/uml2/uml/OccurrenceSpecification.java
+SHA1-Digest: 6laP75qB5QZD/QbY92dj+G+JpEo=
+
+Name: org/eclipse/uml2/uml/internal/impl/InstanceSpecificationImpl.jav
+ a
+SHA1-Digest: Lb31TDzleKxfoOqo1GMZB3znVak=
+
+Name: org/eclipse/uml2/uml/internal/operations/ObjectNodeOperations.ja
+ va
+SHA1-Digest: XmExcXtdjrtmkmwsue3FZtgdjro=
+
+Name: org/eclipse/uml2/uml/ActivityGroup.java
+SHA1-Digest: WJlDV3Y71H/YDveUSHQPrqIfKM0=
+
+Name: org/eclipse/uml2/uml/internal/operations/OutputPinOperations.jav
+ a
+SHA1-Digest: WI2vrWQOkk0ZbStNqzL+cTp0wnw=
+
+Name: org/eclipse/uml2/uml/InstanceSpecification.java
+SHA1-Digest: t/C8Drbr7YluBYLUZKPu56OCJuA=
+
+Name: org/eclipse/uml2/uml/internal/impl/CollaborationImpl.java
+SHA1-Digest: MpKpnH4WC4eoxsix7IuQiM9QmkQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/RelationshipImpl.java
+SHA1-Digest: E3i4U6yp8be3fM4UzmZea9Xl/u4=
+
+Name: org/eclipse/uml2/uml/Abstraction.java
+SHA1-Digest: BmtY16+djc06ynEHGk+hmIN3/2A=
+
+Name: org/eclipse/uml2/uml/internal/operations/DeploymentTargetOperati
+ ons.java
+SHA1-Digest: mFCDo95C0A6D1/LOTQjdqSkOrPY=
+
+Name: org/eclipse/uml2/uml/internal/impl/TransitionImpl.java
+SHA1-Digest: xzu83z8ruDjZ4d06pDTxrqNkPlI=
+
+Name: org/eclipse/uml2/uml/internal/impl/ElementImportImpl.java
+SHA1-Digest: G7ul+Qut7tQzI29jf3Rm4ijStLc=
+
+Name: org/eclipse/uml2/uml/internal/impl/EncapsulatedClassifierImpl.ja
+ va
+SHA1-Digest: 06foL1q3nqRqx8h1WxCosyJuy7Q=
+
+Name: org/eclipse/uml2/uml/internal/impl/ControlNodeImpl.java
+SHA1-Digest: qXAOnxQCc1EAWi22aIfRNcu+KTc=
+
+Name: org/eclipse/uml2/uml/internal/impl/LiteralIntegerImpl.java
+SHA1-Digest: F+KS7DSNT4Sc5MGUxAb4HohHDzE=
+
+Name: org/eclipse/uml2/uml/internal/impl/CreationEventImpl.java
+SHA1-Digest: RkKpSD1DHBhmBe7QmPmEwJ3Wrts=
+
+Name: org/eclipse/uml2/uml/internal/operations/BroadcastSignalActionOp
+ erations.java
+SHA1-Digest: TiXtmCpMuZv5nXjqXelJYM5JKhU=
+
+Name: org/eclipse/uml2/uml/internal/impl/LiteralNullImpl.java
+SHA1-Digest: UrfITpfRaZZ+XBZg2uFDrrf24gM=
+
+Name: templates/Header.javajetinc
+SHA1-Digest: gnBqrnOc4wyXeNgto4Wk3ULhZP8=
+
+Name: org/eclipse/uml2/uml/internal/operations/SendSignalActionOperati
+ ons.java
+SHA1-Digest: 8H/z3QCUbm5uxINldFCvryzIHt4=
+
+Name: org/eclipse/uml2/uml/internal/operations/InformationFlowOperatio
+ ns.java
+SHA1-Digest: eUkLTAMzgIUJ4rdO0K67pzkZtF4=
+
+Name: org/eclipse/uml2/uml/internal/operations/CallBehaviorActionOpera
+ tions.java
+SHA1-Digest: 4HS8eVfeYM5oh9ZaT87tuE23hKE=
+
+Name: org/eclipse/uml2/uml/resource/XMI212UMLResource.java
+SHA1-Digest: nTsSuZFIDD/qumfW2iKXpFqVJL4=
+
+Name: org/eclipse/uml2/uml/DecisionNode.java
+SHA1-Digest: YVgM7485X9L6z9Lb28I5QY6X+no=
+
+Name: org/eclipse/uml2/uml/internal/impl/ActionInputPinImpl.java
+SHA1-Digest: L1B6q/PwH8Ogqasige9pJ5jbQHY=
+
+Name: org/eclipse/uml2/uml/resource/XMI2UMLExtendedMetaData.java
+SHA1-Digest: 9nb5UCq2gqHOPqmZ8XewjYz2VlU=
+
+Name: org/eclipse/uml2/uml/resource/UML22UMLResource.java
+SHA1-Digest: yUv9EsAl8r3CmVTZsYAqaqkr2cg=
+
+Name: org/eclipse/uml2/uml/RaiseExceptionAction.java
+SHA1-Digest: 349aJCOxQWHtY1fReU9N/Lnb3Gg=
+
+Name: org/eclipse/uml2/uml/InteractionOperatorKind.java
+SHA1-Digest: 4U1wdh5zLcIibdwoHRswl0TVEfQ=
+
+Name: org/eclipse/uml2/uml/internal/operations/InstanceSpecificationOp
+ erations.java
+SHA1-Digest: sfCbpsVwx6Sx2hxhyigUrxQazws=
+
+Name: org/eclipse/uml2/uml/InteractionOperand.java
+SHA1-Digest: hLSWwtwGTVtR8K/NDVw5HF50OiQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/GeneralizationSetImpl.java
+SHA1-Digest: Zj49TpTjg1Lczcd9YUzL8H8SJto=
+
+Name: org/eclipse/uml2/uml/Property.java
+SHA1-Digest: WAE1nd7meX/sdRl9tN81UCHvwzg=
+
+Name: org/eclipse/uml2/uml/Region.java
+SHA1-Digest: cbihYri8P6tYgFflWLc+b2+Ex3A=
+
+Name: org/eclipse/uml2/uml/DurationConstraint.java
+SHA1-Digest: afCjFPh2ssITLBhD+kaUeAeTDgM=
+
+Name: org/eclipse/uml2/uml/ProtocolConformance.java
+SHA1-Digest: CQBTXvxjolh5VjjaCruK9H1m6Sk=
+
+Name: org/eclipse/uml2/uml/ComponentRealization.java
+SHA1-Digest: fj6cCO0tBvkBdDdOdLFUD95Tzv4=
+
+Name: org/eclipse/uml2/uml/internal/impl/ClassImpl.java
+SHA1-Digest: SdVk/8p8mFlKUMEQ2lY8EjL72cQ=
+
+Name: org/eclipse/uml2/uml/internal/impl/LiteralUnlimitedNaturalImpl.j
+ ava
+SHA1-Digest: yvjL4ma7G/OjTlDNe3ynXmLViZU=
+
+Name: org/eclipse/uml2/uml/InformationFlow.java
+SHA1-Digest: 8kB2miFC/TmLxAJNXxih/hP2FPc=
+
+Name: org/eclipse/uml2/uml/internal/operations/TemplateSignatureOperat
+ ions.java
+SHA1-Digest: 03z1KkXD0bx55GzAnbd8YmTssHo=
+
+Name: org/eclipse/uml2/uml/internal/impl/ReceiveOperationEventImpl.jav
+ a
+SHA1-Digest: koDTmPmCvNJSfgckjmUZkqx2dWc=
+
+Name: org/eclipse/uml2/uml/Feature.java
+SHA1-Digest: Ft+3nSdS79QeFWzN/gkxlNQIzo8=
+
+Name: org/eclipse/uml2/uml/ReceiveOperationEvent.java
+SHA1-Digest: G5Uj18a5HCwYzDBn2uchdvxJ1Xo=
+
+Name: org/eclipse/uml2/uml/internal/impl/LoopNodeImpl.java
+SHA1-Digest: gMcXI2anY1IE3Ki0DQXwZf4DISo=
+
+Name: org/eclipse/uml2/uml/StructuredActivityNode.java
+SHA1-Digest: sYGPaoR35DRPidfcax0EMyNZazo=
+
+Name: org/eclipse/uml2/uml/internal/resource/XMI212UMLLoadImpl.java
+SHA1-Digest: L+1faVsOoTIoqxLR8SKYespQWZo=
+
+Name: org/eclipse/uml2/uml/Observation.java
+SHA1-Digest: g0hqQs2650XFv7QE3T9akfYmAh4=
+
