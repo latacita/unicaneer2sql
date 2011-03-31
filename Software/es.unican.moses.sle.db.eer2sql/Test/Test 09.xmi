@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<EER:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EER="http://EER/1.0" xsi:schemaLocation="http://EER/1.0 ../new_model/EERmodel.ecore" Name="Test 09">
+  <Project_Entity Name="Curso">
+    <Entity_Primary_Key Candidate_Key_Attribute="//@Project_Entity.0/@Entity_Attribute.0" Name="Cod_Curso_PK"/>
+    <Entity_Candidate_Key Candidate_Key_Attribute="//@Project_Entity.0/@Entity_Attribute.0" Name="Cod_Curso_CK"/>
+    <Entity_Attribute xsi:type="EER:Single_Attribute" Name="Cod_Curso" Single_Att_Domain="//@Project_Domain.0"/>
+    <Entity_Weak_Entity Name="Edicion">
+      <Weak_Entity_Attribute xsi:type="EER:Single_Attribute" Name="Cod_Edicion" Single_Att_Domain="//@Project_Domain.0"/>
+      <Weak_Entity_Primary_Key Candidate_Key_Attribute="//@Project_Entity.0/@Entity_Weak_Entity.0/@Weak_Entity_Attribute.0" Name="Cod_Edicion_PK"/>
+      <Weak_Entity_Candidate_Key Candidate_Key_Attribute="//@Project_Entity.0/@Entity_Weak_Entity.0/@Weak_Entity_Attribute.0" Name="Cod_Edicion_CK"/>
+    </Entity_Weak_Entity>
+    <Entity_Dependency_Rel Name="tiene">
+      <Dependency_Rel_Line_Dep Rol="" Line_Entity="//@Project_Entity.0" Line_Rel_Relation="//@Project_Entity.0/@Entity_Dependency_Rel.0"/>
+      <Dependency_Rel_Line_Dep Line_Rel_Relation="//@Project_Entity.0/@Entity_Dependency_Rel.0" Line_Rel_Weak_Ent="//@Project_Entity.0/@Entity_Weak_Entity.0"/>
+    </Entity_Dependency_Rel>
+  </Project_Entity>
+  <Project_Entity Name="Profesor">
+    <Entity_Primary_Key Candidate_Key_Attribute="//@Project_Entity.1/@Entity_Attribute.0" Name="Cod_Profesor_PK"/>
+    <Entity_Candidate_Key Candidate_Key_Attribute="//@Project_Entity.1/@Entity_Attribute.0" Name="Cod_Profesor_CK"/>
+    <Entity_Attribute xsi:type="EER:Single_Attribute" Name="Cod_Profesor" Single_Att_Domain="//@Project_Domain.0"/>
+  </Project_Entity>
+  <Project_Relationship Name="asiste">
+    <Relationship_Line_Rel Line_Rel_Relationship="//@Project_Relationship.0" Line_Rel_Weak_Ent="//@Project_Entity.0/@Entity_Weak_Entity.0"/>
+    <Relationship_Line_Rel Line_Entity="//@Project_Entity.1" Line_Rel_Relationship="//@Project_Relationship.0"/>
+  </Project_Relationship>
+  <Project_Domain xsi:type="EER:Base_Domain" Name="Predefinido"/>
+</EER:Project>

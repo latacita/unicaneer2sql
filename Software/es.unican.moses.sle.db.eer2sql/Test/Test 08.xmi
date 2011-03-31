@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<EER:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EER="http://EER/1.0" xsi:schemaLocation="http://EER/1.0 ../new_model/EERmodel.ecore" Name="Test 08">
+  <Project_Entity Name="Marca">
+    <Entity_Primary_Key Candidate_Key_Attribute="//@Project_Entity.0/@Entity_Attribute.0" Name="Cod_Marca_PK"/>
+    <Entity_Candidate_Key Candidate_Key_Attribute="//@Project_Entity.0/@Entity_Attribute.0" Name="Cod_Marca_CK"/>
+    <Entity_Attribute xsi:type="EER:Single_Attribute" Name="Cod_Marca" Single_Att_Domain="//@Project_Domain.0"/>
+  </Project_Entity>
+  <Project_Domain xsi:type="EER:Base_Domain" Name="Predefinido" Type="binary"/>
+</EER:Project>
