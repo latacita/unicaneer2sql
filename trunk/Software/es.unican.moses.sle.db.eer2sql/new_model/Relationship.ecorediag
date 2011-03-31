@@ -4,7 +4,7 @@
     <children xmi:type="notation:Node" xmi:id="_vglMoFVQEeCpO7JwxyHuAw" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_vglMoVVQEeCpO7JwxyHuAw" type="5001">
       <children xmi:type="notation:Node" xmi:id="_ygf6YFVQEeCpO7JwxyHuAw" type="2001">
-        <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Abstract_Relation/Name"/>
+        <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Relation/Name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ygf6YVVQEeCpO7JwxyHuAw"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_vglMolVQEeCpO7JwxyHuAw"/>
@@ -17,7 +17,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_vglMqFVQEeCpO7JwxyHuAw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_vgcCsVVQEeCpO7JwxyHuAw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="EERmodel.ecore#//Abstract_Relation"/>
+    <element xmi:type="ecore:EClass" href="EERmodel.ecore#//Relation"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vgcCslVQEeCpO7JwxyHuAw" x="365" y="75"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_4FtPYFVQEeCpO7JwxyHuAw" type="1001">
@@ -103,10 +103,6 @@
   <children xmi:type="notation:Node" xmi:id="_Cv0v8FlHEeCxj4GWRw4Tlg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_Cv0v81lHEeCxj4GWRw4Tlg" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_Cv0v9FlHEeCxj4GWRw4Tlg" type="5001">
-      <children xmi:type="notation:Node" xmi:id="_Cv954FlHEeCxj4GWRw4Tlg" type="2001">
-        <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Entity/Name"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_Cv954VlHEeCxj4GWRw4Tlg"/>
-      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_Cv0v9VlHEeCxj4GWRw4Tlg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Cv0v9llHEeCxj4GWRw4Tlg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Cv0v91lHEeCxj4GWRw4Tlg"/>
@@ -172,7 +168,7 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MPIg4FYDEeC3qoWI4y9FHw" id="(0.3390804597701149,0.9019607843137255)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Mg178FYDEeC3qoWI4y9FHw" id="(0.275,0.09302325581395349)"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_JqlgiFYDEeC3qoWI4y9FHw" type="3002" source="_JqSlkFYDEeC3qoWI4y9FHw" target="_9F7WEFVSEeCpO7JwxyHuAw">
+  <edges xmi:type="notation:Edge" xmi:id="_JqlgiFYDEeC3qoWI4y9FHw" type="3002" source="_vgcCsFVQEeCpO7JwxyHuAw" target="_9F7WEFVSEeCpO7JwxyHuAw">
     <children xmi:type="notation:Node" xmi:id="_JqlgjFYDEeC3qoWI4y9FHw" type="4011">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_JqlgjVYDEeC3qoWI4y9FHw" x="-48" y="-13"/>
     </children>
@@ -181,8 +177,9 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_JqlgiVYDEeC3qoWI4y9FHw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_JqlgilYDEeC3qoWI4y9FHw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="EERmodel.ecore#//Relationship/Relationship_Attribute"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Jqlgi1YDEeC3qoWI4y9FHw" points="[-6, -24, 239, 112]$[-6, -129, 239, 7]$[-173, -129, 72, 7]"/>
+    <element xmi:type="ecore:EReference" href="EERmodel.ecore#//Relation/Relationship_Attribute"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Jqlgi1YDEeC3qoWI4y9FHw" points="[-19, -22, 314, -8]$[-19, -22, 314, -8]$[-261, -22, 72, -8]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zkw70FuHEeCahOKOQflq7g" id="(0.16393442622950818,0.8627450980392157)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_JqvRgFYDEeC3qoWI4y9FHw" type="3003" source="_JqSlkFYDEeC3qoWI4y9FHw" target="_vgcCsFVQEeCpO7JwxyHuAw">
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_JqvRgVYDEeC3qoWI4y9FHw" routing="Rectilinear" lineColor="4210752"/>

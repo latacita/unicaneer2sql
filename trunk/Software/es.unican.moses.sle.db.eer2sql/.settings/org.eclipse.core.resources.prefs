@@ -1,4 +1,4 @@
-#Thu Mar 24 10:27:01 CET 2011
+#Thu Mar 31 12:48:46 CEST 2011
 eclipse.preferences.version=1
 encoding//model_anterior/Attribute.ecorediag=UTF-8
 encoding//model_anterior/Constraint.ecorediag=UTF-8
@@ -18,3 +18,5 @@ encoding//new_model/Lines.ecorediag=UTF-8
 encoding//new_model/Project.ecorediag=UTF-8
 encoding//new_model/Relationship.ecorediag=UTF-8
 encoding//new_model/Types.ecorediag=UTF-8
+encoding//new_model/inheritance.ecorediag=UTF-8
+encoding//new_model/relationshipsParticpants.ecorediag=UTF-8
