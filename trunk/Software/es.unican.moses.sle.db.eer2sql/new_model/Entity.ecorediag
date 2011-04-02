@@ -110,17 +110,4 @@
     <element xmi:type="ecore:EReference" href="EERmodel.ecore#//Entity/candidateKey"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_R4Wb01uYEeCgKspSpDh__w" points="[0, -20, 212, 62]$[0, -76, 212, 6]$[-154, -76, 58, 6]"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="_TzrgEFuYEeCgKspSpDh__w" type="3002" source="_SvGx4FU7EeC11o5yiAlA1w" target="_R3v-4FuYEeCgKspSpDh__w">
-    <children xmi:type="notation:Node" xmi:id="_TzrgFFuYEeCgKspSpDh__w" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_TzrgFVuYEeCgKspSpDh__w" x="-31" y="12"/>
-    </children>
-    <children xmi:type="notation:Node" xmi:id="_TzrgFluYEeCgKspSpDh__w" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_TzrgF1uYEeCgKspSpDh__w" x="10" y="10"/>
-    </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_TzrgEVuYEeCgKspSpDh__w" lineColor="4210752"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_TzrgEluYEeCgKspSpDh__w" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="EERmodel.ecore#//Entity/primaryKey"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TzrgE1uYEeCgKspSpDh__w" points="[-50, -6, 164, 57]$[-214, -6, 0, 57]$[-214, -57, 0, 6]"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zBibkF1LEeCoWO494MEi5Q" id="(0.5043478260869565,0.8823529411764706)"/>
-  </edges>
 </notation:Diagram>
