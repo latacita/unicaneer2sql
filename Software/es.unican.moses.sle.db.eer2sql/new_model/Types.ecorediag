@@ -22,22 +22,6 @@
   <children xmi:type="notation:Node" xmi:id="_OVZxcFVhEeCpO7JwxyHuAw" type="1005">
     <children xmi:type="notation:Node" xmi:id="_OVZxc1VhEeCpO7JwxyHuAw" type="4010"/>
     <children xmi:type="notation:Node" xmi:id="_OVf4EFVhEeCpO7JwxyHuAw" type="5008">
-      <children xmi:type="notation:Node" xmi:id="_P0lFMFVhEeCpO7JwxyHuAw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="EERmodel.ecore#//GeneralizationType/Total_Overlapping"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_P0lFMVVhEeCpO7JwxyHuAw"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_boA3AFVhEeCpO7JwxyHuAw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="EERmodel.ecore#//GeneralizationType/Total_Disjoint"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_boA3AVVhEeCpO7JwxyHuAw"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_dmof0FVhEeCpO7JwxyHuAw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="EERmodel.ecore#//GeneralizationType/Partial_Overlapping"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_dmof0VVhEeCpO7JwxyHuAw"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_gAn2AFVhEeCpO7JwxyHuAw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="EERmodel.ecore#//GeneralizationType/Partial_Disjoint"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_gAn2AVVhEeCpO7JwxyHuAw"/>
-      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_OVf4EVVhEeCpO7JwxyHuAw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_OVf4ElVhEeCpO7JwxyHuAw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_OVf4E1VhEeCpO7JwxyHuAw"/>
