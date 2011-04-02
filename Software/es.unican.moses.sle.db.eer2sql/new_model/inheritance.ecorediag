@@ -75,10 +75,6 @@
   <children xmi:type="notation:Node" xmi:id="_AE3usFw-EeCza6fmXeKFfg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_AE3us1w-EeCza6fmXeKFfg" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_AE3utFw-EeCza6fmXeKFfg" type="5001">
-      <children xmi:type="notation:Node" xmi:id="_ke9AUFylEeCfjYi05Mov5Q" type="2001">
-        <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Generalization/name"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_ke9AUVylEeCfjYi05Mov5Q"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_GhYgsFyiEeCfjYi05Mov5Q" type="2001">
         <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//Generalization/type"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_GhYgsVyiEeCfjYi05Mov5Q"/>
