@@ -173,7 +173,7 @@
     <eLiterals name="partialOverlapping" value="2"/>
     <eLiterals name="partialDisjoint" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractParticipant">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractParticipant" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
         eType="#//Cardinality" containment="true"/>
