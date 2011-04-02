@@ -257,7 +257,7 @@
   </nodes>
   <nodes xsi:type="EER:Entity" name="Ruedas" primaryKey="//@nodes.36/@candidateKey.0">
     <candidateKey xsi:type="EER:PrimaryKey" attribute="//@nodes.36/@attributes.0" name="Cod_Ruedas_PK"/>
-    <attributes xsi:type="EER:SingleAttribute" name="Cod_Ruedas"/>
+    <attributes xsi:type="EER:SingleAttribute" name="Cod_Ruedas" domain="//@domains.0"/>
   </nodes>
   <nodes xsi:type="EER:Entity" name="Motor" primaryKey="//@nodes.37/@candidateKey.0">
     <candidateKey xsi:type="EER:PrimaryKey" attribute="//@nodes.37/@attributes.0" name="Cod_Motor_PK"/>
