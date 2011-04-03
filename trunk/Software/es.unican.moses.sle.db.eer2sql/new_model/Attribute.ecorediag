@@ -50,7 +50,7 @@
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_kBn7MVU-EeC11o5yiAlA1w"/>
   <element xmi:type="ecore:EPackage" href="EERmodel.ecore#/"/>
-  <edges xmi:type="notation:Edge" xmi:id="_MqbZAFVDEeCpO7JwxyHuAw" type="3002" source="_O2vVAFVCEeCpO7JwxyHuAw" target="_QxxeUFVCEeCpO7JwxyHuAw">
+  <edges xmi:type="notation:Edge" xmi:id="_MqbZAFVDEeCpO7JwxyHuAw" type="3002" source="_O2vVAFVCEeCpO7JwxyHuAw" target="_MuUP8VVCEeCpO7JwxyHuAw">
     <children xmi:type="notation:Node" xmi:id="_MqbZBFVDEeCpO7JwxyHuAw" type="4011">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_MqbZBVVDEeCpO7JwxyHuAw" x="-24" y="-9"/>
     </children>
@@ -60,9 +60,9 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_MqbZAVVDEeCpO7JwxyHuAw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_MqbZAlVDEeCpO7JwxyHuAw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MqbZA1VDEeCpO7JwxyHuAw" points="[14, -4, -242, 1]$[257, -37, 1, -32]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Mqki8FVDEeCpO7JwxyHuAw" id="(0.8992805755395683,0.7906976744186046)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Mqki8VVDEeCpO7JwxyHuAw" id="(0.13793103448275862,0.4852941176470588)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MqbZA1VDEeCpO7JwxyHuAw" points="[0, -4, -138, 120]$[0, -124, -138, 0]$[134, -124, -4, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Mqki8FVDEeCpO7JwxyHuAw" id="(0.4626865671641791,0.11627906976744186)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Mqki8VVDEeCpO7JwxyHuAw" id="(0.035211267605633804,0.45588235294117646)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_UqgN8FVDEeCpO7JwxyHuAw" type="3003" source="_O2vVAFVCEeCpO7JwxyHuAw" target="_MuUP8VVCEeCpO7JwxyHuAw">
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_UqgN8VVDEeCpO7JwxyHuAw" routing="Rectilinear" lineColor="4210752"/>
