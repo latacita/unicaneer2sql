@@ -9,21 +9,14 @@
         eType="#//Domain" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
         eType="#//AttributedNode" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
-        eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relationships" upperBound="-1"
-        eType="#//AbstractRelationship"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributedNode" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//Node">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryKey" lowerBound="1"
-        eType="#//PrimaryKey"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryKey" eType="#//CandidateKey"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="candidateKey" lowerBound="1"
         upperBound="-1" eType="#//CandidateKey" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependencyRelationships"
         upperBound="-1" eType="#//DependencyRelationship" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isSpecializedBy" upperBound="-1"
@@ -67,7 +60,6 @@
         eType="#//Attribute"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimaryKey" eSuperTypes="#//CandidateKey"/>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullable" lowerBound="1"
@@ -75,7 +67,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompositeAttribute" eSuperTypes="#//Attribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="singlesAttributes" lowerBound="2"
-        upperBound="-1" eType="#//SingleAttribute" containment="true"/>
+        upperBound="-1" eType="#//Attribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SingleAttribute" eSuperTypes="#//Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="derivate" lowerBound="1"
@@ -98,8 +90,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractRelationship" abstract="true"
       eSuperTypes="#//Node">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="participants" lowerBound="2"
         upperBound="-1" eType="#//Participant" containment="true" eOpposite="#//Participant/source"/>
   </eClassifiers>
@@ -183,5 +173,8 @@
         eType="#//Aggregation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Node"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true" eSuperTypes="#//AttributedNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true" eSuperTypes="#//AttributedNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//Attribute" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>
