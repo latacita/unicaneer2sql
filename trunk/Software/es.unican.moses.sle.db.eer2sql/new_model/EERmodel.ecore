@@ -19,6 +19,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//Node">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="PrimaryKeysOCL"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="PrimaryKeysOCL" value="&#xA;&#x9;&#x9;&#x9;self.isSpecializedBy -> size() = 0 and &#xA;&#x9;&#x9;&#x9;self.specializes -> size() = 0 &#xA;&#x9;&#x9;&#x9;  implies  self.primaryKey -> size() = 1"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="primaryKey" eType="#//CandidateKey"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="candidateKey" lowerBound="1"
         upperBound="-1" eType="#//CandidateKey" containment="true"/>
