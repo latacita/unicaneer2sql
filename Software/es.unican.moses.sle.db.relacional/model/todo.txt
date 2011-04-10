@@ -1,0 +1,11 @@
+(1) Domain: Si, es recomendable seguir el mismo esquema que el metamodelo de EER.
+(2) Domain: Format e Information son posiblemente suprimibles
+(3) Row a nivel conceptual está bien, pero a la hora de crear modelos es un engorro. 
+    Mejor relacionar directamente tabla con attributos.
+(4) Según yo entiendo, una tabla puede tener varias claves candidatas, cada una de las cuales puede 
+    estar compuesta por varios atributos. Si esto es así, hay que cambiar el metamodelo. 
+(5) Lo mismo con las claves externas
+(6) En AttributeType estás mezclando diferentes conceptos en una misma enumeración. Habría que crear
+    una enumeración por cada juego de valores. En enumeraciones con dos valores mutuamente exclusivos
+    casi mejor usar un booleano. Por ejemplo, para indicar si es derivado o no, casi mejor ponerle un 
+    atributo isDerived:EBoolean a la clase Attribute.
