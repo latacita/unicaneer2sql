@@ -3,14 +3,6 @@
   <children xmi:type="notation:Node" xmi:id="_FIRV4GHKEeCfw5IlzLFW9g" type="1005">
     <children xmi:type="notation:Node" xmi:id="_FITLEGHKEeCfw5IlzLFW9g" type="4010"/>
     <children xmi:type="notation:Node" xmi:id="_FITyIGHKEeCfw5IlzLFW9g" type="5008">
-      <children xmi:type="notation:Node" xmi:id="_Gp8kAGHKEeCfw5IlzLFW9g" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="Relational.ecore#//AttributeType/CandidateKey"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_Gp8kAWHKEeCfw5IlzLFW9g"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_IkBrEGHKEeCfw5IlzLFW9g" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="Relational.ecore#//AttributeType/PrimaryKey"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_IkBrEWHKEeCfw5IlzLFW9g"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_JuQpkGHKEeCfw5IlzLFW9g" type="2006">
         <element xmi:type="ecore:EEnumLiteral" href="Relational.ecore#//AttributeType/Simple"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_JuQpkWHKEeCfw5IlzLFW9g"/>
@@ -25,7 +17,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_FIRV4WHKEeCfw5IlzLFW9g" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="Relational.ecore#//AttributeType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FIRV4mHKEeCfw5IlzLFW9g" x="135" y="55" width="141" height="166"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FIRV4mHKEeCfw5IlzLFW9g" x="135" y="55" width="141" height="98"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_94k1AWHJEeCfw5IlzLFW9g"/>
   <element xmi:type="ecore:EPackage" href="Relational.ecore#/"/>
