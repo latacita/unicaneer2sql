@@ -27,10 +27,6 @@
         <element xmi:type="ecore:EAttribute" href="Relational.ecore#//Table/Name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_isPWoWG1EeCfw5IlzLFW9g"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_oR9pAGG1EeCfw5IlzLFW9g" type="2001">
-        <element xmi:type="ecore:EAttribute" href="Relational.ecore#//Table/Arity"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_oR-QEGG1EeCfw5IlzLFW9g"/>
-      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_hP4GUWG1EeCfw5IlzLFW9g"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_hP4GUmG1EeCfw5IlzLFW9g"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_hP4GU2G1EeCfw5IlzLFW9g"/>
@@ -43,6 +39,22 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_hP24MWG1EeCfw5IlzLFW9g" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="Relational.ecore#//Table"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hP24MmG1EeCfw5IlzLFW9g" x="432" y="45"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_g30dkGQkEeCWmbM83KMpdg" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_g34vAGQkEeCWmbM83KMpdg" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_g35WEGQkEeCWmbM83KMpdg" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g35WEWQkEeCWmbM83KMpdg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g35WEmQkEeCWmbM83KMpdg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g35WE2QkEeCWmbM83KMpdg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g359IGQkEeCWmbM83KMpdg" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g359IWQkEeCWmbM83KMpdg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g359ImQkEeCWmbM83KMpdg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g359I2QkEeCWmbM83KMpdg"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_g30dkWQkEeCWmbM83KMpdg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="Relational.ecore#//Domain"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g30dkmQkEeCWmbM83KMpdg" x="435" y="115"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_PXmdMWG1EeCfw5IlzLFW9g"/>
   <element xmi:type="ecore:EPackage" href="Relational.ecore#/"/>
@@ -59,5 +71,18 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vEH5U2G1EeCfw5IlzLFW9g" points="[11, 5, -228, 0]$[35, 5, -204, 0]$[232, 5, -7, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vE2SEGG1EeCfw5IlzLFW9g" id="(0.9067796610169492,0.19607843137254902)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vE25IGG1EeCfw5IlzLFW9g" id="(0.06779661016949153,0.5294117647058824)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_i2LnsGQkEeCWmbM83KMpdg" type="3002" source="_crKlAGG1EeCfw5IlzLFW9g" target="_g30dkGQkEeCWmbM83KMpdg">
+    <children xmi:type="notation:Node" xmi:id="_i2M10GQkEeCWmbM83KMpdg" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_i2M10WQkEeCWmbM83KMpdg" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_i2M10mQkEeCWmbM83KMpdg" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_i2M102QkEeCWmbM83KMpdg" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_i2LnsWQkEeCWmbM83KMpdg" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_i2LnsmQkEeCWmbM83KMpdg" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="Relational.ecore#//Schema/domains"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_i2MOwGQkEeCWmbM83KMpdg" points="[0, 25, -284, -12]$[0, 51, -284, 14]$[282, 37, -2, 0]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_i2RuUGQkEeCWmbM83KMpdg" id="(0.14666666666666667,0.32941176470588235)"/>
   </edges>
 </notation:Diagram>
