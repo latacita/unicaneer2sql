@@ -68,18 +68,6 @@
     <element xmi:type="ecore:EClass" href="EERmodel.ecore#//PrimitiveType"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aNoOElt_EeCahOKOQflq7g" x="165" y="195" width="128"/>
   </children>
-  <children xmi:type="notation:Shape" xmi:id="_Q-JS0FuXEeCgKspSpDh__w" type="Note" fontName="Segoe UI" description="¿Los tipos primitivos se quedan así?" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
-    <children xmi:type="notation:BasicDecorationNode" xmi:id="_Q-TD0FuXEeCgKspSpDh__w" type="DiagramName">
-      <element xsi:nil="true"/>
-    </children>
-    <children xmi:type="notation:BasicDecorationNode" xmi:id="_Q-TD0VuXEeCgKspSpDh__w" type="Description">
-      <element xsi:nil="true"/>
-    </children>
-    <styles xmi:type="notation:TextStyle" xmi:id="_Q-JS0VuXEeCgKspSpDh__w"/>
-    <styles xmi:type="notation:LineTypeStyle" xmi:id="_Q-JS0luXEeCgKspSpDh__w"/>
-    <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q-JS01uXEeCgKspSpDh__w" x="5" y="55" width="216" height="31"/>
-  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_1j7iEVVDEeCpO7JwxyHuAw"/>
   <element xmi:type="ecore:EPackage" href="EERmodel.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="__36LwFeSEeCoKLy2uzTQkw" type="3003" source="_26VMwFeSEeCoKLy2uzTQkw" target="_9w6xgFbLEeCDhcVTbETsUw">
@@ -110,12 +98,5 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jTXqk1t_EeCahOKOQflq7g" points="[19, -7, -21, 89]$[19, -54, -21, 42]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jTXqlFt_EeCahOKOQflq7g" id="(0.765625,0.1836734693877551)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jTXqlVt_EeCahOKOQflq7g" id="(0.3813559322033898,0.1568627450980392)"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_YMPRMFuXEeCgKspSpDh__w" type="NoteAttachment" source="_Q-JS0FuXEeCgKspSpDh__w" target="_aNoOEFt_EeCahOKOQflq7g" lineWidth="1">
-    <styles xmi:type="notation:ArrowStyle" xmi:id="_YMPRMVuXEeCgKspSpDh__w"/>
-    <styles xmi:type="notation:LineTypeStyle" xmi:id="_YMPRMluXEeCgKspSpDh__w"/>
-    <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YMPRM1uXEeCgKspSpDh__w" points="[-1, -1, -78, -130]$[69, 109, -8, -20]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YMYbIFuXEeCgKspSpDh__w" id="(0.6759259259259259,1.0)"/>
   </edges>
 </notation:Diagram>
