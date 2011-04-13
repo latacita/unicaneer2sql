@@ -23,18 +23,6 @@
         <element xmi:type="ecore:EAttribute" href="Relational.ecore#//Domain/Name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_o-EJ8WHJEeCfw5IlzLFW9g"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_qHpoMGHJEeCfw5IlzLFW9g" type="2001">
-        <element xmi:type="ecore:EAttribute" href="Relational.ecore#//Domain/Type"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_qHpoMWHJEeCfw5IlzLFW9g"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_vhQKIGHJEeCfw5IlzLFW9g" type="2001">
-        <element xmi:type="ecore:EAttribute" href="Relational.ecore#//Domain/Format"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_vhQKIWHJEeCfw5IlzLFW9g"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_yXSjIGHJEeCfw5IlzLFW9g" type="2001">
-        <element xmi:type="ecore:EAttribute" href="Relational.ecore#//Domain/Information"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_yXSjIWHJEeCfw5IlzLFW9g"/>
-      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_j1HTImHJEeCfw5IlzLFW9g"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_j1HTI2HJEeCfw5IlzLFW9g"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_j1HTJGHJEeCfw5IlzLFW9g"/>
