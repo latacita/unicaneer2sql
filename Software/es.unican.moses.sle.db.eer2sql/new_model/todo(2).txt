@@ -1,2 +1,0 @@
-(1) Multiplicidad entre CandidateKey y Attribute debería ser 1..* ¿no?
-(2) AbstractParicipant lo he hecho abstracto
