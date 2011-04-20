@@ -1,0 +1,6 @@
+#Wed Apr 20 09:57:56 CEST 2011
+eclipse.preferences.version=1
+gmf_dashboard/domainModel=platform\:/resource/es.unican.moses.sle.db.eer2sql/new_model/EERmodel.ecore
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/es.unican.moses.sle.db.eer2sql/new_model/EERmodel.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/es.unican.moses.sle.db.eer2sql/new_model/eer2sql.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/es.unican.moses.sle.db.eer2sql/new_model/EERmodel.gmftool

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="EER">
+  <figures name="Default">
+    <descriptors name="EntityFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="EntityFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="EntityNameFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="WeakEntityFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="WeakEntityFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="WeakEntityNameFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="RelationshipFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="RelationshipFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="RelationshipNameFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+  <nodes name="Entity" figure="EntityFigure"/>
+  <nodes name="WeakEntity" figure="WeakEntityFigure"/>
+  <nodes name="Relationship" figure="RelationshipFigure"/>
+  <labels name="EntityName" figure="EntityFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="WeakEntityName" figure="WeakEntityFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="RelationshipName" figure="RelationshipFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+</gmfgraph:Canvas>
