@@ -101,7 +101,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="EERmodel.gmftool#//@palette/@tools.0/@tools.2"/>
+          href="EERmodel.gmftool#//@palette/@tools.1/@tools.2"/>
       <diagramNode
           href="EERmodel.gmfgraph#Generalization"/>
     </ownedChild>
@@ -189,6 +189,40 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="EERmodel.ecore#//AggregationParticipant/target"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="EERmodel.ecore#//SpecializationRelationship"/>
+    <containmentFeature
+        href="EERmodel.ecore#//Entity/isSpecializedBy"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="EERmodel.gmftool#//@palette/@tools.3/@tools.3"/>
+    <diagramLink
+        href="EERmodel.gmfgraph#LineEntityGeneralization"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="EERmodel.ecore#//SpecializationRelationship/source"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="EERmodel.ecore#//SpecializationRelationship/relationship"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="EERmodel.ecore#//GeneralizationRelationship"/>
+    <containmentFeature
+        href="EERmodel.ecore#//Entity/specializes"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="EERmodel.gmftool#//@palette/@tools.3/@tools.4"/>
+    <diagramLink
+        href="EERmodel.gmfgraph#LineGeneralizationEntity"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="EERmodel.ecore#//GeneralizationRelationship/relationship"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="EERmodel.ecore#//GeneralizationRelationship/child"/>
   </links>
   <diagram>
     <diagramCanvas

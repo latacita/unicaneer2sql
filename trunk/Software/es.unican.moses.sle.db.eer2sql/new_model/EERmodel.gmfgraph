@@ -281,9 +281,6 @@
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="black"/>
-        <children
-            xsi:type="gmfgraph:PolylineDecoration"
-            name="SimpleLine"/>
       </actualFigure>
     </descriptors>
     <descriptors
@@ -293,14 +290,41 @@
           name="LineMemberCollectionFigure">
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
-            value="black"/>
-        <preferredSize
-            dx="10"
-            dy="10"/>
-        <children
-            xsi:type="gmfgraph:PolylineDecoration"
-            name="SimpleLine"/>
+            value="red"/>
       </actualFigure>
+    </descriptors>
+    <descriptors
+        name="LineEntityGeneralizationFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="LineEntityGeneralizationFigure">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="LineGeneralizationEntityFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="LineGeneralizationEntityFigure">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="AttributeFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="AttributeFigure">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="AttributeNameFigure"
+            text="..."/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.12/@actualFigure"/>
     </descriptors>
   </figures>
   <nodes
@@ -324,6 +348,9 @@
   <nodes
       name="MemberCollection"
       figure="MemberCollectionFigure"/>
+  <nodes
+      name="AttributeFigure"
+      figure="AttributeFigure"/>
   <connections
       name="LineEntityRelationship"
       figure="SimpleLineFigure"/>
@@ -333,6 +360,12 @@
   <connections
       name="LineMemberCollection"
       figure="LineMemberCollectionFigure"/>
+  <connections
+      name="LineEntityGeneralization"
+      figure="LineEntityGeneralizationFigure"/>
+  <connections
+      name="LineGeneralizationEntity"
+      figure="LineGeneralizationEntityFigure"/>
   <labels
       name="EntityName"
       figure="EntityFigure"
@@ -365,4 +398,8 @@
       name="SimpleLineRole"
       figure="SimpleLineFigure"
       accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+  <labels
+      name="AttributeName"
+      figure="AttributeFigure"
+      accessor="//@figures.0/@descriptors.12/@accessors.0"/>
 </gmfgraph:Canvas>
