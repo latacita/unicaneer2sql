@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @author Adrian Fernandez San Marcos.
  * @version 25-03-2011
  */
-public class UnboundedNatural implements Serializable{
+public class UnboundedNatural implements Serializable, Comparable<Integer>{
 
 	//private attribute
 	private int value;
@@ -36,6 +36,17 @@ public class UnboundedNatural implements Serializable{
 		}else{
 			return ""+value;
 		}
+	}
+
+	public int compareTo(Integer arg0) {
+		if(this.value > arg0){
+			return 1;
+		}
+		if(this.value < arg0){
+			return -1;
+		}
+		return 0;
+		
 	}
 	
 	
