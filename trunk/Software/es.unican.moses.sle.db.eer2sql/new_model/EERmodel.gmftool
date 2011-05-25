@@ -31,8 +31,26 @@
           xsi:type="gmftool:PaletteSeparator"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Attribute"
-          description="Create new Entity">
+          title="CandidateKey"
+          description="">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="SingleAttribute"
+          description="">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="CompositeAttribute"
+          description="">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -130,6 +148,47 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="LineGeneralizationEntity">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Constraints"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Inclusion"
+          description="">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Exclusion"
+          description="">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Exclusive"
+          description="">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Inclusiveness"
+          description="">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
