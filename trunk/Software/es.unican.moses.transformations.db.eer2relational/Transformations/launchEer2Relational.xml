@@ -1,0 +1,45 @@
+<?xml version="1.0"?> 
+
+<!--
+	The following build script illustrates how to launch the example via ANT.
+	Ensure that External Tools Configuration specifies that the JRE to be used
+	is the same as the workspace.
+		1) Click External Tools Configuration... from the External Tools dropdown.
+		2) Select the ANT build for this build script.
+		3) Click the JRE tab.
+		4) Select the option that reads: "Run in the same JRE as the workspace."
+		5) Click Apply.
+		6) Click Run.
+-->
+
+<project default="main">
+
+ 	<target name="loadModels">
+ 		<epsilon.emf.register file="../../es.unican.moses.sle.db.eer2sql/new_model/EERmodel.ecore"/>
+ 		<epsilon.emf.register file="../../es.unican.moses.sle.db.relacional/model/Relational.ecore"/>
+ 		
+ 		<epsilon.loadModel name="EER" type="EMF">
+			<parameter name="modelFile" file="./simpleEERmodel.xmi"/>
+			<parameter name="metamodelFile" value="../../es.unican.moses.sle.db.eer2sql/new_model/EERmodel.ecore"/>
+ 			<parameter name="isMetamodelFileBased" value="true"/>
+ 			<parameter name="readOnLoad" value="true"/>
+			<parameter name="storeOnDisposal" value="false"/>
+		</epsilon.loadModel>
+ 		
+ 		<epsilon.loadModel name="Relational" type="EMF">
+			<parameter name="modelFile" file="tables.model"/>
+			<parameter name="metamodelFile" value="../../es.unican.moses.sle.db.relacional/model/Relational.ecore"/>
+ 			<parameter name="isMetamodelFileBased" value="true"/>
+			<parameter name="readOnLoad" value="false"/>
+			<parameter name="storeOnDisposal" value="true"/>
+		</epsilon.loadModel>
+ 	</target>
+ 	
+	<target name="main" depends="loadModels">		
+	<epsilon.etl src="eer2relational.etl">
+			<model ref="EER"/>
+			<model ref="Relational"/>
+		</epsilon.etl>
+	</target>
+</project>
+

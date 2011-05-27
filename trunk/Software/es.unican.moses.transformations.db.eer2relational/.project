@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>es.unican.moses.transformations.db.eer2relational</name>
+	<comment></comment>
+	<projects>
+		<project>es.unican.moses.sle.db.eer2sql</project>
+		<project>es.unican.moses.sle.db.relacional</project>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+</projectDescription>

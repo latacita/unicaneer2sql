@@ -1,0 +1,19 @@
+rule Project2Schema 
+	
+	transform p : EER!Project
+	to s : Relational!Schema {
+	
+		s.name = p.name;
+
+} -- Project2Schema
+	
+
+-- rule Entity2Table 
+	
+	-- transform e : EER!Entity
+	-- to t : Relational!Table {
+	
+	-- t.name = e.name;
+	
+-- } -- Entity2Table 
+	
