@@ -1,19 +1,17 @@
-rule Project2Schema 
-	
-	transform p : EER!Project
-	to s : Relational!Schema {
-	
-		s.name = p.name;
+pre {
+	'Generating a relational model from a Entity Relationship model'.println();
+	var schema : new Relational!Schema;
+} -- 
 
-} -- Project2Schema
+rule Entity2Table 
 	
+	 transform e : EER!Entity
+	 to t : Relational!Table {
+		
+		t.Name := e.name;
+		schema.tables.add(t); 
+	
+} -- Entity2Table
 
--- rule Entity2Table 
-	
-	-- transform e : EER!Entity
-	-- to t : Relational!Table {
-	
-	-- t.name = e.name;
-	
--- } -- Entity2Table 
+ 
 	
