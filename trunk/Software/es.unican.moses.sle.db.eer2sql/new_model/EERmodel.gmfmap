@@ -478,4 +478,105 @@
     <palette
         href="EERmodel.gmftool#//@palette"/>
   </diagram>
+  <audits
+      id="Checks"
+      name="Feature Model Audit">
+    <audits
+        name="sizeNameProject"
+        description="Check the size's name"
+        id="sizeNameProject"
+        useInLiveMode="true"
+        message="The size's name must be greater than zero">
+      <rule
+          body="self.name.size() > 0"/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//Project"/>
+      </target>
+    </audits>
+    <audits
+        name="sizeNameNode"
+        description="Check the size's name of the node"
+        id="sizeNameNode"
+        useInLiveMode="true"
+        message="The size's name of the node must be greater than zero">
+      <rule
+          body="self.name.size() > 0"/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//Node"/>
+      </target>
+    </audits>
+    <audits
+        name="NodeName"
+        description="Check the Nodes' names"
+        id="NodeName"
+        useInLiveMode="true"
+        message="The Node's name must be unique">
+      <rule
+          body="Node.allInstances()->forAll(p1, p2 |  p1 &lt;> p2 implies p1.name &lt;> p2.name)"/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//Node"/>
+      </target>
+    </audits>
+    <audits
+        name="sizeNameAttribute"
+        description="Check the size's name of the attribute"
+        id="sizeNameAttribute"
+        useInLiveMode="true"
+        message="The size's name of the attribute must be greater than zero">
+      <rule
+          body="self.name.size() > 0"/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//Attribute"/>
+      </target>
+    </audits>
+    <audits
+        name="AttributeName"
+        description="Check the attributes' name "
+        id="AttributeName"
+        useInLiveMode="true"
+        message="The Attribute´s name must be unique">
+      <rule
+          body="Attribute.allInstances() -> forAll(p1, p2 |  p1 &lt;> p2 implies  p1.name &lt;> p2.name)"/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//Attribute"/>
+      </target>
+    </audits>
+    <audits
+        name="AggregationSource"
+        description="Check the source of the Aggregation"
+        id="AggregationSource"
+        useInLiveMode="true"
+        message="The Aggregation's source can not be null">
+      <rule
+          body="self.source -> notEmpty()"/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//Participant"/>
+      </target>
+    </audits>
+    <audits
+        name="PrimaryKey"
+        description="Check the name of the primary key"
+        id="PrimaryKey"
+        message="The primary key can not be null">
+      <rule
+          body="self.primaryKey -> notEmpty()"/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//Entity"/>
+      </target>
+    </audits>
+  </audits>
 </gmfmap:Mapping>
