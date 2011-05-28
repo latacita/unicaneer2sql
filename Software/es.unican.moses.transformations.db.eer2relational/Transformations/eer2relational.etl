@@ -1,17 +1,58 @@
 pre {
-	'Generating a relational model from a Entity Relationship model'.println();
-	var schema : new Relational!Schema;
-} -- 
+	'==========================================================================='.println();
+	' Generating a relational model from a Entity Relationship model'.println();
+	'==========================================================================='.println();
+	' '.println();
+} -- pre
 
+-- This rules creates a relational database schema corresponding to the ERR project
+rule Project2Schema 
+	
+	transform p : EER!Project
+	to s : Relational!Schema {
+	
+	-- The schema is named as the EER project
+	s.Name = p.name;
+	-- We add as tables the results of transforming all the entities
+	s.tables.addAll(p.nodes.select(e : EER!Entity | true).equivalent());
+	
+	-- NOTA(Pablo): Te he dejado esto como ejemplo de como se crea una operacion
+	-- createTables(s,p)  
+	
+} -- Project2Schema
+
+-- This rule creates one table by each entity in the model  
+@lazy
 rule Entity2Table 
 	
-	 transform e : EER!Entity
+	 transform e : EER!Entity 
 	 to t : Relational!Table {
 		
-		t.Name := e.name;
-		schema.tables.add(t); 
-	
+		'Processing entity '.concat(e.name).println(); 
+		''.println();
+		
+		t.Name = e.name;
+		t.attributes.addAll(e.attributes.equivalent());
+		
 } -- Entity2Table
 
+@lazy 
+rule Attribute2Column 
+	transform a : EER!SingleAttribute
+	to c : Relational!Attribute {
+	
+		'Processing attribute '.concat(a.name).println(); 
+		''.println();
+	
+	
+		c.Name = a.name;
+				
+} -- Attribute2Column
+
+-- NOTA(Pablo): Te he dejado esto como ejemplo de como se crea una operacion
+operation createTables(s : Relational!Schema, p : EER!Project) {
+
+} -- operation
  
+
 	
