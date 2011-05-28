@@ -27,7 +27,7 @@
 		</epsilon.loadModel>
  		
  		<epsilon.loadModel name="Relational" type="EMF">
-			<parameter name="modelFile" file="tables.model"/>
+			<parameter name="modelFile" file="tablesv2.model"/>
 			<parameter name="metamodelFile" value="../../es.unican.moses.sle.db.relacional/model/Relational.ecore"/>
  			<parameter name="isMetamodelFileBased" value="true"/>
 			<parameter name="readOnLoad" value="false"/>
