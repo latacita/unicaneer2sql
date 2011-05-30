@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+      <editpolicyProvider
+            class="es.unican.moses.sle.db.eer2sql.diagram.custom.EntityEditPolicyProvider">
+         <Priority
+               name="Lowest">
+         </Priority>
+         <object
+               class="es.unican.moses.sle.db.eer2sql.diagram.edit.parts.EntityEditPart"
+               id="es.unican.moses.sle.db.eer2sql.diagram.edit.parts.EntityEditPart">
+         </object>
+         <context
+               editparts="es.unican.moses.sle.db.eer2sql.diagram.edit.parts.EntityEditPart">
+         </context>
+      </editpolicyProvider>
+   </extension>
+
+</plugin>
