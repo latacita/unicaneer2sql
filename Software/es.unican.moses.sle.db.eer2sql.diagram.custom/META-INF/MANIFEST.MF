@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Moses Research Group
+Bundle-SymbolicName: es.unican.moses.sle.db.eer2sql.diagram.custom;singleton:=true
+Bundle-Version: 1.0.0.1
+Bundle-Activator: es.unican.moses.sle.db.eer2sql.diagram.custom.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.gmf.runtime.emf.commands.core;bundle-version="1.4.0",
+ org.eclipse.gmf.runtime.emf.core;bundle-version="1.4.1",
+ org.eclipse.gmf.runtime.emf.ui.properties;bundle-version="1.4.0",
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1",
+ es.unican.moses.sle.db.eer2sql.diagram;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
