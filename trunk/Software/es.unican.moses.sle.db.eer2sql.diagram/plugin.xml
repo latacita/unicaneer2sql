@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="eer_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="eer_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="EER.diagram.part.EERmodelDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/EERDiagramFile.gif"
+         extensions="eer_diagram"
+         default="true"
+         class="EER.diagram.part.EERmodelDiagramEditor"
+         matchingStrategy="EER.diagram.part.EERmodelMatchingStrategy"
+         contributorClass="EER.diagram.part.EERmodelDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="EER.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/EERDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="EER.diagram.part.EERmodelCreationWizard"
+  	     id="EER.diagram.part.EERmodelCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+      <extension point="org.eclipse.ui.actionSets" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <actionSet
+            label="%initDiagramActionLabel"
+            visible="true"
+            id="es.unican.moses.sle.db.eer2sql.diagram.InitDiagram">
+         <action
+               label="%initDiagramActionLabel"
+               class="EER.diagram.part.EERmodelInitDiagramFileAction"
+               menubarPath="file/additions"
+               id="es.unican.moses.sle.db.eer2sql.diagram.InitDiagramAction">
+         </action>
+      </actionSet>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="EERmodelPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="EER.diagram.part.EERmodelDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="EERmodelRender">
+         <Priority name="Lowest"/>
+         <ViewId id="EER.diagram.part.EERmodelDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="EER.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="es.unican.moses.sle.db.eer2sql.diagram.general"
+            name="%prefpage.es.unican.moses.sle.db.eer2sql.diagram.general"
+            class="EER.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="es.unican.moses.sle.db.eer2sql.diagram.appearance"
+            name="%prefpage.es.unican.moses.sle.db.eer2sql.diagram.appearance"
+            category="es.unican.moses.sle.db.eer2sql.diagram.general"
+            class="EER.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="es.unican.moses.sle.db.eer2sql.diagram.connections"
+            name="%prefpage.es.unican.moses.sle.db.eer2sql.diagram.connections"
+            category="es.unican.moses.sle.db.eer2sql.diagram.general"
+            class="EER.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="es.unican.moses.sle.db.eer2sql.diagram.printing"
+            name="%prefpage.es.unican.moses.sle.db.eer2sql.diagram.printing"
+            category="es.unican.moses.sle.db.eer2sql.diagram.general"
+            class="EER.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="es.unican.moses.sle.db.eer2sql.diagram.rulersAndGrid"
+            name="%prefpage.es.unican.moses.sle.db.eer2sql.diagram.rulersAndGrid"
+            category="es.unican.moses.sle.db.eer2sql.diagram.general"
+            class="EER.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="es.unican.moses.sle.db.eer2sql.diagram"
+            labelProvider="EER.diagram.sheet.EERmodelSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="es.unican.moses.sle.db.eer2sql.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="es.unican.moses.sle.db.eer2sql.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="EER.diagram.sheet.EERmodelPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="EER.diagram.providers.EERmodelViewProvider">
+         <Priority name="Lowest"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="EERmodel"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2009,2003,2007,2010,2011,2013,2014,2015,2016,3005,3001,3002,3008,3007,3004,3009,3010,3011"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4002,4006,4001,4005,4007,4008,4009,4010,4011"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="EER.diagram.providers.EERmodelEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="EERmodel"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2009,2003,2007,2010,2011,2013,2014,2015,2016,3005,3001,3002,3008,3007,3004,3009,3010,3011"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4002,4006,4001,4005,4007,4008,4009,4010,4011"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5009,5003,5007,5010,5014,5015,5016,5012,5013"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7002,7001,7003"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="EER.diagram.providers.EERmodelModelingAssistantProvider">
+         <Priority name="Lowest"/>
+         <object class="EER.diagram.edit.parts.ProjectEditPart" id="Project_1000"/>
+         <object class="EER.diagram.edit.parts.WeakEntityEditPart" id="WeakEntity_2009"/>
+         <object class="EER.diagram.edit.parts.EntityEditPart" id="Entity_2003"/>
+         <object class="EER.diagram.edit.parts.RelationshipEditPart" id="Relationship_2007"/>
+         <object class="EER.diagram.edit.parts.DependencyRelationshipEditPart" id="DependencyRelationship_2010"/>
+         <object class="EER.diagram.edit.parts.GeneralizationEditPart" id="Generalization_2011"/>
+         <object class="EER.diagram.edit.parts.CompositeComponentEditPart" id="CompositeComponent_2013"/>
+         <object class="EER.diagram.edit.parts.MemberCollectionEditPart" id="MemberCollection_2014"/>
+         <object class="EER.diagram.edit.parts.PrimitiveTypeEditPart" id="PrimitiveType_2015"/>
+         <object class="EER.diagram.edit.parts.EnumerationTypeEditPart" id="EnumerationType_2016"/>
+         <context elements="Project_1000,WeakEntity_2009,Entity_2003,Relationship_2007,DependencyRelationship_2010,Generalization_2011,CompositeComponent_2013,MemberCollection_2014,PrimitiveType_2015,EnumerationType_2016"/>
+      </modelingAssistantProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="EER.diagram.providers.EERmodelIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="EER.diagram.providers.EERmodelParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.Project_1000"
+               name="%metatype.name.Project_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Project"
+               edithelper="EER.diagram.edit.helpers.ProjectEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.WeakEntity_2009"
+               name="%metatype.name.WeakEntity_2009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="WeakEntity"
+               edithelper="EER.diagram.edit.helpers.WeakEntityEditHelper">
+            <param name="semanticHint" value="2009"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.Entity_2003"
+               name="%metatype.name.Entity_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Entity"
+               edithelper="EER.diagram.edit.helpers.EntityEditHelper">
+            <param name="semanticHint" value="2003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.Relationship_2007"
+               name="%metatype.name.Relationship_2007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Relationship"
+               edithelper="EER.diagram.edit.helpers.RelationshipEditHelper">
+            <param name="semanticHint" value="2007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.DependencyRelationship_2010"
+               name="%metatype.name.DependencyRelationship_2010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DependencyRelationship"
+               edithelper="EER.diagram.edit.helpers.DependencyRelationshipEditHelper">
+            <param name="semanticHint" value="2010"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.Generalization_2011"
+               name="%metatype.name.Generalization_2011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Generalization"
+               edithelper="EER.diagram.edit.helpers.GeneralizationEditHelper">
+            <param name="semanticHint" value="2011"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.CompositeComponent_2013"
+               name="%metatype.name.CompositeComponent_2013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CompositeComponent"
+               edithelper="EER.diagram.edit.helpers.CompositeComponentEditHelper">
+            <param name="semanticHint" value="2013"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.MemberCollection_2014"
+               name="%metatype.name.MemberCollection_2014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MemberCollection"
+               edithelper="EER.diagram.edit.helpers.MemberCollectionEditHelper">
+            <param name="semanticHint" value="2014"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.PrimitiveType_2015"
+               name="%metatype.name.PrimitiveType_2015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="PrimitiveType"
+               edithelper="EER.diagram.edit.helpers.PrimitiveTypeEditHelper">
+            <param name="semanticHint" value="2015"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.EnumerationType_2016"
+               name="%metatype.name.EnumerationType_2016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="EnumerationType"
+               edithelper="EER.diagram.edit.helpers.EnumerationTypeEditHelper">
+            <param name="semanticHint" value="2016"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.CandidateKey_3005"
+               name="%metatype.name.CandidateKey_3005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CandidateKey"
+               edithelper="EER.diagram.edit.helpers.CandidateKeyEditHelper">
+            <param name="semanticHint" value="3005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.SingleAttribute_3001"
+               name="%metatype.name.SingleAttribute_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SingleAttribute"
+               edithelper="EER.diagram.edit.helpers.SingleAttributeEditHelper">
+            <param name="semanticHint" value="3001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.CompositeAttribute_3002"
+               name="%metatype.name.CompositeAttribute_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CompositeAttribute"
+               edithelper="EER.diagram.edit.helpers.CompositeAttributeEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <specializationType
+               id="es.unican.moses.sle.db.eer2sql.diagram.CandidateKey_3008"
+               name="%metatype.name.CandidateKey_3008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="es.unican.moses.sle.db.eer2sql.diagram.CandidateKey_3005"/>
+            <param name="semanticHint" value="3008"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <specializationType
+               id="es.unican.moses.sle.db.eer2sql.diagram.SingleAttribute_3007"
+               name="%metatype.name.SingleAttribute_3007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="es.unican.moses.sle.db.eer2sql.diagram.SingleAttribute_3001"/>
+            <param name="semanticHint" value="3007"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <specializationType
+               id="es.unican.moses.sle.db.eer2sql.diagram.CompositeAttribute_3004"
+               name="%metatype.name.CompositeAttribute_3004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="es.unican.moses.sle.db.eer2sql.diagram.CompositeAttribute_3002"/>
+            <param name="semanticHint" value="3004"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <specializationType
+               id="es.unican.moses.sle.db.eer2sql.diagram.SingleAttribute_3009"
+               name="%metatype.name.SingleAttribute_3009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="es.unican.moses.sle.db.eer2sql.diagram.SingleAttribute_3001"/>
+            <param name="semanticHint" value="3009"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <specializationType
+               id="es.unican.moses.sle.db.eer2sql.diagram.CompositeAttribute_3010"
+               name="%metatype.name.CompositeAttribute_3010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="es.unican.moses.sle.db.eer2sql.diagram.CompositeAttribute_3002"/>
+            <param name="semanticHint" value="3010"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.EnumeratedLiteral_3011"
+               name="%metatype.name.EnumeratedLiteral_3011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="EnumeratedLiteral"
+               edithelper="EER.diagram.edit.helpers.EnumeratedLiteralEditHelper">
+            <param name="semanticHint" value="3011"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.AggregationParticipant_4002"
+               name="%metatype.name.AggregationParticipant_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AggregationParticipant"
+               edithelper="EER.diagram.edit.helpers.AggregationParticipantEditHelper">
+            <param name="semanticHint" value="4002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <specializationType
+               id="es.unican.moses.sle.db.eer2sql.diagram.AggregationParticipant_4006"
+               name="%metatype.name.AggregationParticipant_4006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="es.unican.moses.sle.db.eer2sql.diagram.AggregationParticipant_4002"/>
+            <param name="semanticHint" value="4006"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.Participant_4001"
+               name="%metatype.name.Participant_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Participant"
+               edithelper="EER.diagram.edit.helpers.ParticipantEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.GeneralizationRelationship_4005"
+               name="%metatype.name.GeneralizationRelationship_4005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="GeneralizationRelationship"
+               edithelper="EER.diagram.edit.helpers.GeneralizationRelationshipEditHelper">
+            <param name="semanticHint" value="4005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.SpecializationRelationship_4007"
+               name="%metatype.name.SpecializationRelationship_4007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SpecializationRelationship"
+               edithelper="EER.diagram.edit.helpers.SpecializationRelationshipEditHelper">
+            <param name="semanticHint" value="4007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.Inclusion_4008"
+               name="%metatype.name.Inclusion_4008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Inclusion"
+               edithelper="EER.diagram.edit.helpers.InclusionEditHelper">
+            <param name="semanticHint" value="4008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.Exclusion_4009"
+               name="%metatype.name.Exclusion_4009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Exclusion"
+               edithelper="EER.diagram.edit.helpers.ExclusionEditHelper">
+            <param name="semanticHint" value="4009"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.Exclusive_4010"
+               name="%metatype.name.Exclusive_4010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Exclusive"
+               edithelper="EER.diagram.edit.helpers.ExclusiveEditHelper">
+            <param name="semanticHint" value="4010"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://EER/1.0">
+         <metamodelType
+               id="es.unican.moses.sle.db.eer2sql.diagram.Inclusiveness_4011"
+               name="%metatype.name.Inclusiveness_4011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Inclusiveness"
+               edithelper="EER.diagram.edit.helpers.InclusivenessEditHelper">
+            <param name="semanticHint" value="4011"/>
+         </metamodelType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="es.unican.moses.sle.db.eer2sql.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="es.unican.moses.sle.db.eer2sql.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="es.unican.moses.sle.db.eer2sql.diagram.TypeContext">
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.Project_1000"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.WeakEntity_2009"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.Entity_2003"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.Relationship_2007"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.DependencyRelationship_2010"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.Generalization_2011"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.CompositeComponent_2013"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.MemberCollection_2014"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.PrimitiveType_2015"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.EnumerationType_2016"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.CandidateKey_3005"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.SingleAttribute_3001"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.CompositeAttribute_3002"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.CandidateKey_3008"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.SingleAttribute_3007"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.CompositeAttribute_3004"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.SingleAttribute_3009"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.CompositeAttribute_3010"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.EnumeratedLiteral_3011"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.AggregationParticipant_4002"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.AggregationParticipant_4006"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.Participant_4001"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.GeneralizationRelationship_4005"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.SpecializationRelationship_4007"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.Inclusion_4008"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.Exclusion_4009"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.Exclusive_4010"/>
+         <elementType ref="es.unican.moses.sle.db.eer2sql.diagram.Inclusiveness_4011"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+
+   <extension id="EERmodelApplication" point="org.eclipse.core.runtime.applications">
+      <?gmfgen generated="true"?>
+      <application>
+         <run class="EER.diagram.application.EERmodelApplication"/>
+      </application>
+   </extension>
+
+   <extension point="org.eclipse.ui.perspectives" id="rcp-perspective">
+      <?gmfgen generated="true"?>
+      <perspective
+            id="EER.diagram.EERmodelPerspective"
+            name="%perspectiveName"
+            class="EER.diagram.application.DiagramEditorPerspective">
+      </perspective>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="rcp-menu-commands">
+      <?gmfgen generated="true"?>
+      <command
+            name="%openURIActionLabel"
+            description="%openURIActionDescription"
+            categoryId="org.eclipse.ui.category.file"
+            id="es.unican.moses.sle.db.eer2sql.diagram.OpenURICommand"/>  
+      <command
+            name="%openActionLabel"
+            description="%openActionDescription"
+            categoryId="org.eclipse.ui.category.file"
+            id="es.unican.moses.sle.db.eer2sql.diagram.OpenCommand"/>  
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings" id="rcp-command-bindings">
+      <?gmfgen generated="true"?>
+      <key
+            commandId="es.unican.moses.sle.db.eer2sql.diagram.OpenURICommand"
+            sequence="M1+U"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="es.unican.moses.sle.db.eer2sql.diagram.OpenCommand"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets" id="rcp-actions">
+      <?gmfgen generated="true"?>
+      <actionSet
+            label="%applicationActionSetLabel"
+            visible="true"
+            id="es.unican.moses.sle.db.eer2sql.diagram.ActionSet">
+         <action
+               label="%newDiagramActionLabel"
+               class="EER.diagram.application.DiagramEditorActionBarAdvisor$NewDiagramAction"
+               menubarPath="file/new/additions"
+               id="es.unican.moses.sle.db.eer2sql.diagram.NewDiagramAction">
+         </action>
+         <action
+               label="%aboutActionLabel"
+               class="EER.diagram.application.DiagramEditorActionBarAdvisor$AboutAction"
+               menubarPath="help/additions"
+               id="es.unican.moses.sle.db.eer2sql.diagram.AboutAction">
+         </action>
+         <action
+               label="%openURIActionLabel"
+               definitionId="es.unican.moses.sle.db.eer2sql.diagram.OpenURICommand"
+               class="EER.diagram.application.DiagramEditorActionBarAdvisor$OpenURIAction"
+               menubarPath="file/additions"
+               id="es.unican.moses.sle.db.eer2sql.diagram.OpenURIAction">
+         </action>
+         <action
+               label="%openActionLabel"
+               definitionId="es.unican.moses.sle.db.eer2sql.diagram.OpenCommand"
+               class="EER.diagram.application.DiagramEditorActionBarAdvisor$OpenAction"
+               menubarPath="file/additions"
+               id="es.unican.moses.sle.db.eer2sql.diagram.OpenAction">
+         </action>
+      </actionSet>
+   </extension>
+   <extension point="org.eclipse.emf.validation.constraintProviders">
+      <?gmfgen generated="true"?>
+            <category id="Checks" mandatory="false" name="Feature Model Audit">
+         <![CDATA[]]>
+      </category>
+      <constraintProvider cache="true">
+         <package namespaceUri="http://EER/1.0"/>
+               <constraints categories="Checks">
+                  <constraint id="sizeNameProject"
+            lang="OCL"
+            name="sizeNameProject"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.name.size() > 0]]>
+            <description><![CDATA[Check the size's name]]></description>
+            <message><![CDATA[The size's name must be greater than zero]]></message>
+            <target class="EER.Project"/>
+         </constraint>
+                  <constraint id="sizeNameNode"
+            lang="OCL"
+            name="sizeNameNode"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.name.size() > 0]]>
+            <description><![CDATA[Check the size's name of the node]]></description>
+            <message><![CDATA[The size's name of the node must be greater than zero]]></message>
+            <target class="EER.Node"/>
+         </constraint>
+                  <constraint id="NodeName"
+            lang="OCL"
+            name="NodeName"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[Node.allInstances()->forAll(p1, p2 |  p1 <> p2 implies p1.name <> p2.name)]]>
+            <description><![CDATA[Check the Nodes' names]]></description>
+            <message><![CDATA[The Node's name must be unique]]></message>
+            <target class="EER.Node"/>
+         </constraint>
+                  <constraint id="sizeNameAttribute"
+            lang="OCL"
+            name="sizeNameAttribute"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.name.size() > 0]]>
+            <description><![CDATA[Check the size's name of the attribute]]></description>
+            <message><![CDATA[The size's name of the attribute must be greater than zero]]></message>
+            <target class="EER.Attribute"/>
+         </constraint>
+                  <constraint id="AttributeName"
+            lang="OCL"
+            name="AttributeName"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[Node.allInstances() -> forAll(n | n.attributes -> forAll(p1, p2 |  p1 <> p2 implies  p1.name <> p2.name))]]>
+            <description><![CDATA[Check the attributes' name ]]></description>
+            <message><![CDATA[The Attribute´s name must be unique]]></message>
+            <target class="EER.Node"/>
+         </constraint>
+                  <constraint id="AggregationSource"
+            lang="OCL"
+            name="AggregationSource"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.source -> notEmpty()]]>
+            <description><![CDATA[Check the source of the Aggregation]]></description>
+            <message><![CDATA[The Aggregation's source can not be null]]></message>
+            <target class="EER.Participant"/>
+         </constraint>
+                  <constraint id="PrimaryKey"
+            lang="OCL"
+            name="PrimaryKey"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.primaryKey -> notEmpty()]]>
+            <description><![CDATA[Check the name of the primary key]]></description>
+            <message><![CDATA[The primary key can not be null]]></message>
+            <target class="EER.Entity"/>
+         </constraint>
+                  <constraint id="DependencyRelationship"
+            lang="OCL"
+            name="DependencyRelationship"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.participants ->exists(e1 | e1.target.oclIsKindOf(WeakEntity))]]>
+            <description><![CDATA[Check the relation between a Dependency Relationship and a Weak Entity]]></description>
+            <message><![CDATA[A Dependency Relationship must be mached with a Weak Entity]]></message>
+            <target class="EER.DependencyRelationship"/>
+         </constraint>
+                  <constraint id="DomainName"
+            lang="OCL"
+            name="DomainName"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.name.size() > 0]]>
+            <description><![CDATA[Check the name of the domain]]></description>
+            <message><![CDATA[The name of the domain can not be null]]></message>
+            <target class="EER.Domain"/>
+         </constraint>
+                  <constraint id="DomainLiterals"
+            lang="OCL"
+            name="DomainLiterals"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.name.size() > 0]]>
+            <description><![CDATA[Check the literals of the enumerated type]]></description>
+            <message><![CDATA[The literals can not  be null]]></message>
+            <target class="EER.EnumeratedLiteral"/>
+         </constraint>
+                  </constraints>
+      </constraintProvider>
+   </extension>
+
+   <extension point="org.eclipse.emf.validation.constraintBindings">
+      <?gmfgen generated="true"?>
+      <clientContext default="false" id="es.unican.moses.sle.db.eer2sql.diagramDefaultCtx">
+         <selector class="EER.diagram.providers.EERmodelValidationProvider$DefaultCtx"/>
+      </clientContext>
+      <binding context="es.unican.moses.sle.db.eer2sql.diagramDefaultCtx">
+                  <constraint ref="es.unican.moses.sle.db.eer2sql.diagram.sizeNameProject"/>
+                  <constraint ref="es.unican.moses.sle.db.eer2sql.diagram.sizeNameNode"/>
+                  <constraint ref="es.unican.moses.sle.db.eer2sql.diagram.NodeName"/>
+                  <constraint ref="es.unican.moses.sle.db.eer2sql.diagram.sizeNameAttribute"/>
+                  <constraint ref="es.unican.moses.sle.db.eer2sql.diagram.AttributeName"/>
+                  <constraint ref="es.unican.moses.sle.db.eer2sql.diagram.AggregationSource"/>
+                  <constraint ref="es.unican.moses.sle.db.eer2sql.diagram.PrimaryKey"/>
+                  <constraint ref="es.unican.moses.sle.db.eer2sql.diagram.DependencyRelationship"/>
+                  <constraint ref="es.unican.moses.sle.db.eer2sql.diagram.DomainName"/>
+                  <constraint ref="es.unican.moses.sle.db.eer2sql.diagram.DomainLiterals"/>
+               </binding>
+
+   </extension>
+
+
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="EER.diagram.part.EERmodelDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="EER.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="EER.diagram.updateDiagram"
+         contextId="EER.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="es.unican.moses.sle.db.eer2sql.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="EER.diagram.part.EERmodelDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="EER.diagram.edit.parts.ProjectEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="EER.diagram.part.EERmodelDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="es.unican.moses.sle.db.eer2sql.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="EER.diagram.part.EERmodelDiagramEditorID"
+         defaultHandler="EER.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>
