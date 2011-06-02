@@ -35,6 +35,14 @@
   <children xmi:type="notation:Node" xmi:id="_fcx14IoWEeClEpyPgSUP7w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_fc05MIoWEeClEpyPgSUP7w" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_fc05MYoWEeClEpyPgSUP7w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_A9zFwIooEeClEpyPgSUP7w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//AbstractParticipant/role"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_A9zFwYooEeClEpyPgSUP7w"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_CU7QwIooEeClEpyPgSUP7w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="EERmodel.ecore#//AbstractParticipant/lowerBound"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_CU7QwYooEeClEpyPgSUP7w"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_fc05MooWEeClEpyPgSUP7w"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_fc05M4oWEeClEpyPgSUP7w"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_fc05NIoWEeClEpyPgSUP7w"/>

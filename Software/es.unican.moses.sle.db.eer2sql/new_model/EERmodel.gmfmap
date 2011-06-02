@@ -54,7 +54,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="EERmodel.gmfgraph#SingleAttributeName"/>
+                href="EERmodel.gmfgraph#Label"/>
             <features
                 href="EERmodel.ecore#//Attribute/name"/>
           </labelMappings>
@@ -62,7 +62,7 @@
               xsi:type="gmftool:CreationTool"
               href="EERmodel.gmftool#//@palette/@tools.0/@tools.4"/>
           <diagramNode
-              href="EERmodel.gmfgraph#SingleAttributeName"/>
+              href="EERmodel.gmfgraph#Label"/>
         </ownedChild>
       </children>
       <children
@@ -143,7 +143,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="EERmodel.gmfgraph#SingleAttributeName"/>
+                href="EERmodel.gmfgraph#Label"/>
             <features
                 href="EERmodel.ecore#//Attribute/name"/>
           </labelMappings>
@@ -151,7 +151,7 @@
               xsi:type="gmftool:CreationTool"
               href="EERmodel.gmftool#//@palette/@tools.0/@tools.4"/>
           <diagramNode
-              href="EERmodel.gmfgraph#SingleAttributeName"/>
+              href="EERmodel.gmfgraph#Label"/>
         </ownedChild>
       </children>
       <children
@@ -308,6 +308,77 @@
           href="EERmodel.gmfgraph#MemberCollection"/>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="EERmodel.ecore#//Project/domains"/>
+    <ownedChild>
+      <domainMetaElement
+          href="EERmodel.ecore#//PrimitiveType"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern="&lt;&lt;{0}>>"
+          editorPattern=""
+          editPattern="">
+        <diagramLabel
+            href="EERmodel.gmfgraph#PrimitiveTypeName"/>
+        <features
+            href="EERmodel.ecore#//Domain/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="EERmodel.gmftool#//@palette/@tools.5/@tools.0"/>
+      <diagramNode
+          href="EERmodel.gmfgraph#PrimitiveType"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="EERmodel.ecore#//Project/domains"/>
+    <ownedChild>
+      <domainMetaElement
+          href="EERmodel.ecore#//EnumerationType"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern="&lt;&lt;{0}>>">
+        <diagramLabel
+            href="EERmodel.gmfgraph#EnumerationTypeName"/>
+        <features
+            href="EERmodel.ecore#//Domain/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="EERmodel.gmftool#//@palette/@tools.5/@tools.1"/>
+      <diagramNode
+          href="EERmodel.gmfgraph#EnumerationType"/>
+      <children
+          compartment="//@nodes.8/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="EERmodel.ecore#//EnumerationType/literals"/>
+        <ownedChild>
+          <domainMetaElement
+              href="EERmodel.ecore#//EnumeratedLiteral"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="- {0}">
+            <diagramLabel
+                href="EERmodel.gmfgraph#Label"/>
+            <features
+                href="EERmodel.ecore#//EnumeratedLiteral/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="EERmodel.gmftool#//@palette/@tools.5/@tools.2"/>
+          <diagramNode
+              href="EERmodel.gmfgraph#Label"/>
+        </ownedChild>
+      </children>
+      <compartments
+          children="//@nodes.8/@ownedChild/@children.0">
+        <compartment
+            href="EERmodel.gmfgraph#EnumerationTypeCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
   <links>
     <domainMetaElement
         href="EERmodel.ecore#//AggregationParticipant"/>
@@ -351,6 +422,18 @@
           href="EERmodel.gmfgraph#SimpleLineRole"/>
       <features
           href="EERmodel.ecore#//AbstractParticipant/role"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        viewPattern="{0,choice,-1#N| 0#{0}}..{1,choice,-1#N| 0#{1}}"
+        editorPattern="{0}..{1}"
+        editPattern="{0}..{1}">
+      <diagramLabel
+          href="EERmodel.gmfgraph#Cardinality"/>
+      <features
+          href="EERmodel.ecore#//AbstractParticipant/lowerBound"/>
+      <features
+          href="EERmodel.ecore#//AbstractParticipant/upperBound"/>
     </labelMappings>
     <containmentFeature
         href="EERmodel.ecore#//AbstractRelationship/participants"/>
@@ -454,6 +537,18 @@
   <links>
     <domainMetaElement
         href="EERmodel.ecore#//Inclusiveness"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        viewPattern="{0,choice,-1#N| 0#{0}}..{1,choice,-1#N| 0#{1}}"
+        editorPattern="{0}..{1}"
+        editPattern="{0}..{1}">
+      <diagramLabel
+          href="EERmodel.gmfgraph#Label"/>
+      <features
+          href="EERmodel.ecore#//Inclusiveness/lowerBound"/>
+      <features
+          href="EERmodel.ecore#//Inclusiveness/upperBound"/>
+    </labelMappings>
     <containmentFeature
         href="EERmodel.ecore#//Participant/inclusivenessConstraint"/>
     <tool
@@ -485,7 +580,6 @@
         name="sizeNameProject"
         description="Check the size's name"
         id="sizeNameProject"
-        useInLiveMode="true"
         message="The size's name must be greater than zero">
       <rule
           body="self.name.size() > 0"/>
@@ -499,7 +593,6 @@
         name="sizeNameNode"
         description="Check the size's name of the node"
         id="sizeNameNode"
-        useInLiveMode="true"
         message="The size's name of the node must be greater than zero">
       <rule
           body="self.name.size() > 0"/>
@@ -513,7 +606,6 @@
         name="NodeName"
         description="Check the Nodes' names"
         id="NodeName"
-        useInLiveMode="true"
         message="The Node's name must be unique">
       <rule
           body="Node.allInstances()->forAll(p1, p2 |  p1 &lt;> p2 implies p1.name &lt;> p2.name)"/>
@@ -527,7 +619,6 @@
         name="sizeNameAttribute"
         description="Check the size's name of the attribute"
         id="sizeNameAttribute"
-        useInLiveMode="true"
         message="The size's name of the attribute must be greater than zero">
       <rule
           body="self.name.size() > 0"/>
@@ -541,21 +632,19 @@
         name="AttributeName"
         description="Check the attributes' name "
         id="AttributeName"
-        useInLiveMode="true"
         message="The Attribute´s name must be unique">
       <rule
-          body="Attribute.allInstances() -> forAll(p1, p2 |  p1 &lt;> p2 implies  p1.name &lt;> p2.name)"/>
+          body="Node.allInstances() -> forAll(n | n.attributes -> forAll(p1, p2 |  p1 &lt;> p2 implies  p1.name &lt;> p2.name))"/>
       <target
           xsi:type="gmfmap:DomainElementTarget">
         <element
-            href="EERmodel.ecore#//Attribute"/>
+            href="EERmodel.ecore#//Node"/>
       </target>
     </audits>
     <audits
         name="AggregationSource"
         description="Check the source of the Aggregation"
         id="AggregationSource"
-        useInLiveMode="true"
         message="The Aggregation's source can not be null">
       <rule
           body="self.source -> notEmpty()"/>
@@ -576,6 +665,45 @@
           xsi:type="gmfmap:DomainElementTarget">
         <element
             href="EERmodel.ecore#//Entity"/>
+      </target>
+    </audits>
+    <audits
+        name="DependencyRelationship"
+        description="Check the relation between a Dependency Relationship and a Weak Entity"
+        id="DependencyRelationship"
+        message="A Dependency Relationship must be mached with a Weak Entity">
+      <rule
+          body="self.participants ->exists(e1 | e1.target.oclIsKindOf(WeakEntity))"/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//DependencyRelationship"/>
+      </target>
+    </audits>
+    <audits
+        name="DomainName"
+        description="Check the name of the domain"
+        id="DomainName"
+        message="The name of the domain can not be null">
+      <rule
+          body="self.name.size() > 0"/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//Domain"/>
+      </target>
+    </audits>
+    <audits
+        name="DomainLiterals"
+        description="Check the literals of the enumerated type"
+        id="DomainLiterals"
+        message="The literals can not  be null">
+      <rule
+          body="self.name.size() > 0"/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//EnumeratedLiteral"/>
       </target>
     </audits>
   </audits>
