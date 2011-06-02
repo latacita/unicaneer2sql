@@ -88,12 +88,12 @@ public interface SingleAttribute extends Attribute {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Multiplicity</em>' attribute.
-	 * @see #setMultiplicity(UnboundedNatural)
+	 * @see #setMultiplicity(int)
 	 * @see EER.EERPackage#getSingleAttribute_Multiplicity()
-	 * @model dataType="EER.UnboundedNatural" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
-	UnboundedNatural getMultiplicity();
+	int getMultiplicity();
 
 	/**
 	 * Sets the value of the '{@link EER.SingleAttribute#getMultiplicity <em>Multiplicity</em>}' attribute.
@@ -103,6 +103,6 @@ public interface SingleAttribute extends Attribute {
 	 * @see #getMultiplicity()
 	 * @generated
 	 */
-	void setMultiplicity(UnboundedNatural value);
+	void setMultiplicity(int value);
 
 } // SingleAttribute

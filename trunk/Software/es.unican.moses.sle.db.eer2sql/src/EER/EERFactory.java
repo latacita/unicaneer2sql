@@ -224,15 +224,6 @@ public interface EERFactory extends EFactory {
 	GeneralizationRelationship createGeneralizationRelationship();
 
 	/**
-	 * Returns a new object of class '<em>Cardinality</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Cardinality</em>'.
-	 * @generated
-	 */
-	Cardinality createCardinality();
-
-	/**
 	 * Returns a new object of class '<em>Aggregation Participant</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

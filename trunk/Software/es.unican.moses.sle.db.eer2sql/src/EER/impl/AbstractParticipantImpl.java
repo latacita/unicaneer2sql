@@ -10,6 +10,7 @@ import EER.AbstractParticipant;
 import EER.Cardinality;
 import EER.EERPackage;
 
+import es.unican.moses.sle.db.eer2sql.util.UnboundedNatural;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -27,7 +28,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link EER.impl.AbstractParticipantImpl#getRole <em>Role</em>}</li>
- *   <li>{@link EER.impl.AbstractParticipantImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link EER.impl.AbstractParticipantImpl#getLowerBound <em>Lower Bound</em>}</li>
+ *   <li>{@link EER.impl.AbstractParticipantImpl#getUpperBound <em>Upper Bound</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,14 +57,44 @@ public abstract class AbstractParticipantImpl extends EObjectImpl implements Abs
 	protected String role = ROLE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
+	 * The default value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
+	 * @see #getLowerBound()
 	 * @generated
 	 * @ordered
 	 */
-	protected Cardinality cardinality;
+	protected static final int LOWER_BOUND_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLowerBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected int lowerBound = LOWER_BOUND_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUpperBound() <em>Upper Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpperBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int UPPER_BOUND_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getUpperBound() <em>Upper Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpperBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected int upperBound = UPPER_BOUND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,8 +141,8 @@ public abstract class AbstractParticipantImpl extends EObjectImpl implements Abs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cardinality getCardinality() {
-		return cardinality;
+	public int getLowerBound() {
+		return lowerBound;
 	}
 
 	/**
@@ -118,14 +150,11 @@ public abstract class AbstractParticipantImpl extends EObjectImpl implements Abs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EERPackage.ABSTRACT_PARTICIPANT__CARDINALITY, oldCardinality, newCardinality);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public void setLowerBound(int newLowerBound) {
+		int oldLowerBound = lowerBound;
+		lowerBound = newLowerBound;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EERPackage.ABSTRACT_PARTICIPANT__LOWER_BOUND, oldLowerBound, lowerBound));
 	}
 
 	/**
@@ -133,18 +162,8 @@ public abstract class AbstractParticipantImpl extends EObjectImpl implements Abs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCardinality(Cardinality newCardinality) {
-		if (newCardinality != cardinality) {
-			NotificationChain msgs = null;
-			if (cardinality != null)
-				msgs = ((InternalEObject)cardinality).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EERPackage.ABSTRACT_PARTICIPANT__CARDINALITY, null, msgs);
-			if (newCardinality != null)
-				msgs = ((InternalEObject)newCardinality).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EERPackage.ABSTRACT_PARTICIPANT__CARDINALITY, null, msgs);
-			msgs = basicSetCardinality(newCardinality, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EERPackage.ABSTRACT_PARTICIPANT__CARDINALITY, newCardinality, newCardinality));
+	public int getUpperBound() {
+		return upperBound;
 	}
 
 	/**
@@ -152,13 +171,11 @@ public abstract class AbstractParticipantImpl extends EObjectImpl implements Abs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case EERPackage.ABSTRACT_PARTICIPANT__CARDINALITY:
-				return basicSetCardinality(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setUpperBound(int newUpperBound) {
+		int oldUpperBound = upperBound;
+		upperBound = newUpperBound;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EERPackage.ABSTRACT_PARTICIPANT__UPPER_BOUND, oldUpperBound, upperBound));
 	}
 
 	/**
@@ -171,8 +188,10 @@ public abstract class AbstractParticipantImpl extends EObjectImpl implements Abs
 		switch (featureID) {
 			case EERPackage.ABSTRACT_PARTICIPANT__ROLE:
 				return getRole();
-			case EERPackage.ABSTRACT_PARTICIPANT__CARDINALITY:
-				return getCardinality();
+			case EERPackage.ABSTRACT_PARTICIPANT__LOWER_BOUND:
+				return getLowerBound();
+			case EERPackage.ABSTRACT_PARTICIPANT__UPPER_BOUND:
+				return getUpperBound();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -188,8 +207,11 @@ public abstract class AbstractParticipantImpl extends EObjectImpl implements Abs
 			case EERPackage.ABSTRACT_PARTICIPANT__ROLE:
 				setRole((String)newValue);
 				return;
-			case EERPackage.ABSTRACT_PARTICIPANT__CARDINALITY:
-				setCardinality((Cardinality)newValue);
+			case EERPackage.ABSTRACT_PARTICIPANT__LOWER_BOUND:
+				setLowerBound((Integer)newValue);
+				return;
+			case EERPackage.ABSTRACT_PARTICIPANT__UPPER_BOUND:
+				setUpperBound((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -206,8 +228,11 @@ public abstract class AbstractParticipantImpl extends EObjectImpl implements Abs
 			case EERPackage.ABSTRACT_PARTICIPANT__ROLE:
 				setRole(ROLE_EDEFAULT);
 				return;
-			case EERPackage.ABSTRACT_PARTICIPANT__CARDINALITY:
-				setCardinality((Cardinality)null);
+			case EERPackage.ABSTRACT_PARTICIPANT__LOWER_BOUND:
+				setLowerBound(LOWER_BOUND_EDEFAULT);
+				return;
+			case EERPackage.ABSTRACT_PARTICIPANT__UPPER_BOUND:
+				setUpperBound(UPPER_BOUND_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -223,8 +248,10 @@ public abstract class AbstractParticipantImpl extends EObjectImpl implements Abs
 		switch (featureID) {
 			case EERPackage.ABSTRACT_PARTICIPANT__ROLE:
 				return ROLE_EDEFAULT == null ? role != null : !ROLE_EDEFAULT.equals(role);
-			case EERPackage.ABSTRACT_PARTICIPANT__CARDINALITY:
-				return cardinality != null;
+			case EERPackage.ABSTRACT_PARTICIPANT__LOWER_BOUND:
+				return lowerBound != LOWER_BOUND_EDEFAULT;
+			case EERPackage.ABSTRACT_PARTICIPANT__UPPER_BOUND:
+				return upperBound != UPPER_BOUND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -241,6 +268,10 @@ public abstract class AbstractParticipantImpl extends EObjectImpl implements Abs
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (role: ");
 		result.append(role);
+		result.append(", lowerBound: ");
+		result.append(lowerBound);
+		result.append(", upperBound: ");
+		result.append(upperBound);
 		result.append(')');
 		return result.toString();
 	}

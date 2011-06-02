@@ -257,13 +257,6 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass cardinalityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass abstractParticipantEClass = null;
 
 	/**
@@ -565,7 +558,7 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInclusiveness_Cardinality() {
+	public EReference getInclusiveness_Target() {
 		return (EReference)inclusivenessEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -574,8 +567,17 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInclusiveness_Target() {
-		return (EReference)inclusivenessEClass.getEStructuralFeatures().get(2);
+	public EAttribute getInclusiveness_LowerBound() {
+		return (EAttribute)inclusivenessEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInclusiveness_UpperBound() {
+		return (EAttribute)inclusivenessEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1069,33 +1071,6 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCardinality() {
-		return cardinalityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCardinality_LowerBound() {
-		return (EAttribute)cardinalityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCardinality_UpperBound() {
-		return (EAttribute)cardinalityEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getAbstractParticipant() {
 		return abstractParticipantEClass;
 	}
@@ -1114,8 +1089,17 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractParticipant_Cardinality() {
-		return (EReference)abstractParticipantEClass.getEStructuralFeatures().get(1);
+	public EAttribute getAbstractParticipant_LowerBound() {
+		return (EAttribute)abstractParticipantEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbstractParticipant_UpperBound() {
+		return (EAttribute)abstractParticipantEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1245,8 +1229,9 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 
 		inclusivenessEClass = createEClass(INCLUSIVENESS);
 		createEReference(inclusivenessEClass, INCLUSIVENESS__SOURCE);
-		createEReference(inclusivenessEClass, INCLUSIVENESS__CARDINALITY);
 		createEReference(inclusivenessEClass, INCLUSIVENESS__TARGET);
+		createEAttribute(inclusivenessEClass, INCLUSIVENESS__LOWER_BOUND);
+		createEAttribute(inclusivenessEClass, INCLUSIVENESS__UPPER_BOUND);
 
 		exclusionEClass = createEClass(EXCLUSION);
 		createEReference(exclusionEClass, EXCLUSION__SOURCE);
@@ -1322,13 +1307,10 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 		createEReference(generalizationRelationshipEClass, GENERALIZATION_RELATIONSHIP__RELATIONSHIP);
 		createEReference(generalizationRelationshipEClass, GENERALIZATION_RELATIONSHIP__CHILD);
 
-		cardinalityEClass = createEClass(CARDINALITY);
-		createEAttribute(cardinalityEClass, CARDINALITY__LOWER_BOUND);
-		createEAttribute(cardinalityEClass, CARDINALITY__UPPER_BOUND);
-
 		abstractParticipantEClass = createEClass(ABSTRACT_PARTICIPANT);
 		createEAttribute(abstractParticipantEClass, ABSTRACT_PARTICIPANT__ROLE);
-		createEReference(abstractParticipantEClass, ABSTRACT_PARTICIPANT__CARDINALITY);
+		createEAttribute(abstractParticipantEClass, ABSTRACT_PARTICIPANT__LOWER_BOUND);
+		createEAttribute(abstractParticipantEClass, ABSTRACT_PARTICIPANT__UPPER_BOUND);
 
 		aggregationParticipantEClass = createEClass(AGGREGATION_PARTICIPANT);
 		createEReference(aggregationParticipantEClass, AGGREGATION_PARTICIPANT__SOURCE);
@@ -1422,8 +1404,9 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 
 		initEClass(inclusivenessEClass, Inclusiveness.class, "Inclusiveness", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInclusiveness_Source(), this.getParticipant(), this.getParticipant_InclusivenessConstraint(), "source", null, 1, 1, Inclusiveness.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInclusiveness_Cardinality(), this.getCardinality(), null, "cardinality", null, 1, 1, Inclusiveness.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInclusiveness_Target(), this.getParticipant(), null, "target", null, 1, 1, Inclusiveness.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInclusiveness_LowerBound(), ecorePackage.getEInt(), "lowerBound", null, 1, 1, Inclusiveness.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInclusiveness_UpperBound(), ecorePackage.getEInt(), "upperBound", null, 0, 1, Inclusiveness.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exclusionEClass, Exclusion.class, "Exclusion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExclusion_Source(), this.getRelationship(), this.getRelationship_ExclusionConstraints(), "source", null, 1, 1, Exclusion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1447,7 +1430,7 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 		initEClass(singleAttributeEClass, SingleAttribute.class, "SingleAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSingleAttribute_Derivate(), ecorePackage.getEBoolean(), "derivate", null, 1, 1, SingleAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSingleAttribute_Domain(), this.getDomain(), null, "domain", null, 1, 1, SingleAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSingleAttribute_Multiplicity(), this.getUnboundedNatural(), "multiplicity", null, 1, 1, SingleAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSingleAttribute_Multiplicity(), ecorePackage.getEInt(), "multiplicity", null, 1, 1, SingleAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(domainEClass, Domain.class, "Domain", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDomain_Name(), ecorePackage.getEString(), "name", null, 1, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1499,13 +1482,10 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 		initEReference(getGeneralizationRelationship_Relationship(), this.getGeneralization(), this.getGeneralization_Childs(), "relationship", null, 1, 1, GeneralizationRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGeneralizationRelationship_Child(), this.getEntity(), this.getEntity_Specializes(), "child", null, 1, 1, GeneralizationRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(cardinalityEClass, Cardinality.class, "Cardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCardinality_LowerBound(), ecorePackage.getEInt(), "lowerBound", "1", 1, 1, Cardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCardinality_UpperBound(), this.getUnboundedNatural(), "upperBound", null, 1, 1, Cardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(abstractParticipantEClass, AbstractParticipant.class, "AbstractParticipant", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractParticipant_Role(), ecorePackage.getEString(), "role", null, 0, 1, AbstractParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractParticipant_Cardinality(), this.getCardinality(), null, "cardinality", null, 1, 1, AbstractParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractParticipant_LowerBound(), ecorePackage.getEInt(), "lowerBound", null, 1, 1, AbstractParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractParticipant_UpperBound(), ecorePackage.getEInt(), "upperBound", null, 0, 1, AbstractParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(aggregationParticipantEClass, AggregationParticipant.class, "AggregationParticipant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAggregationParticipant_Source(), this.getAggregation(), null, "source", null, 1, 1, AggregationParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

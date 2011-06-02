@@ -73,7 +73,7 @@ public class SingleAttributeImpl extends AttributeImpl implements SingleAttribut
 	 * @generated
 	 * @ordered
 	 */
-	protected static final UnboundedNatural MULTIPLICITY_EDEFAULT = null;
+	protected static final int MULTIPLICITY_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
@@ -83,7 +83,7 @@ public class SingleAttributeImpl extends AttributeImpl implements SingleAttribut
 	 * @generated
 	 * @ordered
 	 */
-	protected UnboundedNatural multiplicity = MULTIPLICITY_EDEFAULT;
+	protected int multiplicity = MULTIPLICITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,7 +168,7 @@ public class SingleAttributeImpl extends AttributeImpl implements SingleAttribut
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnboundedNatural getMultiplicity() {
+	public int getMultiplicity() {
 		return multiplicity;
 	}
 
@@ -177,8 +177,8 @@ public class SingleAttributeImpl extends AttributeImpl implements SingleAttribut
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMultiplicity(UnboundedNatural newMultiplicity) {
-		UnboundedNatural oldMultiplicity = multiplicity;
+	public void setMultiplicity(int newMultiplicity) {
+		int oldMultiplicity = multiplicity;
 		multiplicity = newMultiplicity;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EERPackage.SINGLE_ATTRIBUTE__MULTIPLICITY, oldMultiplicity, multiplicity));
@@ -218,7 +218,7 @@ public class SingleAttributeImpl extends AttributeImpl implements SingleAttribut
 				setDomain((Domain)newValue);
 				return;
 			case EERPackage.SINGLE_ATTRIBUTE__MULTIPLICITY:
-				setMultiplicity((UnboundedNatural)newValue);
+				setMultiplicity((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -258,7 +258,7 @@ public class SingleAttributeImpl extends AttributeImpl implements SingleAttribut
 			case EERPackage.SINGLE_ATTRIBUTE__DOMAIN:
 				return domain != null;
 			case EERPackage.SINGLE_ATTRIBUTE__MULTIPLICITY:
-				return MULTIPLICITY_EDEFAULT == null ? multiplicity != null : !MULTIPLICITY_EDEFAULT.equals(multiplicity);
+				return multiplicity != MULTIPLICITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

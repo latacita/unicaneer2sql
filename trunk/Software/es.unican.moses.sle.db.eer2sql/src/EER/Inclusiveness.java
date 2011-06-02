@@ -6,6 +6,8 @@
  */
 package EER;
 
+import es.unican.moses.sle.db.eer2sql.util.UnboundedNatural;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -16,8 +18,9 @@ package EER;
  * The following features are supported:
  * <ul>
  *   <li>{@link EER.Inclusiveness#getSource <em>Source</em>}</li>
- *   <li>{@link EER.Inclusiveness#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link EER.Inclusiveness#getTarget <em>Target</em>}</li>
+ *   <li>{@link EER.Inclusiveness#getLowerBound <em>Lower Bound</em>}</li>
+ *   <li>{@link EER.Inclusiveness#getUpperBound <em>Upper Bound</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,32 +59,6 @@ public interface Inclusiveness extends Constraint {
 	void setSource(Participant value);
 
 	/**
-	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Cardinality</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cardinality</em>' containment reference.
-	 * @see #setCardinality(Cardinality)
-	 * @see EER.EERPackage#getInclusiveness_Cardinality()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	Cardinality getCardinality();
-
-	/**
-	 * Sets the value of the '{@link EER.Inclusiveness#getCardinality <em>Cardinality</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cardinality</em>' containment reference.
-	 * @see #getCardinality()
-	 * @generated
-	 */
-	void setCardinality(Cardinality value);
-
-	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -106,5 +83,57 @@ public interface Inclusiveness extends Constraint {
 	 * @generated
 	 */
 	void setTarget(Participant value);
+
+	/**
+	 * Returns the value of the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lower Bound</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lower Bound</em>' attribute.
+	 * @see #setLowerBound(int)
+	 * @see EER.EERPackage#getInclusiveness_LowerBound()
+	 * @model required="true"
+	 * @generated
+	 */
+	int getLowerBound();
+
+	/**
+	 * Sets the value of the '{@link EER.Inclusiveness#getLowerBound <em>Lower Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Lower Bound</em>' attribute.
+	 * @see #getLowerBound()
+	 * @generated
+	 */
+	void setLowerBound(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Upper Bound</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Upper Bound</em>' attribute.
+	 * @see #setUpperBound(int)
+	 * @see EER.EERPackage#getInclusiveness_UpperBound()
+	 * @model
+	 * @generated
+	 */
+	int getUpperBound();
+
+	/**
+	 * Sets the value of the '{@link EER.Inclusiveness#getUpperBound <em>Upper Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Upper Bound</em>' attribute.
+	 * @see #getUpperBound()
+	 * @generated
+	 */
+	void setUpperBound(int value);
 
 } // Inclusiveness
