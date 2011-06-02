@@ -3,6 +3,8 @@ package es.unican.moses.sle.db.eer2sql.diagram.custom;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+
+
 /**
  * The activator class controls the plug-in life cycle
  */
