@@ -21,7 +21,7 @@ public class RelationshipEditPolicyProvider
 	@Override
 	public void createEditPolicies(EditPart editPart) {
 		System.out.println("Instalando el EntityEditPolicy");
-		editPart.installEditPolicy(EditPolicyRoles.OPEN_ROLE, new EntityOpenEditPolicy(editPart));
+		editPart.installEditPolicy(EditPolicyRoles.OPEN_ROLE, new RelationshipOpenEditPolicy(editPart));
 	}
 	
 	
