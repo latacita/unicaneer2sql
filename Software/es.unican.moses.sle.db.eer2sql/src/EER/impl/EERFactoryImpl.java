@@ -85,7 +85,6 @@ public class EERFactoryImpl extends EFactoryImpl implements EERFactory {
 			case EERPackage.GENERALIZATION: return createGeneralization();
 			case EERPackage.SPECIALIZATION_RELATIONSHIP: return createSpecializationRelationship();
 			case EERPackage.GENERALIZATION_RELATIONSHIP: return createGeneralizationRelationship();
-			case EERPackage.CARDINALITY: return createCardinality();
 			case EERPackage.AGGREGATION_PARTICIPANT: return createAggregationParticipant();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -348,16 +347,6 @@ public class EERFactoryImpl extends EFactoryImpl implements EERFactory {
 	public GeneralizationRelationship createGeneralizationRelationship() {
 		GeneralizationRelationshipImpl generalizationRelationship = new GeneralizationRelationshipImpl();
 		return generalizationRelationship;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Cardinality createCardinality() {
-		CardinalityImpl cardinality = new CardinalityImpl();
-		return cardinality;
 	}
 
 	/**

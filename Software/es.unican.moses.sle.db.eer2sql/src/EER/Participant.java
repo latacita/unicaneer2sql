@@ -118,4 +118,6 @@ public interface Participant extends AbstractParticipant {
 	 */
 	EList<Inclusiveness> getInclusivenessConstraint();
 
+	void setLowerBound(int intValue);
+
 } // Participant

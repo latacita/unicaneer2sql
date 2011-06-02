@@ -146,8 +146,6 @@ public class EERValidator extends EObjectValidator {
 				return validateSpecializationRelationship((SpecializationRelationship)value, diagnostics, context);
 			case EERPackage.GENERALIZATION_RELATIONSHIP:
 				return validateGeneralizationRelationship((GeneralizationRelationship)value, diagnostics, context);
-			case EERPackage.CARDINALITY:
-				return validateCardinality((Cardinality)value, diagnostics, context);
 			case EERPackage.ABSTRACT_PARTICIPANT:
 				return validateAbstractParticipant((AbstractParticipant)value, diagnostics, context);
 			case EERPackage.AGGREGATION_PARTICIPANT:
@@ -618,15 +616,6 @@ public class EERValidator extends EObjectValidator {
 	 */
 	public boolean validateGeneralizationRelationship(GeneralizationRelationship generalizationRelationship, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(generalizationRelationship, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCardinality(Cardinality cardinality, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(cardinality, diagnostics, context);
 	}
 
 	/**

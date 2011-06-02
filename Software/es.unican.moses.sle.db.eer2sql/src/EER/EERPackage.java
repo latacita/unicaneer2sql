@@ -144,7 +144,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getNode()
 	 * @generated
 	 */
-	int NODE = 30;
+	int NODE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -467,22 +467,31 @@ public interface EERPackage extends EPackage {
 	int INCLUSIVENESS__SOURCE = CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUSIVENESS__CARDINALITY = CONSTRAINT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INCLUSIVENESS__TARGET = CONSTRAINT_FEATURE_COUNT + 2;
+	int INCLUSIVENESS__TARGET = CONSTRAINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCLUSIVENESS__LOWER_BOUND = CONSTRAINT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCLUSIVENESS__UPPER_BOUND = CONSTRAINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Inclusiveness</em>' class.
@@ -491,7 +500,7 @@ public interface EERPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INCLUSIVENESS_FEATURE_COUNT = CONSTRAINT_FEATURE_COUNT + 3;
+	int INCLUSIVENESS_FEATURE_COUNT = CONSTRAINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link EER.impl.ExclusionImpl <em>Exclusion</em>}' class.
@@ -1081,7 +1090,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getAbstractParticipant()
 	 * @generated
 	 */
-	int ABSTRACT_PARTICIPANT = 28;
+	int ABSTRACT_PARTICIPANT = 27;
 
 	/**
 	 * The feature id for the '<em><b>Role</b></em>' attribute.
@@ -1093,13 +1102,22 @@ public interface EERPackage extends EPackage {
 	int ABSTRACT_PARTICIPANT__ROLE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_PARTICIPANT__CARDINALITY = 1;
+	int ABSTRACT_PARTICIPANT__LOWER_BOUND = 1;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_PARTICIPANT__UPPER_BOUND = 2;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Participant</em>' class.
@@ -1108,7 +1126,7 @@ public interface EERPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_PARTICIPANT_FEATURE_COUNT = 2;
+	int ABSTRACT_PARTICIPANT_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link EER.impl.ParticipantImpl <em>Participant</em>}' class.
@@ -1130,13 +1148,22 @@ public interface EERPackage extends EPackage {
 	int PARTICIPANT__ROLE = ABSTRACT_PARTICIPANT__ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT__CARDINALITY = ABSTRACT_PARTICIPANT__CARDINALITY;
+	int PARTICIPANT__LOWER_BOUND = ABSTRACT_PARTICIPANT__LOWER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTICIPANT__UPPER_BOUND = ABSTRACT_PARTICIPANT__UPPER_BOUND;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -1451,43 +1478,6 @@ public interface EERPackage extends EPackage {
 	int GENERALIZATION_RELATIONSHIP_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link EER.impl.CardinalityImpl <em>Cardinality</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see EER.impl.CardinalityImpl
-	 * @see EER.impl.EERPackageImpl#getCardinality()
-	 * @generated
-	 */
-	int CARDINALITY = 27;
-
-	/**
-	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY__LOWER_BOUND = 0;
-
-	/**
-	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY__UPPER_BOUND = 1;
-
-	/**
-	 * The number of structural features of the '<em>Cardinality</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY_FEATURE_COUNT = 2;
-
-	/**
 	 * The meta object id for the '{@link EER.impl.AggregationParticipantImpl <em>Aggregation Participant</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1495,7 +1485,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getAggregationParticipant()
 	 * @generated
 	 */
-	int AGGREGATION_PARTICIPANT = 29;
+	int AGGREGATION_PARTICIPANT = 28;
 
 	/**
 	 * The feature id for the '<em><b>Role</b></em>' attribute.
@@ -1507,13 +1497,22 @@ public interface EERPackage extends EPackage {
 	int AGGREGATION_PARTICIPANT__ROLE = ABSTRACT_PARTICIPANT__ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGGREGATION_PARTICIPANT__CARDINALITY = ABSTRACT_PARTICIPANT__CARDINALITY;
+	int AGGREGATION_PARTICIPANT__LOWER_BOUND = ABSTRACT_PARTICIPANT__LOWER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGGREGATION_PARTICIPANT__UPPER_BOUND = ABSTRACT_PARTICIPANT__UPPER_BOUND;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -1550,7 +1549,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getDependencyType()
 	 * @generated
 	 */
-	int DEPENDENCY_TYPE = 31;
+	int DEPENDENCY_TYPE = 30;
 
 	/**
 	 * The meta object id for the '{@link EER.GeneralizationType <em>Generalization Type</em>}' enum.
@@ -1560,7 +1559,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getGeneralizationType()
 	 * @generated
 	 */
-	int GENERALIZATION_TYPE = 32;
+	int GENERALIZATION_TYPE = 31;
 
 	/**
 	 * The meta object id for the '<em>Unbounded Natural</em>' data type.
@@ -1570,7 +1569,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getUnboundedNatural()
 	 * @generated
 	 */
-	int UNBOUNDED_NATURAL = 33;
+	int UNBOUNDED_NATURAL = 32;
 
 
 	/**
@@ -1798,17 +1797,6 @@ public interface EERPackage extends EPackage {
 	EReference getInclusiveness_Source();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link EER.Inclusiveness#getCardinality <em>Cardinality</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Cardinality</em>'.
-	 * @see EER.Inclusiveness#getCardinality()
-	 * @see #getInclusiveness()
-	 * @generated
-	 */
-	EReference getInclusiveness_Cardinality();
-
-	/**
 	 * Returns the meta object for the reference '{@link EER.Inclusiveness#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1818,6 +1806,28 @@ public interface EERPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInclusiveness_Target();
+
+	/**
+	 * Returns the meta object for the attribute '{@link EER.Inclusiveness#getLowerBound <em>Lower Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lower Bound</em>'.
+	 * @see EER.Inclusiveness#getLowerBound()
+	 * @see #getInclusiveness()
+	 * @generated
+	 */
+	EAttribute getInclusiveness_LowerBound();
+
+	/**
+	 * Returns the meta object for the attribute '{@link EER.Inclusiveness#getUpperBound <em>Upper Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Upper Bound</em>'.
+	 * @see EER.Inclusiveness#getUpperBound()
+	 * @see #getInclusiveness()
+	 * @generated
+	 */
+	EAttribute getInclusiveness_UpperBound();
 
 	/**
 	 * Returns the meta object for class '{@link EER.Exclusion <em>Exclusion</em>}'.
@@ -2394,38 +2404,6 @@ public interface EERPackage extends EPackage {
 	EReference getGeneralizationRelationship_Child();
 
 	/**
-	 * Returns the meta object for class '{@link EER.Cardinality <em>Cardinality</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Cardinality</em>'.
-	 * @see EER.Cardinality
-	 * @generated
-	 */
-	EClass getCardinality();
-
-	/**
-	 * Returns the meta object for the attribute '{@link EER.Cardinality#getLowerBound <em>Lower Bound</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Lower Bound</em>'.
-	 * @see EER.Cardinality#getLowerBound()
-	 * @see #getCardinality()
-	 * @generated
-	 */
-	EAttribute getCardinality_LowerBound();
-
-	/**
-	 * Returns the meta object for the attribute '{@link EER.Cardinality#getUpperBound <em>Upper Bound</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Upper Bound</em>'.
-	 * @see EER.Cardinality#getUpperBound()
-	 * @see #getCardinality()
-	 * @generated
-	 */
-	EAttribute getCardinality_UpperBound();
-
-	/**
 	 * Returns the meta object for class '{@link EER.AbstractParticipant <em>Abstract Participant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2447,15 +2425,26 @@ public interface EERPackage extends EPackage {
 	EAttribute getAbstractParticipant_Role();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link EER.AbstractParticipant#getCardinality <em>Cardinality</em>}'.
+	 * Returns the meta object for the attribute '{@link EER.AbstractParticipant#getLowerBound <em>Lower Bound</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Cardinality</em>'.
-	 * @see EER.AbstractParticipant#getCardinality()
+	 * @return the meta object for the attribute '<em>Lower Bound</em>'.
+	 * @see EER.AbstractParticipant#getLowerBound()
 	 * @see #getAbstractParticipant()
 	 * @generated
 	 */
-	EReference getAbstractParticipant_Cardinality();
+	EAttribute getAbstractParticipant_LowerBound();
+
+	/**
+	 * Returns the meta object for the attribute '{@link EER.AbstractParticipant#getUpperBound <em>Upper Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Upper Bound</em>'.
+	 * @see EER.AbstractParticipant#getUpperBound()
+	 * @see #getAbstractParticipant()
+	 * @generated
+	 */
+	EAttribute getAbstractParticipant_UpperBound();
 
 	/**
 	 * Returns the meta object for class '{@link EER.AggregationParticipant <em>Aggregation Participant</em>}'.
@@ -2746,20 +2735,28 @@ public interface EERPackage extends EPackage {
 		EReference INCLUSIVENESS__SOURCE = eINSTANCE.getInclusiveness_Source();
 
 		/**
-		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INCLUSIVENESS__CARDINALITY = eINSTANCE.getInclusiveness_Cardinality();
-
-		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference INCLUSIVENESS__TARGET = eINSTANCE.getInclusiveness_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Lower Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INCLUSIVENESS__LOWER_BOUND = eINSTANCE.getInclusiveness_LowerBound();
+
+		/**
+		 * The meta object literal for the '<em><b>Upper Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INCLUSIVENESS__UPPER_BOUND = eINSTANCE.getInclusiveness_UpperBound();
 
 		/**
 		 * The meta object literal for the '{@link EER.impl.ExclusionImpl <em>Exclusion</em>}' class.
@@ -3234,32 +3231,6 @@ public interface EERPackage extends EPackage {
 		EReference GENERALIZATION_RELATIONSHIP__CHILD = eINSTANCE.getGeneralizationRelationship_Child();
 
 		/**
-		 * The meta object literal for the '{@link EER.impl.CardinalityImpl <em>Cardinality</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see EER.impl.CardinalityImpl
-		 * @see EER.impl.EERPackageImpl#getCardinality()
-		 * @generated
-		 */
-		EClass CARDINALITY = eINSTANCE.getCardinality();
-
-		/**
-		 * The meta object literal for the '<em><b>Lower Bound</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CARDINALITY__LOWER_BOUND = eINSTANCE.getCardinality_LowerBound();
-
-		/**
-		 * The meta object literal for the '<em><b>Upper Bound</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CARDINALITY__UPPER_BOUND = eINSTANCE.getCardinality_UpperBound();
-
-		/**
 		 * The meta object literal for the '{@link EER.impl.AbstractParticipantImpl <em>Abstract Participant</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3278,12 +3249,20 @@ public interface EERPackage extends EPackage {
 		EAttribute ABSTRACT_PARTICIPANT__ROLE = eINSTANCE.getAbstractParticipant_Role();
 
 		/**
-		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Lower Bound</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_PARTICIPANT__CARDINALITY = eINSTANCE.getAbstractParticipant_Cardinality();
+		EAttribute ABSTRACT_PARTICIPANT__LOWER_BOUND = eINSTANCE.getAbstractParticipant_LowerBound();
+
+		/**
+		 * The meta object literal for the '<em><b>Upper Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_PARTICIPANT__UPPER_BOUND = eINSTANCE.getAbstractParticipant_UpperBound();
 
 		/**
 		 * The meta object literal for the '{@link EER.impl.AggregationParticipantImpl <em>Aggregation Participant</em>}' class.

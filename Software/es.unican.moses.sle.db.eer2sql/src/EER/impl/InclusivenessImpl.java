@@ -11,6 +11,7 @@ import EER.EERPackage;
 import EER.Inclusiveness;
 import EER.Participant;
 
+import es.unican.moses.sle.db.eer2sql.util.UnboundedNatural;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -29,24 +30,15 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * <ul>
  *   <li>{@link EER.impl.InclusivenessImpl#getSource <em>Source</em>}</li>
- *   <li>{@link EER.impl.InclusivenessImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link EER.impl.InclusivenessImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link EER.impl.InclusivenessImpl#getLowerBound <em>Lower Bound</em>}</li>
+ *   <li>{@link EER.impl.InclusivenessImpl#getUpperBound <em>Upper Bound</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class InclusivenessImpl extends ConstraintImpl implements Inclusiveness {
-	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected Cardinality cardinality;
-
 	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -56,6 +48,46 @@ public class InclusivenessImpl extends ConstraintImpl implements Inclusiveness {
 	 * @ordered
 	 */
 	protected Participant target;
+
+	/**
+	 * The default value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLowerBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int LOWER_BOUND_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getLowerBound() <em>Lower Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLowerBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected int lowerBound = LOWER_BOUND_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUpperBound() <em>Upper Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpperBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int UPPER_BOUND_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getUpperBound() <em>Upper Bound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpperBound()
+	 * @generated
+	 * @ordered
+	 */
+	protected int upperBound = UPPER_BOUND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,49 +154,6 @@ public class InclusivenessImpl extends ConstraintImpl implements Inclusiveness {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cardinality getCardinality() {
-		return cardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EERPackage.INCLUSIVENESS__CARDINALITY, oldCardinality, newCardinality);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCardinality(Cardinality newCardinality) {
-		if (newCardinality != cardinality) {
-			NotificationChain msgs = null;
-			if (cardinality != null)
-				msgs = ((InternalEObject)cardinality).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EERPackage.INCLUSIVENESS__CARDINALITY, null, msgs);
-			if (newCardinality != null)
-				msgs = ((InternalEObject)newCardinality).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EERPackage.INCLUSIVENESS__CARDINALITY, null, msgs);
-			msgs = basicSetCardinality(newCardinality, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EERPackage.INCLUSIVENESS__CARDINALITY, newCardinality, newCardinality));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Participant getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject)target;
@@ -203,6 +192,48 @@ public class InclusivenessImpl extends ConstraintImpl implements Inclusiveness {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getLowerBound() {
+		return lowerBound;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLowerBound(int newLowerBound) {
+		int oldLowerBound = lowerBound;
+		lowerBound = newLowerBound;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EERPackage.INCLUSIVENESS__LOWER_BOUND, oldLowerBound, lowerBound));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getUpperBound() {
+		return upperBound;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUpperBound(int newUpperBound) {
+		int oldUpperBound = upperBound;
+		upperBound = newUpperBound;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EERPackage.INCLUSIVENESS__UPPER_BOUND, oldUpperBound, upperBound));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -224,8 +255,6 @@ public class InclusivenessImpl extends ConstraintImpl implements Inclusiveness {
 		switch (featureID) {
 			case EERPackage.INCLUSIVENESS__SOURCE:
 				return basicSetSource(null, msgs);
-			case EERPackage.INCLUSIVENESS__CARDINALITY:
-				return basicSetCardinality(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -254,11 +283,13 @@ public class InclusivenessImpl extends ConstraintImpl implements Inclusiveness {
 		switch (featureID) {
 			case EERPackage.INCLUSIVENESS__SOURCE:
 				return getSource();
-			case EERPackage.INCLUSIVENESS__CARDINALITY:
-				return getCardinality();
 			case EERPackage.INCLUSIVENESS__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
+			case EERPackage.INCLUSIVENESS__LOWER_BOUND:
+				return getLowerBound();
+			case EERPackage.INCLUSIVENESS__UPPER_BOUND:
+				return getUpperBound();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -274,11 +305,14 @@ public class InclusivenessImpl extends ConstraintImpl implements Inclusiveness {
 			case EERPackage.INCLUSIVENESS__SOURCE:
 				setSource((Participant)newValue);
 				return;
-			case EERPackage.INCLUSIVENESS__CARDINALITY:
-				setCardinality((Cardinality)newValue);
-				return;
 			case EERPackage.INCLUSIVENESS__TARGET:
 				setTarget((Participant)newValue);
+				return;
+			case EERPackage.INCLUSIVENESS__LOWER_BOUND:
+				setLowerBound((Integer)newValue);
+				return;
+			case EERPackage.INCLUSIVENESS__UPPER_BOUND:
+				setUpperBound((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -295,11 +329,14 @@ public class InclusivenessImpl extends ConstraintImpl implements Inclusiveness {
 			case EERPackage.INCLUSIVENESS__SOURCE:
 				setSource((Participant)null);
 				return;
-			case EERPackage.INCLUSIVENESS__CARDINALITY:
-				setCardinality((Cardinality)null);
-				return;
 			case EERPackage.INCLUSIVENESS__TARGET:
 				setTarget((Participant)null);
+				return;
+			case EERPackage.INCLUSIVENESS__LOWER_BOUND:
+				setLowerBound(LOWER_BOUND_EDEFAULT);
+				return;
+			case EERPackage.INCLUSIVENESS__UPPER_BOUND:
+				setUpperBound(UPPER_BOUND_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -315,12 +352,32 @@ public class InclusivenessImpl extends ConstraintImpl implements Inclusiveness {
 		switch (featureID) {
 			case EERPackage.INCLUSIVENESS__SOURCE:
 				return getSource() != null;
-			case EERPackage.INCLUSIVENESS__CARDINALITY:
-				return cardinality != null;
 			case EERPackage.INCLUSIVENESS__TARGET:
 				return target != null;
+			case EERPackage.INCLUSIVENESS__LOWER_BOUND:
+				return lowerBound != LOWER_BOUND_EDEFAULT;
+			case EERPackage.INCLUSIVENESS__UPPER_BOUND:
+				return upperBound != UPPER_BOUND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (lowerBound: ");
+		result.append(lowerBound);
+		result.append(", upperBound: ");
+		result.append(upperBound);
+		result.append(')');
+		return result.toString();
 	}
 
 } //InclusivenessImpl
