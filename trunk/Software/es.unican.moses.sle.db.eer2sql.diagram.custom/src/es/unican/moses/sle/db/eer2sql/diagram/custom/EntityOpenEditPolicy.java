@@ -20,6 +20,10 @@ public class EntityOpenEditPolicy extends OpenEditPolicy {
 			@Override
 			public void execute() {
 				System.out.println("Double click captured");
+				new AttributesWizard("Relation x");
+//		   	new AttributesDialog("Relation x");
+//				new AttributesDisplay("Relation x");
+				
 			} // execute
 		};
 	}
