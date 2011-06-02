@@ -4,19 +4,6 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
       <editpolicyProvider
-            class="es.unican.moses.sle.db.eer2sql.diagram.custom.EntityEditPolicyProvider">
-         <Priority
-               name="Medium">
-         </Priority>
-         <context
-               editparts="EER.diagram.edit.parts.EntityEditPart">
-         </context>
-         <object
-               class="EER.diagram.edit.parts.EntityEditPart"
-               id="EER.diagram.edit.parts.EntityEditPart">
-         </object>
-      </editpolicyProvider>
-      <editpolicyProvider
             class="es.unican.moses.sle.db.eer2sql.diagram.custom.RelationshipEditPolicyProvider">
          <Priority
                name="Medium">
@@ -27,6 +14,19 @@
          <object
                class="EER.diagram.edit.parts.RelationshipEditPart"
                id="EER.diagram.edit.parts.RelationshipEditPart">
+         </object>
+      </editpolicyProvider>
+      <editpolicyProvider
+            class="es.unican.moses.sle.db.eer2sql.diagram.custom.DependencyRelationshipEditPolicyProvider">
+         <Priority
+               name="Medium">
+         </Priority>
+         <context
+               editparts="EER.diagram.edit.parts.RelationshipEditPart">
+         </context>
+         <object
+               class="EER.diagram.edit.parts.DependencyRelationshipEditPart"
+               id="EER.diagram.edit.parts.DependencyRelationshipEditPart">
          </object>
       </editpolicyProvider>
    </extension>
