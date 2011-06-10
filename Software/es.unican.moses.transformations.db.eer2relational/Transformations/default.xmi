@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<EER:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EER="http://EER/1.0" name="Prueba1">
+  <domains xsi:type="EER:PrimitiveType" name="String"/>
+  <nodes xsi:type="EER:Entity" name="Persona" primaryKey="//@nodes.0/@candidateKey.0">
+    <attributes xsi:type="EER:SingleAttribute" name="DNI" domain="//@domains.0" multiplicity="1"/>
+    <attributes xsi:type="EER:SingleAttribute" name="Nombre" domain="//@domains.0" multiplicity="1"/>
+    <attributes xsi:type="EER:SingleAttribute" name="Apellidos" nullable="true" domain="//@domains.0" multiplicity="1"/>
+    <candidateKey attributes="//@nodes.0/@attributes.0" name="DNI_CK"/>
+  </nodes>
+  <nodes xsi:type="EER:Entity" name="Coche">
+    <attributes xsi:type="EER:SingleAttribute" name="Matricula"/>
+    <candidateKey attributes="//@nodes.1/@attributes.0" name="Matricula_CK"/>
+  </nodes>
+  <nodes xsi:type="EER:Relationship" name="tiene">
+    <participants lowerBound="1" upperBound="1" target="//@nodes.0"/>
+    <participants lowerBound="1" upperBound="-1" target="//@nodes.1"/>
+  </nodes>
+</EER:Project>
+

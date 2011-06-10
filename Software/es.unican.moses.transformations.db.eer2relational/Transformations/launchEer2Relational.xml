@@ -19,7 +19,7 @@
  		<epsilon.emf.register file="../../es.unican.moses.sle.db.relacional/model/Relational.ecore"/>
  		
  		<epsilon.loadModel name="EER" type="EMF">
-			<parameter name="modelFile" file="./simpleEERmodel.xmi"/>
+			<parameter name="modelFile" file="./default.xmi"/>
 			<parameter name="metamodelFile" value="../../es.unican.moses.sle.db.eer2sql/new_model/EERmodel.ecore"/>
  			<parameter name="isMetamodelFileBased" value="true"/>
  			<parameter name="readOnLoad" value="true"/>
@@ -27,7 +27,7 @@
 		</epsilon.loadModel>
  		
  		<epsilon.loadModel name="Relational" type="EMF">
-			<parameter name="modelFile" file="tablesv2.model"/>
+			<parameter name="modelFile" file="pruebaSalida.model"/>
 			<parameter name="metamodelFile" value="../../es.unican.moses.sle.db.relacional/model/Relational.ecore"/>
  			<parameter name="isMetamodelFileBased" value="true"/>
 			<parameter name="readOnLoad" value="false"/>

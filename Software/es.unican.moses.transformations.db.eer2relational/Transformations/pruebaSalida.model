@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Relational:Schema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Relational="http://Relational/1.0" name="Prueba1">
+  <tables name="Persona" primaryKey="//@tables.0/@candidateKey.0">
+    <candidateKey name="DNI_CK">
+      <attributes href="default.xmi#_4jrv8pLJEeCLGdql03DmYg"/>
+    </candidateKey>
+    <attributes name="DNI" domain="//@domains.0"/>
+    <attributes name="Nombre" domain="//@domains.0"/>
+    <attributes name="Apellidos" nullable="true" domain="//@domains.0"/>
+  </tables>
+  <tables name="Subordinado" primaryKey="//@tables.1/@candidateKey.1">
+    <candidateKey name="Nombre_CK">
+      <attributes href="default.xmi#_4jsXAJLJEeCLGdql03DmYg"/>
+    </candidateKey>
+    <candidateKey attributes="//@tables.1/@attributes.6" name="Subordinado_CK"/>
+    <attributes name="Nombre_S" domain="//@domains.0"/>
+    <attributes name="Sexo" domain="//@domains.0"/>
+    <attributes name="at1" domain="//@domains.0"/>
+    <attributes name="at2" domain="//@domains.0"/>
+    <attributes name="at3" domain="//@domains.0"/>
+    <attributes name="at4" domain="//@domains.0"/>
+    <attributes name="DNI" domain="//@domains.0"/>
+  </tables>
+  <domains xsi:type="Relational:PrimitiveType" name="String"/>
+</Relational:Schema>
