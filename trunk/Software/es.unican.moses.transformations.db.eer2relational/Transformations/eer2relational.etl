@@ -13,21 +13,19 @@ rule Project2Schema
 	
 	-- The schema is named as the EER project
 	s.name = p.name;
-	-- We add as tables the results of transforming all the entities
+	-- We add as tables the results of transforming all the entities and weak entities
 	s.tables.addAll(p.nodes.select(e : EER!Entity | true).equivalent());
-	
-	s.domains.addAll(p.nodes.select(e : EER!Domain | true).equivalent());
-	
+	-- We add as domains the results of transforming all domains
 	s.domains.addAll(p.domains.select(e : EER!Domain | true).equivalent());
-	
-	if (p.nodes.select(e : EER!Relationship | true).asSequence().size() > 0){
-		transformRelationships(p.nodes.select(e : EER!Relationship | true).asSequence(), s);
-	}
-	
-	if (p.nodes.select(e : EER!DependencyRelationship | true).asSequence().size() > 0){
-		transformDependencyRelationships(p.nodes.select(e : EER!DependencyRelationship | true).asSequence(), s);
-	}
-	
+	-- We make the transformation necesary to relationships
+	transformRelationshipsOp(p.nodes.select(e : EER!Relationship | true).asSequence(), s);
+	-- We make the transformation necesary to dependency relationships
+	transformDependencyRelationshipsOp(p.nodes.select(e : EER!DependencyRelationship | true).asSequence(), s);
+	-- We make the transformation necesary to generalizations
+	generalizationOp(s, p.nodes.select(e : EER!Generalization | true).asSequence());
+	-- We make the transformation necesary to aggregations
+	aggregationsOp(s, p.nodes.select(e : EER!Aggregation | true).asSequence());
+	-- We make the transformation necesary to multivalued attributes	
 	transformMultivaluedAttributesOp(s);
 	
 } -- Project2Schema
@@ -44,17 +42,17 @@ rule Entity2Table
 		''.println();
 		
 		t.name = e.name;
-		
-		if(e.attributes.select(p : EER!SingleAttribute | true).asSequence().size() > 0){
-			singleAttributesOp(t, e.attributes.select(p : EER!SingleAttribute | true).asSequence());
-		}
+		-- We make the transformation necesary to single attributes
+		singleAttributesOp(t, e.attributes.select(p : EER!SingleAttribute | true).asSequence());
+		-- We add as candidate key the results of transforming the candidates keys
 		t.candidateKey.addAll(e.candidateKey.equivalent());
+		-- We reference the primary key
 		t.primaryKey ::= e.primaryKey;
-		if(e.attributes.select(p : EER!CompositeAttribute | true).asSequence().size() > 0){
-			compositeAttributesOp(t, e.attributes.select(p : EER!CompositeAttribute | true).asSequence());
-		}
-	
+		-- We make the transformation necesary to composite attributes
+		compositeAttributesOp(t, e.attributes.select(p : EER!CompositeAttribute | true).asSequence());
+			
 } -- Entity2Table
+
 
 -- This rule creates one table by each weak entity in the model  
 @lazy
@@ -67,14 +65,10 @@ rule WeakEntity2Table
 		''.println();
 		
 		t.name = e.name;
-		if(e.attributes.select(p : EER!SingleAttribute | true).asSequence().size() > 0){
-			singleAttributesOp(t, e.attributes.select(p : EER!SingleAttribute | true).asSequence());
-		}
+		singleAttributesOp(t, e.attributes.select(p : EER!SingleAttribute | true).asSequence());
 		t.candidateKey.addAll(e.candidateKey.equivalent());
 		t.primaryKey := e.primaryKey;
-		if(e.attributes.select(p : EER!CompositeAttribute | true).asSequence().size() > 0){
-			compositeAttributesOp(t, e.attributes.select(p : EER!CompositeAttribute | true).asSequence());
-		}
+		compositeAttributesOp(t, e.attributes.select(p : EER!CompositeAttribute | true).asSequence());
 		
 } -- WeakEntity2Table
 
@@ -135,46 +129,61 @@ rule EnumeratedLiteral2EnumeratedLiteral
 }--EnumeratedLiteral2EnumeratedLiteral
 
 
+--
+-- Operation compositeAttributesOp.
+-- It invokes the creation of the attributes.
+--
+-- Relational!Table t: Table owner of attributes.
+-- Sequence a: Sequence with composite attributes. 
+--
 operation compositeAttributesOp(t : Relational!Table, a : Sequence ){
-	--para cada atributo compuesto	
-	for(n in Sequence{0..a.size()-1}){
+	--for each attribute in sequence	
+	for(n in a){
 		var ca : new EER!CompositeAttribute;
-		var sa : new EER!SingleAttribute;
-		ca  = a.at(n);
+		ca = n;
 		
 		'Processing composite attribute '.concat(ca.name).println();
 		
-		--creacion de los attributos simples si los hay
-		if(ca.singlesAttributes.select(p : EER!SingleAttribute | true).asSequence().size() > 0){
-			singleAttributesOp(t, ca.singlesAttributes.select(p : EER!SingleAttribute | true).asSequence());
-		}
-		--creacion de los attributos compuestos si los hay
-		if(ca.singlesAttributes.select(p : EER!CompositeAttribute | true).asSequence().size() > 0){
-			compositeAttributesOp(t, ca.singlesAttributes.select(p : EER!CompositeAttribute | true).asSequence());
-		}
+		--invokes the creation of singles attributes
+		singleAttributesOp(t, ca.singlesAttributes.select(p : EER!SingleAttribute | true).asSequence());
+		--invokes the creation of composite attributes (recursive)
+		compositeAttributesOp(t, ca.singlesAttributes.select(p : EER!CompositeAttribute | true).asSequence());
 	}
 }
 
 
-
+--
+-- Operation singleAttributesOp 
+-- It creates single attributes of the list and add it into the table.
+--
+-- Relational!Table t: Table owner of attributes.
+-- Sequence attributeList: Sequence with single attributes.
+--
 operation singleAttributesOp(t : Relational!Table, attributeList : Sequence ){	
-	--para cada attributo simple
-	for(i in Sequence{0..attributeList.size()-1}){
+	--for each single attribute in sequence
+	for(i in attributeList){
+		-- I create a new attribute (column)
 		var c : Relational!Attribute;
-		c = createSingleAttributeOp(attributeList.at(i));
-		--if(attributeList.at(i).multiplicity > 1){
-		--	multivaluedAttributeOp(t, c);
-		--}else{
-			t.attributes.add(c);
-		--}
+		c = createSingleAttributeOp(i);
+		-- I add it as attribute (column) of the table
+		t.attributes.add(c);
 	}
 }
 
+
+--
+-- Operation createSingleAttributeOp
+-- It transforms a single attribute as a column 
+--
+-- EER!SingleAttribute sa: single attribute.
+-- return Relational!Attribute: returns an attribute (column) 
+--
 operation createSingleAttributeOp(sa : EER!SingleAttribute) : Relational!Attribute{
 	var c : new Relational!Attribute;
 		
 	'Processing attribute '.concat(sa.name).println();
 	
+	-- capturing of values
 	c.name = sa.name;
 	c.domain ::= sa.domain;
 	c.nullable = sa.nullable;
@@ -188,21 +197,29 @@ operation createSingleAttributeOp(sa : EER!SingleAttribute) : Relational!Attribu
 	}else{
 		c.type = Relational!AttributeType#Simple;
 	}
+	--returns the attribute
 	return c;	
 }
 
 
+--
+-- Operation transformMultivaluesdAttributesOp.
+-- It transforms all multivalued attributes in new tables.
+--
+-- Relational!Schema s: Schema owner of attributes.
+--
 operation transformMultivaluedAttributesOp(s : Relational!Schema){
 	var deletedAttributes : new Sequence;
 	var deletedTables : new Sequence;
 	var addedTables : new Sequence;
-	--para todas las tablas del schema
+	--for each table of schema
 	for(i in s.tables){
-		--para todos los atributos de la tabla
+		--for each attribute of schema
 		for(j in i.attributes){
-			--si el atributo es multivaluado lo transformo
+			--if is a multivalued attribute
 			if(j.multivalued){
 				var t : Relational!Table;
+				-- obtains the new table 
 				t = multivaluedAttributeOp(j, i);
 				deletedAttributes.add(j);
 				deletedTables.add(i);
@@ -210,19 +227,27 @@ operation transformMultivaluedAttributesOp(s : Relational!Schema){
 			}
 		}
 	}
-	--si se han borrado elementos
+	--if there are deleted atrributes
 	if(deletedAttributes.size() > 0){
-		--recorro las sequences
+		--for each deleted attribute
 		for(i in Sequence{0..deletedAttributes.size()-1}){
-			--los borro de la tabla en la que estaban
+			--delete of the owner table
 			deletedTables.at(i).attributes.remove(deletedAttributes.at(i));
-			--añado la tabla al schema
+			--add the new table to schema
 			s.tables.add(addedTables.at(i));
 		}
 	}
 }
 
 
+--
+-- Operation multivaluedAttributeOp.
+-- Generate the new table corresponding at multivalued attribute.
+--
+-- Relational!Attribute a: multivalued attribute.
+-- Relational!Table t: table owner of attribute.
+-- return Relational!Table: returns the new table.
+--
 operation multivaluedAttributeOp(a : Relational!Attribute, t : Relational!Table) : Relational!Table{
 	var table : new Relational!Table;
 	var ck : new Relational!CandidateKey;
@@ -231,19 +256,26 @@ operation multivaluedAttributeOp(a : Relational!Attribute, t : Relational!Table)
 	table.name = t.name.concat('_').concat(a.name);
 	'Created Table '.concat(table.name).println();
 	
-	--para cada atributo que conforme la primary key
+	--for each attribute of primary key
 	for(n in t.primaryKey.attributes){
+		--create a new attribute
 		var att : Relational!Attribute;
-		att = createSingleAttributeOp(n);
-		--añado los atributos a la foreign key
+		if(n.isTypeOf(EER!SingleAttribute)){
+			att = createSingleAttributeOp(n);
+		}else{
+			att = n;
+		}
+		--the attribute is added to foreign key and to table
 		fk.attributes.add(att);
 		table.attributes.add(att);
 	}
-	
+	--fill the foreign key 
 	fk.name = table.name.concat('_FK');
 	fk.referencedTable := t;
+	--add the foreign key to table
 	table.foreignKey.add(fk);
 	
+	--new attribute corresponding at multivalued attribute
 	'Processing multivalued attribute '.concat(a.name).println();
 	var att : new Relational!Attribute;
 	att.name = a.name;
@@ -253,68 +285,86 @@ operation multivaluedAttributeOp(a : Relational!Attribute, t : Relational!Table)
 	att.domain = a.domain;
 	table.attributes.add(att);
 	
-	--añado a la candidate key los attributos
+	--add the attributes to candidate key
 	for(n in table.attributes){
 		ck.attributes.add(n);
 	}
 	ck.name = table.name.concat('_CK');
+	--the primary key will be the candidate key
 	table.primaryKey := ck;
+	--add the candidate key to table
 	table.candidateKey.add(ck);
+	-- return the new table
 	return table;
 }
 
 
-operation transformRelationships(r : Sequence, s : Relational!Schema){
-
-	var entitiesList : Sequence;
-	var cardinalitiesLowerList : Sequence; 
-	var cardinalitiesUpperList : Sequence;
-	var participantsList : Sequence;
-
-	--recorro todos las relaciones
-	for(z in Sequence{0..r.size()-1}){
-		participantsList = r.at(z).participants.asSequence();
+--
+-- Operation transformRelationshipsOp.
+-- Transforms relationships in their respective tables.
+-- 
+-- Sequence relationships: relationships to transform.
+-- Relational!Schema s: Schema owner. 
+operation transformRelationshipsOp(relationships : Sequence, s : Relational!Schema){
+	--for each relationship
+	for(r in relationships){
+		var entitiesList : new Sequence;
+		var cardinalitiesLowerList : new Sequence; 
+		var cardinalitiesUpperList : new Sequence;
+		var participantsList : new Sequence;
 		
-		--recorro todos los participantes de la relacion j
-		for(n in Sequence{0..participantsList.size()-1}){	
-			entitiesList.add(participantsList.at(n).target);
-			cardinalitiesLowerList.add(participantsList.at(n).lowerBound);
-			cardinalitiesUpperList.add(participantsList.at(n).upperBound);
+		participantsList = r.participants.asSequence();
+
+		--for each participant of relationship
+		for(n in participantsList){
+			--add into a respective list the name of the target and their bounds	
+			entitiesList.add(n.target);
+			cardinalitiesLowerList.add(n.lowerBound);
+			cardinalitiesUpperList.add(n.upperBound);
 		}
-		--compruebo que la relacion es (1,1)
-		if(compruebaCardinalidad(cardinalitiesUpperList, 1)){
-			relation11Op(s, r.at(z), participantsList);
+		--check the cardinality of relationship
+		--if is 1:1 invoke respective operation
+		if(checkCardinalityOp(cardinalitiesUpperList, 1)){
+			relation11Op(s, r, participantsList);
 		}else{
-			--Compruebo si la cardinalidad es (N,N)
-			if(compruebaCardinalidad(cardinalitiesUpperList, -1)){
-				relationNNOp(s, r.at(z), participantsList);
+			--if is N:N invoke respective operation
+			if(checkCardinalityOp(cardinalitiesUpperList, -1)){
+				relationNNOp(s, r, participantsList);
+			--else it will be 1:N and invoke respective operation
 			}else{
-				
-				relation1NOp(s, r.at(z), participantsList, cardinalitiesUpperList);
+				relation1NOp(s, r, participantsList);
 			}
 		}
 	}
 }
 
 
-operation compruebaCardinalidad(l : Sequence, n : Integer) : Boolean{
-	
+--
+-- Operation checkCardinalityOp.
+-- Checks the values of list.
+--
+-- Sequence list: list with values.
+-- Integer n: integer that indicates the operation.
+-- Return boolean: 
+-- If n = 1 returns true if all values are 1 and false in oposite case.
+-- If n <> 1 returns true if there are more of one value like 1 and false in oposite case.
+operation checkCardinalityOp(list : Sequence, n : Integer) : Boolean{
 	switch(n){
 		case 1:
-			for(i in Sequence{0..l.size()-1}){
-				if(l.at(i) <> n){
+			for(i in list){
+				if(i <> n){
 					return false;
 				}
 			}
 			return true;
-		case -1:
+		default:
 			var count : Integer = 0;
-			for(i in Sequence{0..(l.size()-1)}){
-				if(l.at(i) = -1){
+			for(i in list){
+				if(i = -1){
 					count = count + 1;
 				}
 			}
-			if(count = l.size() or count > 1){
+			if(count = list.size() or count > 1){
 				return true;
 			}else{
 				return false;
@@ -323,173 +373,182 @@ operation compruebaCardinalidad(l : Sequence, n : Integer) : Boolean{
 }
 
 
+--
+-- Operation relation11Op.
+-- Transforms the relationship 1:1 in its respective result.
+--
+-- Relation!Schema s: Schema owner.
+-- EER!Relationship r: Relationship to transform.
+-- Sequence participantsList: participants of the relationship.
+--
 operation relation11Op(s : Relational!Schema, r : EER!Relationship, participantsList : Sequence){
-	var index : Integer;
-	--buscamos el indice de la tabla
-	for(j in Sequence{0..s.tables.size()-1}){
-		if(s.tables.at(j).name = participantsList.at(0).target.name){	
-			index = j;					
-		}
-	}
-	--introducimos todas las pk
+	var table : Relational!Table;
+	--find the table
+	table = findTableOp(s, participantsList.at(0).target.name);
+	
+	--for each participant distint of the first
 	for(i in Sequence{1..participantsList.size()-1}){
+		-- generate the foreign keys
 		var fk : new Relational!ForeignKey; 
-		var ck :  EER!CandidateKey = participantsList.at(i).target.primaryKey;
-		fk.name = ck.name;
+		fk.name = participantsList.at(i).target.name.concat('_').concat(r.name).concat('_FK');
+		fk.referencedTable ::= participantsList.at(i).target;
 		
-		for(k in Sequence{0..ck.attributes.size()-1}){
-			--var att : new Relational!Attribute; 
-			--att.name = ck.attributes.at(k).name;
-			--att.nullable = ck.attributes.at(k).nullable;
-			--att.domain ::= ck.attributes.at(k).domain;
-			--if(ck.attributes.at(k).derivate){
-			--	att.type = Relational!AttributeType#Derivate;
-			--}else{
-			--	att.type = Relational!AttributeType#Simple;
-			--}
-			--comprobar si con esto funciona----------------------------------------------------------------------------------------------------------------------------
+		-- for each attribute of the primary key of the target of the participants
+		for(k in participantsList.at(i).target.primaryKey.attributes){
+			--create an attribute
 			var att :Relational!Attribute; 
-			att = createSingleAttributeOp(ck.attributes.at(k));
+			att = createSingleAttributeOp(k);
+			if(participantsList.at(i).role <> null){
+				att.name = att.name.concat('_').concat(r.role);
+			}else{
+				att.name = att.name.concat('_').concat(r.name);
+			}
 			fk.attributes.add(att);
+			if(participantsList.at(i).lowerBound = 0){
+				att.nullable = true;
+			}
+			--add the attribute to the table
+			table.attributes.add(att);
 		}
-		s.tables.at(index).foreignKey.add(fk);
-		s.tables.at(index).foreignKey.last().referencedTable ::= participantsList.at(i).target;
-		s.tables.at(index).foreignKey.last().name = s.tables.at(index).foreignKey.last().name.concat('_FK');
-		'Added '.concat(s.tables.at(index).foreignKey.last().name).concat(' to ').
-		concat(s.tables.at(index).name).println();
+		--add the foreign key to the table
+		table.foreignKey.add(fk);
+		'Added '.concat(table.foreignKey.last().name).concat(' to ').
+		concat(table.name).println();
 	}
-	--si la relación tiene atributos
-	if(r.attributes.select(p : EER!CompositeAttribute | true).asSequence().size() > 0){
-		compositeAttributesOp(s.tables.at(index), r.attributes.select(p : EER!CompositeAttribute | true).asSequence());
-	}
-	if(r.attributes.select(p : EER!SingleAttribute | true).asSequence().size() > 0){
-		singleAttributesOp(s.tables.at(index), r.attributes.select(p : EER!SingleAttribute | true).asSequence());
-	}
+	--add the attributes of the relationship
+	compositeAttributesOp(table, r.attributes.select(p : EER!CompositeAttribute | true).asSequence());
+	singleAttributesOp(table, r.attributes.select(p : EER!SingleAttribute | true).asSequence());
 }
 
 
+--
+-- Operation relation1NOp
+-- Transforms the relationship 1:N in its respective result.
+--
+-- Relation!Schema s: Schema owner.
+-- EER!Relationship r: Relationship to transform.
+-- Sequence participantsList: participants of the relationship.
+-- 
+operation relation1NOp(s : Relational!Schema, r : EER!Relationship, participantsList : Sequence){
+	var table : Relational!Table;
+	
+	--find the table with bigest cardinality
+	for(i in participantsList){
+		if(i.upperBound = -1){
+			table ::= i.target;
+		}
+	}
+	--for each participant of the participantsList
+	for(j in participantsList){
+		--if the tables target and the table with bigest cardinality are not the same
+		if(j.target.name <> table.name){
+			--create the foreign key
+			var fk : new Relational!ForeignKey; 
+			fk.name = j.target.name.concat('_').concat(r.name).concat('_FK');
+			fk.referencedTable ::= j.target; 
+			--for each attribute of the primary key
+			for(k in j.target.primaryKey.attributes){
+				--create an attribute
+				var att :Relational!Attribute; 
+				att = createSingleAttributeOp(k);
+				if(j.role <> null){
+					att.name = att.name.concat('_').concat(j.role);
+				}else{
+					att.name = att.name.concat('_').concat(r.name);
+				}
+				--add the attribute to the foreign key and to the table
+				fk.attributes.add(att);
+				if(j.lowerBound = 0){
+					att.nullable = true;
+				}
+				table.attributes.add(att);
+			}
+			--add the foreign key to the table
+			table.foreignKey.add(fk);
+			'Added '.concat(fk.name).concat(' to ').concat(table.name).println();
+		}
+	}
+	--add the attributes of the relationship
+	compositeAttributesOp(table, r.attributes.select(p : EER!CompositeAttribute | true).asSequence());
+	singleAttributesOp(table, r.attributes.select(p : EER!SingleAttribute | true).asSequence());
+}
+
+
+--
+-- Operation relationNNOp
+-- Transforms the relationship N:N in its respective result.
+--
+-- Relation!Schema s: Schema owner.
+-- EER!Relationship r: Relationship to transform.
+-- Sequence participantsList: participants of the relationship.
+-- 
 operation relationNNOp(s : Relational!Schema, r : EER!Relationship, participantsList : Sequence){
-	--crear tabla con el nombre de la relacion
+	--create a new table
 	var table : new Relational!Table;
 	table.name = r.name;
 	'Created table '.concat(r.name).println();
-	--foreignKey para meter las primaries keys de las tablas
-	var ckR : new Relational!CandidateKey;
-	ckR.name = r.name.concat('_FK');
-	'Created candidate key '.concat(ckR.name).println();
-	var ckE :  EER!CandidateKey;
+	--create a new candidate key
+	var ck : new Relational!CandidateKey;
+	ck.name = r.name.concat('_CK');
+	'Created candidate key '.concat(ck.name).println();
 	
-	for(i in Sequence{0..(participantsList.size()-1)}){
+	--for each participant of the participantList
+	for(i in participantsList){
+		--create a new foreign key
 		var fk : new Relational!ForeignKey;
-		fk.name = participantsList.at(i).target.name.concat('_FK');
-		ckE = participantsList.at(i).target.primaryKey;  
-		for(k in Sequence{0..ckE.attributes.size()-1}){
-			var att : new Relational!Attribute;
-			var att1 : new Relational!Attribute;
-			att.name = ckE.attributes.at(k).name;
-			att1.name = ckE.attributes.at(k).name;
-			att.nullable = ckE.attributes.at(k).nullable;
-			att1.nullable = ckE.attributes.at(k).nullable;
-			att.domain ::= ckE.attributes.at(k).domain;
-			att1.domain ::= ckE.attributes.at(k).domain;
-			if(ckE.attributes.at(k).derivate){
-				att.type = Relational!AttributeType#Derivate;
-				att1.type = Relational!AttributeType#Derivate;
+		fk.name = i.target.name.concat('_FK');
+		--for each attribute of the primary key
+		for(k in i.target.primaryKey.attributes){
+			--create a new attribute
+			var att : Relational!Attribute;
+			att = createSingleAttributeOp(k);
+			if(i.role <> null){
+				att.name = att.name.concat('_').concat(i.role);
 			}else{
-				att.type = Relational!AttributeType#Simple;
-				att1.type = Relational!AttributeType#Simple;
+				att.name = att.name.concat('_').concat(i.target.name);
 			}
+			--add the attribute to the table and to the foreign key
+			table.attributes.add(att);
 			fk.attributes.add(att);
-			fk.referencedTable ::= participantsList.at(i).target;
+			fk.referencedTable ::= i.target;
 			'Added attribute '.concat(att.name).concat(' at foreign key ').concat(fk.name).println();
+			--add the foreign key to the table
 			table.foreignKey.add(fk);
 			'Added foreign key '.concat(fk.name).concat(' at table ').concat(table.name).println();
-			ckR.attributes.add(att1);
-			'Added attribute '.concat(att.name).concat(' at candidate key ').concat(ckR.name).println();
+			--add the attribute to the candidate key
+			ck.attributes.add(att);
+			'Added attribute '.concat(att.name).concat(' at candidate key ').concat(ck.name).println();
 		}
 	}
-	table.attributes.add(ckR);
-	'Added candidate key '.concat(ckR.name).concat(' at table ').concat(table.name).println();
-	table.primaryKey = ckR;
-	--si la relación tiene atributos
-	if(r.attributes.select(p : EER!CompositeAttribute | true).asSequence().size() > 0){
-		compositeAttributesOp(table, r.attributes.select(p : EER!CompositeAttribute | true).asSequence());
-	}
-	if(r.attributes.select(p : EER!SingleAttribute | true).asSequence().size() > 0){
-		singleAttributesOp(table, r.attributes.select(p : EER!SingleAttribute | true).asSequence());
-	}
+	--add the candidate key to the table
+	table.candidateKey.add(ck);
+	'Added candidate key '.concat(ck.name).concat(' at table ').concat(table.name).println();
+	table.primaryKey := ck;
+	--add the attributes of the relationship
+	compositeAttributesOp(table, r.attributes.select(p : EER!CompositeAttribute | true).asSequence());
+	singleAttributesOp(table, r.attributes.select(p : EER!SingleAttribute | true).asSequence());
+	--add the table to the schema
 	s.tables.add(table);
 	'Added table '.concat(table.name).concat(' at Schema ').concat(s.name).println();			
 }
 
 
-operation relation1NOp(s : Relational!Schema, r : EER!Relationship, participantsList : Sequence, cardinalitiesUpperList : Sequence){
-	var table : Relational!Table;
-	var index : Integer;
-	var indexTables : Integer;
-	--buscamos la tabla que tiene la cardinalidad alta en la lista de cardinalidades
-	for(i in Sequence{0..participantsList.size()-1}){
-		if(cardinalitiesUpperList.at(i) = -1){
-			table ::= participantsList.at(i).target;
-			index = i;
-		}
-	}
-	
-	--buscamos la tabla que tiene la cardinalidad alta en las tablas del schema
-	for(i in Sequence{0..s.tables.size()-1}){
-		if(table.name = s.tables.at(i).name){
-			indexTables = i;
-		}
-	}
-	
-	for(j in Sequence{0..participantsList.size()-1}){
-		if(j <> index){
-			var fk : new Relational!ForeignKey; 
-			var ck :  EER!CandidateKey = participantsList.at(j).target.primaryKey;
-			fk.name = ck.name;
-			for(k in Sequence{0..ck.attributes.size()-1}){
---				var att : new Relational!Attribute; 
---				att.name = ck.attributes.at(k).name;
---				att.nullable = ck.attributes.at(k).nullable;
---				att.domain ::= ck.attributes.at(k).domain;
---				if(ck.attributes.at(k).derivate){
---					att.type = Relational!AttributeType#Derivate;
---				}else{
---					att.type = Relational!AttributeType#Simple;
---				}
-				--comprobar si con esto funciona----------------------------------------------------------------------------------------------------------------------------
-				var att :Relational!Attribute; 
-				att = createSingleAttributeOp(ck.attributes.at(k));
-				fk.attributes.add(att);
-				fk.referencedTable ::= participantsList.at(j).target;
-			}
-			s.tables.at(indexTables).foreignKey.add(fk);
-			s.tables.at(indexTables).foreignKey.last().name = s.tables.at(indexTables).foreignKey.last().name.concat('_FK');
-			'Added '.concat(s.tables.at(indexTables).foreignKey.last().name).concat(' to ').
-			concat(s.tables.at(indexTables).name).println();
-		}
-	}
-	--si la relación tiene atributos
-	if(r.attributes.select(p : EER!CompositeAttribute | true).asSequence().size() > 0){
-		compositeAttributesOp(s.tables.at(indexTables), r.attributes.select(p : EER!CompositeAttribute | true).asSequence());
-	}
-	if(r.attributes.select(p : EER!SingleAttribute | true).asSequence().size() > 0){
-		singleAttributesOp(s.tables.at(indexTables), r.attributes.select(p : EER!SingleAttribute | true).asSequence());
-	}
-}
-
-
-
-operation transformDependencyRelationships(relationList : Sequence, s : Relational!Schema){
+--
+-- Operation transformDependencyRelationshipsOp.
+-- Transforms the dependency relationship to their respective results.
+--
+-- Sequence relationList: list with dependency relationships.
+-- Relational!Schema s: schema owner.
+--
+operation transformDependencyRelationshipsOp(relationList : Sequence, s : Relational!Schema){
 
 	var entity : Relational!Table;
 	var weakEntity : Relational!Table;
 	var name : String;
 	
-	
-	--para cada relacion de dependencia
+	--for each dependency relationship of the list
 	for(i in relationList){
-		--encuentro las tablas relacionadas
+		--find the related tables 
 		for(j in Sequence{0..1}){
 			if(i.participants.at(j).target.isTypeOf(EER!Entity)){
 				name = i.participants.at(j).target.name;
@@ -499,48 +558,186 @@ operation transformDependencyRelationships(relationList : Sequence, s : Relation
 				weakEntity = findTableOp(s, name);
 			}
 		}
-		--añado los atributos de la relacion
-		if(i.attributes.select(p : EER!SingleAttribute | true).asSequence().size() > 0){
-			singleAttributesOp(weakEntity, i.attributes.select(p : EER!SingleAttribute | true).asSequence());
-		}
-		if(i.attributes.select(p : EER!CompositeAttribute | true).asSequence().size() > 0){
-			compositeAttributesOp(weakEntity, i.attributes.select(p : EER!CompositeAttribute | true).asSequence());
-		}
-		
+		--add the attributes of the dependency relationship
+		singleAttributesOp(weakEntity, i.attributes.select(p : EER!SingleAttribute | true).asSequence());
+		compositeAttributesOp(weakEntity, i.attributes.select(p : EER!CompositeAttribute | true).asSequence());
+				
 		var ck : new Relational!CandidateKey;
-		--para cada attributo que conforma la PK de la entidad fuerte
+		--for each attribute of the primary key of the strong entity
 		for(k in entity.primaryKey.attributes){
+			--create an attribute
 			var a : Relational!Attribute;
 			a = createSingleAttributeOp(k);
+			--add the attribute to the weak entity and to the candidate key
 			weakEntity.attributes.add(a);
 			ck.name = weakEntity.name.concat('_CK');
 			ck.attributes.add(a);
 		}
 		
-		--si la relación es de tipo ID
+		--if the dependency relationship is an ID type
 		if(i.type = EER!DependencyType#ID){
-			--si la entidad debil tiene una PK distinta a la PK de la entidad fuerte
+			--if the primary key of the weak entity is distint of the primary key of the strong entity
 			if(weakEntity.primaryKey.attributes <> entity.primaryKey.attributes){ 
+				--add the attributes to the candidate key
 				ck.attributes.addAll(weakEntity.primaryKey.attributes);
 			}else{
 				i.name.concat(' is a existence dependency relationship.').println();
 			}
 		}
+		--add the candidate key to the table of the weak entity
 		weakEntity.candidateKey.add(ck);
 		weakEntity.primaryKey := ck;		
 	}
 }
 
 
+--
+-- Operation findTableOp.
+-- Find the table with the name "name".
+--
+-- Relational!Schema s: Schema owner.
+-- String name: name of the table.
+-- Return Relational!Table: returns the table with the name "name".
 operation findTableOp(s : Relational!Schema, name : String) : Relational!Table{
-	--para cada tabla en el schema
+	--for each table of the schema
 	for(n in s.tables){
 		if(n.name = name){
 			return n;
 		}
 	}
+	--if the table was not found, show a message and returns null
 	'WARNING: The table '.concat(name).concat(' not found.').println();
+	return null;
 }
+
+
+--
+-- Operation generalizationOp
+-- Transfoms the generalizations in their respective results.
+--
+-- Relational!Schema s: Schema owner.
+-- Sequence list: list with generalizations.
+operation generalizationOp(s : Relational!Schema, list : Sequence){
+	--for each generalization of the list
+	for(i in list){
+		var father : Relational!Table;
+		father = findTableOp(s,i.parent.source.name);
+		--for each child
+		for(j in i.childs){
+			--create a new table and a new candidate key
+			var table : Relational!Table;
+			table = findTableOp(s,j.child.name);
+			var ck : new Relational!CandidateKey;
+			ck.name = table.name.concat('_CK');
+			--for each attribute of the primary key of the father
+			for(n in father.primaryKey.attributes){
+				--create a new attribute
+				var att : Relational!Attribute;
+				att = createSingleAttributeOp(n);
+				--add the attribute to the candidate key an to the table
+				ck.attributes.add(att);
+				table.attributes.add(att);
+			}
+			--add the candidate key to the table
+			table.candidateKey.add(ck);
+			table.primaryKey := ck;
+		}
+	}
+}
+
+
+--
+-- Operation aggregationsOp.
+-- Transforms the aggregations in their respective results.
+--
+-- Relational!Schema s: schema owner.
+-- Sequence list: list with aggregations.
+operation aggregationsOp(s : Relational!Schema, list : Sequence){
+	--for each aggregation of the list
+	for(i in list){
+		--create a reference of a table
+		var source : Relational!Table;
+		source = findTableOp(s, i.source.name);
+		--for each participant of the aggregation
+		for(j in i.participants){
+			--create a new attribute
+			var att : Relational!Attribute;
+			--if is N:N
+			if((j.lowerBound > 1 or j.lowerBound < 0) and 
+			   (j.upperBound > 1 or j.upperBound < 0)){
+			    --create a new table, a new candidate key and a new foreign key
+				var table : new Relational!Table;
+				table.name = source.name.concat('_').concat(j.target.name);
+				var ck : new Relational!CandidateKey;
+				ck.name = table.name.concat('_CK');
+				var fk : new Relational!ForeignKey;
+				fk.name = source.name.concat('_FK');
+				fk.referencedTable := source;
+				--for each attribute of the primary key of the source
+				for(k in source.primaryKey.attributes){
+					att = createSingleAttributeOp(k);
+					--add the attribute to the foreign key, to the table 
+					--and to the candidate key
+					fk.attributes.add(att);
+					table.attributes.add(att);
+					ck.attributes.add(att);
+				}
+				--add the foreign key to the table
+				table.foreignKey.add(fk);
+				
+				--create a new foreign key
+				var fk1 : new Relational!ForeignKey;
+				fk1.name = j.target.name.concat('_FK');
+				fk1.referencedTable ::= j.target;
+				--for each attribute of the primary key of the target
+				for(k in j.target.primaryKey.attributes){
+					att = createSingleAttributeOp(k);
+					fk1.attributes.add(att);
+					table.attributes.add(att);
+					ck.attributes.add(att);
+				}
+				table.foreignKey.add(fk1);
+				table.candidateKey.add(ck);
+				table.primaryKey := ck;		
+				s.tables.add(table);
+			}else{
+				--if is 1:N
+				if((j.lowerBound = 1 or j.lowerBound = 0) and 
+				   (j.upperBound > 1 or j.upperBound < 0)){
+				   
+				   	var fk : new Relational!ForeignKey;
+					fk.name = source.name.concat('_FK');
+					fk.referencedTable := source;
+					var table : Relational!Table;
+					table = findTableOp(s,j.target.name); 
+				   	--for each attribute of the primary key of the source
+				   	for(k in source.primaryKey.attributes){
+						att = createSingleAttributeOp(k);
+						fk.attributes.add(att);
+						table.attributes.add(att);   		
+				   	}
+				   	table.foreignKey.add(fk);
+				   
+				--if is 1:1
+				}else{
+					var fk : new Relational!ForeignKey;
+					fk.name = j.target.name.concat('_FK');
+					fk.referencedTable ::= j.target;
+					--for each attribute of the primary key of the target
+					for(k in j.target.primaryKey.attributes){
+						att = createSingleAttributeOp(k);
+						fk.attributes.add(att);
+						source.attributes.add(att);
+					}
+					source.foreignKey.add(fk);
+				}
+			}
+		}
+	}
+}
+
+
+
 
 
 
