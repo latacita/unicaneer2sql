@@ -111,7 +111,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="domain" lowerBound="1"
         eType="#//Domain"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Domain" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -148,18 +148,6 @@
         eType="#//Exclusive" containment="true" eOpposite="#//Exclusive/source"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inclusivenessConstraint"
         upperBound="-1" eType="#//Inclusiveness" containment="true" eOpposite="#//Inclusiveness/source"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Aggregation" abstract="true" eSuperTypes="#//AttributedNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="#//Entity"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//Aggregation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="participants" lowerBound="1"
-        upperBound="-1" eType="#//AggregationParticipant" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MemberCollection" eSuperTypes="#//Aggregation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="participant" lowerBound="1"
-        eType="#//AggregationParticipant" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Generalization" eSuperTypes="#//AttributedNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
@@ -200,12 +188,18 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregationParticipant" eSuperTypes="#//AbstractParticipant">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="#//Aggregation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Aggregation" eOpposite="#//Aggregation/participants"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true" eSuperTypes="#//AttributedNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//Attribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Aggregation" eSuperTypes="#//AttributedNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participants" lowerBound="1"
+        upperBound="-1" eType="#//AggregationParticipant" containment="true" eOpposite="#//AggregationParticipant/source"/>
   </eClassifiers>
 </ecore:EPackage>

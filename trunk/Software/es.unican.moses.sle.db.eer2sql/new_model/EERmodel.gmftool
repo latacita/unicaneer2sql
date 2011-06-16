@@ -87,22 +87,9 @@
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
       </tools>
-    </tools>
-    <tools
-        xsi:type="gmftool:ToolGroup"
-        title="Aggregations"
-        collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="CompositeComponent">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="MemberCollection">
+          title="Aggregation">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -123,15 +110,7 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="LineCompositeComponent">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="LineMemberCollection">
+          title="LineAggregation">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
