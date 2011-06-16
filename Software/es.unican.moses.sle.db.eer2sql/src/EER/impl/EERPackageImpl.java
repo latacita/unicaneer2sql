@@ -222,20 +222,6 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass compositeComponentEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass memberCollectionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass generalizationEClass = null;
 
 	/**
@@ -648,7 +634,7 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCandidateKey_Attribute() {
+	public EReference getCandidateKey_Attributes() {
 		return (EReference)candidateKeyEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -936,35 +922,8 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCompositeComponent() {
-		return compositeComponentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCompositeComponent_Participants() {
-		return (EReference)compositeComponentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getMemberCollection() {
-		return memberCollectionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMemberCollection_Participant() {
-		return (EReference)memberCollectionEClass.getEStructuralFeatures().get(0);
+	public EReference getAggregation_Participants() {
+		return (EReference)aggregationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1117,7 +1076,7 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 	 * @generated
 	 */
 	public EReference getAggregationParticipant_Source() {
-		return (EReference)aggregationParticipantEClass.getEStructuralFeatures().get(0);
+		return (EReference)aggregationParticipantEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1126,7 +1085,7 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 	 * @generated
 	 */
 	public EReference getAggregationParticipant_Target() {
-		return (EReference)aggregationParticipantEClass.getEStructuralFeatures().get(1);
+		return (EReference)aggregationParticipantEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1242,7 +1201,7 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 		createEReference(inclusionEClass, INCLUSION__TARGET);
 
 		candidateKeyEClass = createEClass(CANDIDATE_KEY);
-		createEReference(candidateKeyEClass, CANDIDATE_KEY__ATTRIBUTE);
+		createEReference(candidateKeyEClass, CANDIDATE_KEY__ATTRIBUTES);
 		createEAttribute(candidateKeyEClass, CANDIDATE_KEY__NAME);
 
 		attributeEClass = createEClass(ATTRIBUTE);
@@ -1284,15 +1243,6 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 		createEReference(participantEClass, PARTICIPANT__EXCLUSIVE_CONSTRAINT);
 		createEReference(participantEClass, PARTICIPANT__INCLUSIVENESS_CONSTRAINT);
 
-		aggregationEClass = createEClass(AGGREGATION);
-		createEReference(aggregationEClass, AGGREGATION__SOURCE);
-
-		compositeComponentEClass = createEClass(COMPOSITE_COMPONENT);
-		createEReference(compositeComponentEClass, COMPOSITE_COMPONENT__PARTICIPANTS);
-
-		memberCollectionEClass = createEClass(MEMBER_COLLECTION);
-		createEReference(memberCollectionEClass, MEMBER_COLLECTION__PARTICIPANT);
-
 		generalizationEClass = createEClass(GENERALIZATION);
 		createEReference(generalizationEClass, GENERALIZATION__PARENT);
 		createEReference(generalizationEClass, GENERALIZATION__CHILDS);
@@ -1313,11 +1263,15 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 		createEAttribute(abstractParticipantEClass, ABSTRACT_PARTICIPANT__UPPER_BOUND);
 
 		aggregationParticipantEClass = createEClass(AGGREGATION_PARTICIPANT);
-		createEReference(aggregationParticipantEClass, AGGREGATION_PARTICIPANT__SOURCE);
 		createEReference(aggregationParticipantEClass, AGGREGATION_PARTICIPANT__TARGET);
+		createEReference(aggregationParticipantEClass, AGGREGATION_PARTICIPANT__SOURCE);
 
 		nodeEClass = createEClass(NODE);
 		createEReference(nodeEClass, NODE__ATTRIBUTES);
+
+		aggregationEClass = createEClass(AGGREGATION);
+		createEReference(aggregationEClass, AGGREGATION__SOURCE);
+		createEReference(aggregationEClass, AGGREGATION__PARTICIPANTS);
 
 		// Create enums
 		dependencyTypeEEnum = createEEnum(DEPENDENCY_TYPE);
@@ -1369,12 +1323,10 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 		relationshipEClass.getESuperTypes().add(this.getAbstractRelationship());
 		dependencyRelationshipEClass.getESuperTypes().add(this.getAbstractRelationship());
 		participantEClass.getESuperTypes().add(this.getAbstractParticipant());
-		aggregationEClass.getESuperTypes().add(this.getAttributedNode());
-		compositeComponentEClass.getESuperTypes().add(this.getAggregation());
-		memberCollectionEClass.getESuperTypes().add(this.getAggregation());
 		generalizationEClass.getESuperTypes().add(this.getAttributedNode());
 		aggregationParticipantEClass.getESuperTypes().add(this.getAbstractParticipant());
 		nodeEClass.getESuperTypes().add(this.getAttributedNode());
+		aggregationEClass.getESuperTypes().add(this.getAttributedNode());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1417,7 +1369,7 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 		initEReference(getInclusion_Target(), this.getRelationship(), null, "target", null, 1, 1, Inclusion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(candidateKeyEClass, CandidateKey.class, "CandidateKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCandidateKey_Attribute(), this.getAttribute(), null, "attribute", null, 1, -1, CandidateKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCandidateKey_Attributes(), this.getAttribute(), null, "attributes", null, 1, -1, CandidateKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCandidateKey_Name(), ecorePackage.getEString(), "name", null, 0, 1, CandidateKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1430,7 +1382,7 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 		initEClass(singleAttributeEClass, SingleAttribute.class, "SingleAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSingleAttribute_Derivate(), ecorePackage.getEBoolean(), "derivate", null, 1, 1, SingleAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSingleAttribute_Domain(), this.getDomain(), null, "domain", null, 1, 1, SingleAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSingleAttribute_Multiplicity(), ecorePackage.getEInt(), "multiplicity", null, 1, 1, SingleAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSingleAttribute_Multiplicity(), ecorePackage.getEInt(), "multiplicity", "1", 1, 1, SingleAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(domainEClass, Domain.class, "Domain", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDomain_Name(), ecorePackage.getEString(), "name", null, 1, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1459,15 +1411,6 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 		initEReference(getParticipant_ExclusiveConstraint(), this.getExclusive(), this.getExclusive_Source(), "exclusiveConstraint", null, 0, -1, Participant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getParticipant_InclusivenessConstraint(), this.getInclusiveness(), this.getInclusiveness_Source(), "inclusivenessConstraint", null, 0, -1, Participant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(aggregationEClass, Aggregation.class, "Aggregation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAggregation_Source(), this.getEntity(), null, "source", null, 1, 1, Aggregation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(compositeComponentEClass, CompositeComponent.class, "CompositeComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCompositeComponent_Participants(), this.getAggregationParticipant(), null, "participants", null, 1, -1, CompositeComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(memberCollectionEClass, MemberCollection.class, "MemberCollection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMemberCollection_Participant(), this.getAggregationParticipant(), null, "participant", null, 1, 1, MemberCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(generalizationEClass, Generalization.class, "Generalization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGeneralization_Parent(), this.getSpecializationRelationship(), this.getSpecializationRelationship_Relationship(), "parent", null, 1, 1, Generalization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGeneralization_Childs(), this.getGeneralizationRelationship(), this.getGeneralizationRelationship_Relationship(), "childs", null, 1, -1, Generalization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1488,11 +1431,15 @@ public class EERPackageImpl extends EPackageImpl implements EERPackage {
 		initEAttribute(getAbstractParticipant_UpperBound(), ecorePackage.getEInt(), "upperBound", null, 0, 1, AbstractParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(aggregationParticipantEClass, AggregationParticipant.class, "AggregationParticipant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAggregationParticipant_Source(), this.getAggregation(), null, "source", null, 1, 1, AggregationParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAggregationParticipant_Target(), this.getNode(), null, "target", null, 0, 1, AggregationParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAggregationParticipant_Source(), this.getAggregation(), this.getAggregation_Participants(), "source", null, 1, 1, AggregationParticipant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNode_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(aggregationEClass, Aggregation.class, "Aggregation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAggregation_Source(), this.getEntity(), null, "source", null, 1, 1, Aggregation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAggregation_Participants(), this.getAggregationParticipant(), this.getAggregationParticipant_Source(), "participants", null, 1, -1, Aggregation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(dependencyTypeEEnum, DependencyType.class, "DependencyType");

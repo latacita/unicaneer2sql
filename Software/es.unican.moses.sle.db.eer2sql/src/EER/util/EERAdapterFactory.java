@@ -156,18 +156,6 @@ public class EERAdapterFactory extends AdapterFactoryImpl {
 				return createParticipantAdapter();
 			}
 			@Override
-			public Adapter caseAggregation(Aggregation object) {
-				return createAggregationAdapter();
-			}
-			@Override
-			public Adapter caseCompositeComponent(CompositeComponent object) {
-				return createCompositeComponentAdapter();
-			}
-			@Override
-			public Adapter caseMemberCollection(MemberCollection object) {
-				return createMemberCollectionAdapter();
-			}
-			@Override
 			public Adapter caseGeneralization(Generalization object) {
 				return createGeneralizationAdapter();
 			}
@@ -190,6 +178,10 @@ public class EERAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNode(Node object) {
 				return createNodeAdapter();
+			}
+			@Override
+			public Adapter caseAggregation(Aggregation object) {
+				return createAggregationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -516,34 +508,6 @@ public class EERAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAggregationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link EER.CompositeComponent <em>Composite Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see EER.CompositeComponent
-	 * @generated
-	 */
-	public Adapter createCompositeComponentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link EER.MemberCollection <em>Member Collection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see EER.MemberCollection
-	 * @generated
-	 */
-	public Adapter createMemberCollectionAdapter() {
 		return null;
 	}
 

@@ -81,6 +81,7 @@ public interface SingleAttribute extends Attribute {
 
 	/**
 	 * Returns the value of the '<em><b>Multiplicity</b></em>' attribute.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Multiplicity</em>' attribute isn't clear,
@@ -90,7 +91,7 @@ public interface SingleAttribute extends Attribute {
 	 * @return the value of the '<em>Multiplicity</em>' attribute.
 	 * @see #setMultiplicity(int)
 	 * @see EER.EERPackage#getSingleAttribute_Multiplicity()
-	 * @model required="true"
+	 * @model default="1" required="true"
 	 * @generated
 	 */
 	int getMultiplicity();

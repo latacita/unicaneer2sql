@@ -15,8 +15,8 @@ package EER;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link EER.AggregationParticipant#getSource <em>Source</em>}</li>
  *   <li>{@link EER.AggregationParticipant#getTarget <em>Target</em>}</li>
+ *   <li>{@link EER.AggregationParticipant#getSource <em>Source</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,26 +26,28 @@ package EER;
  */
 public interface AggregationParticipant extends AbstractParticipant {
 	/**
-	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * Returns the value of the '<em><b>Source</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link EER.Aggregation#getParticipants <em>Participants</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Source</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source</em>' reference.
+	 * @return the value of the '<em>Source</em>' container reference.
 	 * @see #setSource(Aggregation)
 	 * @see EER.EERPackage#getAggregationParticipant_Source()
-	 * @model required="true"
+	 * @see EER.Aggregation#getParticipants
+	 * @model opposite="participants" required="true" transient="false"
 	 * @generated
 	 */
 	Aggregation getSource();
 
 	/**
-	 * Sets the value of the '{@link EER.AggregationParticipant#getSource <em>Source</em>}' reference.
+	 * Sets the value of the '{@link EER.AggregationParticipant#getSource <em>Source</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source</em>' reference.
+	 * @param value the new value of the '<em>Source</em>' container reference.
 	 * @see #getSource()
 	 * @generated
 	 */

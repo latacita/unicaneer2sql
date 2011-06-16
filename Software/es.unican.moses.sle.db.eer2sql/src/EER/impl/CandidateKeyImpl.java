@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link EER.impl.CandidateKeyImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link EER.impl.CandidateKeyImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link EER.impl.CandidateKeyImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
@@ -39,14 +39,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class CandidateKeyImpl extends EObjectImpl implements CandidateKey {
 	/**
-	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference list.
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttribute()
+	 * @see #getAttributes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> attribute;
+	protected EList<Attribute> attributes;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -92,11 +92,11 @@ public class CandidateKeyImpl extends EObjectImpl implements CandidateKey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Attribute> getAttribute() {
-		if (attribute == null) {
-			attribute = new EObjectResolvingEList<Attribute>(Attribute.class, this, EERPackage.CANDIDATE_KEY__ATTRIBUTE);
+	public EList<Attribute> getAttributes() {
+		if (attributes == null) {
+			attributes = new EObjectResolvingEList<Attribute>(Attribute.class, this, EERPackage.CANDIDATE_KEY__ATTRIBUTES);
 		}
-		return attribute;
+		return attributes;
 	}
 
 	/**
@@ -128,8 +128,8 @@ public class CandidateKeyImpl extends EObjectImpl implements CandidateKey {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EERPackage.CANDIDATE_KEY__ATTRIBUTE:
-				return getAttribute();
+			case EERPackage.CANDIDATE_KEY__ATTRIBUTES:
+				return getAttributes();
 			case EERPackage.CANDIDATE_KEY__NAME:
 				return getName();
 		}
@@ -145,9 +145,9 @@ public class CandidateKeyImpl extends EObjectImpl implements CandidateKey {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EERPackage.CANDIDATE_KEY__ATTRIBUTE:
-				getAttribute().clear();
-				getAttribute().addAll((Collection<? extends Attribute>)newValue);
+			case EERPackage.CANDIDATE_KEY__ATTRIBUTES:
+				getAttributes().clear();
+				getAttributes().addAll((Collection<? extends Attribute>)newValue);
 				return;
 			case EERPackage.CANDIDATE_KEY__NAME:
 				setName((String)newValue);
@@ -164,8 +164,8 @@ public class CandidateKeyImpl extends EObjectImpl implements CandidateKey {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EERPackage.CANDIDATE_KEY__ATTRIBUTE:
-				getAttribute().clear();
+			case EERPackage.CANDIDATE_KEY__ATTRIBUTES:
+				getAttributes().clear();
 				return;
 			case EERPackage.CANDIDATE_KEY__NAME:
 				setName(NAME_EDEFAULT);
@@ -182,8 +182,8 @@ public class CandidateKeyImpl extends EObjectImpl implements CandidateKey {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EERPackage.CANDIDATE_KEY__ATTRIBUTE:
-				return attribute != null && !attribute.isEmpty();
+			case EERPackage.CANDIDATE_KEY__ATTRIBUTES:
+				return attributes != null && !attributes.isEmpty();
 			case EERPackage.CANDIDATE_KEY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}

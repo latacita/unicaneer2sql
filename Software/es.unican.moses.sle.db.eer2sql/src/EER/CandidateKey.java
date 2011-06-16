@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link EER.CandidateKey#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link EER.CandidateKey#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link EER.CandidateKey#getName <em>Name</em>}</li>
  * </ul>
  * </p>
@@ -29,20 +29,20 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface CandidateKey extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Attribute</b></em>' reference list.
+	 * Returns the value of the '<em><b>Attributes</b></em>' reference list.
 	 * The list contents are of type {@link EER.Attribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Attribute</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Attributes</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attribute</em>' reference list.
-	 * @see EER.EERPackage#getCandidateKey_Attribute()
+	 * @return the value of the '<em>Attributes</em>' reference list.
+	 * @see EER.EERPackage#getCandidateKey_Attributes()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Attribute> getAttribute();
+	EList<Attribute> getAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

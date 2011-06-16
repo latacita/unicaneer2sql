@@ -235,29 +235,6 @@ public class EERSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case EERPackage.AGGREGATION: {
-				Aggregation aggregation = (Aggregation)theEObject;
-				T result = caseAggregation(aggregation);
-				if (result == null) result = caseAttributedNode(aggregation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EERPackage.COMPOSITE_COMPONENT: {
-				CompositeComponent compositeComponent = (CompositeComponent)theEObject;
-				T result = caseCompositeComponent(compositeComponent);
-				if (result == null) result = caseAggregation(compositeComponent);
-				if (result == null) result = caseAttributedNode(compositeComponent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EERPackage.MEMBER_COLLECTION: {
-				MemberCollection memberCollection = (MemberCollection)theEObject;
-				T result = caseMemberCollection(memberCollection);
-				if (result == null) result = caseAggregation(memberCollection);
-				if (result == null) result = caseAttributedNode(memberCollection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case EERPackage.GENERALIZATION: {
 				Generalization generalization = (Generalization)theEObject;
 				T result = caseGeneralization(generalization);
@@ -294,6 +271,13 @@ public class EERSwitch<T> {
 				Node node = (Node)theEObject;
 				T result = caseNode(node);
 				if (result == null) result = caseAttributedNode(node);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EERPackage.AGGREGATION: {
+				Aggregation aggregation = (Aggregation)theEObject;
+				T result = caseAggregation(aggregation);
+				if (result == null) result = caseAttributedNode(aggregation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -628,36 +612,6 @@ public class EERSwitch<T> {
 	 * @generated
 	 */
 	public T caseAggregation(Aggregation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Composite Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Composite Component</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCompositeComponent(CompositeComponent object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Member Collection</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Member Collection</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMemberCollection(MemberCollection object) {
 		return null;
 	}
 
