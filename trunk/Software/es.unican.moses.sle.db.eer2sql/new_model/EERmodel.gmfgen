@@ -777,74 +777,6 @@
       </modelFacet>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2013"
-        editPartClassName="CompositeComponentEditPart"
-        itemSemanticEditPolicyClassName="CompositeComponentItemSemanticEditPolicy"
-        notationViewFactoryClassName="CompositeComponentViewFactory"
-        canonicalEditPolicyClassName="CompositeComponentCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="CompositeComponentGraphicalNodeEditPolicy"
-        createCommandClassName="CompositeComponentCreateCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="CompositeComponentEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="CompositeComponentFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CompositeComponentFigure extends org.eclipse.draw2d.PolygonShape {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCompositeComponentNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CompositeComponentFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(30)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;this.setFill(true);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(21)&#xA;, getMapMode().DPtoLP(31)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCompositeComponentNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureCompositeComponentNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureCompositeComponentNameFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCompositeComponentNameFigure() {&#xA;&#x9;&#x9;return fFigureCompositeComponentNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-        <attributes
-            xsi:type="gmfgen:DefaultSizeAttributes"
-            width="21"
-            height="31"/>
-      </viewmap>
-      <modelFacet>
-        <metaClass
-            href="EERmodel.genmodel#//EER/CompositeComponent"/>
-        <containmentMetaFeature
-            href="EERmodel.genmodel#//EER/Project/nodes"/>
-        <childMetaFeature
-            href="EERmodel.genmodel#//EER/Project/nodes"/>
-      </modelFacet>
-    </topLevelNodes>
-    <topLevelNodes
-        visualID="2014"
-        editPartClassName="MemberCollectionEditPart"
-        itemSemanticEditPolicyClassName="MemberCollectionItemSemanticEditPolicy"
-        notationViewFactoryClassName="MemberCollectionViewFactory"
-        canonicalEditPolicyClassName="MemberCollectionCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="MemberCollectionGraphicalNodeEditPolicy"
-        createCommandClassName="MemberCollectionCreateCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="MemberCollectionEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="MemberCollectionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MemberCollectionFigure extends org.eclipse.draw2d.PolygonShape {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMemberCollectionNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MemberCollectionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(30)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;this.setFill(true);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(21)&#xA;, getMapMode().DPtoLP(31)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureMemberCollectionNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureMemberCollectionNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureMemberCollectionNameFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMemberCollectionNameFigure() {&#xA;&#x9;&#x9;return fFigureMemberCollectionNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-        <attributes
-            xsi:type="gmfgen:DefaultSizeAttributes"
-            width="21"
-            height="31"/>
-      </viewmap>
-      <modelFacet>
-        <metaClass
-            href="EERmodel.genmodel#//EER/MemberCollection"/>
-        <containmentMetaFeature
-            href="EERmodel.genmodel#//EER/Project/nodes"/>
-        <childMetaFeature
-            href="EERmodel.genmodel#//EER/Project/nodes"/>
-      </modelFacet>
-    </topLevelNodes>
-    <topLevelNodes
         visualID="2015"
         editPartClassName="PrimitiveTypeEditPart"
         itemSemanticEditPolicyClassName="PrimitiveTypeItemSemanticEditPolicy"
@@ -955,6 +887,39 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
+    <topLevelNodes
+        visualID="2017"
+        editPartClassName="AggregationEditPart"
+        itemSemanticEditPolicyClassName="AggregationItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="AggregationCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="AggregationGraphicalNodeEditPolicy"
+        createCommandClassName="AggregationCreateCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="AggregationEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="AggregationFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AggregationFigure extends org.eclipse.draw2d.PolygonShape {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAggregationNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AggregationFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(30)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;this.setFill(true);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(21)&#xA;, getMapMode().DPtoLP(31)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureAggregationNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureAggregationNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureAggregationNameFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAggregationNameFigure() {&#xA;&#x9;&#x9;return fFigureAggregationNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedForeground="true"/>
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="21"
+            height="31"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="EERmodel.genmodel#//EER/Aggregation"/>
+        <containmentMetaFeature
+            href="EERmodel.genmodel#//EER/Project/nodes"/>
+        <childMetaFeature
+            href="EERmodel.genmodel#//EER/Project/nodes"/>
+      </modelFacet>
+    </topLevelNodes>
     <links
         visualID="4002"
         editPartClassName="AggregationParticipantEditPart"
@@ -969,8 +934,8 @@
           editHelperClassName="AggregationParticipantEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          className="LineCompositeComponentFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class LineCompositeComponentFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public LineCompositeComponentFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          className="LineAggregationFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class LineAggregationFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public LineAggregationFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:StyleAttributes"
             fixedForeground="true"/>
@@ -980,48 +945,41 @@
         <metaClass
             href="EERmodel.genmodel#//EER/AggregationParticipant"/>
         <containmentMetaFeature
-            href="EERmodel.genmodel#//EER/CompositeComponent/participants"/>
+            href="EERmodel.genmodel#//EER/Aggregation/participants"/>
         <childMetaFeature
-            href="EERmodel.genmodel#//EER/CompositeComponent/participants"/>
+            href="EERmodel.genmodel#//EER/Aggregation/participants"/>
         <sourceMetaFeature
             href="EERmodel.genmodel#//EER/AggregationParticipant/source"/>
         <targetMetaFeature
             href="EERmodel.genmodel#//EER/AggregationParticipant/target"/>
       </modelFacet>
-    </links>
-    <links
-        visualID="4006"
-        editPartClassName="AggregationParticipant2EditPart"
-        itemSemanticEditPolicyClassName="AggregationParticipant2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="AggregationParticipantViewFactory"
-        createCommandClassName="AggregationParticipant2CreateCommand"
-        reorientCommandClassName="AggregationParticipant2ReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@links.0/@elementType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="LineMemberCollectionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class LineMemberCollectionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public LineMemberCollectionFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-      </viewmap>
-      <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet">
-        <metaClass
-            href="EERmodel.genmodel#//EER/AggregationParticipant"/>
-        <containmentMetaFeature
-            href="EERmodel.genmodel#//EER/MemberCollection/participant"/>
-        <childMetaFeature
-            href="EERmodel.genmodel#//EER/MemberCollection/participant"/>
-        <sourceMetaFeature
-            href="EERmodel.genmodel#//EER/AggregationParticipant/source"/>
-        <targetMetaFeature
-            href="EERmodel.genmodel#//EER/AggregationParticipant/target"/>
-      </modelFacet>
+      <labels
+          visualID="6004"
+          editPartClassName="AggregationParticipantLowerBoundUpperBoundEditPart"
+          itemSemanticEditPolicyClassName="AggregationParticipantLowerBoundUpperBoundItemSemanticEditPolicy"
+          notationViewFactoryClassName="AggregationParticipantLowerBoundUpperBoundViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="LabelFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class LabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public LabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;...&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="40"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
+            viewPattern="{0,choice,-1#N| 0#{0}}..{1,choice,-1#N| 0#{1}}"
+            editorPattern="{0}..{1}"
+            editPattern="{0}..{1}">
+          <metaFeatures
+              href="EERmodel.genmodel#//EER/AbstractParticipant/lowerBound"/>
+          <metaFeatures
+              href="EERmodel.genmodel#//EER/AbstractParticipant/upperBound"/>
+        </modelFacet>
+      </labels>
     </links>
     <links
         visualID="4001"
@@ -1391,7 +1349,7 @@
         title="EnumerationTypeCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.8">
+        node="//@diagram/@topLevelNodes.6">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -1452,18 +1410,10 @@
             xsi:type="gmfgen:ToolEntry"
             title="Generalization"
             genNodes="//@diagram/@topLevelNodes.4"/>
-      </groups>
-      <groups
-          title="Aggregations"
-          collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="CompositeComponent"
-            genNodes="//@diagram/@topLevelNodes.5"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="MemberCollection"
-            genNodes="//@diagram/@topLevelNodes.6"/>
+            title="Aggregation"
+            genNodes="//@diagram/@topLevelNodes.7"/>
       </groups>
       <groups
           title="Links"
@@ -1471,23 +1421,19 @@
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="LineEntityRelationship"
-            genLinks="//@diagram/@links.2"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="LineCompositeComponent"
-            genLinks="//@diagram/@links.0"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="LineMemberCollection"
             genLinks="//@diagram/@links.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
+            title="LineAggregation"
+            genLinks="//@diagram/@links.0"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
             title="LineEntityGeneralization"
-            genLinks="//@diagram/@links.4"/>
+            genLinks="//@diagram/@links.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="LineGeneralizationEntity"
-            genLinks="//@diagram/@links.3"/>
+            genLinks="//@diagram/@links.2"/>
       </groups>
       <groups
           title="Constraints"
@@ -1496,22 +1442,22 @@
             xsi:type="gmfgen:ToolEntry"
             title="Inclusion"
             description=""
-            genLinks="//@diagram/@links.5"/>
+            genLinks="//@diagram/@links.4"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Exclusion"
             description=""
-            genLinks="//@diagram/@links.6"/>
+            genLinks="//@diagram/@links.5"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Exclusive"
             description=""
-            genLinks="//@diagram/@links.7"/>
+            genLinks="//@diagram/@links.6"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Inclusiveness"
             description=""
-            genLinks="//@diagram/@links.8"/>
+            genLinks="//@diagram/@links.7"/>
       </groups>
       <groups
           title="Data Types"
@@ -1519,11 +1465,11 @@
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Primitive Type"
-            genNodes="//@diagram/@topLevelNodes.7"/>
+            genNodes="//@diagram/@topLevelNodes.5"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Enumeration Type"
-            genNodes="//@diagram/@topLevelNodes.8"/>
+            genNodes="//@diagram/@topLevelNodes.6"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Literals"
@@ -1839,7 +1785,7 @@
           body="self.primaryKey -> notEmpty()"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="self.participants ->exists(e1 | e1.target.oclIsKindOf(WeakEntity))"/>
+          body="self.participants -> forAll(p1, p2 |  p1.target.oclIsKindOf(WeakEntity) implies p2.target.oclIsKindOf(Entity))"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.name.size() > 0"/>
@@ -1852,7 +1798,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.0/@labelModelFacet //@diagram/@childNodes.1/@labelModelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.6/@labelModelFacet //@diagram/@childNodes.7/@labelModelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labelModelFacet //@diagram/@topLevelNodes.8/@labels.0/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet //@diagram/@links.2/@labels.1/@modelFacet //@diagram/@links.8/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.0/@labelModelFacet //@diagram/@childNodes.1/@labelModelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.6/@labelModelFacet //@diagram/@childNodes.7/@labelModelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.8/@labelModelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.1/@labels.1/@modelFacet //@diagram/@links.7/@labels.0/@modelFacet"/>
   </labelParsers>
   <contextMenus
       context="//@diagram">
