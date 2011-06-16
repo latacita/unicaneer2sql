@@ -21,7 +21,7 @@ public class DependencyRelationshipOpenEditPolicy extends OpenEditPolicy {
 			@Override
 			public void execute() {
 				System.out.println("Double click captured");
-				new AttributesWizard("Relation x");
+				new RelationshipWizard("Relation x");
 //		   	new AttributesDialog("Relation x");
 //				new AttributesDisplay("Relation x");
 				
