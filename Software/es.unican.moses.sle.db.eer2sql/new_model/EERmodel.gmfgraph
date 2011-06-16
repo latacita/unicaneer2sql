@@ -361,10 +361,10 @@
           figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
-        name="CompositeComponentFigure">
+        name="AggregationFigure">
       <actualFigure
           xsi:type="gmfgraph:Polygon"
-          name="CompositeComponentFigure">
+          name="AggregationFigure">
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="black"/>
@@ -373,7 +373,7 @@
             dy="31"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="CompositeComponentNameFigure"
+            name="AggregationNameFigure"
             text="&lt;...>"/>
         <template
             x="10"/>
@@ -388,35 +388,6 @@
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="MemberCollectionFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Polygon"
-          name="MemberCollectionFigure">
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="black"/>
-        <preferredSize
-            dx="21"
-            dy="31"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="MemberCollectionNameFigure"
-            text="&lt;...>"/>
-        <template
-            x="10"/>
-        <template
-            x="20"
-            y="15"/>
-        <template
-            x="10"
-            y="30"/>
-        <template
-            y="15"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="SimpleLineFigure">
@@ -437,25 +408,15 @@
             name="Cardinality"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.2"/>
       <accessors
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
-        name="LineCompositeComponentFigure">
+        name="LineAggregationFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
-          name="LineCompositeComponentFigure">
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="black"/>
-      </actualFigure>
-    </descriptors>
-    <descriptors
-        name="LineMemberCollectionFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="LineMemberCollectionFigure">
+          name="LineAggregationFigure">
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="black"/>
@@ -516,7 +477,7 @@
           xsi:type="gmfgraph:PolylineConnection"
           name="InclusionFigure"
           lineKind="LINE_DASH"
-          targetDecoration="//@figures.0/@descriptors.17/@actualFigure/@children.0">
+          targetDecoration="//@figures.0/@descriptors.15/@actualFigure/@children.0">
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="lightGray"/>
@@ -561,7 +522,7 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="InclusivenessFigure"
-          targetDecoration="//@figures.0/@descriptors.17/@actualFigure/@children.0">
+          targetDecoration="//@figures.0/@descriptors.15/@actualFigure/@children.0">
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="lightGray"/>
@@ -598,7 +559,7 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.21/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.19/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="EnumerationTypeFigure">
@@ -648,9 +609,9 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.22/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.20/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.22/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.20/@actualFigure/@children.1"/>
     </descriptors>
   </figures>
   <nodes
@@ -675,11 +636,8 @@
       name="Generalization"
       figure="GeneralizationFigure"/>
   <nodes
-      name="CompositeComponent"
-      figure="CompositeComponentFigure"/>
-  <nodes
-      name="MemberCollection"
-      figure="MemberCollectionFigure"/>
+      name="Aggregation"
+      figure="AggregationFigure"/>
   <nodes
       name="PrimitiveType"
       figure="PrimitiveTypeFigure"/>
@@ -690,11 +648,8 @@
       name="LineEntityRelationship"
       figure="SimpleLineFigure"/>
   <connections
-      name="LineCompositeComponent"
-      figure="LineCompositeComponentFigure"/>
-  <connections
-      name="LineMemberCollection"
-      figure="LineMemberCollectionFigure"/>
+      name="LineAggregation"
+      figure="LineAggregationFigure"/>
   <connections
       name="LineEntityGeneralization"
       figure="LineEntityGeneralizationFigure"/>
@@ -728,7 +683,7 @@
   <compartments
       name="EnumerationTypeCompartment"
       figure="EnumerationTypeFigure"
-      accessor="//@figures.0/@descriptors.22/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.20/@accessors.1"/>
   <labels
       name="EntityName"
       figure="EntityFigure"
@@ -760,25 +715,20 @@
       elementIcon="false"
       accessor="//@figures.0/@descriptors.6/@accessors.0"/>
   <labels
-      name="CompositeComponentName"
-      figure="CompositeComponentFigure"
+      name="AggregationName"
+      figure="AggregationFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.7/@accessors.0"/>
-  <labels
-      name="MemberCollectionName"
-      figure="MemberCollectionFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <labels
       name="SimpleLineRole"
       figure="SimpleLineFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.9/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.8/@accessors.1"/>
   <labels
       name="Cardinality"
       figure="SimpleLineFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <labels
       name="Label"
       figure="LabelFigure"
@@ -805,10 +755,10 @@
       name="PrimitiveTypeName"
       figure="PrimitiveTypeFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.21/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.19/@accessors.0"/>
   <labels
       name="EnumerationTypeName"
       figure="EnumerationTypeFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.22/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.20/@accessors.0"/>
 </gmfgraph:Canvas>
