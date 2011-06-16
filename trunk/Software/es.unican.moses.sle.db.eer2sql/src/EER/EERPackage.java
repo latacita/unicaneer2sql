@@ -144,7 +144,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getNode()
 	 * @generated
 	 */
-	int NODE = 29;
+	int NODE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -623,13 +623,13 @@ public interface EERPackage extends EPackage {
 	int CANDIDATE_KEY = 9;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CANDIDATE_KEY__ATTRIBUTE = 0;
+	int CANDIDATE_KEY__ATTRIBUTES = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1090,7 +1090,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getAbstractParticipant()
 	 * @generated
 	 */
-	int ABSTRACT_PARTICIPANT = 27;
+	int ABSTRACT_PARTICIPANT = 24;
 
 	/**
 	 * The feature id for the '<em><b>Role</b></em>' attribute.
@@ -1218,126 +1218,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getAggregation()
 	 * @generated
 	 */
-	int AGGREGATION = 21;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGGREGATION__NAME = ATTRIBUTED_NODE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGGREGATION__SOURCE = ATTRIBUTED_NODE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Aggregation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGGREGATION_FEATURE_COUNT = ATTRIBUTED_NODE_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link EER.impl.CompositeComponentImpl <em>Composite Component</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see EER.impl.CompositeComponentImpl
-	 * @see EER.impl.EERPackageImpl#getCompositeComponent()
-	 * @generated
-	 */
-	int COMPOSITE_COMPONENT = 22;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_COMPONENT__NAME = AGGREGATION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_COMPONENT__SOURCE = AGGREGATION__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Participants</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_COMPONENT__PARTICIPANTS = AGGREGATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Composite Component</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_COMPONENT_FEATURE_COUNT = AGGREGATION_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link EER.impl.MemberCollectionImpl <em>Member Collection</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see EER.impl.MemberCollectionImpl
-	 * @see EER.impl.EERPackageImpl#getMemberCollection()
-	 * @generated
-	 */
-	int MEMBER_COLLECTION = 23;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEMBER_COLLECTION__NAME = AGGREGATION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEMBER_COLLECTION__SOURCE = AGGREGATION__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Participant</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEMBER_COLLECTION__PARTICIPANT = AGGREGATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Member Collection</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEMBER_COLLECTION_FEATURE_COUNT = AGGREGATION_FEATURE_COUNT + 1;
+	int AGGREGATION = 27;
 
 	/**
 	 * The meta object id for the '{@link EER.impl.GeneralizationImpl <em>Generalization</em>}' class.
@@ -1347,7 +1228,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getGeneralization()
 	 * @generated
 	 */
-	int GENERALIZATION = 24;
+	int GENERALIZATION = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1411,7 +1292,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getSpecializationRelationship()
 	 * @generated
 	 */
-	int SPECIALIZATION_RELATIONSHIP = 25;
+	int SPECIALIZATION_RELATIONSHIP = 22;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' container reference.
@@ -1448,7 +1329,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getGeneralizationRelationship()
 	 * @generated
 	 */
-	int GENERALIZATION_RELATIONSHIP = 26;
+	int GENERALIZATION_RELATIONSHIP = 23;
 
 	/**
 	 * The feature id for the '<em><b>Relationship</b></em>' reference.
@@ -1485,7 +1366,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getAggregationParticipant()
 	 * @generated
 	 */
-	int AGGREGATION_PARTICIPANT = 28;
+	int AGGREGATION_PARTICIPANT = 25;
 
 	/**
 	 * The feature id for the '<em><b>Role</b></em>' attribute.
@@ -1515,22 +1396,22 @@ public interface EERPackage extends EPackage {
 	int AGGREGATION_PARTICIPANT__UPPER_BOUND = ABSTRACT_PARTICIPANT__UPPER_BOUND;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AGGREGATION_PARTICIPANT__SOURCE = ABSTRACT_PARTICIPANT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGGREGATION_PARTICIPANT__TARGET = ABSTRACT_PARTICIPANT_FEATURE_COUNT + 1;
+	int AGGREGATION_PARTICIPANT__TARGET = ABSTRACT_PARTICIPANT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGGREGATION_PARTICIPANT__SOURCE = ABSTRACT_PARTICIPANT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Aggregation Participant</em>' class.
@@ -1542,6 +1423,42 @@ public interface EERPackage extends EPackage {
 	int AGGREGATION_PARTICIPANT_FEATURE_COUNT = ABSTRACT_PARTICIPANT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGGREGATION__NAME = ATTRIBUTED_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGGREGATION__SOURCE = ATTRIBUTED_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Participants</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGGREGATION__PARTICIPANTS = ATTRIBUTED_NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Aggregation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGGREGATION_FEATURE_COUNT = ATTRIBUTED_NODE_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link EER.DependencyType <em>Dependency Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1549,7 +1466,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getDependencyType()
 	 * @generated
 	 */
-	int DEPENDENCY_TYPE = 30;
+	int DEPENDENCY_TYPE = 28;
 
 	/**
 	 * The meta object id for the '{@link EER.GeneralizationType <em>Generalization Type</em>}' enum.
@@ -1559,7 +1476,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getGeneralizationType()
 	 * @generated
 	 */
-	int GENERALIZATION_TYPE = 31;
+	int GENERALIZATION_TYPE = 29;
 
 	/**
 	 * The meta object id for the '<em>Unbounded Natural</em>' data type.
@@ -1569,7 +1486,7 @@ public interface EERPackage extends EPackage {
 	 * @see EER.impl.EERPackageImpl#getUnboundedNatural()
 	 * @generated
 	 */
-	int UNBOUNDED_NATURAL = 32;
+	int UNBOUNDED_NATURAL = 30;
 
 
 	/**
@@ -1904,15 +1821,15 @@ public interface EERPackage extends EPackage {
 	EClass getCandidateKey();
 
 	/**
-	 * Returns the meta object for the reference list '{@link EER.CandidateKey#getAttribute <em>Attribute</em>}'.
+	 * Returns the meta object for the reference list '{@link EER.CandidateKey#getAttributes <em>Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attribute</em>'.
-	 * @see EER.CandidateKey#getAttribute()
+	 * @return the meta object for the reference list '<em>Attributes</em>'.
+	 * @see EER.CandidateKey#getAttributes()
 	 * @see #getCandidateKey()
 	 * @generated
 	 */
-	EReference getCandidateKey_Attribute();
+	EReference getCandidateKey_Attributes();
 
 	/**
 	 * Returns the meta object for the attribute '{@link EER.CandidateKey#getName <em>Name</em>}'.
@@ -2244,46 +2161,15 @@ public interface EERPackage extends EPackage {
 	EReference getAggregation_Source();
 
 	/**
-	 * Returns the meta object for class '{@link EER.CompositeComponent <em>Composite Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Composite Component</em>'.
-	 * @see EER.CompositeComponent
-	 * @generated
-	 */
-	EClass getCompositeComponent();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link EER.CompositeComponent#getParticipants <em>Participants</em>}'.
+	 * Returns the meta object for the containment reference list '{@link EER.Aggregation#getParticipants <em>Participants</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Participants</em>'.
-	 * @see EER.CompositeComponent#getParticipants()
-	 * @see #getCompositeComponent()
+	 * @see EER.Aggregation#getParticipants()
+	 * @see #getAggregation()
 	 * @generated
 	 */
-	EReference getCompositeComponent_Participants();
-
-	/**
-	 * Returns the meta object for class '{@link EER.MemberCollection <em>Member Collection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Member Collection</em>'.
-	 * @see EER.MemberCollection
-	 * @generated
-	 */
-	EClass getMemberCollection();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link EER.MemberCollection#getParticipant <em>Participant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Participant</em>'.
-	 * @see EER.MemberCollection#getParticipant()
-	 * @see #getMemberCollection()
-	 * @generated
-	 */
-	EReference getMemberCollection_Participant();
+	EReference getAggregation_Participants();
 
 	/**
 	 * Returns the meta object for class '{@link EER.Generalization <em>Generalization</em>}'.
@@ -2457,10 +2343,10 @@ public interface EERPackage extends EPackage {
 	EClass getAggregationParticipant();
 
 	/**
-	 * Returns the meta object for the reference '{@link EER.AggregationParticipant#getSource <em>Source</em>}'.
+	 * Returns the meta object for the container reference '{@link EER.AggregationParticipant#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @return the meta object for the container reference '<em>Source</em>'.
 	 * @see EER.AggregationParticipant#getSource()
 	 * @see #getAggregationParticipant()
 	 * @generated
@@ -2821,12 +2707,12 @@ public interface EERPackage extends EPackage {
 		EClass CANDIDATE_KEY = eINSTANCE.getCandidateKey();
 
 		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CANDIDATE_KEY__ATTRIBUTE = eINSTANCE.getCandidateKey_Attribute();
+		EReference CANDIDATE_KEY__ATTRIBUTES = eINSTANCE.getCandidateKey_Attributes();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3101,40 +2987,12 @@ public interface EERPackage extends EPackage {
 		EReference AGGREGATION__SOURCE = eINSTANCE.getAggregation_Source();
 
 		/**
-		 * The meta object literal for the '{@link EER.impl.CompositeComponentImpl <em>Composite Component</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see EER.impl.CompositeComponentImpl
-		 * @see EER.impl.EERPackageImpl#getCompositeComponent()
-		 * @generated
-		 */
-		EClass COMPOSITE_COMPONENT = eINSTANCE.getCompositeComponent();
-
-		/**
 		 * The meta object literal for the '<em><b>Participants</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPOSITE_COMPONENT__PARTICIPANTS = eINSTANCE.getCompositeComponent_Participants();
-
-		/**
-		 * The meta object literal for the '{@link EER.impl.MemberCollectionImpl <em>Member Collection</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see EER.impl.MemberCollectionImpl
-		 * @see EER.impl.EERPackageImpl#getMemberCollection()
-		 * @generated
-		 */
-		EClass MEMBER_COLLECTION = eINSTANCE.getMemberCollection();
-
-		/**
-		 * The meta object literal for the '<em><b>Participant</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MEMBER_COLLECTION__PARTICIPANT = eINSTANCE.getMemberCollection_Participant();
+		EReference AGGREGATION__PARTICIPANTS = eINSTANCE.getAggregation_Participants();
 
 		/**
 		 * The meta object literal for the '{@link EER.impl.GeneralizationImpl <em>Generalization</em>}' class.
@@ -3275,7 +3133,7 @@ public interface EERPackage extends EPackage {
 		EClass AGGREGATION_PARTICIPANT = eINSTANCE.getAggregationParticipant();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Source</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

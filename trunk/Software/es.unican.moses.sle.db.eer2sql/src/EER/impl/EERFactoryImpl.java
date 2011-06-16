@@ -80,12 +80,11 @@ public class EERFactoryImpl extends EFactoryImpl implements EERFactory {
 			case EERPackage.RELATIONSHIP: return createRelationship();
 			case EERPackage.DEPENDENCY_RELATIONSHIP: return createDependencyRelationship();
 			case EERPackage.PARTICIPANT: return createParticipant();
-			case EERPackage.COMPOSITE_COMPONENT: return createCompositeComponent();
-			case EERPackage.MEMBER_COLLECTION: return createMemberCollection();
 			case EERPackage.GENERALIZATION: return createGeneralization();
 			case EERPackage.SPECIALIZATION_RELATIONSHIP: return createSpecializationRelationship();
 			case EERPackage.GENERALIZATION_RELATIONSHIP: return createGeneralizationRelationship();
 			case EERPackage.AGGREGATION_PARTICIPANT: return createAggregationParticipant();
+			case EERPackage.AGGREGATION: return createAggregation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -304,26 +303,6 @@ public class EERFactoryImpl extends EFactoryImpl implements EERFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CompositeComponent createCompositeComponent() {
-		CompositeComponentImpl compositeComponent = new CompositeComponentImpl();
-		return compositeComponent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MemberCollection createMemberCollection() {
-		MemberCollectionImpl memberCollection = new MemberCollectionImpl();
-		return memberCollection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Generalization createGeneralization() {
 		GeneralizationImpl generalization = new GeneralizationImpl();
 		return generalization;
@@ -357,6 +336,16 @@ public class EERFactoryImpl extends EFactoryImpl implements EERFactory {
 	public AggregationParticipant createAggregationParticipant() {
 		AggregationParticipantImpl aggregationParticipant = new AggregationParticipantImpl();
 		return aggregationParticipant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Aggregation createAggregation() {
+		AggregationImpl aggregation = new AggregationImpl();
+		return aggregation;
 	}
 
 	/**

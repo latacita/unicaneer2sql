@@ -6,6 +6,8 @@
  */
 package EER;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -16,11 +18,12 @@ package EER;
  * The following features are supported:
  * <ul>
  *   <li>{@link EER.Aggregation#getSource <em>Source</em>}</li>
+ *   <li>{@link EER.Aggregation#getParticipants <em>Participants</em>}</li>
  * </ul>
  * </p>
  *
  * @see EER.EERPackage#getAggregation()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Aggregation extends AttributedNode {
@@ -49,5 +52,23 @@ public interface Aggregation extends AttributedNode {
 	 * @generated
 	 */
 	void setSource(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Participants</b></em>' containment reference list.
+	 * The list contents are of type {@link EER.AggregationParticipant}.
+	 * It is bidirectional and its opposite is '{@link EER.AggregationParticipant#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Participants</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Participants</em>' containment reference list.
+	 * @see EER.EERPackage#getAggregation_Participants()
+	 * @see EER.AggregationParticipant#getSource
+	 * @model opposite="source" containment="true" required="true"
+	 * @generated
+	 */
+	EList<AggregationParticipant> getParticipants();
 
 } // Aggregation

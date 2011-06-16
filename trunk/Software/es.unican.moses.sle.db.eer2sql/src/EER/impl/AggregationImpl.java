@@ -7,15 +7,22 @@
 package EER.impl;
 
 import EER.Aggregation;
+import EER.AggregationParticipant;
 import EER.EERPackage;
 import EER.Entity;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,12 +32,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link EER.impl.AggregationImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link EER.impl.AggregationImpl#getParticipants <em>Participants</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class AggregationImpl extends AttributedNodeImpl implements Aggregation {
+public class AggregationImpl extends AttributedNodeImpl implements Aggregation {
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -40,6 +48,16 @@ public abstract class AggregationImpl extends AttributedNodeImpl implements Aggr
 	 * @ordered
 	 */
 	protected Entity source;
+
+	/**
+	 * The cached value of the '{@link #getParticipants() <em>Participants</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParticipants()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AggregationParticipant> participants;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,12 +121,55 @@ public abstract class AggregationImpl extends AttributedNodeImpl implements Aggr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<AggregationParticipant> getParticipants() {
+		if (participants == null) {
+			participants = new EObjectContainmentWithInverseEList<AggregationParticipant>(AggregationParticipant.class, this, EERPackage.AGGREGATION__PARTICIPANTS, EERPackage.AGGREGATION_PARTICIPANT__SOURCE);
+		}
+		return participants;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case EERPackage.AGGREGATION__PARTICIPANTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParticipants()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case EERPackage.AGGREGATION__PARTICIPANTS:
+				return ((InternalEList<?>)getParticipants()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case EERPackage.AGGREGATION__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
+			case EERPackage.AGGREGATION__PARTICIPANTS:
+				return getParticipants();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,11 +179,16 @@ public abstract class AggregationImpl extends AttributedNodeImpl implements Aggr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case EERPackage.AGGREGATION__SOURCE:
 				setSource((Entity)newValue);
+				return;
+			case EERPackage.AGGREGATION__PARTICIPANTS:
+				getParticipants().clear();
+				getParticipants().addAll((Collection<? extends AggregationParticipant>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,6 +205,9 @@ public abstract class AggregationImpl extends AttributedNodeImpl implements Aggr
 			case EERPackage.AGGREGATION__SOURCE:
 				setSource((Entity)null);
 				return;
+			case EERPackage.AGGREGATION__PARTICIPANTS:
+				getParticipants().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -153,6 +222,8 @@ public abstract class AggregationImpl extends AttributedNodeImpl implements Aggr
 		switch (featureID) {
 			case EERPackage.AGGREGATION__SOURCE:
 				return source != null;
+			case EERPackage.AGGREGATION__PARTICIPANTS:
+				return participants != null && !participants.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

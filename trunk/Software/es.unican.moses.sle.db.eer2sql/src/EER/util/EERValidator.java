@@ -134,12 +134,6 @@ public class EERValidator extends EObjectValidator {
 				return validateDependencyRelationship((DependencyRelationship)value, diagnostics, context);
 			case EERPackage.PARTICIPANT:
 				return validateParticipant((Participant)value, diagnostics, context);
-			case EERPackage.AGGREGATION:
-				return validateAggregation((Aggregation)value, diagnostics, context);
-			case EERPackage.COMPOSITE_COMPONENT:
-				return validateCompositeComponent((CompositeComponent)value, diagnostics, context);
-			case EERPackage.MEMBER_COLLECTION:
-				return validateMemberCollection((MemberCollection)value, diagnostics, context);
 			case EERPackage.GENERALIZATION:
 				return validateGeneralization((Generalization)value, diagnostics, context);
 			case EERPackage.SPECIALIZATION_RELATIONSHIP:
@@ -152,6 +146,8 @@ public class EERValidator extends EObjectValidator {
 				return validateAggregationParticipant((AggregationParticipant)value, diagnostics, context);
 			case EERPackage.NODE:
 				return validateNode((Node)value, diagnostics, context);
+			case EERPackage.AGGREGATION:
+				return validateAggregation((Aggregation)value, diagnostics, context);
 			case EERPackage.DEPENDENCY_TYPE:
 				return validateDependencyType((DependencyType)value, diagnostics, context);
 			case EERPackage.GENERALIZATION_TYPE:
@@ -571,24 +567,6 @@ public class EERValidator extends EObjectValidator {
 	 */
 	public boolean validateAggregation(Aggregation aggregation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(aggregation, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCompositeComponent(CompositeComponent compositeComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(compositeComponent, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMemberCollection(MemberCollection memberCollection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(memberCollection, diagnostics, context);
 	}
 
 	/**

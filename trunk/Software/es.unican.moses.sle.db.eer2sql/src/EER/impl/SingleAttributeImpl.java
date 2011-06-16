@@ -73,7 +73,7 @@ public class SingleAttributeImpl extends AttributeImpl implements SingleAttribut
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int MULTIPLICITY_EDEFAULT = 0;
+	protected static final int MULTIPLICITY_EDEFAULT = 1;
 
 	/**
 	 * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.

@@ -179,24 +179,6 @@ public interface EERFactory extends EFactory {
 	Participant createParticipant();
 
 	/**
-	 * Returns a new object of class '<em>Composite Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Composite Component</em>'.
-	 * @generated
-	 */
-	CompositeComponent createCompositeComponent();
-
-	/**
-	 * Returns a new object of class '<em>Member Collection</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Member Collection</em>'.
-	 * @generated
-	 */
-	MemberCollection createMemberCollection();
-
-	/**
 	 * Returns a new object of class '<em>Generalization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,6 +213,15 @@ public interface EERFactory extends EFactory {
 	 * @generated
 	 */
 	AggregationParticipant createAggregationParticipant();
+
+	/**
+	 * Returns a new object of class '<em>Aggregation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Aggregation</em>'.
+	 * @generated
+	 */
+	Aggregation createAggregation();
 
 	/**
 	 * Returns the package supported by this factory.
