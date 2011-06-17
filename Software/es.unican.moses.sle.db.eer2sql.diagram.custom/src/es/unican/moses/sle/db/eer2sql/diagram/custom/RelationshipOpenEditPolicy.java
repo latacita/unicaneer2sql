@@ -28,11 +28,9 @@ public class RelationshipOpenEditPolicy extends OpenEditPolicy {
 		return new Command() {
 			@Override
 			public void execute() {
-				new RelationshipWizard(editpart);		
+				new RelationshipWizard(editpart);
 			} // execute
 		};
 	}
-	
-
 }
 

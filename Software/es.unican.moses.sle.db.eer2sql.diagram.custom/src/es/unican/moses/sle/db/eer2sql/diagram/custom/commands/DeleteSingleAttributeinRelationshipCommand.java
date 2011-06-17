@@ -6,15 +6,22 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import EER.Relationship;
 
+import EER.AbstractRelationship;
+
+/**
+ * Class DeleteSingleAttributeinRelationshipCommand.</br>
+ * 
+ * @author Adrian Fdez San Marcos
+ * @version 16-06-2011
+ */
 public class DeleteSingleAttributeinRelationshipCommand extends AbstractTransactionalCommand{
 		
-	private Relationship relationship;
+	private AbstractRelationship relationship;
 	private int index;
 	
 	public DeleteSingleAttributeinRelationshipCommand(
-				TransactionalEditingDomain domain, Relationship relationship,
+				TransactionalEditingDomain domain, AbstractRelationship relationship,
 				Diagram diagram, int index) {
 			super(domain, "No label", null);
 			this.relationship = relationship;
@@ -28,5 +35,5 @@ public class DeleteSingleAttributeinRelationshipCommand extends AbstractTransact
 			return CommandResult.newOKCommandResult();
 	}
 	
-} // DeleteAttributeinRelationshipCommand
+} // DeleteSingleAttributeinRelationshipCommand
 

@@ -6,6 +6,13 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.OpenEditPolicy;
 
+/**
+ * Class DependencyRelationshipOpenEditPolicy.</br>
+ * 
+ * @author Pablo Sanchez Barreiro
+ * @author Adrian Fernandez San Marcos
+ * @version 16-06-2011
+ */
 public class DependencyRelationshipOpenEditPolicy extends OpenEditPolicy {
 	
 	protected EditPart editpart;
@@ -20,11 +27,7 @@ public class DependencyRelationshipOpenEditPolicy extends OpenEditPolicy {
 		return new Command() {
 			@Override
 			public void execute() {
-				System.out.println("Double click captured");
-				new RelationshipWizard("Relation x");
-//		   	new AttributesDialog("Relation x");
-//				new AttributesDisplay("Relation x");
-				
+				new RelationshipWizard(editpart);
 			} // execute
 		};
 	}

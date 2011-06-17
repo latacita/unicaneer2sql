@@ -5,19 +5,24 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
-import org.eclipse.gmf.runtime.notation.Diagram;
-import EER.CompositeAttribute;
-import EER.Domain;
-import EER.EERFactory;
-import EER.Relationship;
 
+import EER.AbstractRelationship;
+import EER.CompositeAttribute;
+import EER.EERFactory;
+
+/**
+ * Class CreateCompositeAttributeinRelationshipCommand.</br>
+ * 
+ * @author Adrian Fdez San Marcos
+ * @version 16-06-2011
+ */
 public class CreateCompositeAttributeinRelationshipCommand extends AbstractTransactionalCommand {
 	
 	private String name ;
 	private boolean nullable;
-	private Relationship relationship;
+	private AbstractRelationship relationship;
 	public CreateCompositeAttributeinRelationshipCommand(
-				TransactionalEditingDomain domain, Relationship relationship,
+				TransactionalEditingDomain domain, AbstractRelationship relationship,
 				String name, boolean nullable) {
 			super(domain, "No label", null);
 			this.name = name;
@@ -35,5 +40,5 @@ public class CreateCompositeAttributeinRelationshipCommand extends AbstractTrans
 			return CommandResult.newOKCommandResult();
 	}
 	
-} // CreateAttributeinRelationshipCommand
+} // CreateCompositeAttributeinRelationshipCommand
 

@@ -6,14 +6,18 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.ui.commands.ExecutionException;
 
-import EER.Attribute;
+import EER.AbstractRelationship;
 import EER.Domain;
 import EER.EERFactory;
-import EER.Relationship;
 import EER.SingleAttribute;
 
+/**
+ * Class UpdateSingleAttributeinRelationshipCommand.</br>
+ * 
+ * @author Adrian Fdez San Marcos
+ * @version 16-06-2011
+ */
 public class UpdateSingleAttributeinRelationshipCommand extends AbstractTransactionalCommand {
 	
 	private String name ;
@@ -21,13 +25,11 @@ public class UpdateSingleAttributeinRelationshipCommand extends AbstractTransact
 	private boolean derivate;
 	private Domain dom;
 	private int multiplicity;
-	private Relationship relationship;
-	private Diagram diagram;
-	
+	private AbstractRelationship relationship;
 	private int index;
 	
 	public UpdateSingleAttributeinRelationshipCommand(
-				TransactionalEditingDomain domain, Relationship relationship,
+				TransactionalEditingDomain domain, AbstractRelationship relationship,
 				String name, boolean nullable, boolean derivate, Domain dom, int multiplicity,
 				Diagram diagram, int index) {
 			super(domain, "No label", null);
@@ -37,7 +39,6 @@ public class UpdateSingleAttributeinRelationshipCommand extends AbstractTransact
 			this.dom = dom;
 			this.multiplicity = multiplicity;
 			this.relationship = relationship;
-			this.diagram = diagram;
 			this.index = index;
 	}
 	
@@ -55,5 +56,5 @@ public class UpdateSingleAttributeinRelationshipCommand extends AbstractTransact
 			return CommandResult.newOKCommandResult();
 	}
 	
-} // UpdateAttributeinRelationshipCommand
+} // UpdateSingleAttributeinRelationshipCommand
 

@@ -1,10 +1,10 @@
 package es.unican.moses.sle.db.eer2sql.diagram.custom;
 
-import java.awt.BorderLayout;
-
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.ComboBoxModel;
@@ -18,7 +18,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.ListModel;
-import javax.swing.WindowConstants;
 import javax.swing.border.BevelBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -38,35 +37,24 @@ import es.unican.moses.sle.db.eer2sql.diagram.custom.commands.DeleteSingleAttrib
 import es.unican.moses.sle.db.eer2sql.diagram.custom.commands.UpdateCompositeAttributeinRelationshipCommand;
 import es.unican.moses.sle.db.eer2sql.diagram.custom.commands.UpdateSingleAttributeinRelationshipCommand;
 
+import EER.AbstractRelationship;
 import EER.CompositeAttribute;
 import EER.Domain;
 import EER.Project;
-import EER.Relationship;
 import EER.SingleAttribute;
 
 
-  
-/**
- * This code was edited or generated using CloudGarden's Jigloo
- * SWT/Swing GUI Builder, which is free for non-commercial
- * use. If Jigloo is being used commercially (ie, by a corporation,
- * company or business for any purpose whatever) then you
- * should purchase a license for each developer using Jigloo.
- * Please visit www.cloudgarden.com for details.
- * Use of Jigloo implies acceptance of these licensing terms.
- * A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
- * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
- * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
- */
+ 
 
 /**
  * Class RelationshipWizard.</br>
- * Generate a dialog to add, update or delete attributes of a relationship
+ * Generate a dialog to add, update or delete attributes of a abstract relationship.
  * 
  * @author: Adrian Fernandez San Marcos
  * @version: 16/06/2011
  */
-public class RelationshipWizard extends javax.swing.JFrame {
+@SuppressWarnings("serial")
+public class RelationshipWizard extends JFrame {
 	{
 		//Set Look & Feel
 		try {
@@ -102,6 +90,7 @@ public class RelationshipWizard extends javax.swing.JFrame {
 
 	private int indexList = 0;
 	private String title;
+	private JFrame owner = this;
 
 	private ListModel attributesListModel;
 	private ComboBoxModel domainComboModel;
@@ -116,7 +105,7 @@ public class RelationshipWizard extends javax.swing.JFrame {
 	protected Project project;
 	protected Node node;
 	protected Diagram diagram;
-	protected Relationship element;
+	protected AbstractRelationship element;
 	protected EList<Domain> domains;
 	protected TransactionalEditingDomain TEDomain;
 
@@ -131,22 +120,17 @@ public class RelationshipWizard extends javax.swing.JFrame {
 		//access to model
 		this.editpart = editpart;
 		node = (Node) editpart.getModel();
-
 		diagram = node.getDiagram();
-		element = (Relationship) node.getElement();
+		element = (AbstractRelationship) node.getElement();
 		project = (Project) diagram.getElement();
 		domains = project.getDomains();
 		TEDomain = TransactionUtil.getEditingDomain(element);
 
-		this.title = "Relationship " + element.getName();
-		JFrame frame = new JFrame();
-		RelationshipWizard inst = this;
-		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		frame.pack();
-		frame.setSize(527, 588);
-		frame.setPreferredSize(new java.awt.Dimension(527, 588));
+		this.title = element.eClass().getName()+" "+ element.getName();
+		pack();
+		setResizable(false);
 		initGUI();
-
+		
 	}
 
 
@@ -193,6 +177,18 @@ public class RelationshipWizard extends javax.swing.JFrame {
 									return;
 								updateAttributesValues();
 							}
+						});
+						attributesList.addMouseListener(new MouseAdapter() {
+						    public void mouseClicked(MouseEvent evt) {
+						        JList list = (JList)evt.getSource();
+						        if (evt.getClickCount() == 2) {          // Double-click
+						            // Get item index
+						            indexList = list.locationToIndex(evt.getPoint());
+						            if(element.getAttributes().get(indexList).eClass().getName().equalsIgnoreCase("CompositeAttribute")){
+						            	new CompositeAttributeWizard(owner, editpart, (CompositeAttribute) element.getAttributes().get(indexList));
+						            }
+						        } 
+						    }
 						});
 					}					
 				}
@@ -521,12 +517,10 @@ public class RelationshipWizard extends javax.swing.JFrame {
 			try {
 				cmd.execute(new NullProgressMonitor(), null);
 			} catch (org.eclipse.core.commands.ExecutionException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} // try
 		//if is a composite attribute
 		}else{
-			CompositeAttribute a = (CompositeAttribute) element.getAttributes().get(index);
 			//set the respective values
 			String name = nameText.getText();
 			boolean nullable;
@@ -542,7 +536,6 @@ public class RelationshipWizard extends javax.swing.JFrame {
 			try {
 				cmd.execute(new NullProgressMonitor(), null);
 			} catch (org.eclipse.core.commands.ExecutionException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} // try
 		}
@@ -581,7 +574,6 @@ public class RelationshipWizard extends javax.swing.JFrame {
 				try {
 					cmd.execute(new NullProgressMonitor(), null);
 				} catch (org.eclipse.core.commands.ExecutionException ee) {
-					// TODO Auto-generated catch block
 					ee.printStackTrace();
 				} // try
 			//if is a composite attribute
@@ -593,7 +585,6 @@ public class RelationshipWizard extends javax.swing.JFrame {
 				try {
 					cmd.execute(new NullProgressMonitor(), null);
 				} catch (org.eclipse.core.commands.ExecutionException ee) {
-					// TODO Auto-generated catch block
 					ee.printStackTrace();
 				} // try
 			}
@@ -616,11 +607,10 @@ public class RelationshipWizard extends javax.swing.JFrame {
 		CreateSingleAttributeinRelationshipCommand cmd = 
 			new CreateSingleAttributeinRelationshipCommand(TEDomain, element,
 					"attribute"+(indexList+1), false, false, 
-					domains.get(0), 1, diagram);
+					domains.get(0), 1);
 		try {
 			cmd.execute(new NullProgressMonitor(), null);
 		} catch (org.eclipse.core.commands.ExecutionException ee) {
-			// TODO Auto-generated catch block
 			ee.printStackTrace();
 		} // try
 		//update the list
@@ -640,7 +630,6 @@ public class RelationshipWizard extends javax.swing.JFrame {
 		try {
 			cmd.execute(new NullProgressMonitor(), null);
 		} catch (org.eclipse.core.commands.ExecutionException ee) {
-			// TODO Auto-generated catch block
 			ee.printStackTrace();
 		} // try
 		//update the list
