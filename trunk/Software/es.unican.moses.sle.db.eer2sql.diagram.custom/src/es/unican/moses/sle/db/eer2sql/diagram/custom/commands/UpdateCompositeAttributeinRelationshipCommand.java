@@ -5,26 +5,27 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
-import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.ui.commands.ExecutionException;
 
-import EER.Attribute;
+import EER.AbstractRelationship;
 import EER.CompositeAttribute;
-import EER.Domain;
 import EER.EERFactory;
-import EER.Relationship;
-import EER.SingleAttribute;
 
+/**
+ * Class UpdateCompositeAttributeinRelationshipCommand.</br>
+ * 
+ * @author Adrian Fdez San Marcos
+ * @version 16-06-2011
+ */
 public class UpdateCompositeAttributeinRelationshipCommand extends AbstractTransactionalCommand {
 	
 	private String name ;
 	private boolean nullable;
-	private Relationship relationship;
+	private AbstractRelationship relationship;
 	
 	private int index;
 	
 	public UpdateCompositeAttributeinRelationshipCommand(
-				TransactionalEditingDomain domain, Relationship relationship,
+				TransactionalEditingDomain domain, AbstractRelationship relationship,
 				String name, boolean nullable, int index) {
 			super(domain, "No label", null);
 			this.name = name;
@@ -44,5 +45,5 @@ public class UpdateCompositeAttributeinRelationshipCommand extends AbstractTrans
 			return CommandResult.newOKCommandResult();
 	}
 	
-} // UpdateAttributeinRelationshipCommand
+} // UpdateCompositeAttributeinRelationshipCommand
 
