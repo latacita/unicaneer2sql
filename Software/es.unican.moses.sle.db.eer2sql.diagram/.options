@@ -1,0 +1,7 @@
+# Tracing options for the es.unican.moses.sle.db.eer2sql.diagram plug-in
+
+# Common issues
+es.unican.moses.sle.db.eer2sql.diagram/debug=false
+
+# Visual IDs
+es.unican.moses.sle.db.eer2sql.diagram/debug/visualID=false
