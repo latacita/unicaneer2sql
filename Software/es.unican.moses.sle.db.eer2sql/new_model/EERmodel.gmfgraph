@@ -105,42 +105,6 @@
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
-        name="SingleAttributeFigure2">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="SingleAttributeFigure2"
-          lineWidth="0"
-          lineKind="LINE_DOT">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"
-            vertical="true"
-            matchMinorSize="true"
-            forceSingleLine="true"
-            minorAlignment="CENTER"
-            majorSpacing="0"
-            minorSpacing="0"/>
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="black"/>
-        <backgroundColor
-            xsi:type="gmfgraph:RGBColor"
-            green="220"
-            blue="220"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="SingleAttributeNameFigure2"
-            text="...">
-          <insets
-              top="5"
-              left="5"
-              bottom="5"
-              right="5"/>
-        </children>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
         name="WeakEntityFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
@@ -197,9 +161,9 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="RelationshipFigure">
@@ -234,7 +198,7 @@
             y="25"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="DependencyRelationshipFigure">
@@ -291,9 +255,9 @@
             y="12"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="GeneralizationFigure">
@@ -328,7 +292,7 @@
             y="10"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="AggregationFigure">
@@ -357,7 +321,7 @@
             y="15"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="SimpleLineFigure">
@@ -378,9 +342,9 @@
             name="Cardinality"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.2"/>
       <accessors
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="LineAggregationFigure">
@@ -447,7 +411,7 @@
           xsi:type="gmfgraph:PolylineConnection"
           name="InclusionFigure"
           lineKind="LINE_DASH"
-          targetDecoration="//@figures.0/@descriptors.15/@actualFigure/@children.0">
+          targetDecoration="//@figures.0/@descriptors.14/@actualFigure/@children.0">
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="lightGray"/>
@@ -492,7 +456,7 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="InclusivenessFigure"
-          targetDecoration="//@figures.0/@descriptors.15/@actualFigure/@children.0">
+          targetDecoration="//@figures.0/@descriptors.14/@actualFigure/@children.0">
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="lightGray"/>
@@ -529,7 +493,7 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.19/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.18/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="EnumerationTypeFigure">
@@ -579,9 +543,9 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.20/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.19/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.20/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.19/@actualFigure/@children.1"/>
     </descriptors>
   </figures>
   <nodes
@@ -590,9 +554,6 @@
   <nodes
       name="CompositeAttribute"
       figure="CompositeAttributeFigure"/>
-  <nodes
-      name="SingleAttribute2"
-      figure="SingleAttributeFigure2"/>
   <nodes
       name="WeakEntity"
       figure="WeakEntityFigure"/>
@@ -649,11 +610,11 @@
   <compartments
       name="WeakEntityAttributesCompartment"
       figure="WeakEntityFigure"
-      accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <compartments
       name="EnumerationTypeCompartment"
       figure="EnumerationTypeFigure"
-      accessor="//@figures.0/@descriptors.20/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.19/@accessors.1"/>
   <labels
       name="EntityName"
       figure="EntityFigure"
@@ -668,46 +629,41 @@
       name="WeakEntityName"
       figure="WeakEntityFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels
       name="RelationshipName"
       figure="RelationshipFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
   <labels
       name="DependencyRelationshipName"
       figure="DependencyRelationshipFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.4/@accessors.0"/>
   <labels
       name="GeneralizationName"
       figure="GeneralizationFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.6/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.5/@accessors.0"/>
   <labels
       name="AggregationName"
       figure="AggregationFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.6/@accessors.0"/>
   <labels
       name="SimpleLineRole"
       figure="SimpleLineFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.7/@accessors.1"/>
   <labels
       name="Cardinality"
       figure="SimpleLineFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
   <labels
       name="Label"
       figure="LabelFigure"
       elementIcon="false"/>
-  <labels
-      name="SingleAttributeName2"
-      figure="SingleAttributeFigure2"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels
       name="CandidateKeyName"
       figure="CandidateKeyFigure"
@@ -720,15 +676,15 @@
       name="DependencyTypeName"
       figure="DependencyRelationshipFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.5/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.4/@accessors.1"/>
   <labels
       name="PrimitiveTypeName"
       figure="PrimitiveTypeFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.19/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.18/@accessors.0"/>
   <labels
       name="EnumerationTypeName"
       figure="EnumerationTypeFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.20/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.19/@accessors.0"/>
 </gmfgraph:Canvas>

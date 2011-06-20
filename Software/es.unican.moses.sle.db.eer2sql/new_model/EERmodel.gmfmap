@@ -85,40 +85,6 @@
           <diagramNode
               href="EERmodel.gmfgraph#CompositeAttribute"/>
           <children
-              compartment="//@nodes.0/@ownedChild/@children.2/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="EERmodel.ecore#//CompositeAttribute"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="EERmodel.gmfgraph#CompositeAttributeName"/>
-                <features
-                    href="EERmodel.ecore#//Attribute/name"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="EERmodel.gmftool#//@palette/@tools.0/@tools.5"/>
-              <diagramNode
-                  href="EERmodel.gmfgraph#CompositeAttribute"/>
-              <children
-                  compartment="//@nodes.0/@ownedChild/@children.2/@ownedChild/@children.0/@ownedChild/@compartments.0"
-                  referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
-                <containmentFeature
-                    href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
-                <childrenFeature
-                    href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
-              </children>
-              <compartments
-                  children="//@nodes.0/@ownedChild/@children.2/@ownedChild/@children.0/@ownedChild/@children.0">
-                <compartment
-                    href="EERmodel.gmfgraph#CompositeAttributeCompartment"/>
-              </compartments>
-            </ownedChild>
-          </children>
-          <children
               compartment="//@nodes.0/@ownedChild/@children.2/@ownedChild/@compartments.0"
               referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
             <containmentFeature
@@ -127,7 +93,7 @@
                 href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
           </children>
           <compartments
-              children="//@nodes.0/@ownedChild/@children.2/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2/@ownedChild/@children.0">
+              children="//@nodes.0/@ownedChild/@children.2/@ownedChild/@children.0">
             <compartment
                 href="EERmodel.gmfgraph#CompositeAttributeCompartment"/>
           </compartments>
@@ -221,40 +187,6 @@
           <diagramNode
               href="EERmodel.gmfgraph#CompositeAttribute"/>
           <children
-              compartment="//@nodes.1/@ownedChild/@children.2/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="EERmodel.ecore#//CompositeAttribute"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="EERmodel.gmfgraph#CompositeAttributeName"/>
-                <features
-                    href="EERmodel.ecore#//Attribute/name"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="EERmodel.gmftool#//@palette/@tools.0/@tools.5"/>
-              <diagramNode
-                  href="EERmodel.gmfgraph#CompositeAttribute"/>
-              <children
-                  compartment="//@nodes.1/@ownedChild/@children.2/@ownedChild/@children.0/@ownedChild/@compartments.0"
-                  referencedChild="//@nodes.1/@ownedChild/@children.1/@ownedChild">
-                <containmentFeature
-                    href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
-                <childrenFeature
-                    href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
-              </children>
-              <compartments
-                  children="//@nodes.1/@ownedChild/@children.2/@ownedChild/@children.0/@ownedChild/@children.0">
-                <compartment
-                    href="EERmodel.gmfgraph#CompositeAttributeCompartment"/>
-              </compartments>
-            </ownedChild>
-          </children>
-          <children
               compartment="//@nodes.1/@ownedChild/@children.2/@ownedChild/@compartments.0"
               referencedChild="//@nodes.1/@ownedChild/@children.1/@ownedChild">
             <containmentFeature
@@ -263,7 +195,7 @@
                 href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
           </children>
           <compartments
-              children="//@nodes.1/@ownedChild/@children.2/@ownedChild/@children.1 //@nodes.1/@ownedChild/@children.2/@ownedChild/@children.0">
+              children="//@nodes.1/@ownedChild/@children.2/@ownedChild/@children.0">
             <compartment
                 href="EERmodel.gmfgraph#CompositeAttributeCompartment"/>
           </compartments>
