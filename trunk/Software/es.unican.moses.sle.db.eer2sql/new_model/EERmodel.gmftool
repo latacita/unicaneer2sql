@@ -118,7 +118,7 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="LineEntityGeneralization">
+          title="LineGeneralizationParent">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -126,7 +126,7 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="LineGeneralizationEntity">
+          title="LineGeneralizationChilds">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
