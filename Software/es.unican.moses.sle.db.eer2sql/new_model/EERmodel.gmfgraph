@@ -312,36 +312,6 @@
               left="20"/>
         </children>
         <template
-            x="10"
-            y="8"/>
-        <template
-            x="12"
-            y="8"/>
-        <template
-            x="14"
-            y="6"/>
-        <template
-            x="14"
-            y="4"/>
-        <template
-            x="12"
-            y="2"/>
-        <template
-            x="10"
-            y="2"/>
-        <template
-            x="8"
-            y="4"/>
-        <template
-            x="8"
-            y="6"/>
-        <template
-            x="10"
-            y="8"/>
-        <template
-            x="11"
-            y="8"/>
-        <template
             x="11"
             y="10"/>
         <template

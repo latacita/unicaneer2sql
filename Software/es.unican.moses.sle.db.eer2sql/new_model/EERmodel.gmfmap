@@ -84,6 +84,53 @@
               href="EERmodel.gmftool#//@palette/@tools.0/@tools.5"/>
           <diagramNode
               href="EERmodel.gmfgraph#CompositeAttribute"/>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.2/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="EERmodel.ecore#//CompositeAttribute"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="EERmodel.gmfgraph#CompositeAttributeName"/>
+                <features
+                    href="EERmodel.ecore#//Attribute/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="EERmodel.gmftool#//@palette/@tools.0/@tools.5"/>
+              <diagramNode
+                  href="EERmodel.gmfgraph#CompositeAttribute"/>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.2/@ownedChild/@children.0/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+                <containmentFeature
+                    href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
+                <childrenFeature
+                    href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
+              </children>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.2/@ownedChild/@children.0/@ownedChild/@children.0">
+                <compartment
+                    href="EERmodel.gmfgraph#CompositeAttributeCompartment"/>
+              </compartments>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.2/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+            <containmentFeature
+                href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
+            <childrenFeature
+                href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
+          </children>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.2/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2/@ownedChild/@children.0">
+            <compartment
+                href="EERmodel.gmfgraph#CompositeAttributeCompartment"/>
+          </compartments>
         </ownedChild>
       </children>
       <compartments
@@ -173,6 +220,53 @@
               href="EERmodel.gmftool#//@palette/@tools.0/@tools.5"/>
           <diagramNode
               href="EERmodel.gmfgraph#CompositeAttribute"/>
+          <children
+              compartment="//@nodes.1/@ownedChild/@children.2/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="EERmodel.ecore#//CompositeAttribute"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="EERmodel.gmfgraph#CompositeAttributeName"/>
+                <features
+                    href="EERmodel.ecore#//Attribute/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="EERmodel.gmftool#//@palette/@tools.0/@tools.5"/>
+              <diagramNode
+                  href="EERmodel.gmfgraph#CompositeAttribute"/>
+              <children
+                  compartment="//@nodes.1/@ownedChild/@children.2/@ownedChild/@children.0/@ownedChild/@compartments.0"
+                  referencedChild="//@nodes.1/@ownedChild/@children.1/@ownedChild">
+                <containmentFeature
+                    href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
+                <childrenFeature
+                    href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
+              </children>
+              <compartments
+                  children="//@nodes.1/@ownedChild/@children.2/@ownedChild/@children.0/@ownedChild/@children.0">
+                <compartment
+                    href="EERmodel.gmfgraph#CompositeAttributeCompartment"/>
+              </compartments>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.1/@ownedChild/@children.2/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.1/@ownedChild/@children.1/@ownedChild">
+            <containmentFeature
+                href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
+            <childrenFeature
+                href="EERmodel.ecore#//CompositeAttribute/singlesAttributes"/>
+          </children>
+          <compartments
+              children="//@nodes.1/@ownedChild/@children.2/@ownedChild/@children.1 //@nodes.1/@ownedChild/@children.2/@ownedChild/@children.0">
+            <compartment
+                href="EERmodel.gmfgraph#CompositeAttributeCompartment"/>
+          </compartments>
         </ownedChild>
       </children>
       <compartments
@@ -650,6 +744,32 @@
       </target>
     </audits>
     <audits
+        name="CandidateKey"
+        description="Check the attributes of the candidate key"
+        id="CandidateKey"
+        message="The candidate key can not be null">
+      <rule
+          body="self.attributes -> notEmpty()"/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//CandidateKey"/>
+      </target>
+    </audits>
+    <audits
+        name="CompositeAttribute"
+        description="Check the attributes of the composite attribute"
+        id="CompositeAttribute"
+        message="The composite attribute can not be null">
+      <rule
+          body="self.singlesAttributes -> notEmpty()"/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//CompositeAttribute"/>
+      </target>
+    </audits>
+    <audits
         name="DependencyRelationship"
         description="Check the relation between a Dependency Relationship and a Weak Entity"
         id="DependencyRelationship"
@@ -699,6 +819,19 @@
           xsi:type="gmfmap:DomainElementTarget">
         <element
             href="EERmodel.ecore#//SingleAttribute"/>
+      </target>
+    </audits>
+    <audits
+        name="Cardinality"
+        description="Check the cardinality of the relationship"
+        id="Cardinality"
+        message="The upperBound must be > or = than lowerBound.">
+      <rule
+          body="self.upperBound >= self.lowerBound "/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//AbstractParticipant"/>
       </target>
     </audits>
   </audits>
