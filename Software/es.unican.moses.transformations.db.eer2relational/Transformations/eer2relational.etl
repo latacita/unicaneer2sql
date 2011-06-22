@@ -17,12 +17,12 @@ rule Project2Schema
 	s.tables.addAll(p.nodes.select(e : EER!Entity | true).equivalent());
 	-- We add as domains the results of transforming all domains
 	s.domains.addAll(p.domains.select(e : EER!Domain | true).equivalent());
-	-- We make the transformation necesary to relationships
-	transformRelationshipsOp(p.nodes.select(e : EER!Relationship | true).asSequence(), s);
 	-- We make the transformation necesary to dependency relationships
 	transformDependencyRelationshipsOp(p.nodes.select(e : EER!DependencyRelationship | true).asSequence(), s);
 	-- We make the transformation necesary to generalizations
 	generalizationOp(s, p.nodes.select(e : EER!Generalization | true).asSequence());
+	-- We make the transformation necesary to relationships
+	transformRelationshipsOp(p.nodes.select(e : EER!Relationship | true).asSequence(), s);
 	-- We make the transformation necesary to aggregations
 	aggregationsOp(s, p.nodes.select(e : EER!Aggregation | true).asSequence());
 	-- We make the transformation necesary to multivalued attributes	
@@ -162,10 +162,10 @@ operation compositeAttributesOp(t : Relational!Table, a : Sequence ){
 operation singleAttributesOp(t : Relational!Table, attributeList : Sequence ){	
 	--for each single attribute in sequence
 	for(i in attributeList){
-		-- I create a new attribute (column)
+		--create a new attribute (column)
 		var c : Relational!Attribute;
 		c = createSingleAttributeOp(i);
-		-- I add it as attribute (column) of the table
+		--add it as attribute (column) of the table
 		t.attributes.add(c);
 	}
 }
@@ -642,6 +642,15 @@ operation generalizationOp(s : Relational!Schema, list : Sequence){
 			table.candidateKey.add(ck);
 			table.primaryKey := ck;
 		}
+		--if the generalizaton has attributes
+		if(i.attribute <> null){
+			for(j in i.attribute){
+				--create a new attribute
+				var att : Relational!Attribute;
+				att = createSingleAttributeOp(j);
+				father.attributes.add(att);
+			}
+		}
 	}
 }
 
@@ -735,6 +744,39 @@ operation aggregationsOp(s : Relational!Schema, list : Sequence){
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
