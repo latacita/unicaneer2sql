@@ -745,62 +745,28 @@ operation aggregationsOp(s : Relational!Schema, list : Sequence){
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
--- This rule creates one column by each single attribute in the entity 
-@lazy 
-rule SingleAttribute2Column 
 
-	transform a : EER!SingleAttribute
-	to c : Relational!Attribute{
+operation triggerMaximunOp(s : Relational!Schema, t : Relational!Table, max : Integer){
 	
-		'Processing attribute '.concat(a.name).println(); 
-		''.println();
+	var text : String;
 	
-		c.name = a.name;
-		c.nullable = a.nullable;
-		c.domain ::= a.domain;
-		if(a.derivate){
-			c.type = Relational!AttributeType#Derivate;
-		}else{
-			c.type = Relational!AttributeType#Simple;
-		}
-				
-} -- SingleAttribute2Column
+	text = 'CREATE TRIGGER '.concat(t.name).concat('_maximum ON ').concat(t.name).concat('\n');
+	text = text.concat('AFTER INSERT, UPDATE').concat('\n');
+	text = text.concat('AS BEGIN').concat('\n');
+	text = text.concat('\n');
+	text = text.concat('IF (SELECT count(*) FROM ' ).concat(t.name).concat(' t, inserted i').concat('\n');
+	text = text.concat('WHERE t.').concat(PRIMARY KEY).concat(' = i.').concat(PRIMARY KEY).concat(') > ').concat(max).concat('\n');
+	text = text.concat('BEGIN ').concat('\n');
+	text = text.concat('RAISERROR (\'The number of rows is bigger than the limit\', 16, 1)').concat('\n');
+	text = text.concat('ROLLBACK TRANSACTION').concat('\n');
+	text = text.concat('RETURN').concat('\n');
+	text = text.concat('END	').concat('\n');
+	text = text.concat('END').concat('\n');
+	text = text.concat('GO').concat('\n');
+	
+	var constraint : new Relational!Constraint;
+	constraint.name = 'Trigger';
+	constraint.description = text;
+	s.constraints.add(constraint);
+}
