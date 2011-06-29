@@ -1,0 +1,28 @@
+<?xml version="1.0"?> 
+<project default="main">
+
+ 	<target name="loadModels">
+ 		<epsilon.emf.register file="../../es.unican.moses.sle.db.relacional/model/Relational.ecore"/>
+ 		
+ 		<epsilon.loadModel name="Relational" type="EMF">
+			<parameter name="modelFile" file="pruebaSalida.model"/>
+			<parameter name="metamodelFile" value="../../es.unican.moses.sle.db.relacional/model/Relational.ecore"/>
+ 			<parameter name="isMetamodelFileBased" value="true"/>
+			<parameter name="readOnLoad" value="true"/>
+			<parameter name="storeOnDisposal" value="false"/>
+		</epsilon.loadModel>
+ 		
+ 		<epsilon.loadModel name="Out" type="sql">
+ 			<parameter name="sqlFile" file="out.sql"/>
+ 			<parameter name="readOnLoad" value="false"/>
+ 			<parameter name="storeOnDisposal" value="true"/>
+ 		</epsilon.loadModel>
+ 	</target>
+ 	
+	<target name="main" depends="loadModels">		
+		<epsilon.egl src="relational2sql.egl">
+			<model ref="Relational"/>
+			<model ref="Out"/>
+		</epsilon.egl>
+	</target>
+</project>

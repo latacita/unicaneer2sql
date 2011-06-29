@@ -187,11 +187,7 @@ operation createSingleAttributeOp(sa : EER!SingleAttribute) : Relational!Attribu
 	c.name = sa.name;
 	c.domain ::= sa.domain;
 	c.nullable = sa.nullable;
-	if(sa.multiplicity > 1){
-		c.multivalued = true;
-	}else{
-		c.multivalued = false;
-	}
+	c.multiplicity = sa.multiplicity; 
 	if(sa.derivate){
 		c.type = Relational!AttributeType#Derivate;
 	}else{
@@ -217,13 +213,14 @@ operation transformMultivaluedAttributesOp(s : Relational!Schema){
 		--for each attribute of schema
 		for(j in i.attributes){
 			--if is a multivalued attribute
-			if(j.multivalued){
+			if(j.multiplicity > 1 or j.multiplicity < 0){
 				var t : Relational!Table;
 				-- obtains the new table 
 				t = multivaluedAttributeOp(j, i);
 				deletedAttributes.add(j);
 				deletedTables.add(i);
 				addedTables.add(t);
+				triggerMaximumOp(s, t, j.multiplicity);
 			}
 		}
 	}
@@ -281,7 +278,7 @@ operation multivaluedAttributeOp(a : Relational!Attribute, t : Relational!Table)
 	att.name = a.name;
 	att.type = a.type;
 	att.nullable = a.nullable;
-	att.multivalued = a.multivalued;
+	att.multiplicity = a.multiplicity;
 	att.domain = a.domain;
 	table.attributes.add(att);
 	
@@ -360,7 +357,7 @@ operation checkCardinalityOp(list : Sequence, n : Integer) : Boolean{
 		default:
 			var count : Integer = 0;
 			for(i in list){
-				if(i = -1){
+				if(i < 0 or i > 1){
 					count = count + 1;
 				}
 			}
@@ -431,11 +428,13 @@ operation relation11Op(s : Relational!Schema, r : EER!Relationship, participants
 -- 
 operation relation1NOp(s : Relational!Schema, r : EER!Relationship, participantsList : Sequence){
 	var table : Relational!Table;
-	
+	var max : Integer = 0;
+	var list : Sequence;
 	--find the table with bigest cardinality
 	for(i in participantsList){
-		if(i.upperBound = -1){
+		if(i.upperBound < 0 or i.upperBound > 1){
 			table ::= i.target;
+			max = i.upperBound;
 		}
 	}
 	--for each participant of the participantsList
@@ -465,12 +464,17 @@ operation relation1NOp(s : Relational!Schema, r : EER!Relationship, participants
 			}
 			--add the foreign key to the table
 			table.foreignKey.add(fk);
+			list.addAll(fk.attributes);
 			'Added '.concat(fk.name).concat(' to ').concat(table.name).println();
 		}
 	}
 	--add the attributes of the relationship
 	compositeAttributesOp(table, r.attributes.select(p : EER!CompositeAttribute | true).asSequence());
 	singleAttributesOp(table, r.attributes.select(p : EER!SingleAttribute | true).asSequence());
+	
+	if(max > 1){
+		triggerMaximumRelationshipOp(s, table, max, r.name, list);
+	}
 }
 
 
@@ -518,7 +522,7 @@ operation relationNNOp(s : Relational!Schema, r : EER!Relationship, participants
 			--add the attribute to the candidate key
 			ck.attributes.add(att);
 			'Added attribute '.concat(att.name).concat(' at candidate key ').concat(ck.name).println();
-		}
+		}	
 	}
 	--add the candidate key to the table
 	table.candidateKey.add(ck);
@@ -529,7 +533,22 @@ operation relationNNOp(s : Relational!Schema, r : EER!Relationship, participants
 	singleAttributesOp(table, r.attributes.select(p : EER!SingleAttribute | true).asSequence());
 	--add the table to the schema
 	s.tables.add(table);
-	'Added table '.concat(table.name).concat(' at Schema ').concat(s.name).println();			
+	'Added table '.concat(table.name).concat(' at Schema ').concat(s.name).println();
+	
+	-- instructions for the trigger
+	--for each participant
+	for(i in participantsList){
+		if(i.upperBound > 1){
+			var list : new Sequence; 
+			for(j in table.foreignKey){
+				if(i.target.name <> j.referencedTable.name){
+					list.addAll(j.attributes);
+				}
+			}
+			--invokes the operation
+			triggerMaximumRelationshipOp(s, table, i.upperBound, r.name, list);
+		}	
+	}				
 }
 
 
@@ -671,83 +690,58 @@ operation aggregationsOp(s : Relational!Schema, list : Sequence){
 		for(j in i.participants){
 			--create a new attribute
 			var att : Relational!Attribute;
-			--if is N:N
-			if((j.lowerBound > 1 or j.lowerBound < 0) and 
-			   (j.upperBound > 1 or j.upperBound < 0)){
-			    --create a new table, a new candidate key and a new foreign key
-				var table : new Relational!Table;
-				table.name = source.name.concat('_').concat(j.target.name);
-				var ck : new Relational!CandidateKey;
-				ck.name = table.name.concat('_CK');
-				var fk : new Relational!ForeignKey;
+			--if is 1:N
+			if((j.upperBound > 1 or j.upperBound < 0)){
+				   
+			   	var fk : new Relational!ForeignKey;
 				fk.name = source.name.concat('_FK');
 				fk.referencedTable := source;
-				--for each attribute of the primary key of the source
-				for(k in source.primaryKey.attributes){
+				var table : Relational!Table;
+				table = findTableOp(s,j.target.name); 
+			   	--for each attribute of the primary key of the source
+			   	for(k in source.primaryKey.attributes){
 					att = createSingleAttributeOp(k);
-					--add the attribute to the foreign key, to the table 
-					--and to the candidate key
 					fk.attributes.add(att);
-					table.attributes.add(att);
-					ck.attributes.add(att);
+					table.attributes.add(att);   		
+			   	}
+			   	table.foreignKey.add(fk);
+			   	--if the upper bound is not infinite, creates a trigger.
+			   	if(j.upperBound > 1){
+			   		var name : String;
+			   		if (i.name <> null){
+			   			name = i.name; 
+			   		}else{
+			   			name = 'aggregation';
+			   		}
+					triggerMaximumRelationshipOp(s, table, j.upperBound, name, fk.attributes.asSequence());
 				}
-				--add the foreign key to the table
-				table.foreignKey.add(fk);
-				
-				--create a new foreign key
-				var fk1 : new Relational!ForeignKey;
-				fk1.name = j.target.name.concat('_FK');
-				fk1.referencedTable ::= j.target;
+			    
+			--if is 1:1
+			}else{
+				var fk : new Relational!ForeignKey;
+				fk.name = j.target.name.concat('_FK');
+				fk.referencedTable ::= j.target;
 				--for each attribute of the primary key of the target
 				for(k in j.target.primaryKey.attributes){
 					att = createSingleAttributeOp(k);
-					fk1.attributes.add(att);
-					table.attributes.add(att);
-					ck.attributes.add(att);
+					fk.attributes.add(att);
+					source.attributes.add(att);
 				}
-				table.foreignKey.add(fk1);
-				table.candidateKey.add(ck);
-				table.primaryKey := ck;		
-				s.tables.add(table);
-			}else{
-				--if is 1:N
-				if((j.lowerBound = 1 or j.lowerBound = 0) and 
-				   (j.upperBound > 1 or j.upperBound < 0)){
-				   
-				   	var fk : new Relational!ForeignKey;
-					fk.name = source.name.concat('_FK');
-					fk.referencedTable := source;
-					var table : Relational!Table;
-					table = findTableOp(s,j.target.name); 
-				   	--for each attribute of the primary key of the source
-				   	for(k in source.primaryKey.attributes){
-						att = createSingleAttributeOp(k);
-						fk.attributes.add(att);
-						table.attributes.add(att);   		
-				   	}
-				   	table.foreignKey.add(fk);
-				   
-				--if is 1:1
-				}else{
-					var fk : new Relational!ForeignKey;
-					fk.name = j.target.name.concat('_FK');
-					fk.referencedTable ::= j.target;
-					--for each attribute of the primary key of the target
-					for(k in j.target.primaryKey.attributes){
-						att = createSingleAttributeOp(k);
-						fk.attributes.add(att);
-						source.attributes.add(att);
-					}
-					source.foreignKey.add(fk);
-				}
+				source.foreignKey.add(fk);
 			}
 		}
 	}
 }
 
-/*
 
-operation triggerMaximunOp(s : Relational!Schema, t : Relational!Table, max : Integer){
+--
+-- Operation triggerMaximumOp.
+-- Create a constrait that limits the number of rows.
+--
+-- Relational!Schema s: schema owner.
+-- Relational!Table t: table that drops the constraint.
+-- Integer max: number that indicates the limit of rows.
+operation triggerMaximumOp(s : Relational!Schema, t : Relational!Table, max : Integer){
 	
 	var text : String;
 	
@@ -756,7 +750,9 @@ operation triggerMaximunOp(s : Relational!Schema, t : Relational!Table, max : In
 	text = text.concat('AS BEGIN').concat('\n');
 	text = text.concat('\n');
 	text = text.concat('IF (SELECT count(*) FROM ' ).concat(t.name).concat(' t, inserted i').concat('\n');
-	text = text.concat('WHERE t.').concat(PRIMARY KEY).concat(' = i.').concat(PRIMARY KEY).concat(') > ').concat(max).concat('\n');
+	text = text.concat('WHERE t.').concat(t.primaryKey.name);
+	text = text.concat(' = i.').concat(t.primaryKey.name);
+	text = text.concat(') > ').concat(max.asString).concat('\n');
 	text = text.concat('BEGIN ').concat('\n');
 	text = text.concat('RAISERROR (\'The number of rows is bigger than the limit\', 16, 1)').concat('\n');
 	text = text.concat('ROLLBACK TRANSACTION').concat('\n');
@@ -770,3 +766,53 @@ operation triggerMaximunOp(s : Relational!Schema, t : Relational!Table, max : In
 	constraint.description = text;
 	s.constraints.add(constraint);
 }
+
+
+--
+-- Operation triggerMaximumOp.
+-- Create a constrait that limits the number of rows.
+--
+-- Relational!Schema s: schema owner.
+-- Relational!Table t: table that drops the constraint.
+-- Integer max: number that indicates the limit of rows.
+-- String relationName: Name of the relationship.
+-- Sequence list: list of foreign keys.
+operation triggerMaximumRelationshipOp(s : Relational!Schema, t : Relational!Table, max : Integer, relationName : String, list : Sequence){
+	
+	var text : String;
+	var i : Integer = 0;
+	
+	text = 'CREATE TRIGGER '.concat(t.name).concat('_').concat(relationName).concat('_maximum ON ').concat(t.name).concat('\n');
+	text = text.concat('AFTER INSERT, UPDATE').concat('\n');
+	text = text.concat('AS BEGIN').concat('\n');
+	text = text.concat('\n');
+	text = text.concat('IF (SELECT count(*) FROM ' ).concat(t.name).concat(' t, inserted i').concat('\n');
+	text = text.concat('WHERE');
+	
+	for(n in list){
+		if(i=0){
+			text = text.concat(' t.').concat(n.name);
+			text = text.concat(' = i.').concat(n.name);
+		}else{		
+			text = text.concat(' AND ');
+			text = text.concat(' t.').concat(n.name);
+			text = text.concat(' = i.').concat(n.name);
+		}
+		i = i + 1;
+	}
+	
+	text = text.concat(') > ').concat(max.asString).concat('\n');
+	text = text.concat('BEGIN ').concat('\n');
+	text = text.concat('RAISERROR (\'The number of rows is bigger than the limit\', 16, 1)').concat('\n');
+	text = text.concat('ROLLBACK TRANSACTION').concat('\n');
+	text = text.concat('RETURN').concat('\n');
+	text = text.concat('END	').concat('\n');
+	text = text.concat('END').concat('\n');
+	text = text.concat('GO').concat('\n');
+	
+	var constraint : new Relational!Constraint;
+	constraint.name = 'Trigger';
+	constraint.description = text;
+	s.constraints.add(constraint);
+}
+
