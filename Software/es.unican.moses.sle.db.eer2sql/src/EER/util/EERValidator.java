@@ -8,8 +8,6 @@ package EER.util;
 
 import EER.*;
 
-import es.unican.moses.sle.db.eer2sql.util.UnboundedNatural;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -152,8 +150,6 @@ public class EERValidator extends EObjectValidator {
 				return validateDependencyType((DependencyType)value, diagnostics, context);
 			case EERPackage.GENERALIZATION_TYPE:
 				return validateGeneralizationType((GeneralizationType)value, diagnostics, context);
-			case EERPackage.UNBOUNDED_NATURAL:
-				return validateUnboundedNatural((UnboundedNatural)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -638,15 +634,6 @@ public class EERValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateGeneralizationType(GeneralizationType generalizationType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateUnboundedNatural(UnboundedNatural unboundedNatural, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
