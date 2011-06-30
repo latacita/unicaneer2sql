@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<EER:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EER="http://EER/1.0" name="MyFirstProject">
-  <nodes xsi:type="EER:Entity" name="HelloWorld">
-    <attributes xsi:type="EER:SingleAttribute" name="theAttribute"/>
-  </nodes>
-</EER:Project>
