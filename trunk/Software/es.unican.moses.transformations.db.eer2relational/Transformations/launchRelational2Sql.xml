@@ -1,7 +1,7 @@
 <?xml version="1.0"?> 
 <project default="main">
 
- 	<target name="loadModels">
+ 	<target name="transformation">
  		<epsilon.emf.register file="../../es.unican.moses.sle.db.relacional/model/Relational.ecore"/>
  		
  		<epsilon.loadModel name="Relational" type="EMF">
@@ -12,17 +12,14 @@
 			<parameter name="storeOnDisposal" value="false"/>
 		</epsilon.loadModel>
  		
- 		<epsilon.loadModel name="Out" type="sql">
- 			<parameter name="sqlFile" file="out.sql"/>
- 			<parameter name="readOnLoad" value="false"/>
- 			<parameter name="storeOnDisposal" value="true"/>
- 		</epsilon.loadModel>
+ 		<copy  file="out.sql" tofile="out.sql"/>
+ 		
  	</target>
  	
-	<target name="main" depends="loadModels">		
+	<target name="main" depends="transformation">		
 		<epsilon.egl src="relational2sql.egl">
 			<model ref="Relational"/>
-			<model ref="Out"/>
+			<copy ref="out"/>
 		</epsilon.egl>
 	</target>
 </project>
