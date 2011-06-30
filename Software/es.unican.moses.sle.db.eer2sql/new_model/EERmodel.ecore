@@ -38,7 +38,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="WeakEntity" eSuperTypes="#//Entity"/>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Exclusive" eSuperTypes="#//Constraint">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -170,7 +169,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="child" lowerBound="1" eType="#//Entity"
         eOpposite="#//Entity/specializes"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="UnboundedNatural" instanceClassName="es.unican.moses.sle.db.eer2sql.util.UnboundedNatural"/>
   <eClassifiers xsi:type="ecore:EEnum" name="DependencyType">
     <eLiterals name="ID"/>
     <eLiterals name="E" value="1"/>
