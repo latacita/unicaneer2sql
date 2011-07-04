@@ -140,6 +140,22 @@
     <element xmi:type="ecore:EClass" href="EERmodel.ecore#//Node"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gQplwqMjEeCDncCvc_fRsA" x="410" y="285"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_B05KsKPjEeCRhKu4nyVgGQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_B081EKPjEeCRhKu4nyVgGQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_B09cIKPjEeCRhKu4nyVgGQ" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_B09cIaPjEeCRhKu4nyVgGQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_B09cIqPjEeCRhKu4nyVgGQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_B09cI6PjEeCRhKu4nyVgGQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_B0-DMKPjEeCRhKu4nyVgGQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_B0-DMaPjEeCRhKu4nyVgGQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_B0-DMqPjEeCRhKu4nyVgGQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_B0-DM6PjEeCRhKu4nyVgGQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_B05KsaPjEeCRhKu4nyVgGQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="EERmodel.ecore#//Attribute"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B05KsqPjEeCRhKu4nyVgGQ" x="415" y="465"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_WXKTIVU6EeC11o5yiAlA1w"/>
   <element xmi:type="ecore:EPackage" href="EERmodel.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_nc9fsFkaEeCyjpf-BKmFdg" type="3002" source="_z9yZwFU6EeC11o5yiAlA1w" target="_ncqkwFkaEeCyjpf-BKmFdg">
@@ -200,5 +216,29 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_gQ-V4qMjEeCDncCvc_fRsA" fontName="Segoe UI"/>
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gQ-V46MjEeCDncCvc_fRsA" points="[53, -20, -20, 75]$[53, -74, -20, 21]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_B1zJoKPjEeCRhKu4nyVgGQ" type="3002" source="_afJhMKMjEeCDncCvc_fRsA" target="_B05KsKPjEeCRhKu4nyVgGQ">
+    <children xmi:type="notation:Node" xmi:id="_B10XwKPjEeCRhKu4nyVgGQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_B10XwaPjEeCRhKu4nyVgGQ" x="26" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_B10XwqPjEeCRhKu4nyVgGQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_B10Xw6PjEeCRhKu4nyVgGQ" x="37" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_B1zJoaPjEeCRhKu4nyVgGQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_B1zJoqPjEeCRhKu4nyVgGQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="EERmodel.ecore#//Generalization/attribute"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_B1zJo6PjEeCRhKu4nyVgGQ" points="[0, 25, -287, -164]$[0, 189, -287, 0]$[217, 189, -70, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_B12M8KPjEeCRhKu4nyVgGQ" type="3002" source="_gQplwKMjEeCDncCvc_fRsA" target="_B05KsKPjEeCRhKu4nyVgGQ">
+    <children xmi:type="notation:Node" xmi:id="_B120AKPjEeCRhKu4nyVgGQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_B120AaPjEeCRhKu4nyVgGQ" x="29" y="10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_B120AqPjEeCRhKu4nyVgGQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_B120A6PjEeCRhKu4nyVgGQ" x="47" y="-10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_B12M8aPjEeCRhKu4nyVgGQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_B12M8qPjEeCRhKu4nyVgGQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="EERmodel.ecore#//Node/attributes"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_B12M86PjEeCRhKu4nyVgGQ" points="[50, 0, 25, -193]$[180, 0, 155, -193]$[180, 193, 155, 0]$[95, 193, 70, 0]"/>
   </edges>
 </notation:Diagram>
