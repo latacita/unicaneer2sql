@@ -44,7 +44,7 @@ import EER.Project;
 import EER.SingleAttribute;
 
 
- 
+
 
 /**
  * Class RelationshipWizard.</br>
@@ -130,7 +130,7 @@ public class RelationshipWizard extends JFrame {
 		pack();
 		setResizable(false);
 		initGUI();
-		
+
 	}
 
 
@@ -179,16 +179,16 @@ public class RelationshipWizard extends JFrame {
 							}
 						});
 						attributesList.addMouseListener(new MouseAdapter() {
-						    public void mouseClicked(MouseEvent evt) {
-						        JList list = (JList)evt.getSource();
-						        if (evt.getClickCount() == 2) {          // Double-click
-						            // Get item index
-						            indexList = list.locationToIndex(evt.getPoint());
-						            if(element.getAttributes().get(indexList).eClass().getName().equalsIgnoreCase("CompositeAttribute")){
-						            	new CompositeAttributeWizard(owner, editpart, (CompositeAttribute) element.getAttributes().get(indexList));
-						            }
-						        } 
-						    }
+							public void mouseClicked(MouseEvent evt) {
+								JList list = (JList)evt.getSource();
+								if (evt.getClickCount() == 2) {          // Double-click
+									// Get item index
+									indexList = list.locationToIndex(evt.getPoint());
+									if(element.getAttributes().get(indexList).eClass().getName().equalsIgnoreCase("CompositeAttribute")){
+										new CompositeAttributeWizard(owner, editpart, (CompositeAttribute) element.getAttributes().get(indexList));
+									}
+								} 
+							}
 						});
 					}					
 				}
@@ -322,7 +322,7 @@ public class RelationshipWizard extends JFrame {
 					domainCombo.setBounds(137, 149, 317, 20);
 					domainCombo.setSize(315, 20);
 					domainCombo.setBackground(new java.awt.Color(210,210,210));
-					domainCombo.setSelectedIndex(0);
+					updateDomainList();
 				}
 				{
 					multiplicityLabel = new JLabel();
@@ -353,8 +353,10 @@ public class RelationshipWizard extends JFrame {
 							new ActionListener() {
 								public void actionPerformed(ActionEvent e) {
 									indexList = attributesList.getSelectedIndex();
-									updateValueofAttribute();
-									updateAttributesList();
+									if(indexList != -1){
+										updateValueofAttribute();
+										updateAttributesList();
+									}
 								}
 							}
 					);
@@ -443,14 +445,18 @@ public class RelationshipWizard extends JFrame {
 				nullableCombo.setSelectedItem(a.isNullable()+"");
 				domainCombo.setVisible(true);
 				domainLabel.setVisible(true);
-				domainCombo.setSelectedItem(a.getDomain().getName()+"");
+				if(a.getDomain()!=null){
+					domainCombo.setSelectedItem(a.getDomain().getName()+"");
+				}else{
+					domainCombo.setSelectedItem("");
+				}
 				derivateCombo.setVisible(true);
 				derivateLabel.setVisible(true);
 				derivateCombo.setSelectedItem(a.isDerivate()+"");
 				multiplicityText.setVisible(true);
 				multiplicityLabel.setVisible(true);
 				multiplicityText.setText(a.getMultiplicity()+"");
-			//if is a composite attribute
+				//if is a composite attribute
 			}else{
 				//create a composite attribute
 				CompositeAttribute a = (CompositeAttribute) element.getAttributes().get(index);
@@ -519,7 +525,7 @@ public class RelationshipWizard extends JFrame {
 			} catch (org.eclipse.core.commands.ExecutionException e) {
 				e.printStackTrace();
 			} // try
-		//if is a composite attribute
+			//if is a composite attribute
 		}else{
 			//set the respective values
 			String name = nameText.getText();
@@ -540,7 +546,7 @@ public class RelationshipWizard extends JFrame {
 			} // try
 		}
 	}
-	
+
 	/**
 	 * Method updateDomainList.</br>
 	 * Update the domains list of the dialog.
@@ -553,9 +559,11 @@ public class RelationshipWizard extends JFrame {
 		}
 		domainComboModel = new DefaultComboBoxModel(doms);
 		domainCombo.setModel(domainComboModel);
-		domainCombo.setSelectedIndex(0);	
+		if(doms.length!=0){
+			domainCombo.setSelectedIndex(0);
+		}
 	}
-	
+
 	/**
 	 * Method deleteAttribute.</br>
 	 * Delete the actual attribute of the model.
@@ -576,7 +584,7 @@ public class RelationshipWizard extends JFrame {
 				} catch (org.eclipse.core.commands.ExecutionException ee) {
 					ee.printStackTrace();
 				} // try
-			//if is a composite attribute
+				//if is a composite attribute
 			}else{
 				//invoke the command
 				DeleteCompositeAttributeinRelationshipCommand cmd = 
@@ -595,19 +603,25 @@ public class RelationshipWizard extends JFrame {
 			updateAttributesList();
 		}
 	}
-	
+
 	/**
 	 * Method addNewSingleAttribute.</br>
 	 * Add a new single attribute to the element.
 	 */
-	
+
 	private void addNewSingleAttribute(){
 		indexList = attributesList.getModel().getSize();
+		Domain d;
+		if(domains.size()!=0){
+			d = domains.get(0);
+		}else{
+			d = null;
+		}
 		//invoke the command
 		CreateSingleAttributeinRelationshipCommand cmd = 
 			new CreateSingleAttributeinRelationshipCommand(TEDomain, element,
 					"attribute"+(indexList+1), false, false, 
-					domains.get(0), 1);
+					d, 1);
 		try {
 			cmd.execute(new NullProgressMonitor(), null);
 		} catch (org.eclipse.core.commands.ExecutionException ee) {
