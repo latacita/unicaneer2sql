@@ -347,7 +347,7 @@ public class CompositeAttributeWizard extends JDialog {
 					domainCombo.setBounds(137, 149, 317, 20);
 					domainCombo.setSize(315, 20);
 					domainCombo.setBackground(new java.awt.Color(210,210,210));
-					domainCombo.setSelectedIndex(0);
+					updateDomainList();
 				}
 				{
 					multiplicityLabel = new JLabel();
@@ -378,8 +378,10 @@ public class CompositeAttributeWizard extends JDialog {
 							new ActionListener() {
 								public void actionPerformed(ActionEvent e) {
 									indexList = attributesList.getSelectedIndex();
-									updateValueofAttribute();
-									updateAttributesList();
+									if(indexList != -1){
+										updateValueofAttribute();
+										updateAttributesList();
+									}
 								}
 							}
 					);
@@ -468,7 +470,11 @@ public class CompositeAttributeWizard extends JDialog {
 				nullableCombo.setSelectedItem(a.isNullable()+"");
 				domainCombo.setVisible(true);
 				domainLabel.setVisible(true);
-				domainCombo.setSelectedItem(a.getDomain().getName()+"");
+				if(a.getDomain()!=null){
+					domainCombo.setSelectedItem(a.getDomain().getName()+"");
+				}else{
+					domainCombo.setSelectedItem("");
+				}
 				derivateCombo.setVisible(true);
 				derivateLabel.setVisible(true);
 				derivateCombo.setSelectedItem(a.isDerivate()+"");
@@ -578,7 +584,9 @@ public class CompositeAttributeWizard extends JDialog {
 		}
 		domainComboModel = new DefaultComboBoxModel(doms);
 		domainCombo.setModel(domainComboModel);
-		domainCombo.setSelectedIndex(0);	
+		if(doms.length!=0){
+			domainCombo.setSelectedIndex(0);
+		}
 	}
 	
 	/**
@@ -628,11 +636,17 @@ public class CompositeAttributeWizard extends JDialog {
 	
 	private void addNewSingleAttribute(){
 		indexList = attributesList.getModel().getSize();
+		Domain d;
+		if(domains.size()!=0){
+			d = domains.get(0);
+		}else{
+			d = null;
+		}
 		//invoke the command
 		CreateSingleAttributeinCompositeAttributeCommand cmd = 
 			new CreateSingleAttributeinCompositeAttributeCommand(TEDomain, element,
 					"attribute"+(indexList+1), false, false, 
-					domains.get(0), 1);
+					d, 1);
 		try {
 			cmd.execute(new NullProgressMonitor(), null);
 		} catch (org.eclipse.core.commands.ExecutionException ee) {
