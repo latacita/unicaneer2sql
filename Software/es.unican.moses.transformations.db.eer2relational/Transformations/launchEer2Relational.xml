@@ -15,12 +15,12 @@
 <project default="main">
 
  	<target name="loadModels">
- 		<epsilon.emf.register file="../../es.unican.moses.sle.db.eer2sql/new_model/EERmodel.ecore"/>
+ 		<epsilon.emf.register file="../../es.unican.moses.sle.db.eer2sql/model/EERmodel.ecore"/>
  		<epsilon.emf.register file="../../es.unican.moses.sle.db.relacional/model/Relational.ecore"/>
  		
  		<epsilon.loadModel name="EER" type="EMF">
 			<parameter name="modelFile" file="./default.xmi"/>
-			<parameter name="metamodelFile" value="../../es.unican.moses.sle.db.eer2sql/new_model/EERmodel.ecore"/>
+			<parameter name="metamodelFile" value="../../es.unican.moses.sle.db.eer2sql/model/EERmodel.ecore"/>
  			<parameter name="isMetamodelFileBased" value="true"/>
  			<parameter name="readOnLoad" value="true"/>
 			<parameter name="storeOnDisposal" value="false"/>
