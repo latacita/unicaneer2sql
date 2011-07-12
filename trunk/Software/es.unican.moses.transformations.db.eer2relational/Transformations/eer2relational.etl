@@ -11,6 +11,9 @@ rule Project2Schema
 	transform p : EER!Project
 	to s : Relational!Schema {
 	
+	'Processing project '.concat(p.name).println(); 
+	''.println();
+	
 	-- The schema is named as the EER project
 	s.name = p.name;
 	-- We add as tables the results of transforming all the entities and weak entities
@@ -305,6 +308,9 @@ operation multivaluedAttributeOp(a : Relational!Attribute, t : Relational!Table)
 operation transformRelationshipsOp(relationships : Sequence, s : Relational!Schema){
 	--for each relationship
 	for(r in relationships){
+	
+		'Processing relationship '.concat(r.name).println();
+		
 		var entitiesList : new Sequence;
 		var cardinalitiesLowerList : new Sequence; 
 		var cardinalitiesUpperList : new Sequence;
@@ -567,6 +573,9 @@ operation transformDependencyRelationshipsOp(relationList : Sequence, s : Relati
 	
 	--for each dependency relationship of the list
 	for(i in relationList){
+	
+		'Processing dependency relationship '.concat(i.name).println();
+	
 		--find the related tables 
 		for(j in Sequence{0..1}){
 			if(i.participants.at(j).target.isTypeOf(EER!Entity)){
@@ -639,6 +648,9 @@ operation findTableOp(s : Relational!Schema, name : String) : Relational!Table{
 operation generalizationOp(s : Relational!Schema, list : Sequence){
 	--for each generalization of the list
 	for(i in list){
+		
+		'Processing generalization'.println();
+	
 		var father : Relational!Table;
 		father = findTableOp(s,i.parent.source.name);
 		--for each child
@@ -683,6 +695,9 @@ operation generalizationOp(s : Relational!Schema, list : Sequence){
 operation aggregationsOp(s : Relational!Schema, list : Sequence){
 	--for each aggregation of the list
 	for(i in list){
+	
+		'Processing aggregation'.println();	
+	
 		--create a reference of a table
 		var source : Relational!Table;
 		source = findTableOp(s, i.source.name);
@@ -743,6 +758,8 @@ operation aggregationsOp(s : Relational!Schema, list : Sequence){
 -- Integer max: number that indicates the limit of rows.
 operation triggerMaximumOp(s : Relational!Schema, t : Relational!Table, max : Integer){
 	
+	'Processing trigger'.concat(t.name).concat('_maximum').println();
+	
 	var text : String;
 	
 	text = 'CREATE TRIGGER '.concat(t.name).concat('_maximum ON ').concat(t.name).concat('\n');
@@ -778,6 +795,8 @@ operation triggerMaximumOp(s : Relational!Schema, t : Relational!Table, max : In
 -- String relationName: Name of the relationship.
 -- Sequence list: list of foreign keys.
 operation triggerMaximumRelationshipOp(s : Relational!Schema, t : Relational!Table, max : Integer, relationName : String, list : Sequence){
+	
+	'Processing trigger'.concat(t.name).concat('_').concat(relationName).concat('_maximum').println();
 	
 	var text : String;
 	var i : Integer = 0;
@@ -816,3 +835,9 @@ operation triggerMaximumRelationshipOp(s : Relational!Schema, t : Relational!Tab
 	s.constraints.add(constraint);
 }
 
+post {
+	'==========================================================================='.println();
+	' Completed sucessfully.'.println();
+	'==========================================================================='.println();
+	' '.println();
+} -- post
