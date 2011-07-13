@@ -1,9 +1,14 @@
-[%   
+[%'Creating script sql for the database '.println();%]
+[%	
 
-'Hello Word'.println();
 
+Schema.name.println();
 
+for (class in EClass.allInstances()){
+	class.name;
+}
 
 %]
 
-perro
+
+
