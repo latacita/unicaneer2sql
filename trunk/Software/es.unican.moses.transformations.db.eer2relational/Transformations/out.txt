@@ -1,3 +1,253 @@
+-- ****************************************
+-- Drop Database
+-- ****************************************
+PRINT '';
+PRINT '*** Dropping Database';
+GO
+
+USE [master];
+GO
+
+IF EXISTS (SELECT [name] FROM [master].[sys].[databases] WHERE [name] = N'Test1')
+    DROP DATABASE [Test1];
+
+-- If the database has any other open connections close the network connection.
+IF @@ERROR = 3702 
+    RAISERROR('[Test1] database cannot be dropped because there are still other open connections', 127, 127) WITH NOWAIT, LOG;
+GO
+
+
+-- ****************************************
+-- Create Database
+-- ****************************************
+PRINT '';
+PRINT '*** Creating Database';
+GO
+
+CREATE DATABASE [Test1];
+GO
+
+ALTER DATABASE [Test1] 
+SET RECOVERY SIMPLE, 
+    ANSI_NULLS ON, 
+    ANSI_PADDING ON, 
+    ANSI_WARNINGS ON, 
+    ARITHABORT ON, 
+    CONCAT_NULL_YIELDS_NULL ON, 
+    QUOTED_IDENTIFIER ON, 
+    NUMERIC_ROUNDABORT OFF, 
+    PAGE_VERIFY CHECKSUM, 
+    ALLOW_SNAPSHOT_ISOLATION OFF;
+GO
+
+USE [Test1];
+GO
+
+
+-- ******************************************************
+-- Create tables
+-- ******************************************************
+PRINT '';
+PRINT '*** Creating Tables';
+GO
+CREATE TABLE Marca(
+	Codigo_Marca	INT		NOT NULL,	
+	Nombre	VARCHAR(25)		NOT NULL,	
+	CONSTRAINT pk_Marca_id PRIMARY KEY(Codigo_Marca)
+	)
+GO
+
+
+CREATE TABLE Modelo(
+	Codigo_Modelo	INT		NOT NULL,	
+	Nombre	VARCHAR(25)		NOT NULL,	
+	Codigo_Marca_pertenece1	INT		NOT NULL,	
+	Cod_Coches_pertenece2	INT		NOT NULL,	
+	CONSTRAINT pk_Modelo_id PRIMARY KEY(Codigo_Modelo)
+	)
+GO
+
+
+CREATE TABLE Coches(
+	Cod_Coches	INT		NOT NULL,	
+	NBastidor	INT		NOT NULL,	
+	Matricula	VARCHAR(25)		NOT NULL,	
+	Precio	INT		NOT NULL,	
+	Cod_Concesionario_oferta	INT		NOT NULL,	
+	Cod_Pruebas_utiliza	INT		NOT NULL,	
+	Cod_Compra_es_adquirido	INT		NOT NULL,	
+	CONSTRAINT pk_Coches_id PRIMARY KEY(Cod_Coches)
+	)
+GO
+
+
+CREATE TABLE Km0(
+	FechaMatriculacion	DateTime		NOT NULL,	
+	Cod_Coches	INT		NOT NULL,	
+	Cod_Pack_incluye	INT		NOT NULL,	
+	CONSTRAINT pk_Km0_id PRIMARY KEY(Cod_Coches)
+	)
+GO
+
+
+CREATE TABLE Usados(
+	Kilometros	INT		NOT NULL,	
+	FechaCirculacion	DateTime		NOT NULL,	
+	Cod_Coches	INT		NOT NULL,	
+	CONSTRAINT pk_Usados_id PRIMARY KEY(Cod_Coches)
+	)
+GO
+
+
+CREATE TABLE Estado(
+	Cod_Estado	INT		NOT NULL,	
+	Descripcion	VARCHAR(25)		NULL,	
+	Cod_Coches_tiene	INT		NOT NULL,	
+	CONSTRAINT pk_Estado_id PRIMARY KEY(Cod_Estado)
+	)
+GO
+
+
+CREATE TABLE Caracteristicas(
+	Cod_Características	INT		NOT NULL,	
+	Valor	INT		NOT NULL,	
+	Codigo_Modelo_tiene2	INT		NOT NULL,	
+	Cod_TipoCaracterísticas_pertence3	INT		NOT NULL,	
+	Cod_Pack_Añade	INT		NOT NULL,	
+	CONSTRAINT pk_Caracteristicas_id PRIMARY KEY(Cod_Características)
+	)
+GO
+
+
+CREATE TABLE TipoCaracteristicas(
+	Cod_TipoCaracterísticas	INT		NOT NULL,	
+	Descripcion	VARCHAR(25)		NULL,	
+	CONSTRAINT pk_TipoCaracteristicas_id PRIMARY KEY(Cod_TipoCaracterísticas)
+	)
+GO
+
+
+CREATE TABLE Pack(
+	Cod_Pack	INT		NOT NULL,	
+	Nombre	VARCHAR(25)		NOT NULL,	
+	Precio	INT		NOT NULL,	
+	CONSTRAINT pk_Pack_id PRIMARY KEY(Cod_Pack)
+	)
+GO
+
+
+CREATE TABLE Compra(
+	Cod_Compra	INT		NOT NULL,	
+	Descripción	VARCHAR(25)		NOT NULL,	
+	CONSTRAINT pk_Compra_id PRIMARY KEY(Cod_Compra)
+	)
+GO
+
+
+CREATE TABLE Clientes(
+	Cod_Cliente	INT		NOT NULL,	
+	NDocumento	INT		NOT NULL,	
+	TipoDocumento	VARCHAR(25)		NOT NULL,	
+	Nombre	VARCHAR(25)		NOT NULL,	
+	Apellido1	VARCHAR(25)		NOT NULL,	
+	Apellido2	VARCHAR(25)		NULL,	
+	Calle	VARCHAR(25)		NOT NULL,	
+	Número	INT		NOT NULL,	
+	Ciudad	VARCHAR(25)		NOT NULL,	
+	Cod_Compra_hace	INT		NOT NULL,	
+	CONSTRAINT pk_Clientes_id PRIMARY KEY(Cod_Cliente)
+	)
+GO
+
+
+CREATE TABLE Pruebas(
+	Cod_Pruebas	INT		NOT NULL,	
+	FechaRegistro	DateTime		NOT NULL,	
+	FechaPrueba	DateTime		NOT NULL,	
+	HoraPrueba	DateTime		NOT NULL,	
+	Cod_Cliente_solicita	INT		NOT NULL,	
+	Cod_Personal_acompaña	INT		NOT NULL,	
+	CONSTRAINT pk_Pruebas_id PRIMARY KEY(Cod_Pruebas)
+	)
+GO
+
+
+CREATE TABLE Concesionarios(
+	Cod_Concesionario	INT		NOT NULL,	
+	Nombre	VARCHAR(25)		NOT NULL,	
+	Correo	VARCHAR(25)		NULL,	
+	Calle	VARCHAR(25)		NOT NULL,	
+	Numero	INT		NOT NULL,	
+	Ciudad	VARCHAR(25)		NOT NULL,	
+	CONSTRAINT pk_Concesionarios_id PRIMARY KEY(Cod_Concesionario)
+	)
+GO
+
+
+CREATE TABLE Horario(
+	dia	DateTime		NOT NULL,	
+	turno	INT		NOT NULL,	
+	HoraAbrir	DateTime		NOT NULL,	
+	HoraCerrar	DateTime		NOT NULL,	
+	Cod_Concesionario	INT		NOT NULL,	
+	CONSTRAINT pk_Horario_id PRIMARY KEY(Cod_Concesionario)
+	)
+GO
+
+
+CREATE TABLE Personal(
+	Cod_Personal	INT		NOT NULL,	
+	TipoDocumento	VARCHAR(25)		NOT NULL,	
+	NDocumento	INT		NOT NULL,	
+	Nombre	VARCHAR(25)		NOT NULL,	
+	Apellido1	VARCHAR(25)		NOT NULL,	
+	Apellido2	VARCHAR(25)		NULL,	
+	Correo	VARCHAR(25)		NOT NULL,	
+	tipo	VARCHAR(25)		NOT NULL,	
+	Cod_Concesionario_tiene4	INT		NOT NULL,	
+	CONSTRAINT pk_Personal_id PRIMARY KEY(Cod_Personal)
+	)
+GO
+
+
+CREATE TABLE Tecnico(
+	Cod_Personal	INT		NOT NULL,	
+	CONSTRAINT pk_Tecnico_id PRIMARY KEY(Cod_Personal)
+	)
+GO
+
+
+CREATE TABLE Comercial(
+	Cod_Personal	INT		NOT NULL,	
+	CONSTRAINT pk_Comercial_id PRIMARY KEY(Cod_Personal)
+	)
+GO
+
+
+CREATE TABLE Clientes_Telefono(
+	Cod_Cliente	INT		NOT NULL,	
+	Telefono	INT		NOT NULL,	
+	CONSTRAINT pk_Clientes_Telefono_id PRIMARY KEY(Cod_Cliente,Telefono)
+	)
+GO
+
+
+CREATE TABLE Concesionarios_Telefono(
+	Cod_Concesionario	INT		NOT NULL,	
+	Telefono	INT		NOT NULL,	
+	CONSTRAINT pk_Concesionarios_Telefono_id PRIMARY KEY(Cod_Concesionario,Telefono)
+	)
+GO
+
+
+CREATE TABLE Personal_Telefono(
+	Cod_Personal	INT		NOT NULL,	
+	Telefono	INT		NOT NULL,	
+	CONSTRAINT pk_Personal_Telefono_id PRIMARY KEY(Cod_Personal,Telefono)
+	)
+GO
 
 
 
+USE [master];
+GO

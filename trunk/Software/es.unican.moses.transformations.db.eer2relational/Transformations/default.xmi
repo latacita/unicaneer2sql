@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EER:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EER="http://EER/1.0" name="Test1">
-  <domains xsi:type="EER:PrimitiveType" name="String"/>
-  <domains xsi:type="EER:PrimitiveType" name="Numerico"/>
+  <domains xsi:type="EER:PrimitiveType" name="VARCHAR(25)"/>
+  <domains xsi:type="EER:PrimitiveType" name="INT"/>
   <domains xsi:type="EER:PrimitiveType" name="DateTime"/>
   <nodes xsi:type="EER:Entity" name="Marca" primaryKey="//@nodes.0/@candidateKey.0">
     <attributes xsi:type="EER:SingleAttribute" name="Codigo_Marca" domain="//@domains.1"/>
