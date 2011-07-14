@@ -200,8 +200,8 @@
     <attributes name="Telefono" domain="//@domains.1" multiplicity="5"/>
     <foreignKey attributes="//@tables.19/@attributes.0" name="Personal_Telefono_FK" referencedTable="//@tables.14"/>
   </tables>
-  <domains xsi:type="Relational:PrimitiveType" name="String"/>
-  <domains xsi:type="Relational:PrimitiveType" name="Numerico"/>
+  <domains xsi:type="Relational:PrimitiveType" name="VARCHAR(25)"/>
+  <domains xsi:type="Relational:PrimitiveType" name="INT"/>
   <domains xsi:type="Relational:PrimitiveType" name="DateTime"/>
   <constraints name="Trigger" description="CREATE TRIGGER Clientes_Telefono_maximum ON Clientes_Telefono&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;&#xA;IF (SELECT count(*) FROM Clientes_Telefono t, inserted i&#xA;WHERE t.Clientes_Telefono_CK = i.Clientes_Telefono_CK) > 5&#xA;BEGIN &#xA;RAISERROR ('The number of rows is bigger than the limit', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
   <constraints name="Trigger" description="CREATE TRIGGER Concesionarios_Telefono_maximum ON Concesionarios_Telefono&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;&#xA;IF (SELECT count(*) FROM Concesionarios_Telefono t, inserted i&#xA;WHERE t.Concesionarios_Telefono_CK = i.Concesionarios_Telefono_CK) > 4&#xA;BEGIN &#xA;RAISERROR ('The number of rows is bigger than the limit', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>

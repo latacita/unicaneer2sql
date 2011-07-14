@@ -1,14 +1,97 @@
-[%'Creating script sql for the database '.println();%]
-[%	
+[%
+	var database : Relational!Schema = Schema.allInstances().first();
+	'Creating script sql for the database '.concat(database.name).println();
+%]
+-- ****************************************
+-- Drop Database
+-- ****************************************
+PRINT '';
+PRINT '*** Dropping Database';
+GO
+
+USE [master];
+GO
+
+IF EXISTS (SELECT [name] FROM [master].[sys].[databases] WHERE [name] = N'[%=database.name%]')
+    DROP DATABASE [[%=database.name%]];
+
+-- If the database has any other open connections close the network connection.
+IF @@ERROR = 3702 
+    RAISERROR('[[%=database.name%]] database cannot be dropped because there are still other open connections', 127, 127) WITH NOWAIT, LOG;
+GO
 
 
-Schema.name.println();
+-- ****************************************
+-- Create Database
+-- ****************************************
+PRINT '';
+PRINT '*** Creating Database';
+GO
 
-for (class in EClass.allInstances()){
-	class.name;
-}
+CREATE DATABASE [[%=database.name%]];
+GO
 
+ALTER DATABASE [[%=database.name%]] 
+SET RECOVERY SIMPLE, 
+    ANSI_NULLS ON, 
+    ANSI_PADDING ON, 
+    ANSI_WARNINGS ON, 
+    ARITHABORT ON, 
+    CONCAT_NULL_YIELDS_NULL ON, 
+    QUOTED_IDENTIFIER ON, 
+    NUMERIC_ROUNDABORT OFF, 
+    PAGE_VERIFY CHECKSUM, 
+    ALLOW_SNAPSHOT_ISOLATION OFF;
+GO
+
+USE [[%=database.name%]];
+GO
+
+
+-- ******************************************************
+-- Create tables
+-- ******************************************************
+PRINT '';
+PRINT '*** Creating Tables';
+GO
+[%
+	for(table in database.tables){
+		'Creating table '.concat(table.name).println();
+%]
+CREATE TABLE [%=table.name%](
+[%
+		var nullable : String;
+		for(column in table.attributes){
+			if(column.nullable = true){
+				nullable = 'NULL';
+			}else{
+				nullable = 'NOT NULL';
+			}
+%]
+	[%=column.name%]	[%=column.domain.name%]		[%=nullable%],	
+[%
+		}
+%]
+[%
+		var attributes : String = '';
+		var count : Integer = 0;
+		for(n in table.primaryKey.attributes){		
+			if(count = 0){
+				attributes = attributes.concat(n.name);
+			}else{
+				attributes = attributes.concat(',').concat(n.name);
+			}
+			count = count + 1;
+		}
+%]
+	CONSTRAINT pk_[%=table.name%]_id PRIMARY KEY([%=attributes%])
+	)
+GO
+
+
+[%
+	}
 %]
 
-
-
+USE [master];
+GO
