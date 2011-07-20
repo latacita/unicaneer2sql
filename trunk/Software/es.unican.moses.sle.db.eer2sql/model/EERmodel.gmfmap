@@ -766,5 +766,18 @@
             href="EERmodel.ecore#//AbstractParticipant"/>
       </target>
     </audits>
+    <audits
+        name="CandidateKeyName"
+        description="Check the name of the candidates keys"
+        id="CandidateKeyName"
+        message="The Candidate key's name must be unique">
+      <rule
+          body="CandidateKey.allInstances()->forAll(c1, c2 |  c1 &lt;> c2 implies c1.name &lt;> c2.name)"/>
+      <target
+          xsi:type="gmfmap:DomainElementTarget">
+        <element
+            href="EERmodel.ecore#//CandidateKey"/>
+      </target>
+    </audits>
   </audits>
 </gmfmap:Mapping>
