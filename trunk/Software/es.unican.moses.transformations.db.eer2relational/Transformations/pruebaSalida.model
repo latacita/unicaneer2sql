@@ -4,9 +4,6 @@
     <candidateKey name="Codigo_Marca_CK">
       <attributes href="default.xmi#/0/@nodes.0/@attributes.0"/>
     </candidateKey>
-    <candidateKey name="CK">
-      <attributes href="default.xmi#/0/@nodes.28/@attributes.4"/>
-    </candidateKey>
     <attributes name="Codigo_Marca" domain="//@domains.1"/>
     <attributes name="Nombre" domain="//@domains.0"/>
   </tables>
@@ -143,11 +140,7 @@
     <attributes name="Numero" domain="//@domains.1"/>
     <attributes name="Ciudad" domain="//@domains.0"/>
   </tables>
-  <tables name="Horario" primaryKey="//@tables.13/@candidateKey.1">
-    <candidateKey name="horario_CK">
-      <attributes href="default.xmi#/0/@nodes.26/@attributes.0"/>
-      <attributes href="default.xmi#/0/@nodes.26/@attributes.1"/>
-    </candidateKey>
+  <tables name="Horario" primaryKey="//@tables.13/@candidateKey.0">
     <candidateKey attributes="//@tables.13/@attributes.4" name="Horario_CK"/>
     <attributes name="dia" domain="//@domains.2"/>
     <attributes name="turno" domain="//@domains.1"/>
@@ -159,7 +152,7 @@
     <candidateKey name="Cod_Personal_CK">
       <attributes href="default.xmi#/0/@nodes.28/@attributes.0"/>
     </candidateKey>
-    <candidateKey name="Documento_CK">
+    <candidateKey name="Documentos_CK">
       <attributes href="default.xmi#/0/@nodes.28/@attributes.1"/>
       <attributes href="default.xmi#/0/@nodes.28/@attributes.2"/>
     </candidateKey>

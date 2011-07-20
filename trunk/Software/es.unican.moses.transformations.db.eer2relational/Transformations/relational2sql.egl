@@ -73,6 +73,22 @@ CREATE TABLE [%=table.name%](
 		}
 %]
 [%
+	var attributes : String = '';
+	var count : Integer = 0;
+	for(n in table.candidateKey){
+		for(i in n.attributes){
+			if(count = 0){
+				attributes = attributes.concat(i.name);
+			}else{
+				attributes = attributes.concat(',').concat(i.name);
+			}
+			count = count + 1;
+		}
+%]
+	CONSTRAINT [%=n.name%] UNIQUE ([%=attributes%]),
+[%
+	}
+		
 		var attributes : String = '';
 		var count : Integer = 0;
 		for(n in table.primaryKey.attributes){		
@@ -92,6 +108,68 @@ GO
 [%
 	}
 %]
+
+
+-- ******************************************************
+-- Alter tables
+-- ******************************************************
+PRINT '';
+PRINT '*** Adding references';
+GO
+[%
+	for(table in database.tables){
+		if(not table.foreignKey.isEmpty()){	
+			for(n in table.foreignKey){
+				'Adding references in'.concat(table.name).println();
+%]
+		ALTER TABLE [%=table.name%]
+[%	
+				var attributes : String = '';
+				var count : Integer = 0;
+				for(i in n.attributes){
+					if(count = 0){
+						attributes = attributes.concat(i.name);
+					}else{
+						attributes = attributes.concat(',').concat(i.name);
+					}
+					count = count + 1;
+				}
+				count = 0;
+				var attributes2 : String = '';
+				for(i in n.referencedTable.primaryKey.attributes){
+					if(count = 0){
+						attributes2 = attributes2.concat(i.name);
+					}else{
+						attributes2 = attributes2.concat(',').concat(i.name);
+					}
+					count = count + 1;
+				}
+%]
+	ADD CONSTRAINT [%=n.name%] FOREIGN KEY([%=attributes%])REFERENCES [%=n.referencedTable.name%]([%=attributes2%])
+	GO
+		
+[%
+			}
+		}
+	}
+%]
+-- ******************************************************
+-- Triggers
+-- ******************************************************
+PRINT '';
+PRINT '*** Creating Triggers';
+GO
+	
+[%
+	for(c in database.constraints){
+		'Creating trigger '.concat(c.name).println();
+%]
+[%=c.description%]
+[%
+	}
+%]
+	
+	
 
 USE [master];
 GO
