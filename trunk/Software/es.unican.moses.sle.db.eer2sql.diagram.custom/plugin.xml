@@ -30,5 +30,28 @@
          </object>
       </editpolicyProvider>
    </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="es.unican.moses.sle.db.eer2sql.diagram.custom.contribution1"
+            nameFilter="*.eer"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="es.unican.moses.sle.db.eer2sql.diagram.custom.menu1"
+               label="EER Code Generation"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="es.unican.moses.sle.db.eer2sql.diagram.custom.popup.actions.doCodeGeneration"
+               enablesFor="1"
+               id="es.unican.moses.sle.db.eer2sql.diagram.custom.newAction"
+               label="EER Code Generation"
+               menubarPath="es.unican.moses.sle.db.eer2sql.diagram.custom.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
 
 </plugin>
