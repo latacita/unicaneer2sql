@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension-point 
+   		id="org.eclipse.ui.viewActions" 
+   		name="viewActions" 
+   		schema="schema/org.eclipse.ui.viewActions.exsd">
+   			
+   			<viewerContribution
+        		id="es.unican.moses.plugin.button"
+        		targetID="es.unican.moses.plugin.button.outline">
+	    		<action id="es.unican.moses.plugin.button.action1"
+	       				label="%PopupMenus.action"
+	       				icon="icons/ctool16/openbrwsr.gif"
+	       				menubarPath="additions"
+	       				helpContextId="es.unican.moses.plugin.button.open_browser_action_context"
+           				definitionId="es.unican.moses.plugin.button.action1"
+	       				class="es.unican.moses.plugin.button.ViewActionDelegate">	
+	    		</action>
+       </viewerContribution>
+   		
+   	</extension-point>
+
+</plugin>
