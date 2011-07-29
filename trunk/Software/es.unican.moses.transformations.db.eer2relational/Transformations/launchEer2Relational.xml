@@ -15,8 +15,10 @@
 <project default="main">
 
  	<target name="loadModels">
+ 		<!--
  		<epsilon.emf.register file="../../es.unican.moses.sle.db.eer2sql/model/EERmodel.ecore"/>
  		<epsilon.emf.register file="../../es.unican.moses.sle.db.relacional/model/Relational.ecore"/>
+ 		-->
  		
  		<epsilon.loadModel name="EER" type="EMF">
 			<parameter name="modelFile" file="./default.xmi"/>

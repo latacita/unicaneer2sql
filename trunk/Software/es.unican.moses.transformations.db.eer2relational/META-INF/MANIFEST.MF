@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: es.unican.moses.transformations.db.eer2relational
+Bundle-SymbolicName: es.unican.moses.transformations.db.eer2relational;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: MOSES Research Group
