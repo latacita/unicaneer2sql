@@ -63,7 +63,6 @@ CREATE TABLE Modelo(
 	Codigo_Modelo	INT		NOT NULL,	
 	Nombre	VARCHAR(25)		NOT NULL,	
 	Codigo_Marca_pertenece1	INT		NOT NULL,	
-	Cod_Coches_pertenece2	INT		NOT NULL,	
 	CONSTRAINT Codigo_Modelo_CK UNIQUE (Codigo_Modelo),
 	CONSTRAINT pk_Modelo_id PRIMARY KEY(Codigo_Modelo)
 	)
@@ -75,12 +74,12 @@ CREATE TABLE Coches(
 	NBastidor	INT		NOT NULL,	
 	Matricula	VARCHAR(25)		NOT NULL,	
 	Precio	INT		NOT NULL,	
+	Codigo_Modelo_pertenece2	INT		NOT NULL,	
 	Cod_Concesionario_oferta	INT		NOT NULL,	
-	Cod_Pruebas_utiliza	INT		NOT NULL,	
-	Cod_Compra_es_adquirido	INT		NOT NULL,	
+	Cod_Compra_es_adquirido	INT		NULL,	
 	CONSTRAINT Cod_Coches_CK UNIQUE (Cod_Coches),
-	CONSTRAINT Matricula_CK UNIQUE (Cod_Coches,Matricula),
-	CONSTRAINT NBastidor_CK UNIQUE (Cod_Coches,Matricula,NBastidor),
+	CONSTRAINT Matricula_CK UNIQUE (Matricula),
+	CONSTRAINT NBastidor_CK UNIQUE (NBastidor),
 	CONSTRAINT pk_Coches_id PRIMARY KEY(Cod_Coches)
 	)
 GO
@@ -159,7 +158,7 @@ GO
 CREATE TABLE Clientes(
 	Cod_Cliente	INT		NOT NULL,	
 	NDocumento	INT		NOT NULL,	
-	TipoDocumento	VARCHAR(25)		NOT NULL,	
+	TipoDocumento	TipoDocumento		NOT NULL,	
 	Nombre	VARCHAR(25)		NOT NULL,	
 	Apellido1	VARCHAR(25)		NOT NULL,	
 	Apellido2	VARCHAR(25)		NULL,	
@@ -168,7 +167,7 @@ CREATE TABLE Clientes(
 	Ciudad	VARCHAR(25)		NOT NULL,	
 	Cod_Compra_hace	INT		NOT NULL,	
 	CONSTRAINT Cod_Cliente_CK UNIQUE (Cod_Cliente),
-	CONSTRAINT Documento_CK UNIQUE (Cod_Cliente,NDocumento,TipoDocumento),
+	CONSTRAINT Documento_CK UNIQUE (NDocumento,TipoDocumento),
 	CONSTRAINT pk_Clientes_id PRIMARY KEY(Cod_Cliente)
 	)
 GO
@@ -179,6 +178,7 @@ CREATE TABLE Pruebas(
 	FechaRegistro	DateTime		NOT NULL,	
 	FechaPrueba	DateTime		NOT NULL,	
 	HoraPrueba	DateTime		NOT NULL,	
+	Cod_Coches_utiliza	INT		NOT NULL,	
 	Cod_Cliente_solicita	INT		NOT NULL,	
 	Cod_Personal_acompaña	INT		NOT NULL,	
 	CONSTRAINT Cod_Pruebas_CK UNIQUE (Cod_Pruebas),
@@ -206,15 +206,16 @@ CREATE TABLE Horario(
 	HoraAbrir	DateTime		NOT NULL,	
 	HoraCerrar	DateTime		NOT NULL,	
 	Cod_Concesionario	INT		NOT NULL,	
-	CONSTRAINT Horario_CK UNIQUE (Cod_Concesionario),
-	CONSTRAINT pk_Horario_id PRIMARY KEY(Cod_Concesionario)
+	CONSTRAINT Cod_Horario UNIQUE (dia,turno),
+	CONSTRAINT Horario_WE_CK UNIQUE (Cod_Concesionario,dia,turno),
+	CONSTRAINT pk_Horario_id PRIMARY KEY(Cod_Concesionario,dia,turno)
 	)
 GO
 
 
 CREATE TABLE Personal(
 	Cod_Personal	INT		NOT NULL,	
-	TipoDocumento	VARCHAR(25)		NOT NULL,	
+	TipoDocumento	TipoDocumento		NOT NULL,	
 	NDocumento	INT		NOT NULL,	
 	Nombre	VARCHAR(25)		NOT NULL,	
 	Apellido1	VARCHAR(25)		NOT NULL,	
@@ -222,8 +223,9 @@ CREATE TABLE Personal(
 	Correo	VARCHAR(25)		NOT NULL,	
 	tipo	VARCHAR(25)		NOT NULL,	
 	Cod_Concesionario_tiene4	INT		NOT NULL,	
+	Cod_Personal_subordinado	INT		NOT NULL,	
 	CONSTRAINT Cod_Personal_CK UNIQUE (Cod_Personal),
-	CONSTRAINT Documentos_CK UNIQUE (Cod_Personal,TipoDocumento,NDocumento),
+	CONSTRAINT Documento_CK UNIQUE (TipoDocumento,NDocumento),
 	CONSTRAINT pk_Personal_id PRIMARY KEY(Cod_Personal)
 	)
 GO
@@ -284,16 +286,12 @@ GO
 	ADD CONSTRAINT Marca_pertenece1_FK FOREIGN KEY(Codigo_Marca_pertenece1)REFERENCES Marca(Codigo_Marca)
 	GO
 		
-		ALTER TABLE Modelo
-	ADD CONSTRAINT Coches_pertenece2_FK FOREIGN KEY(Cod_Coches_pertenece2)REFERENCES Coches(Cod_Coches)
+		ALTER TABLE Coches
+	ADD CONSTRAINT Modelo_pertenece2_FK FOREIGN KEY(Codigo_Modelo_pertenece2)REFERENCES Modelo(Codigo_Modelo)
 	GO
 		
 		ALTER TABLE Coches
 	ADD CONSTRAINT Concesionarios_oferta_FK FOREIGN KEY(Cod_Concesionario_oferta)REFERENCES Concesionarios(Cod_Concesionario)
-	GO
-		
-		ALTER TABLE Coches
-	ADD CONSTRAINT Pruebas_utiliza_FK FOREIGN KEY(Cod_Pruebas_utiliza)REFERENCES Pruebas(Cod_Pruebas)
 	GO
 		
 		ALTER TABLE Coches
@@ -325,6 +323,10 @@ GO
 	GO
 		
 		ALTER TABLE Pruebas
+	ADD CONSTRAINT Coches_utiliza_FK FOREIGN KEY(Cod_Coches_utiliza)REFERENCES Coches(Cod_Coches)
+	GO
+		
+		ALTER TABLE Pruebas
 	ADD CONSTRAINT Clientes_solicita_FK FOREIGN KEY(Cod_Cliente_solicita)REFERENCES Clientes(Cod_Cliente)
 	GO
 		
@@ -334,6 +336,10 @@ GO
 		
 		ALTER TABLE Personal
 	ADD CONSTRAINT Concesionarios_tiene4_FK FOREIGN KEY(Cod_Concesionario_tiene4)REFERENCES Concesionarios(Cod_Concesionario)
+	GO
+		
+		ALTER TABLE Personal
+	ADD CONSTRAINT Personal_jefe_FK FOREIGN KEY(Cod_Personal_subordinado)REFERENCES Personal(Cod_Personal)
 	GO
 		
 		ALTER TABLE Clientes_Telefono
@@ -355,6 +361,56 @@ PRINT '';
 PRINT '*** Creating Triggers';
 GO
 	
+CREATE TRIGGER Km0_Usados_exclusive ON Km0
+AFTER INSERT, UPDATE
+AS BEGIN
+
+IF (SELECT count(*) FROM Usados t, inserted i
+WHERE t.Cod_Coches = i.Cod_Coches) > 0
+BEGIN 
+RAISERROR ('The pk exists in another table', 16, 1)
+ROLLBACK TRANSACTION
+RETURN
+END	
+END
+GO
+
+CREATE TRIGGER Usados_Km0_exclusive ON Usados
+AFTER INSERT, UPDATE
+AS BEGIN
+
+IF (SELECT count(*) FROM Km0 t, inserted i
+WHERE t.Cod_Coches = i.Cod_Coches) > 0
+BEGIN 
+RAISERROR ('The pk exists in another table', 16, 1)
+ROLLBACK TRANSACTION
+RETURN
+END	
+END
+GO
+
+CREATE TRIGGER Coches_total ON Coches
+AFTER INSERT, UPDATE
+AS BEGIN
+BEGIN 
+RAISERROR ('Do not insert rows in the supertype. Insert them into subtypes.', 16, 1)
+ROLLBACK TRANSACTION
+RETURN
+END	
+END
+GO
+
+CREATE TRIGGER Personal_total ON Personal
+AFTER INSERT, UPDATE
+AS BEGIN
+BEGIN 
+RAISERROR ('Do not insert rows in the supertype. Insert them into subtypes.', 16, 1)
+ROLLBACK TRANSACTION
+RETURN
+END	
+END
+GO
+
 CREATE TRIGGER Clientes_Telefono_maximum ON Clientes_Telefono
 AFTER INSERT, UPDATE
 AS BEGIN

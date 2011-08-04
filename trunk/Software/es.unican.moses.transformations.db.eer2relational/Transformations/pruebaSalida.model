@@ -14,9 +14,7 @@
     <attributes name="Codigo_Modelo" domain="//@domains.1"/>
     <attributes name="Nombre" domain="//@domains.0"/>
     <attributes name="Codigo_Marca_pertenece1" domain="//@domains.1"/>
-    <attributes name="Cod_Coches_pertenece2" domain="//@domains.1"/>
     <foreignKey attributes="//@tables.1/@attributes.2" name="Marca_pertenece1_FK" referencedTable="//@tables.0"/>
-    <foreignKey attributes="//@tables.1/@attributes.3" name="Coches_pertenece2_FK" referencedTable="//@tables.2"/>
   </tables>
   <tables name="Coches" primaryKey="//@tables.2/@candidateKey.0">
     <candidateKey name="Cod_Coches_CK">
@@ -32,11 +30,11 @@
     <attributes name="NBastidor" domain="//@domains.1"/>
     <attributes name="Matricula" domain="//@domains.0"/>
     <attributes name="Precio" domain="//@domains.1"/>
+    <attributes name="Codigo_Modelo_pertenece2" domain="//@domains.1"/>
     <attributes name="Cod_Concesionario_oferta" domain="//@domains.1"/>
-    <attributes name="Cod_Pruebas_utiliza" domain="//@domains.1"/>
-    <attributes name="Cod_Compra_es_adquirido" domain="//@domains.1"/>
-    <foreignKey attributes="//@tables.2/@attributes.4" name="Concesionarios_oferta_FK" referencedTable="//@tables.12"/>
-    <foreignKey attributes="//@tables.2/@attributes.5" name="Pruebas_utiliza_FK" referencedTable="//@tables.11"/>
+    <attributes name="Cod_Compra_es_adquirido" nullable="true" domain="//@domains.1"/>
+    <foreignKey attributes="//@tables.2/@attributes.4" name="Modelo_pertenece2_FK" referencedTable="//@tables.1"/>
+    <foreignKey attributes="//@tables.2/@attributes.5" name="Concesionarios_oferta_FK" referencedTable="//@tables.12"/>
     <foreignKey attributes="//@tables.2/@attributes.6" name="Compra_es_adquirido_FK" referencedTable="//@tables.9"/>
   </tables>
   <tables name="Km0" primaryKey="//@tables.3/@candidateKey.0">
@@ -106,7 +104,7 @@
     </candidateKey>
     <attributes name="Cod_Cliente" domain="//@domains.1"/>
     <attributes name="NDocumento" domain="//@domains.1"/>
-    <attributes name="TipoDocumento" domain="//@domains.0"/>
+    <attributes name="TipoDocumento" domain="//@domains.3"/>
     <attributes name="Nombre" domain="//@domains.0"/>
     <attributes name="Apellido1" domain="//@domains.0"/>
     <attributes name="Apellido2" nullable="true" domain="//@domains.0"/>
@@ -124,10 +122,12 @@
     <attributes name="FechaRegistro" domain="//@domains.2"/>
     <attributes name="FechaPrueba" domain="//@domains.2"/>
     <attributes name="HoraPrueba" domain="//@domains.2"/>
+    <attributes name="Cod_Coches_utiliza" domain="//@domains.1"/>
     <attributes name="Cod_Cliente_solicita" domain="//@domains.1"/>
     <attributes name="Cod_Personal_acompa&#xf1;a" domain="//@domains.1"/>
-    <foreignKey attributes="//@tables.11/@attributes.4" name="Clientes_solicita_FK" referencedTable="//@tables.10"/>
-    <foreignKey attributes="//@tables.11/@attributes.5" name="Comercial_acompa&#xf1;a_FK" referencedTable="//@tables.16"/>
+    <foreignKey attributes="//@tables.11/@attributes.4" name="Coches_utiliza_FK" referencedTable="//@tables.2"/>
+    <foreignKey attributes="//@tables.11/@attributes.5" name="Clientes_solicita_FK" referencedTable="//@tables.10"/>
+    <foreignKey attributes="//@tables.11/@attributes.6" name="Comercial_acompa&#xf1;a_FK" referencedTable="//@tables.16"/>
   </tables>
   <tables name="Concesionarios" primaryKey="//@tables.12/@candidateKey.0">
     <candidateKey name="Cod_Concesionario_CK">
@@ -140,8 +140,16 @@
     <attributes name="Numero" domain="//@domains.1"/>
     <attributes name="Ciudad" domain="//@domains.0"/>
   </tables>
-  <tables name="Horario" primaryKey="//@tables.13/@candidateKey.0">
-    <candidateKey attributes="//@tables.13/@attributes.4" name="Horario_CK"/>
+  <tables name="Horario" primaryKey="//@tables.13/@candidateKey.1">
+    <candidateKey name="Cod_Horario">
+      <attributes href="default.xmi#/0/@nodes.26/@attributes.0"/>
+      <attributes href="default.xmi#/0/@nodes.26/@attributes.1"/>
+    </candidateKey>
+    <candidateKey name="Horario_WE_CK">
+      <attributes href="#//@tables.13/@attributes.4"/>
+      <attributes href="default.xmi#/0/@nodes.26/@attributes.0"/>
+      <attributes href="default.xmi#/0/@nodes.26/@attributes.1"/>
+    </candidateKey>
     <attributes name="dia" domain="//@domains.2"/>
     <attributes name="turno" domain="//@domains.1"/>
     <attributes name="HoraAbrir" domain="//@domains.2"/>
@@ -152,12 +160,12 @@
     <candidateKey name="Cod_Personal_CK">
       <attributes href="default.xmi#/0/@nodes.28/@attributes.0"/>
     </candidateKey>
-    <candidateKey name="Documentos_CK">
+    <candidateKey name="Documento_CK">
       <attributes href="default.xmi#/0/@nodes.28/@attributes.1"/>
       <attributes href="default.xmi#/0/@nodes.28/@attributes.2"/>
     </candidateKey>
     <attributes name="Cod_Personal" domain="//@domains.1"/>
-    <attributes name="TipoDocumento" domain="//@domains.0"/>
+    <attributes name="TipoDocumento" domain="//@domains.3"/>
     <attributes name="NDocumento" domain="//@domains.1"/>
     <attributes name="Nombre" domain="//@domains.0"/>
     <attributes name="Apellido1" domain="//@domains.0"/>
@@ -165,7 +173,9 @@
     <attributes name="Correo" domain="//@domains.0"/>
     <attributes name="tipo" domain="//@domains.0"/>
     <attributes name="Cod_Concesionario_tiene4" domain="//@domains.1"/>
+    <attributes name="Cod_Personal_subordinado" domain="//@domains.1"/>
     <foreignKey attributes="//@tables.14/@attributes.8" name="Concesionarios_tiene4_FK" referencedTable="//@tables.12"/>
+    <foreignKey attributes="//@tables.14/@attributes.9" name="Personal_jefe_FK" referencedTable="//@tables.14"/>
   </tables>
   <tables name="Tecnico" primaryKey="//@tables.15/@candidateKey.0">
     <candidateKey attributes="//@tables.15/@attributes.0" name="Tecnico_CK"/>
@@ -196,6 +206,15 @@
   <domains xsi:type="Relational:PrimitiveType" name="VARCHAR(25)"/>
   <domains xsi:type="Relational:PrimitiveType" name="INT"/>
   <domains xsi:type="Relational:PrimitiveType" name="DateTime"/>
+  <domains xsi:type="Relational:EnumerationType" name="TipoDocumento">
+    <literals name="DNI"/>
+    <literals name="Pasaporte"/>
+    <literals name="Tarjeta_Extranjero"/>
+  </domains>
+  <constraints name="Trigger" description="CREATE TRIGGER Km0_Usados_exclusive ON Km0&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;&#xA;IF (SELECT count(*) FROM Usados t, inserted i&#xA;WHERE t.Cod_Coches = i.Cod_Coches) > 0&#xA;BEGIN &#xA;RAISERROR ('The pk exists in another table', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
+  <constraints name="Trigger" description="CREATE TRIGGER Usados_Km0_exclusive ON Usados&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;&#xA;IF (SELECT count(*) FROM Km0 t, inserted i&#xA;WHERE t.Cod_Coches = i.Cod_Coches) > 0&#xA;BEGIN &#xA;RAISERROR ('The pk exists in another table', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
+  <constraints name="Trigger" description="CREATE TRIGGER Coches_total ON Coches&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;BEGIN &#xA;RAISERROR ('Do not insert rows in the supertype. Insert them into subtypes.', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
+  <constraints name="Trigger" description="CREATE TRIGGER Personal_total ON Personal&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;BEGIN &#xA;RAISERROR ('Do not insert rows in the supertype. Insert them into subtypes.', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
   <constraints name="Trigger" description="CREATE TRIGGER Clientes_Telefono_maximum ON Clientes_Telefono&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;&#xA;IF (SELECT count(*) FROM Clientes_Telefono t, inserted i&#xA;WHERE t.Clientes_Telefono_CK = i.Clientes_Telefono_CK) > 5&#xA;BEGIN &#xA;RAISERROR ('The number of rows is bigger than the limit', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
   <constraints name="Trigger" description="CREATE TRIGGER Concesionarios_Telefono_maximum ON Concesionarios_Telefono&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;&#xA;IF (SELECT count(*) FROM Concesionarios_Telefono t, inserted i&#xA;WHERE t.Concesionarios_Telefono_CK = i.Concesionarios_Telefono_CK) > 4&#xA;BEGIN &#xA;RAISERROR ('The number of rows is bigger than the limit', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
   <constraints name="Trigger" description="CREATE TRIGGER Personal_Telefono_maximum ON Personal_Telefono&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;&#xA;IF (SELECT count(*) FROM Personal_Telefono t, inserted i&#xA;WHERE t.Personal_Telefono_CK = i.Personal_Telefono_CK) > 5&#xA;BEGIN &#xA;RAISERROR ('The number of rows is bigger than the limit', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
