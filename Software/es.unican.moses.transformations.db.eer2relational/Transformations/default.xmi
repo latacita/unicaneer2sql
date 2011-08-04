@@ -3,6 +3,11 @@
   <domains xsi:type="EER:PrimitiveType" name="VARCHAR(25)"/>
   <domains xsi:type="EER:PrimitiveType" name="INT"/>
   <domains xsi:type="EER:PrimitiveType" name="DateTime"/>
+  <domains xsi:type="EER:EnumerationType" name="TipoDocumento">
+    <literals name="DNI"/>
+    <literals name="Pasaporte"/>
+    <literals name="Tarjeta_Extranjero"/>
+  </domains>
   <nodes xsi:type="EER:Entity" name="Marca" primaryKey="//@nodes.0/@candidateKey.0">
     <attributes xsi:type="EER:SingleAttribute" name="Codigo_Marca" domain="//@domains.1"/>
     <attributes xsi:type="EER:SingleAttribute" name="Nombre" domain="//@domains.0"/>
@@ -29,7 +34,7 @@
   </nodes>
   <nodes xsi:type="EER:Relationship" name="pertenece2">
     <participants lowerBound="1" upperBound="1" target="//@nodes.1"/>
-    <participants lowerBound="1" upperBound="1" target="//@nodes.3"/>
+    <participants lowerBound="1" upperBound="-1" target="//@nodes.3"/>
   </nodes>
   <nodes xsi:type="EER:Entity" name="Km0" primaryKey="//@nodes.3/@candidateKey.0">
     <attributes xsi:type="EER:SingleAttribute" name="FechaMatriculacion" domain="//@domains.2"/>
@@ -87,12 +92,12 @@
     <participants lowerBound="1" upperBound="1" target="//@nodes.25"/>
   </nodes>
   <nodes xsi:type="EER:Relationship" name="utiliza">
-    <participants lowerBound="1" upperBound="-1" target="//@nodes.3"/>
-    <participants lowerBound="1" upperBound="1" target="//@nodes.23"/>
+    <participants lowerBound="1" upperBound="1" target="//@nodes.3"/>
+    <participants upperBound="-1" target="//@nodes.23"/>
   </nodes>
   <nodes xsi:type="EER:Relationship" name="es_adquirido">
     <participants lowerBound="1" upperBound="1" target="//@nodes.3"/>
-    <participants lowerBound="1" upperBound="1" target="//@nodes.20"/>
+    <participants upperBound="1" target="//@nodes.20"/>
   </nodes>
   <nodes xsi:type="EER:Entity" name="Compra" primaryKey="//@nodes.20/@candidateKey.0">
     <attributes xsi:type="EER:SingleAttribute" name="Cod_Compra" domain="//@domains.1"/>
@@ -106,7 +111,7 @@
   <nodes xsi:type="EER:Entity" name="Clientes" primaryKey="//@nodes.22/@candidateKey.0">
     <attributes xsi:type="EER:SingleAttribute" name="Cod_Cliente" domain="//@domains.1"/>
     <attributes xsi:type="EER:SingleAttribute" name="NDocumento" domain="//@domains.1"/>
-    <attributes xsi:type="EER:SingleAttribute" name="TipoDocumento" domain="//@domains.0"/>
+    <attributes xsi:type="EER:SingleAttribute" name="TipoDocumento" domain="//@domains.3"/>
     <attributes xsi:type="EER:SingleAttribute" name="Nombre" domain="//@domains.0"/>
     <attributes xsi:type="EER:SingleAttribute" name="Apellido1" domain="//@domains.0"/>
     <attributes xsi:type="EER:SingleAttribute" name="Apellido2" nullable="true" domain="//@domains.0"/>
@@ -142,11 +147,12 @@
     </attributes>
     <candidateKey attributes="//@nodes.25/@attributes.0" name="Cod_Concesionario_CK"/>
   </nodes>
-  <nodes xsi:type="EER:WeakEntity" name="Horario">
+  <nodes xsi:type="EER:WeakEntity" name="Horario" primaryKey="//@nodes.26/@candidateKey.0">
     <attributes xsi:type="EER:SingleAttribute" name="dia" domain="//@domains.2"/>
     <attributes xsi:type="EER:SingleAttribute" name="turno" domain="//@domains.1"/>
     <attributes xsi:type="EER:SingleAttribute" name="HoraAbrir" domain="//@domains.2"/>
     <attributes xsi:type="EER:SingleAttribute" name="HoraCerrar" domain="//@domains.2"/>
+    <candidateKey attributes="//@nodes.26/@attributes.0 //@nodes.26/@attributes.1" name="Cod_Horario"/>
   </nodes>
   <nodes xsi:type="EER:DependencyRelationship" name="tiene3">
     <participants lowerBound="1" upperBound="1" target="//@nodes.25"/>
@@ -154,7 +160,7 @@
   </nodes>
   <nodes xsi:type="EER:Entity" name="Personal" primaryKey="//@nodes.28/@candidateKey.0">
     <attributes xsi:type="EER:SingleAttribute" name="Cod_Personal" domain="//@domains.1"/>
-    <attributes xsi:type="EER:SingleAttribute" name="TipoDocumento" domain="//@domains.0"/>
+    <attributes xsi:type="EER:SingleAttribute" name="TipoDocumento" domain="//@domains.3"/>
     <attributes xsi:type="EER:SingleAttribute" name="NDocumento" domain="//@domains.1"/>
     <attributes xsi:type="EER:SingleAttribute" name="Nombre" domain="//@domains.0"/>
     <attributes xsi:type="EER:SingleAttribute" name="Apellido1" domain="//@domains.0"/>
@@ -162,7 +168,7 @@
     <attributes xsi:type="EER:SingleAttribute" name="Telefono" domain="//@domains.1" multiplicity="5"/>
     <attributes xsi:type="EER:SingleAttribute" name="Correo" domain="//@domains.0"/>
     <candidateKey attributes="//@nodes.28/@attributes.0" name="Cod_Personal_CK"/>
-    <candidateKey attributes="//@nodes.28/@attributes.1 //@nodes.28/@attributes.2" name="Documentos_CK"/>
+    <candidateKey attributes="//@nodes.28/@attributes.1 //@nodes.28/@attributes.2" name="Documento_CK"/>
     <isSpecializedBy relationship="//@nodes.31"/>
   </nodes>
   <nodes xsi:type="EER:Relationship" name="tiene4">

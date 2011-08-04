@@ -72,10 +72,10 @@ CREATE TABLE [%=table.name%](
 [%
 		}
 %]
-[%
-	var attributes : String = '';
-	var count : Integer = 0;
+[%	
 	for(n in table.candidateKey){
+		var count : Integer = 0;
+		var attributes : String = '';
 		for(i in n.attributes){
 			if(count = 0){
 				attributes = attributes.concat(i.name);
