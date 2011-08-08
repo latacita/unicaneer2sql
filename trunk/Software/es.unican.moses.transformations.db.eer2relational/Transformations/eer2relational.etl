@@ -390,7 +390,7 @@ operation relation11Op(s : Relational!Schema, r : EER!Relationship, participants
 	--if the minimun cardinality is 0 the foreign key will be
 	--in the other table
 	for(i in participantsList){
-		if(i.lowerBound <> 0){
+		if(i.lowerBound = 0){
 			table ::= i.target;
 		}
 	}
@@ -971,7 +971,7 @@ operation triggerTotalOp(s : Relational!Schema, t : Relational!Table){
 	text = text.concat('AFTER INSERT, UPDATE').concat('\n');
 	text = text.concat('AS BEGIN').concat('\n');
 	text = text.concat('BEGIN ').concat('\n');
-	text = text.concat('RAISERROR (\'Do not insert rows in the supertype. Insert them into subtypes.\', 16, 1)').concat('\n');
+	text = text.concat('RAISERROR (\'Do not insert rows in the supertype. Insert them in the corresponding subtype.\', 16, 1)').concat('\n');
 	text = text.concat('ROLLBACK TRANSACTION').concat('\n');
 	text = text.concat('RETURN').concat('\n');
 	text = text.concat('END	').concat('\n');
