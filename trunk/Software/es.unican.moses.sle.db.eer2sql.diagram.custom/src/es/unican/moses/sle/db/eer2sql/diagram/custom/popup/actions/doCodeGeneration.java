@@ -4,29 +4,25 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-
-import org.apache.tools.ant.BuildException;
-import org.apache.tools.ant.BuildListener;
-import org.apache.tools.ant.DefaultLogger;
-import org.apache.tools.ant.Project;
-import org.apache.tools.ant.ProjectHelper;
+import org.eclipse.ant.core.AntRunner;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.osgi.framework.Bundle;
 
-
-
 public class doCodeGeneration implements IObjectActionDelegate {
 
 	private Shell shell;
-	
+
 	/**
 	 * Constructor for Action1.
 	 */
@@ -46,12 +42,12 @@ public class doCodeGeneration implements IObjectActionDelegate {
 	 */
 	public void run(IAction action) {
 		MessageDialog.openInformation(
-			shell,
-			"Moses Research Group",
-			"EER Code Generation was executed.");
-		
+				shell,
+				"Moses Research Group",
+		"EER Code Generation was executed.");
+
 		action();
-		
+
 	}
 
 	/**
@@ -60,15 +56,32 @@ public class doCodeGeneration implements IObjectActionDelegate {
 	public void selectionChanged(IAction action, ISelection selection) {
 	}
 
-	
+
 	/**
 	 * Implements the actions to be carried out when the Generate Code action is invoked 
 	 */
 	public void action(){
-		
-		// We look for the ANT file to be executed.
+
+		IProgressMonitor monitor = null;
+		AntRunner runner1 = new AntRunner();
+		AntRunner runner2 = new AntRunner();
+		File buildFile1 = findEer2RelationalLauncher();
+		File buildFile2 = findRelational2SQLLauncher();
+		runner1.setBuildFileLocation(buildFile1.getAbsolutePath());
+		runner2.setBuildFileLocation(buildFile2.getAbsolutePath());
+		runner1.setArguments("-Dmessage=Building -verbose");
+		runner2.setArguments("-Dmessage=Building -verbose");
+		try {
+			runner1.run(monitor);
+			runner2.run(monitor);
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		/*	// We look for the ANT file to be executed.
 		File buildFile = findEer2RelationalLauncher();
-		
+
 		Project p = new Project();
 		p.setUserProperty("ant.file",buildFile.getAbsolutePath());		
 		DefaultLogger consoleLogger = new DefaultLogger();
@@ -88,8 +101,8 @@ public class doCodeGeneration implements IObjectActionDelegate {
 		} catch (BuildException e) {
 			p.fireBuildFinished(e);
 		}
-		
-		
+		 */
+
 	}
 
 	/**
@@ -101,11 +114,11 @@ public class doCodeGeneration implements IObjectActionDelegate {
 
 		// We search for the XML file containing the ANT task to be launched
 		Bundle bundle = Platform.getBundle("es.unican.moses.transformations.db.eer2relational");
-	    Path path = new Path("Transformations/launchEer2Relational.xml");
-	    URL launcherURL = FileLocator.find(bundle, path, null);
-	    
-	    // We convert the URL to a URL using the file protocol 
-	    URL launcherFileURL = null;
+		Path path = new Path("Transformations/launchEer2Relational.xml");
+		URL launcherURL = FileLocator.find(bundle, path, null);
+
+		// We convert the URL to a URL using the file protocol 
+		URL launcherFileURL = null;
 		try {
 			launcherFileURL = FileLocator.toFileURL(launcherURL);
 		} catch (IOException e2) {
@@ -113,16 +126,51 @@ public class doCodeGeneration implements IObjectActionDelegate {
 			// Completa esta excepcion 
 			e2.printStackTrace();
 		} // 
-	    
-	    System.out.println("Path = " + launcherFileURL.toString());
-	        		
+
+		System.out.println("Path = " + launcherFileURL.toString());
+
 		File buildFile = null;
 		try {
 			buildFile = new File(launcherFileURL.toURI());
 		} catch (URISyntaxException e1) {
 			// Cambia esto por una ventana que informe del error
 			System.out.println("The file for launching the transformation can not be found." +
-					"This is probably due to an installation error");	
+			"This is probably due to an installation error");	
+			e1.printStackTrace();
+		}
+		return buildFile;
+	}
+	
+	/**
+	 * Looks for the ANT file to be invoked for transforming a relational model into a code.
+	 * @return The file containing such an ANT file 
+	 */
+	private File findRelational2SQLLauncher() {
+
+		// We search for the XML file containing the ANT task to be launched
+		Bundle bundle = Platform.getBundle("es.unican.moses.transformations.db.eer2relational");
+		Path path = new Path("Transformations/launchRelational2Sql.xml");
+		URL launcherURL = FileLocator.find(bundle, path, null);
+
+		// We convert the URL to a URL using the file protocol 
+		URL launcherFileURL = null;
+		try {
+			launcherFileURL = FileLocator.toFileURL(launcherURL);
+		} catch (IOException e2) {
+			// TODO Auto-generated catch block
+			// Completa esta excepcion 
+			e2.printStackTrace();
+		} // 
+
+		System.out.println("Path = " + launcherFileURL.toString());
+
+		File buildFile = null;
+		try {
+			buildFile = new File(launcherFileURL.toURI());
+		} catch (URISyntaxException e1) {
+			// Cambia esto por una ventana que informe del error
+			System.out.println("The file for launching the transformation can not be found." +
+			"This is probably due to an installation error");	
 			e1.printStackTrace();
 		}
 		return buildFile;
