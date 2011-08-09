@@ -65,6 +65,8 @@ public class doCodeGeneration implements IObjectActionDelegate {
 	 * Implements the actions to be carried out when the Generate Code action is invoked 
 	 */
 	public void action(){
+		
+		//new AddressWindow();
 
 		IProgressMonitor monitor = null;
 		AntRunner runner1 = new AntRunner();
