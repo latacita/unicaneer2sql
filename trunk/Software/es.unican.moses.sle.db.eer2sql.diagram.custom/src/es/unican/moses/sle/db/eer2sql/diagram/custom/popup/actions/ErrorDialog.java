@@ -18,6 +18,11 @@ import java.awt.event.WindowEvent;
 public class ErrorDialog extends Frame{
 	
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * Constructor.
 	 * @param title: String with the name of the dialog.</br>
 	 */

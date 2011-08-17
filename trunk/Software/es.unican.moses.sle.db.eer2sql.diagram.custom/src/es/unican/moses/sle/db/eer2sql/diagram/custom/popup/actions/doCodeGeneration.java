@@ -1,6 +1,5 @@
 package es.unican.moses.sle.db.eer2sql.diagram.custom.popup.actions;
 
-import java.awt.Dialog;
 import java.awt.Frame;
 import java.io.File;
 import java.io.IOException;

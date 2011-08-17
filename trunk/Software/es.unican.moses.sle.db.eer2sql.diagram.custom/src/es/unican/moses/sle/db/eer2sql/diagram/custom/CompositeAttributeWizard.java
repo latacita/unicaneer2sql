@@ -88,8 +88,6 @@ public class CompositeAttributeWizard extends JDialog {
 
 	private int indexList = 0;
 	private String title;
-	private JDialog owner = this;
-	
 	private ListModel attributesListModel;
 	private ComboBoxModel domainComboModel;
 	private ComboBoxModel nullableComboModel = 
@@ -210,7 +208,7 @@ public class CompositeAttributeWizard extends JDialog {
 						            // Get item index
 						            indexList = list.locationToIndex(evt.getPoint());
 						            if(element.getSinglesAttributes().get(indexList).eClass().getName().equalsIgnoreCase("CompositeAttribute")){
-						            	new CompositeAttributeWizard(owner, editpart, (CompositeAttribute) element.getSinglesAttributes().get(indexList));
+						            	//new CompositeAttributeWizard(owner, editpart, (CompositeAttribute) element.getSinglesAttributes().get(indexList));
 						            }
 						        } 
 						    }
