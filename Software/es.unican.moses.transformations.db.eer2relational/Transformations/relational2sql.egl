@@ -47,6 +47,47 @@ GO
 USE [[%=database.name%]];
 GO
 
+-- ****************************************
+-- Create DataTypes
+-- ****************************************
+
+PRINT '';
+PRINT '*** Creating Data types';
+GO
+
+[%
+	for(type in database.domains){
+		if(type.isTypeOf(Relational!EnumerationType)){
+			%] 
+			CREATE RULE [%=type.name%]
+			AS
+			[%
+			var li : String;
+			var count : Integer = 0;
+			var length : Integer = 0;
+			for(literals in type.literals){
+				if(count <> 0){
+					li = li.concat(", ").concat("'").concat(literals.name).concat("'");
+				}else{
+					li = li.concat("'").concat(literals.name).concat("'");
+				}
+				count = count + 1;
+				if(length < literals.name.toCharSequence().size()){
+					length = literals.name.toCharSequence().size();
+				}
+			}
+			%]
+			@list IN ([%=li%]);
+			GO
+			
+			CREATE TYPE [%=type.name%]
+			FROM CHAR([%=length%]) NOT NULL;
+			GO
+
+			[%
+		}
+	}
+%]
 
 -- ******************************************************
 -- Create tables
