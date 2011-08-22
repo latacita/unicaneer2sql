@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
+Bundle-Name: diagram
 Bundle-SymbolicName: es.unican.moses.sle.db.eer2sql.diagram; singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Bundle-Activator: EER.diagram.part.EERmodelDiagramEditorPlugin
-Bundle-Vendor: %providerName
+Bundle-Vendor: diagram
 Bundle-Localization: plugin
 Export-Package: EER.diagram.edit.parts, 
  EER.diagram.part,
