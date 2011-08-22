@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/es.unican.moses.Cupito.feature_1.0.0.jar" id="es.unican.moses.Cupito.feature" version="1.0.0">
+      <category name="Cupito"/>
+   </feature>
+   <category-def name="Cupito" label="Cupito"/>
+</site>

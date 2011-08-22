@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="es.unican.moses.Cupito.feature"
+      label="Cupito Feature"
+      version="1.0.0">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="es.unican.moses.plugin.button" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="es.unican.moses.sle.db.eer2sql" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="es.unican.moses.sle.db.eer2sql.diagram" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="es.unican.moses.sle.db.eer2sql.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="es.unican.moses.sle.db.eer2sql.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="es.unican.moses.sle.db.relacional" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="es.unican.moses.transformations.db.eer2relational" version="1.0.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="es.unican.moses.Cupito"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="es.unican.moses.plugin.button"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="es.unican.moses.sle.db.eer2sql"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="es.unican.moses.sle.db.eer2sql.diagram"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="es.unican.moses.sle.db.eer2sql.diagram.custom"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="es.unican.moses.sle.db.eer2sql.edit"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="es.unican.moses.sle.db.relacional"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="es.unican.moses.transformations.db.eer2relational"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"/>
+
+</feature>
