@@ -43,6 +43,24 @@ GO
 USE [Test1];
 GO
 
+-- ****************************************
+-- Create DataTypes
+-- ****************************************
+
+PRINT '';
+PRINT '*** Creating Data types';
+GO
+
+ 
+			CREATE RULE TipoDocumento
+			AS
+			@list IN ('DNI', 'Pasaporte', 'Tarjeta_Extranjero');
+			GO
+			
+			CREATE TYPE TipoDocumento
+			FROM CHAR(18) NOT NULL;
+			GO
+
 
 -- ******************************************************
 -- Create tables
@@ -76,7 +94,6 @@ CREATE TABLE Coches(
 	Precio	INT		NOT NULL,	
 	Codigo_Modelo_pertenece2	INT		NOT NULL,	
 	Cod_Concesionario_oferta	INT		NOT NULL,	
-	Cod_Compra_es_adquirido	INT		NULL,	
 	CONSTRAINT Cod_Coches_CK UNIQUE (Cod_Coches),
 	CONSTRAINT Matricula_CK UNIQUE (Matricula),
 	CONSTRAINT NBastidor_CK UNIQUE (NBastidor),
@@ -149,6 +166,7 @@ GO
 CREATE TABLE Compra(
 	Cod_Compra	INT		NOT NULL,	
 	Descripción	VARCHAR(25)		NOT NULL,	
+	Cod_Compra_es_adquirido	INT		NULL,	
 	CONSTRAINT Cod_Compra_CK UNIQUE (Cod_Compra),
 	CONSTRAINT pk_Compra_id PRIMARY KEY(Cod_Compra)
 	)
@@ -294,10 +312,6 @@ GO
 	ADD CONSTRAINT Concesionarios_oferta_FK FOREIGN KEY(Cod_Concesionario_oferta)REFERENCES Concesionarios(Cod_Concesionario)
 	GO
 		
-		ALTER TABLE Coches
-	ADD CONSTRAINT Compra_es_adquirido_FK FOREIGN KEY(Cod_Compra_es_adquirido)REFERENCES Compra(Cod_Compra)
-	GO
-		
 		ALTER TABLE Km0
 	ADD CONSTRAINT Pack_incluye_FK FOREIGN KEY(Cod_Pack_incluye)REFERENCES Pack(Cod_Pack)
 	GO
@@ -316,6 +330,10 @@ GO
 		
 		ALTER TABLE Caracteristicas
 	ADD CONSTRAINT Pack_Añade_FK FOREIGN KEY(Cod_Pack_Añade)REFERENCES Pack(Cod_Pack)
+	GO
+		
+		ALTER TABLE Compra
+	ADD CONSTRAINT Compra_es_adquirido_FK FOREIGN KEY(Cod_Compra_es_adquirido)REFERENCES Compra(Cod_Compra)
 	GO
 		
 		ALTER TABLE Clientes
@@ -393,7 +411,7 @@ CREATE TRIGGER Coches_total ON Coches
 AFTER INSERT, UPDATE
 AS BEGIN
 BEGIN 
-RAISERROR ('Do not insert rows in the supertype. Insert them into subtypes.', 16, 1)
+RAISERROR ('Do not insert rows in the supertype. Insert them in the corresponding subtype.', 16, 1)
 ROLLBACK TRANSACTION
 RETURN
 END	
@@ -404,7 +422,7 @@ CREATE TRIGGER Personal_total ON Personal
 AFTER INSERT, UPDATE
 AS BEGIN
 BEGIN 
-RAISERROR ('Do not insert rows in the supertype. Insert them into subtypes.', 16, 1)
+RAISERROR ('Do not insert rows in the supertype. Insert them in the corresponding subtype.', 16, 1)
 ROLLBACK TRANSACTION
 RETURN
 END	

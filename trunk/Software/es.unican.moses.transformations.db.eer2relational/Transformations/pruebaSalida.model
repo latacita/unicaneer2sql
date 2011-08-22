@@ -32,10 +32,8 @@
     <attributes name="Precio" domain="//@domains.1"/>
     <attributes name="Codigo_Modelo_pertenece2" domain="//@domains.1"/>
     <attributes name="Cod_Concesionario_oferta" domain="//@domains.1"/>
-    <attributes name="Cod_Compra_es_adquirido" nullable="true" domain="//@domains.1"/>
     <foreignKey attributes="//@tables.2/@attributes.4" name="Modelo_pertenece2_FK" referencedTable="//@tables.1"/>
     <foreignKey attributes="//@tables.2/@attributes.5" name="Concesionarios_oferta_FK" referencedTable="//@tables.12"/>
-    <foreignKey attributes="//@tables.2/@attributes.6" name="Compra_es_adquirido_FK" referencedTable="//@tables.9"/>
   </tables>
   <tables name="Km0" primaryKey="//@tables.3/@candidateKey.0">
     <candidateKey attributes="//@tables.3/@attributes.1" name="Km0_CK"/>
@@ -93,6 +91,8 @@
     </candidateKey>
     <attributes name="Cod_Compra" domain="//@domains.1"/>
     <attributes name="Descripci&#xf3;n" domain="//@domains.0"/>
+    <attributes name="Cod_Compra_es_adquirido" nullable="true" domain="//@domains.1"/>
+    <foreignKey attributes="//@tables.9/@attributes.2" name="Compra_es_adquirido_FK" referencedTable="//@tables.9"/>
   </tables>
   <tables name="Clientes" primaryKey="//@tables.10/@candidateKey.0">
     <candidateKey name="Cod_Cliente_CK">
@@ -213,8 +213,8 @@
   </domains>
   <constraints name="Trigger" description="CREATE TRIGGER Km0_Usados_exclusive ON Km0&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;&#xA;IF (SELECT count(*) FROM Usados t, inserted i&#xA;WHERE t.Cod_Coches = i.Cod_Coches) > 0&#xA;BEGIN &#xA;RAISERROR ('The pk exists in another table', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
   <constraints name="Trigger" description="CREATE TRIGGER Usados_Km0_exclusive ON Usados&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;&#xA;IF (SELECT count(*) FROM Km0 t, inserted i&#xA;WHERE t.Cod_Coches = i.Cod_Coches) > 0&#xA;BEGIN &#xA;RAISERROR ('The pk exists in another table', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
-  <constraints name="Trigger" description="CREATE TRIGGER Coches_total ON Coches&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;BEGIN &#xA;RAISERROR ('Do not insert rows in the supertype. Insert them into subtypes.', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
-  <constraints name="Trigger" description="CREATE TRIGGER Personal_total ON Personal&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;BEGIN &#xA;RAISERROR ('Do not insert rows in the supertype. Insert them into subtypes.', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
+  <constraints name="Trigger" description="CREATE TRIGGER Coches_total ON Coches&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;BEGIN &#xA;RAISERROR ('Do not insert rows in the supertype. Insert them in the corresponding subtype.', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
+  <constraints name="Trigger" description="CREATE TRIGGER Personal_total ON Personal&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;BEGIN &#xA;RAISERROR ('Do not insert rows in the supertype. Insert them in the corresponding subtype.', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
   <constraints name="Trigger" description="CREATE TRIGGER Clientes_Telefono_maximum ON Clientes_Telefono&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;&#xA;IF (SELECT count(*) FROM Clientes_Telefono t, inserted i&#xA;WHERE t.Clientes_Telefono_CK = i.Clientes_Telefono_CK) > 5&#xA;BEGIN &#xA;RAISERROR ('The number of rows is bigger than the limit', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
   <constraints name="Trigger" description="CREATE TRIGGER Concesionarios_Telefono_maximum ON Concesionarios_Telefono&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;&#xA;IF (SELECT count(*) FROM Concesionarios_Telefono t, inserted i&#xA;WHERE t.Concesionarios_Telefono_CK = i.Concesionarios_Telefono_CK) > 4&#xA;BEGIN &#xA;RAISERROR ('The number of rows is bigger than the limit', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
   <constraints name="Trigger" description="CREATE TRIGGER Personal_Telefono_maximum ON Personal_Telefono&#xA;AFTER INSERT, UPDATE&#xA;AS BEGIN&#xA;&#xA;IF (SELECT count(*) FROM Personal_Telefono t, inserted i&#xA;WHERE t.Personal_Telefono_CK = i.Personal_Telefono_CK) > 5&#xA;BEGIN &#xA;RAISERROR ('The number of rows is bigger than the limit', 16, 1)&#xA;ROLLBACK TRANSACTION&#xA;RETURN&#xA;END&#x9;&#xA;END&#xA;GO&#xA;"/>
