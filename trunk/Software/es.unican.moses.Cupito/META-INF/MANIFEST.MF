@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Cupito
+Bundle-SymbolicName: es.unican.moses.Cupito; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: es.unican.moses.cupito.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ es.unican.moses.plugin.button;bundle-version="1.0.0",
+ es.unican.moses.sle.db.eer2sql;bundle-version="1.0.0",
+ es.unican.moses.sle.db.eer2sql.diagram;bundle-version="1.0.0",
+ es.unican.moses.sle.db.eer2sql.diagram.custom;bundle-version="1.0.0",
+ es.unican.moses.sle.db.eer2sql.edit;bundle-version="1.0.0",
+ es.unican.moses.transformations.db.eer2relational;bundle-version="1.0.0",
+ es.unican.moses.sle.db.relacional;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

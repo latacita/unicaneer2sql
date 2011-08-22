@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="es.unican.moses.cupito.CupitoApplication">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="es.unican.moses.cupito.Perspective"
+            id="es.unican.moses.Cupito.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="es.unican.moses.Cupito.application"
+            name="Cupito">
+         <property
+               name="appName"
+               value="Cupito">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+   </extension>
+
+</plugin>
