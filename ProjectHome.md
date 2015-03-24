@@ -1,0 +1,1 @@
+An Eclipse plugin for model-driven development of databases. The application provides faiclities to create graphical ER models and generates code for SLQ Sever and Oracle.
